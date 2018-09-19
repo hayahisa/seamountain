@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.ProductTable {
+    border: solid 1px #000000;
+    border-collapse: separate;
+    border-spacing: 0px 0px;
+}
+
+.ProductTable td {
+    border: solid 1px #000000;
+    border: solid 1px #007275;
+}
