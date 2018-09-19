@@ -30,6 +30,7 @@ public class Test extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		//request.getRequestDispatcher("WEB-INF/jsp/header.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 
 	/**
