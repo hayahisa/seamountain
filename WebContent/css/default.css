@@ -1,0 +1,32 @@
+div.row{
+  margin-top: -15px;
+}
+
+body{
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+table tr th{
+  text-align: center;
+}
+
+table tr td{
+  margin-left: 0px;
+  padding-left: 0px;
+
+}
+
+table tr td div a.waves-effect{
+  margin-left: 0px;
+  padding: 0px;
+}
+
+table tr td div div.waves-effect{
+  margin-left: 0px;
+  padding: 0px;
+}
+
+table tr td div.center-align{
+  border: solid 1px;
+}
