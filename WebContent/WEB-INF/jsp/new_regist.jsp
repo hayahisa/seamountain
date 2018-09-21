@@ -28,79 +28,73 @@
 
 <nav></nav>
 
-<div class="row"> <!-- 表示範囲の設定 -->
-	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+	<div class="row"> <!-- 表示範囲の設定 -->
+		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 
-	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-		<!-- ここから書いて -->
+	        <br>
+	        <br>
+			<div class="container">
+	    		<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規会員登録</h5>
+	  		</div>
+	        <br>
+	        <br>
+	        <div class="row container">
+	    		<form class="col s12" action="UserRegistConfirmation" method="post">
+					<div class="row">
+	        			<div class="input-field col s12  ">
+	          				<input id="gakuseki" type="text" class="validate" name="number">
+	          				<label for="gakuseki">学籍番号</label>
+	        			</div>
+	      			</div>
+					
+	      			<div class="row">
+	        			<div class="input-field col s12">
+	          				<input id="username" type="text" class="validate" name="username">
+	          				<label for="username">ユーザーネーム</label>
+	        			</div>
+	      			</div>
+					<div class="row">
+	        			<div class="input-field col s12">
+	          				<input id="email" type="email" class="validate" name="mail">
+	          				<label for="email">メールアドレス</label>
+	        			</div>
+	        		</div>
+	        		<div class="row">
+	        			<div class="input-field col s12">
+	        				<input id="email2" type="email" class="validate">
+	        				<label for="email2">メールアドレス確認</label>
+						</div>
+	      			</div>
+	      			<div class="row">
+	        			<div class="input-field col s12">
+	          				<input id="password" type="password" class="validate" name="pass">
+	          				<label for="password">パスワード</label>
+	        			</div>
+	      			</div>
+	              	<div class="row">
+	        			<div class="input-field col s12">
+							<input id="password2" type="password" class="validate" name="pass2">
+							<label for="password2">パスワード確認</label>
+	        			</div>
+	      			</div>
+	      			<div class="row container">
+	      				<div class="col s12 right-align">
+	      					<button type="button" class="left-align btn waves-effect waves-light green lighten-1" onclick="history.back()">戻る</button>
+	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">確認
+							<i class="material-icons right">send</i>
+							</button>
+						</div>
+	    			</div>
+	      			
+	    		</form>
+	  		</div>
+	
+			
+		</div>
 
-        <br>
-        <br>
-          <div class="container">
-    <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規会員登録</h5>
-  </div>
-        <br>
-        <br>
-
-        <div class="row container">
-    <form class="col s12">
-		<div class="row">
-        	<div class="input-field col s12  ">
-          		<input id="gakuseki" type="text" class="validate ">
-          		<label for="gakuseki">学籍番号</label>
-        	</div>
-      	</div>
-
-      	<div class="row">
-        <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
-          <label for="username">ユーザーネーム</label>
-        </div>
-      </div>
-              <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">メールアドレス</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email2" type="email" class="validate">
-          <label for="email2">メールアドレス確認</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">パスワード</label>
-        </div>
-      </div>
-              <div class="row">
-        <div class="input-field col s12">
-          <input id="password2" type="password" class="validate">
-          <label for="password2">パスワード確認</label>
-        </div>
-      </div>
-
-    </form>
-  </div>
-
-            <div class="row container">
-      <div class="col s12 right-align">
-    <button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">確認
-    <i class="material-icons right">send</i>
-    </button></div>
-    </div>
-
-
-
-
-
-   <!-- ここまで -->
-	</div>
-
-	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
-</div> <!-- div row　終了 -->
+		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+	</div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
       <script type="text/javascript">

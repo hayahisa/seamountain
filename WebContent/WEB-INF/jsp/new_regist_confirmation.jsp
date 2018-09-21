@@ -30,7 +30,6 @@
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-		<!-- ここから書いて -->
         
         <br>
         <br>
