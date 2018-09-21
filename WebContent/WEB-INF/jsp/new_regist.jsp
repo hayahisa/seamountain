@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +26,14 @@
 </head>
 <body>
 
+<nav></nav>
+
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-        
+
         <br>
         <br>
           <div class="container">
@@ -37,7 +41,7 @@
   </div>
         <br>
         <br>
-         
+
         <div class="row container">
     <form class="col s12">
 		<div class="row">
@@ -46,7 +50,7 @@
           		<label for="gakuseki">学籍番号</label>
         	</div>
       	</div>
-      	
+
       	<div class="row">
         <div class="input-field col s12">
           <input id="username" type="text" class="validate">
@@ -77,18 +81,18 @@
           <label for="password2">パスワード確認</label>
         </div>
       </div>
-      
+
     </form>
   </div>
-        
+
             <div class="row container">
       <div class="col s12 right-align">
     <button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">確認
     <i class="material-icons right">send</i>
     </button></div>
     </div>
-            
-        
+
+
 
 
 
