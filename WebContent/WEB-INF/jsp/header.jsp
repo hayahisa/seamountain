@@ -23,68 +23,99 @@
     <title></title> <!--画面名-->
 
     </head>
-  <body>
-
+    <body>
     <header> <!-- ヘッダー  -->
-  		<nav class="header">
+
+    	<nav class="header">
 
     		<ul id="slide-out" class="sidenav">　<!-- サイドメニュー -->
-      		<li><div class="user-view">
-        		<div class="background">
-        		</div>
-            <!-- <span class="black-text name"></span> -->
-        		<li><a class="subheader"><i class="material-icons">account_box</i></a></li> <!-- ユーザー名 -->
-      		</div>
-        </li>
+      			<li>
+      				<div class="user-view">
+        				<div class="background"></div>
+        				<!-- <span class="black-text name"></span> -->
+        					<li><a class="subheader"><i class="material-icons">account_box</i></a></li> <!-- ユーザー名 -->
+        			</div>
+       			</li>
 
+       			<li>	<!-- マイページへ -->
+       				<a href="#!">
+       					<i class="material-icons">mood</i>マイページ
+       				</a>
+       			</li>
 
-      		<li><a href="#!"><i class="material-icons">mood</i>マイページ</a></li>
-      		<li><div class="divider"></div></li>
-      		<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
-          <li><a class="waves-effect" href="#!"><i class="material-icons">star_border</i>トップ</a></li>
-  				<li><a class="waves-effect" href="#!"><i class="material-icons">rate_review</i>時間割作成</a></li>
-  				<li><a class="waves-effect" href="#!"><i class="material-icons">view_comfy</i>時間割一覧</a></li>
-  				<li><a class="waves-effect" href="#!"><i class="material-icons">bookmark_border</i>教室予約</a></li>
-  				<li><a class="waves-effect" href="#!"><i class="material-icons">directions_bike</i>ログアウト</a></li>
+      			<li><div class="divider"></div></li>
+
+      			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
+
+         		<li>	<!-- メインへ -->
+         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;"">
+         				<i class="material-icons">star_border</i>トップ
+         			</a>
+         		</li>
+
+  				<li>	<!-- 時間割作成へ -->
+  					<a class="waves-effect" href="#!">
+  						<i class="material-icons">rate_review</i>時間割作成
+  					</a>
+  				</li>
+
+  				<li>	<!-- 時間割一覧へ -->
+  					<a class="waves-effect" href="#!">
+  						<i class="material-icons">view_comfy</i>時間割一覧
+  					</a>
+  				</li>
+
+  				<li>	<!-- 教室予約へ -->
+  					<a class="waves-effect" href="#!">
+  						<i class="material-icons">bookmark_border</i>教室予約
+  					</a>
+  				</li>
+
+  				<li>	<!-- ログアウトへ -->
+  					<a class="waves-effect" href="#!">
+  						<i class="material-icons">directions_bike</i>ログアウト
+  					</a>
+  				</li>
+
     		</ul>
 
+    		<!-- ハンバーガーメニュー -->
     		<a href="#" data-target="slide-out" class="sidenav-trigger">
   				<i class="material-icons">menu</i>
   			</a>
 
-  			<a href="#!" class="brand-logo-small">鍵管理システム</a>
+  			<a href="Next_main" onclick="document.main.submit();return false;">鍵管理システム</a>
+
+  			<!-- form達 -->
+  			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
 
   		</nav>　
 
-
-      <!-- 検索バー -->
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s8">
-              <input type="text" name="" value="">
-
-            </div>
-
-            <div class="input-field col s4">
-                <a class="waves-effect waves-light btn">教室検索</a>
-            </div>
-
-          </div>
-        </form>
-      </div>
+	    <!-- 検索バー -->
+	  	<div class="row">
+	  		<form class="col s12">
+	      		<div class="row">
+	            	<div class="input-field col s8">
+	              		<input type="text" name="" value="">
+	              	</div>
+		            <div class="input-field col s4">
+		                <a class="waves-effect waves-light btn">教室検索</a>
+		            </div>
+	          	</div>
+	      	</form>
+	  	</div>
 
   	</header><!-- ヘッダー終了  -->
-    <!-- SCRIPT -->
 
+
+    <!-- SCRIPT -->
           <script type="text/javascript">
 
-// navのスクリプト
+ 			/* navのスクリプト */
     	    document.addEventListener('DOMContentLoaded', function() {
     	    var elems = document.querySelectorAll('.sidenav');
     	    var instances = M.Sidenav.init(elems);
     	  });
-
 
     	   </script>
 

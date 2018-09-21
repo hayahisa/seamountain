@@ -6,13 +6,11 @@ public class LoginDao extends DaoBase{
 
 	// ユーザーログイン
 		public UserPassBean User_loginDao(int user_no) {
-			UserPassBean UserPassBean = null;
-			System.out.println("loginDao");
+			UserPassBean userpassbean = null;
 			try {
 				super.connection();
-
 				//ログイン認証sql
-				String sql = "SELECT  user_no,password FROM password where user_no = ?";
+				String sql = "SELECT user_no,password FROM password where user_no = ?";
 				stmt = con.prepareStatement(sql);
 
 				stmt.setInt(1,user_no);
@@ -22,8 +20,7 @@ public class LoginDao extends DaoBase{
 				rs.next();
 
 				// Beanに管理者ID.pass格納
-				System.out.println(rs.getInt(1) + rs.getString(2));
-				UserPassBean = new UserPassBean(rs.getInt(1), rs.getString(2));
+				userpassbean = new UserPassBean(rs.getInt(1), rs.getString(2));
 			} catch (Exception e) {
 				System.out.println(e);
 			} finally {
@@ -34,7 +31,7 @@ public class LoginDao extends DaoBase{
 					System.out.println("error");
 				}
 			}
-			return UserPassBean;
+			return userpassbean;
 		}
 }
 
