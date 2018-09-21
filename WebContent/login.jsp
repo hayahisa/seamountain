@@ -43,19 +43,19 @@
     <br>
     <br>
 
-    <form class="col s12" action="Login" method="post">
+    <form class="col s12" action="Login" method="post" onsubmit="return login()">
 
     	<div class="row container">
 	    	<div class="row">
 	        	<div class="input-field col s12  ">
-	          		<input id="gakuseki" type="text" class="validate" name="user_number">
+	          		<input id="gakuseki" type="text" class="validate" name="user_number" required>
 	          		<label for="gakuseki">ユーザ番号</label>
 	        	</div>
 	     	</div>
 
 	     	<div class="row">
 	        	<div class="input-field col s12">
-	         		 <input id="password" type="password" class="validate" name="user_pass">
+	         		 <input id="password" type="password" class="validate" name="user_pass" required>
 	         		 <label for="password">パスワード</label>
 	       		</div>
 	    	</div>
@@ -67,7 +67,7 @@
 	      	</div>
 
 	      	<div class="col s3 right-align">
-	      		<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">
+	      		<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="return login()">
 	      		ログイン
 	      		</button>
 	     	</div>
@@ -95,13 +95,27 @@
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-      <script type="text/javascript">
+      <script>
 
-	    document.addEventListener('DOMContentLoaded', function() {
+      /* ログインのエラー確認 */
+	    function login(){
+	    	var number = document.getElementById('gakuseki').value;
+	    	var pass = document.getElementById('password').value;
+
+	    	if(isNaN(number) == true){
+	    		alert('数字で入力してください');
+	    		return false;
+	    	}else{
+	    		return true;
+	    	}
+	    }
+
+      /*
+      document.addEventListener('DOMContentLoaded', function() {
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
-
+      */
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');

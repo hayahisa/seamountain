@@ -41,6 +41,7 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		System.out.println("login.java");
 		HttpSession session = request.getSession();	//セッション
 		String path = null;	//遷移用path
 
@@ -55,15 +56,20 @@ public class Login extends HttpServlet {
 		UserPassBean userpassbean = ldao.User_loginDao(user_no);
 
 		if(ldao.User_loginDao(user_no) == null){
+			System.out.println("e1");
 			path = "/login.jsp";
 		}else if(userpassbean.getUser_number() ==  user_no && userpassbean.getUser_pass().equals(user_pass)){
 			session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
-			path = "/main01.jsp";
+			path = "WEB-INF/jsp/main01.jsp";
+			System.out.println("e2");
 		}else{
-			path = "login.jsp";
+			path = "/login.jsp";
+			System.out.println("e3");
 		}
-
+		System.out.println(path);
 		request.getRequestDispatcher(path).forward(request, response);
+
+		System.out.println("aiueo");
 	}
 
 }
