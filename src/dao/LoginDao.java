@@ -7,11 +7,12 @@ public class LoginDao extends DaoBase{
 	// ユーザーログイン
 		public UserPassBean User_loginDao(int user_no) {
 			UserPassBean UserPassBean = null;
+			System.out.println("loginDao");
 			try {
 				super.connection();
 
 				//ログイン認証sql
-				String sql = "SELECT  user_no,user_pass FROM user_pass_table where user_no = ?";
+				String sql = "SELECT  user_no,password FROM password where user_no = ?";
 				stmt = con.prepareStatement(sql);
 
 				stmt.setInt(1,user_no);
