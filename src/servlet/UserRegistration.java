@@ -9,21 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.PassDao;
 import dao.UserDao;
+import model.HashPassword;
 import model.PasswordBean;
 import model.UserBean;
 
 /**
- * Servlet implementation class UserRegistConfirmation
+ * Servlet implementation class UserRegistration
  */
-@WebServlet("/UserRegistConfirmation")
-public class UserRegistConfirmation extends HttpServlet {
+@WebServlet("/UserRegistration")
+public class UserRegistration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserRegistConfirmation() {
+    public UserRegistration() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,8 +36,38 @@ public class UserRegistConfirmation extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String path = "";
 		
+		HttpSession session = request.getSession(false);
 		
+		if (session == null) {
+			
+			path = "WEB-INF/jsp/new_regist.jsp";
+		
+		} else {
+			PasswordBean passBean = (PasswordBean) session.getAttribute("passBean");
+			UserBean userBean = (UserBean) session.getAttribute("userBean");
+			
+			// パスワードをSHA-256でハッシュ化
+			HashPassword hashPass = new HashPassword();
+			String encryptPass = hashPass.encryptPass(passBean.getPassword());
+			
+			// passのsessionを破棄
+			session.removeAttribute("passBean");
+
+			// ユーザ情報をuserテーブルに格納
+			UserDao userdao = new UserDao();
+			userdao.registrationUser(userBean);
+			// パスワードをauth_infoテーブルに格納
+			PassDao passDao = new PassDao();
+			passDao.registrationPassword(userBean.getUserNo(), encryptPass);
+			
+			
+
+			path = "WEB-INF/User_Registration_Complete.jsp";
+		}
+
+		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**
@@ -56,7 +88,7 @@ public class UserRegistConfirmation extends HttpServlet {
 		
 		if(userFlg == false){
 			request.setAttribute("msgflg","1");
-			path = "WEB-INF/new_regist.jsp";
+			path = "WEB-INF/jsp/new_regist.jsp";
 			
 		}else if(userFlg = true){
 			UserBean userbean = new UserBean();
@@ -72,11 +104,11 @@ public class UserRegistConfirmation extends HttpServlet {
 			session.setAttribute("userBean",userbean);
 			session.setAttribute("passBean",passbean);
 			
-			path = "WEB-INF/new_regist_confirmation.jsp";
+			path = "WEB-INF/jsp/new_regist_confirmation.jsp";
 			
-			request.getRequestDispatcher(path).forward(request, response);
-
 		}
+		
+		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
 

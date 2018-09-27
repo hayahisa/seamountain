@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="model.UserBean" 
+	import="model.PasswordBean"
+%>
+<% 	UserBean userbean = (UserBean)session.getAttribute("userBean");
+	PasswordBean passbean = (PasswordBean)session.getAttribute("passBean");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,67 +28,61 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title></title> <!--画面名-->
+<title>新規会員登録確認</title> <!--画面名-->
 
 </head>
 <body>
+	<header>
+		<nav> <!-- ヘッダー  -->
+		</nav>
+	</header>
+	<div class="row"> <!-- 表示範囲の設定 -->
+		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
-	
-
-<div class="row"> <!-- 表示範囲の設定 -->
-	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-
-	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+	        <br>
+    	    <br>
+        	<div class="container">
+    			<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>確認</h5>
+  			</div>
+        	<br>
+        	<br>
         
-        <br>
-        <br>
-          <div class="container">
-    <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規会員登録確認</h5>
-  </div>
-        <br>
-        <br>
-         
-        <div class="row container">
-    <form class="col s12">
-              <div class="row">
-        <div class="input-field col s12  ">
-          <input id="gakuseki" type="text" class="validate ">
-          <label for="gakuseki">学籍番号</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
-          <label for="username">ユーザーネーム</label>
-        </div>
-      </div>
-              <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">メールアドレス</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">パスワード</label>
-        </div>
-      </div>
-      
-    </form>
-  </div>
-        
-            <div class="row container">
-      <div class="col s12 right-align">
-    <button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">確認
-    <i class="material-icons right">send</i>
-    </button></div>
-    </div>
-            
-        
-
-
-
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<table border="1">
+							<tr>
+								<th><p>学籍番号<br><%=userbean.getUserNo() %></p></th>
+							</tr>
+							<tr>
+								<th><p>ユーザーネーム<br><%=userbean.getUserName() %></p></th>
+							</tr>
+							<tr>
+								<th><p>メールアドレス<br><%=userbean.getMail() %></p></th>
+							</tr>
+							<tr>
+								<th><p>パスワード<br><%=passbean.getPassword() %></p></th>
+							</tr>
+							
+						</table>
+						
+						<div class="container">
+							<div class="row right-align">
+								<br>
+								<div class="col-md-12">
+									<form action="UserRegistration">
+										<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+										<input type="submit" value="登録" class="waves-effect blue lighten-1 btn">
+									</form>
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
    <!-- ここまで -->
 	</div>
 
