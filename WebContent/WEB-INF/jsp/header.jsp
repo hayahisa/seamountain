@@ -72,7 +72,7 @@
   				</li>
 
   				<li>	<!-- ログアウトへ -->
-  					<a class="waves-effect" href="#!">
+  					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;"">
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
@@ -88,6 +88,7 @@
 
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+  			<form action="Logout" name="logout" method="post"></form>	<!-- logout -->
 
   		</nav>　
 
