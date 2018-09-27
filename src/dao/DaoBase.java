@@ -37,7 +37,7 @@ public class DaoBase {
 		con = ds.getConnection();
 		return con;
 	}
-	
+
 	public void DbClose(){
 	    //接続したものが空でなければ閉じる
 		try {
@@ -48,6 +48,6 @@ public class DaoBase {
 			e.printStackTrace();
 		}
 	}
-	
+
 
 }
