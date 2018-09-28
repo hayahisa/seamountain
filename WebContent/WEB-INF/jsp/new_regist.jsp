@@ -21,7 +21,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title></title> <!--画面名-->
+<title>新規会員登録</title> <!--画面名-->
 
 </head>
 <body>
@@ -29,7 +29,8 @@
 <nav></nav>
 
 	<div class="row"> <!-- 表示範囲の設定 -->
-		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+		<div class="left col-lg-1 col-md-1 col-xs-0">
+		</div> <!-- 左側余白 -->
 		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 
 	        <br>
@@ -40,14 +41,14 @@
 	        <br>
 	        <br>
 	        <div class="row container">
-	    		<form class="col s12" action="UserRegistConfirmation" method="post">
+	        
+	    		<form class="col s12" action="UserRegistration" method="post">
 					<div class="row">
 	        			<div class="input-field col s12  ">
 	          				<input id="gakuseki" type="text" class="validate" name="number">
 	          				<label for="gakuseki">学籍番号</label>
 	        			</div>
 	      			</div>
-					
 	      			<div class="row">
 	        			<div class="input-field col s12">
 	          				<input id="username" type="text" class="validate" name="username">
