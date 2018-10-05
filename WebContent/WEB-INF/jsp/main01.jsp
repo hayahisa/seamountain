@@ -35,26 +35,29 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 
-        <br>
-
         <div class="center-align">
             <p class="Heading h4">次の授業<i class="material-icons">school</i></p>
-        <a class="waves-effect waves-light btn-large blue lighten-1"><i class="material-icons right">edit</i>登録されていません</a>
+        	<label class="btn-large blue"><i class="material-icons right">edit</i>登録されていません</label>
         </div>
-        <br>
 
-        <br>
         <div class="center-align">
             <p class="Heading h4">次の教室<i class="material-icons">place</i></p>
-        <a class="waves-effect waves-light btn-large blue lighten-1 "><i class="material-icons right">edit</i>登録されていません</a>
+        	<label class="btn-large blue"><i class="material-icons right">edit</i>登録されていません</label>
         </div>
-        <br>
 
         <br>
+
         <div class="center-align">
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
-        <a class="waves-effect waves-light btn-large blue lighten-1"><i class="material-icons right">edit</i>登録されていません</a>
+        	<label class="btn-large blue"><i class="material-icons right">edit</i>登録されていません</label>
         </div>
+
+        <br>
+
+        <div class="center-align">
+            <a class="waves-effect waves-light btn">登録・変更</a>
+        </div>
+
 
 
 

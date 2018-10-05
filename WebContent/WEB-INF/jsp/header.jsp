@@ -38,7 +38,7 @@
        			</li>
 
        			<li>	<!-- マイページへ -->
-       				<a href="#!">
+       				<a class="waves-effect" href="Next_mypage" onclick="document.mypage.submit();return false;">
        					<i class="material-icons">mood</i>マイページ
        				</a>
        			</li>
@@ -48,20 +48,21 @@
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
          		<li>	<!-- メインへ -->
-         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;"">
+
+         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;">
          				<i class="material-icons">star_border</i>トップ
          			</a>
          		</li>
 
   				<li>	<!-- 時間割作成へ -->
-  					<a class="waves-effect" href="#!">
+  					<a class="waves-effect" href="Next_create_table" onclick="document.create_table.submit();return false;">
   						<i class="material-icons">rate_review</i>時間割作成
   					</a>
   				</li>
 
-  				<li>	<!-- 時間割一覧へ -->
-  					<a class="waves-effect" href="#!">
-  						<i class="material-icons">view_comfy</i>時間割一覧
+  				<li>	<!-- 時間割へ -->
+  					<a class="waves-effect" href="Next_time_table" onclick="document.time_table.submit();return false;">
+  						<i class="material-icons">view_comfy</i>時間割
   					</a>
   				</li>
 
@@ -72,7 +73,7 @@
   				</li>
 
   				<li>	<!-- ログアウトへ -->
-  					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;"">
+  					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;">
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
@@ -89,11 +90,15 @@
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
   			<form action="Logout" name="logout" method="post"></form>	<!-- logout -->
+  			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- MyPageへ -->
+  			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
+  			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
+
 
   		</nav>　
 
 	    <!-- 検索バー -->
-	  	<div class="row">
+	  	<!-- <div class="row">
 	  		<form class="col s12">
 	      		<div class="row">
 	            	<div class="input-field col s8">
@@ -104,7 +109,7 @@
 		            </div>
 	          	</div>
 	      	</form>
-	  	</div>
+	  	</div> -->
 
   	</header><!-- ヘッダー終了  -->
 

@@ -82,6 +82,8 @@
    			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
    		</div>
 
+
+
    		<div class="row right-align"></div>
 	</div>
 
