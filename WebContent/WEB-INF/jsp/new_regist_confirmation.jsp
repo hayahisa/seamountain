@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.UserBean" 
+<%@ page import="model.UserBean"
 	import="model.PasswordBean"
 %>
 <% 	UserBean userbean = (UserBean)session.getAttribute("userBean");
@@ -17,7 +17,7 @@
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
 <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/default.css" >
@@ -47,7 +47,7 @@
   			</div>
         	<br>
         	<br>
-        
+
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -64,9 +64,9 @@
 							<tr>
 								<th><p>パスワード<br><%=passbean.getPassword() %></p></th>
 							</tr>
-							
+
 						</table>
-						
+
 						<div class="container">
 							<div class="row right-align">
 								<br>
@@ -75,8 +75,8 @@
 										<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
 										<input type="submit" value="登録" class="waves-effect blue lighten-1 btn">
 									</form>
-									
-									
+
+
 								</div>
 							</div>
 						</div>
