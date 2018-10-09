@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashPassword {
-	
+
 	/**
 	* 文字列をハッシュ化するメソッド
 	*
