@@ -45,8 +45,7 @@
 				<div class="row">
 					<div class="input-field col s12">
 					
-						<a href="main01.jsp">トップヘ</a>
-						
+						<a href="main01.jsp">トップ</a>
 						
 					</div>
 				</div>
