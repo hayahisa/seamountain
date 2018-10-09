@@ -81,7 +81,7 @@ public class UserDao extends DaoBase{
 			}
 		}
 
-		public UserSessionBean userSession(String userno) {
+		public UserSessionBean userSession(String user_no) {
 			UserSessionBean usersessionbean = null;
 			try {
 
