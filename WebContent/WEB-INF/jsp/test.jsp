@@ -10,6 +10,6 @@
 <h1>Hello SeaMountain</h1>
 <p>welcome to my world</p>
 tasukete
-
+onegai
 </body>
 </html>
