@@ -40,186 +40,178 @@
 		<!-- ここから書いて -->
         <br>
 
-              <table>
+        <table>
+
         <thead>
-          <tr>
-              <th></th>
-              <th class="center-align">月</th>
-              <th class="center-align">火</th>
-              <th class="center-align">水</th>
-              <th class="center-align">木</th>
-              <th class="center-align">金</th>
-          </tr>
+            <tr>
+                <th class="center-align">月</th>
+                <th class="center-align">火</th>
+                <th class="center-align">水</th>
+                <th class="center-align">木</th>
+                <th class="center-align">金</th>
+            </tr>
         </thead>
 
         <tbody>
-      <!1------------------------------------------------------>
 
+        <!-- 時間割の中身 -->
+<!-- ***********************1限目********************************* -->
             <tr>
-            <td>1</td>
-
-            <td>
-
- <div class="center-align">
-
-     <a class="waves-effect waves-light btn">教科</a>
-                <p>test</p></div>
-                <div>
- </div>
-
+                <td>  <!-- 月曜１限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
- <div class="center-align"><a class="waves-effect waves-light btn"></a></div>
-                <div>
- </div>
+                <td>  <!-- 火曜1限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
+                <td>  <!-- 水曜1限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
 
-
- <div class="center-align"><a class="waves-effect waves-light btn"></a></div>
-                <div>
- </div>
-
+                <td>  <!-- 木曜1限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
- <div class="center-align"><a class="waves-effect waves-light btn"></a></div>
-                <div>
- </div>
-
-
-
+                <td>  <!-- 金曜1限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
+            </tr>
 
-                            <td>
-
- <div class="center-align"><a class="waves-effect waves-light btn"></a></div>
-                <div>
- </div>
-
-
-                </td>
-        </tr>
-      <!2------------------------------------------------------>
+<!-- ***********************2限目********************************* -->
             <tr>
-            <td>2</td>
 
-                        <td>
-    <div><div>
- </div></div>
-
-
+                <td>  <!-- 月曜2限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-<div><div>
- </div></div>
-
+                <td>  <!-- 火曜2限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-<div><div>
- </div></div>
-
+                <td>  <!-- 水曜2限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-<div><div>
- </div></div>
-
+                <td>  <!-- 木曜2限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-<div><div>
- </div></div>
-
+                <td>  <!-- 金曜2限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
-        </tr>
-      <!3------------------------------------------------------>
-                        <tr>
-            <td>3</td>
+            </tr>
 
-                                    <td>
+<!-- ***********************3限目********************************* -->
+            <tr>
 
-  <div><div>
- </div></div>
+                <td>  <!-- 月曜3限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
 
-                </td>
-
-                            <td>
-
-<div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
+                <td>  <!-- 火曜3限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-  <div><div>
- </div></div>
-
+                <td>  <!-- 水曜3限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-        </tr>
-      <!4------------------------------------------------------>
-                        <tr>
-            <td>4</td>
-
-              <td>
-
- <div><div>
- </div></div>
+                <td>  <!-- 木曜3限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
+                <td>  <!-- 金曜3限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
+                </td>
+            </tr>
 
-  <div><div>
- </div></div>
+<!-- ***********************4限目********************************* -->
+            <tr>
 
+                <td>  <!-- 月曜4限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
- <div><div>
- </div></div>
+                <td>  <!-- 火曜4限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-  <div><div>
- </div></div>
-
+                <td>  <!-- 水曜4限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
 
-                            <td>
-
-  <div><div>
- </div></div>
-
+                <td>  <!-- 木曜4限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
                 </td>
-        </tr>
-                  </tbody></table>
+
+                <td>  <!-- 金曜4限目　-->
+                    <div class="center-align">
+                        <p class="waves-effect waves-light btn">使用</p>
+                    </div>
+                    <div></div>
+                </td>
+            </tr>
+
+            <!--　時間割内容終了　-->
+
+        </tbody>
+    </table>
         <br>
 
 
