@@ -44,7 +44,9 @@
 			<div class="row container">
 				<div class="row">
 					<div class="input-field col s12">
+					
 						<a href="main01.jsp">トップヘ</a>
+						
 					</div>
 				</div>
 			</div>
