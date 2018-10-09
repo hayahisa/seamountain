@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,61 +26,33 @@
 </head>
 <body>
 
-<div class="row"> <!-- 表示範囲の設定 -->
-	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+	<header>
+		<nav> <!-- ヘッダー  -->
+		</nav>
+	</header>
 
-	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-		<!-- ここから書いて -->
-        
-        <br>
-        <br>
-          <div class="container">
-    <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規会員登録完了</h5>
-  </div>
-        <br>
-        <br>
-         
-        <div class="row container">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="0000000" id="disabled" type="text" class="validate">
-          <label for="disabled"></label>
-        </div>
-      </div>
-              <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="メールアドレス" id="disabled" type="text" class="validate">
-          <label for="disabled"></label>
-        </div>
-      </div>
-              <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="ユーザー名" id="disabled" type="text" class="validate">
-          <label for="disabled"></label>
-        </div>
-      </div>
-             
-    </form>
-  </div>
-        <div class="container">
-    <div class="row right-align">
-        <br>
-            <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">&nbsp;&nbsp;&nbsp;&nbsp;戻る&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a class="waves-effect blue lighten-1 btn">&nbsp;&nbsp;&nbsp;&nbsp;登録&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-        </div>
-            </div>
-            
-        
+	<div class="row"> <!-- 表示範囲の設定 -->
+		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+	
+		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+			<!-- ここから書いて -->
+			<br>
+			<br>
+			<div class="container">
+				<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規登録完了</h5>
+			</div>
+			<div class="row container">
+				<div class="row">
+					<div class="input-field col s12">
+						<a href="main01.jsp">トップヘ</a>
+					</div>
+				</div>
+			</div>
+			<!-- ここまで -->
+		</div>
 
-
-
-   <!-- ここまで -->
-	</div>
-
-	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
-</div> <!-- div row　終了 -->
+		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+	</div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
       <script type="text/javascript">

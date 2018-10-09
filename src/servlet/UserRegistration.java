@@ -62,9 +62,7 @@ public class UserRegistration extends HttpServlet {
 			PassDao passDao = new PassDao();
 			passDao.registrationPassword(userBean.getUserNo(), encryptPass);
 			
-			
-
-			path = "WEB-INF/User_Registration_Complete.jsp";
+			path = "WEB-INF/jsp/new_regist_complete.jsp";
 		}
 
 		request.getRequestDispatcher(path).forward(request, response);
@@ -80,6 +78,7 @@ public class UserRegistration extends HttpServlet {
 		String username = request.getParameter("username");
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
+		String course = request.getParameter("course");
 		
 		String path = "";
 		
@@ -95,6 +94,9 @@ public class UserRegistration extends HttpServlet {
 			userbean.setUserNo(number);
 			userbean.setUserName(username);
 			userbean.setMail(mail);
+			userbean.setCourseId(course);
+			userbean.setRoleFlg("S");
+			userbean.setLoginFlg("1");
 			
 			PasswordBean passbean = new PasswordBean();
 			passbean.setUserNo(number);

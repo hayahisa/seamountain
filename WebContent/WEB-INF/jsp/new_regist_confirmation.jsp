@@ -28,7 +28,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>新規会員登録確認</title> <!--画面名-->
+<title>新規登録確認</title> <!--画面名-->
 
 </head>
 <body>
