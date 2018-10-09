@@ -67,7 +67,7 @@
   				</li>
 
   				<li>	<!-- 教室予約へ -->
-  					<a class="waves-effect" href="#!">
+  					<a class="waves-effect" href="Next_reservation" onclick="document.reservation.submit();return false;">
   						<i class="material-icons">bookmark_border</i>教室予約
   					</a>
   				</li>
@@ -93,6 +93,7 @@
   			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
   			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
+  			<form action="Next_reservation" name="reservation" method="post"></form>	<!-- reservation(予約）へ -->
 
 
   		</nav>　
