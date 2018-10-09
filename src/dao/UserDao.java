@@ -1,7 +1,6 @@
 package dao;
 
 import model.UserBean;
-import model.UserPassBean;
 import model.UserSessionBean;
 
 public class UserDao extends DaoBase{
@@ -83,7 +82,7 @@ public class UserDao extends DaoBase{
 		}
 
 		public UserSessionBean userSession(String userno) {
-			UserPassBean userpassbean = null;
+			UserSessionBean usersessionbean = null;
 			try {
 
 				// connection確立
