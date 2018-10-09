@@ -49,6 +49,18 @@
 	          				<label for="gakuseki">学籍番号</label>
 	        			</div>
 	      			</div>
+	      			
+	      			<div class="row">
+						<div class="input-field col s12">
+							<select name="course">
+								<option value="1">情報システム科</option>
+								<option value="2">情報システム専攻科</option>
+								<option value="3">情報工学科</option>
+								<option value="4">ネットワーク科</option>
+							</select>
+						</div>
+					</div>
+	      			
 	      			<div class="row">
 	        			<div class="input-field col s12">
 	          				<input id="username" type="text" class="validate" name="username">
@@ -82,7 +94,7 @@
 	      			<div class="row container">
 	      				<div class="col s12 right-align">
 	      					<button type="button" class="left-align btn waves-effect waves-light green lighten-1" onclick="history.back()">戻る</button>
-	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">確認
+	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="return errorcheck()">確認
 							<i class="material-icons right">send</i>
 							</button>
 						</div>
@@ -111,6 +123,16 @@
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
 	  // Or with jQuery
+		document.addEventListener('DOMContentLoaded', function() {
+    	var elems = document.querySelectorAll('select');
+    	var instances = M.FormSelect.init(elems);
+ 		});
+
+  // Or with jQuery
+
+		$(document).ready(function(){
+			$('select').formSelect();
+		});
 	   </script>
 
 </body>

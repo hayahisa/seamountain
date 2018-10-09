@@ -8,6 +8,7 @@ public class UserDao extends DaoBase{
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 	
+	//ユーザIDの重複チェック
 	public boolean userIDcheck(String userno) {
 
 		boolean flg = false;
