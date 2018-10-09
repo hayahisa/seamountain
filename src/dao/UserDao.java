@@ -1,7 +1,6 @@
 package dao;
 
 import model.UserBean;
-import model.UserSessionBean;
 
 public class UserDao extends DaoBase{
 
@@ -81,21 +80,21 @@ public class UserDao extends DaoBase{
 			}
 		}
 
-		public UserSessionBean userSession(String user_no) {
-			UserSessionBean usersessionbean = null;
+		public UserBean userSession(String userNo) {
+			UserBean userbean = null;
 			try {
-
-				// connection確立
 				super.connection();
+				//ログイン認証sql
+				String sql = "SELECT * FROM user where user_no = ?";
+				stmt = con.prepareStatement(sql);
 
-				// SQLの？に値のセット
-				stmt.setString(1, userno);
-				rs = stmt.executeQuery();
+				stmt.setString(1,userNo);
 
+				rs = stmt.executeQuery();// 結果が返ってくるSQL実行文
 				rs.next();
-				String selectSQL = "select * from user where user_no = ?";
 
-				stmt = con.prepareStatement(selectSQL);
+				// Beanにuse情報を格納
+				userbean = new UserBean(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8));
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -106,5 +105,6 @@ public class UserDao extends DaoBase{
 					System.out.println("error");
 				}
 			}
+			return userbean;
 		}
 }
