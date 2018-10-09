@@ -1,13 +1,15 @@
 package dao;
 
 import model.UserBean;
+import model.UserPassBean;
+import model.UserSessionBean;
 
 public class UserDao extends DaoBase{
-	
+
 	public UserDao() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
-	
+
 	//ユーザIDの重複チェック
 	public boolean userIDcheck(String userno) {
 
@@ -44,7 +46,7 @@ public class UserDao extends DaoBase{
 		}
 		return flg;
 	}
-	
+
 	// ユーザ登録
 		public void registrationUser(UserBean ubean) {
 			try {
@@ -68,6 +70,33 @@ public class UserDao extends DaoBase{
 				stmt.setString(8, ubean.getLoginFlg());
 				stmt.executeUpdate();
 
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					// エラー時はclose処理
+					super.DbClose();
+				} catch (Exception e) {
+					System.out.println("error");
+				}
+			}
+		}
+
+		public UserSessionBean userSession(String userno) {
+			UserPassBean userpassbean = null;
+			try {
+
+				// connection確立
+				super.connection();
+
+				// SQLの？に値のセット
+				stmt.setString(1, userno);
+				rs = stmt.executeQuery();
+
+				rs.next();
+				String selectSQL = "select * from user where user_no = ?";
+
+				stmt = con.prepareStatement(selectSQL);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
