@@ -9,7 +9,7 @@ public class UserDao extends DaoBase{
 	}
 
 	//ユーザIDの重複チェック
-	public boolean userIDcheck(String userno) {
+	public boolean userNocheck(String userno) {
 
 		boolean flg = false;
 
@@ -53,7 +53,7 @@ public class UserDao extends DaoBase{
 				super.connection();
 
 				// ユーザーを登録するSQL
-				String sql = "insert into user(user_no,course_id,time_id,user_name,mail,user_year,role_flg,login_flg) values(?,?,?,?,?,?,?,?)";
+				String sql = "insert into user(user_no,course_id,time_id,user_name,mail,user_year,role_flg) values(?,?,?,?,?,?,?)";
 
 				stmt = con.prepareStatement(sql);
 
@@ -65,7 +65,6 @@ public class UserDao extends DaoBase{
 				stmt.setString(5, ubean.getMail());
 				stmt.setInt(6, ubean.getUserYear());
 				stmt.setString(7, ubean.getRoleFlg());
-				stmt.setString(8, ubean.getLoginFlg());
 				stmt.executeUpdate();
 
 			} catch (Exception e) {

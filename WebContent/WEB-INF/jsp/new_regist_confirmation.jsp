@@ -56,6 +56,12 @@
 								<th><p>学籍番号<br><%=userbean.getUserNo() %></p></th>
 							</tr>
 							<tr>
+								<th><p>学科<br><%=userbean.getCourseId() %></p></th>
+							</tr>
+							<tr>
+								<th><p>入学年<br><%=userbean.getUserYear() %>年</p></th>
+							</tr>
+							<tr>
 								<th><p>ユーザーネーム<br><%=userbean.getUserName() %></p></th>
 							</tr>
 							<tr>
@@ -104,6 +110,7 @@
 
 	  // Or with jQuery
 	   </script>
+	   
 
 </body>
 </html>

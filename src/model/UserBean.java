@@ -6,12 +6,12 @@ public class UserBean implements Serializable {
 
 	private String userNo;
 	private String courseId;
+	private String courseName;
 	private String timeId;
 	private String userName;
 	private String mail;
 	private int userYear;
 	private String roleFlg;
-	private String loginFlg;
 
 	public UserBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
@@ -43,6 +43,14 @@ public class UserBean implements Serializable {
 
 	public void setCourseId(String courseId) {
 		this.courseId = courseId;
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
 
 	public String getTimeId() {
@@ -84,14 +92,5 @@ public class UserBean implements Serializable {
 	public void setRoleFlg(String roleFlg) {
 		this.roleFlg = roleFlg;
 	}
-
-	public String getLoginFlg() {
-		return loginFlg;
-	}
-
-	public void setLoginFlg(String loginFlg) {
-		this.loginFlg = loginFlg;
-	}
-
 
 }
