@@ -58,16 +58,18 @@
 	        
 	    		<form class="col s12" action="UserRegistration" method="post">
 					<div class="row">
+						<label style="color:red"><%=msg %></label>
 	        			<div class="input-field col s12  ">
-	          				<input id="gakuseki" type="text" class="validate" name="number">
+	          				<input id="gakuseki" type="text" class="validate" name="number" required>
 	          				<label for="gakuseki">学籍番号</label>
 	        			</div>
 	      			</div>
 	      			
+	      			
 	      			<p>学科</p>
 	      			<div class="row">
 						<div class="input-field col s12">
-							<select name="course">
+							<select name="course" required>
 								<option value="1">情報システム科</option>
 								<option value="2">情報システム専攻科</option>
 								<option value="3">情報工学科</option>
@@ -89,31 +91,31 @@
 	      			
 	      			<div class="row">
 	        			<div class="input-field col s12">
-	          				<input id="username" type="text" class="validate" name="username">
+	          				<input id="username" type="text" class="validate" name="username" required>
 	          				<label for="username">ユーザーネーム</label>
 	        			</div>
 	      			</div>
 					<div class="row">
 	        			<div class="input-field col s12">
-	          				<input id="email" type="email" class="validate" name="mail">
+	          				<input id="email" type="email" class="validate" name="mail" required>
 	          				<label for="email">メールアドレス</label>
 	        			</div>
 	        		</div>
 	        		<div class="row">
 	        			<div class="input-field col s12">
-	        				<input id="email2" type="email" class="validate">
+	        				<input id="email2" type="email" class="validate" required>
 	        				<label for="email2">メールアドレス確認</label>
 						</div>
 	      			</div>
 	      			<div class="row">
 	        			<div class="input-field col s12">
-	          				<input id="password" type="password" class="validate" name="pass">
+	          				<input id="pass" type="password" class="validate" name="pass" required>
 	          				<label for="password">パスワード</label>
 	        			</div>
 	      			</div>
 	              	<div class="row">
 	        			<div class="input-field col s12">
-							<input id="password2" type="password" class="validate" name="pass2">
+							<input id="pass2" type="password" class="validate" name="pass2" required>
 							<label for="password2">パスワード確認</label>
 	        			</div>
 	      			</div>
@@ -159,6 +161,37 @@
 		$(document).ready(function(){
 			$('select').formSelect();
 		});
+		
+		function errorcheck() {
+		    var pass = document.getElementById('pass').value;
+		    var pass2 = document.getElementById('pass2').value;
+		    
+		    
+		    // パスワードの一致確認
+		    if (pass != pass2){
+		    	
+		      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+		      return false;
+		    }else{
+		      return true;
+		    }
+		};
+		
+		function errorcheck() {
+		    var mail = document.getElementById('email').value;
+		    var mail2 = document.getElementById('email2').value;
+		    
+		    
+		    // パスワードの一致確認
+		    if (mail != mail2){
+		    	
+		      alert("メールアドレスと確認用メールアドレスが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+		      return false;
+		    }else{
+		      return true;
+		    }
+		};
+
 	   </script>
 
 </body>

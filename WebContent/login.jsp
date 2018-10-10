@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>ログイン画面</title> <!--画面名-->
 
-<nav class="header">　鍵管理システム</nav>　
+<nav class="header">鍵管理システム</nav>
 
 </head>
 <body>
@@ -42,10 +42,10 @@
 
     <br>
     <br>
-
+	<div class="row container">
     <form class="col s12" action="Login" method="post" onsubmit="return login()">
 
-    	<div class="row container">
+    	
 	    	<div class="row">
 	        	<div class="input-field col s12  ">
 	          		<input id="gakuseki" type="text" class="validate" name="user_number" required>
@@ -81,11 +81,11 @@
    		<div class="col s12 left-align">
    			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
    		</div>
-
-
-
    		<div class="row right-align"></div>
 	</div>
+	
+	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+	
 
 	<form action="Next_re_pass" name="repass" method="post"></form> <!-- パスワードを忘れた遷移用フォーム -->
    	<form action="Next_new_regist" name="newregist" method="post"></form> <!-- 新規登録遷移 -->

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CourseDao;
 import dao.PassDao;
 import dao.UserDao;
 import model.HashPassword;
@@ -84,9 +85,9 @@ public class UserRegistration extends HttpServlet {
 		String path = "";
 
 		UserDao userdao = new UserDao();
-
-		boolean userFlg = userdao.userNocheck(number);
 		
+		boolean userFlg = userdao.userNocheck(number);
+		//学籍番号重複チェック
 		if(userFlg == false){
 			request.setAttribute("msgflg","1");
 			path = "WEB-INF/jsp/new_regist.jsp";
@@ -103,7 +104,11 @@ public class UserRegistration extends HttpServlet {
 			PasswordBean passbean = new PasswordBean();
 			passbean.setUserNo(number);
 			passbean.setPassword(pass);
-
+			
+			CourseDao coursedao = new CourseDao();
+			String courseName = coursedao.selectCourseName(course);
+			request.setAttribute("courseName", courseName);
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("userBean",userbean);
 			session.setAttribute("passBean",passbean);
@@ -113,7 +118,6 @@ public class UserRegistration extends HttpServlet {
 		}
 
 		request.getRequestDispatcher(path).forward(request, response);
-
 	}
 
 }
