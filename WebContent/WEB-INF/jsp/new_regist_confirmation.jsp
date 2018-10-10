@@ -5,6 +5,8 @@
 %>
 <% 	UserBean userbean = (UserBean)session.getAttribute("userBean");
 	PasswordBean passbean = (PasswordBean)session.getAttribute("passBean");
+	
+	String courseName = (String)request.getAttribute("courseName");
 %>
 
 <!DOCTYPE html>
@@ -56,7 +58,7 @@
 								<th><p>学籍番号<br><%=userbean.getUserNo() %></p></th>
 							</tr>
 							<tr>
-								<th><p>学科<br><%=userbean.getCourseId() %></p></th>
+								<th><p>学科<br><%=courseName %></p></th>
 							</tr>
 							<tr>
 								<th><p>入学年<br><%=userbean.getUserYear() %>年</p></th>
