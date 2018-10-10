@@ -11,7 +11,7 @@
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
 <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/default.css" >
@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
 <%@ include file="header.jsp"%>
 
 <div class="row"> <!-- 表示範囲の設定 -->
@@ -37,9 +36,7 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-		 <div class="center-align">
-            <h5>時間割名表示</h5>
-        </div>
+        <br>
 
         <table>
 
@@ -60,7 +57,7 @@
                 <tr>
                     <td>  <!-- 月曜１限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -68,7 +65,7 @@
 
                     <td>  <!-- 火曜1限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -76,7 +73,7 @@
 
                     <td>  <!-- 水曜1限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -84,7 +81,7 @@
 
                     <td>  <!-- 木曜1限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -92,7 +89,7 @@
 
                     <td>  <!-- 金曜1限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -104,7 +101,7 @@
 
                     <td>  <!-- 月曜2限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -112,7 +109,7 @@
 
                     <td>  <!-- 火曜2限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -120,7 +117,7 @@
 
                     <td>  <!-- 水曜2限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -128,7 +125,7 @@
 
                     <td>  <!-- 木曜2限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -136,7 +133,7 @@
 
                     <td>  <!-- 金曜2限目　-->
                         <div class="center-align">
-                           <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -148,7 +145,7 @@
 
                     <td>  <!-- 月曜3限目　-->
                         <div class="center-align">
-                          	<label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -156,7 +153,7 @@
 
                     <td>  <!-- 火曜3限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -164,7 +161,7 @@
 
                     <td>  <!-- 水曜3限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -172,7 +169,7 @@
 
                     <td>  <!-- 木曜3限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -180,7 +177,7 @@
 
                     <td>  <!-- 金曜3限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -192,7 +189,7 @@
 
                     <td>  <!-- 月曜4限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -200,7 +197,7 @@
 
                     <td>  <!-- 火曜4限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -208,7 +205,7 @@
 
                     <td>  <!-- 水曜4限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -216,7 +213,7 @@
 
                     <td>  <!-- 木曜4限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
@@ -224,7 +221,7 @@
 
                     <td>  <!-- 金曜4限目　-->
                         <div class="center-align">
-                            <label>教科</label >
+                            <a class="waves-effect waves-light btn">教科</a>
                             <p>test</p>
                         </div>
                         <div></div>
