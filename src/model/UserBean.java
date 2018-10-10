@@ -26,7 +26,7 @@ public class UserBean implements Serializable {
 		this.mail = string5;
 		this.userYear = int1;
 		this.roleFlg = string6;
-		this.loginFlg = string7;
+
 	}
 
 	public String getUserNo() {
@@ -44,7 +44,7 @@ public class UserBean implements Serializable {
 	public void setCourseId(String courseId) {
 		this.courseId = courseId;
 	}
-	
+
 	public String getCourseName() {
 		return courseName;
 	}
