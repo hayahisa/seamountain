@@ -3,11 +3,11 @@ package dao;
 import model.UserBean;
 
 public class UserDao extends DaoBase{
-	
+
 	public UserDao() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
-	
+
 	//ユーザIDの重複チェック
 	public boolean userNocheck(String userno) {
 
@@ -44,7 +44,7 @@ public class UserDao extends DaoBase{
 		}
 		return flg;
 	}
-	
+
 	// ユーザ登録
 		public void registrationUser(UserBean ubean) {
 			try {
@@ -77,5 +77,33 @@ public class UserDao extends DaoBase{
 					System.out.println("error");
 				}
 			}
+		}
+
+		public UserBean userSession(String userNo) {
+			UserBean userbean = null;
+			try {
+				super.connection();
+				//ログイン認証sql
+				String sql = "SELECT * FROM user where user_no = ?";
+				stmt = con.prepareStatement(sql);
+
+				stmt.setString(1,userNo);
+
+				rs = stmt.executeQuery();// 結果が返ってくるSQL実行文
+				rs.next();
+
+				// Beanにuse情報を格納
+				userbean = new UserBean(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8));
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					// エラー時はclose処理
+					super.DbClose();
+				} catch (Exception e) {
+					System.out.println("error");
+				}
+			}
+			return userbean;
 		}
 }

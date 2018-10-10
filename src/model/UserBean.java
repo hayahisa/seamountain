@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
-	
+
 	private String userNo;
 	private String courseId;
 	private String courseName;
@@ -15,6 +15,18 @@ public class UserBean implements Serializable {
 
 	public UserBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+	public UserBean(String string, String string2, String string3, String string4, String string5, int int1,
+			String string6, String string7) {
+		this.userNo = string;
+		this.courseId = string2;
+		this.timeId = string3;
+		this.userName = string4;
+		this.mail = string5;
+		this.userYear = int1;
+		this.roleFlg = string6;
+		this.loginFlg = string7;
 	}
 
 	public String getUserNo() {
@@ -80,4 +92,5 @@ public class UserBean implements Serializable {
 	public void setRoleFlg(String roleFlg) {
 		this.roleFlg = roleFlg;
 	}
+
 }

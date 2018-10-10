@@ -39,6 +39,7 @@ public class Test extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("テストだよ！！！");
+		System.out.println("aa");
 
 
 		// TODO Auto-generated method stub
