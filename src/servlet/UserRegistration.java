@@ -79,11 +79,13 @@ public class UserRegistration extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 		String course = request.getParameter("course");
+		int useryear = Integer.parseInt(request.getParameter("useryear"));
 
 		String path = "";
 
 		UserDao userdao = new UserDao();
-		boolean userFlg = userdao.userIDcheck(number);
+
+		boolean userFlg = userdao.userNocheck(number);
 
 		if(userFlg == false){
 			request.setAttribute("msgflg","1");
@@ -95,8 +97,8 @@ public class UserRegistration extends HttpServlet {
 			userbean.setUserName(username);
 			userbean.setMail(mail);
 			userbean.setCourseId(course);
+			userbean.setUserYear(useryear);
 			userbean.setRoleFlg("S");
-			userbean.setLoginFlg("1");
 
 			PasswordBean passbean = new PasswordBean();
 			passbean.setUserNo(number);

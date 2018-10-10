@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String sysYear = (new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()));
+	int isysYear = Integer.parseInt(sysYear);
+%>
+<%
+	String msgflg = (String) request.getAttribute("msgflg");
+	String msg = "";
+
+	//request変数に値が入っていたらエラーメッセージを格納
+	if (msgflg != null) {
+		msg = "学籍番号が重複しています。";
+
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +64,7 @@
 	        			</div>
 	      			</div>
 	      			
+	      			<p>学科</p>
 	      			<div class="row">
 						<div class="input-field col s12">
 							<select name="course">
@@ -57,6 +72,17 @@
 								<option value="2">情報システム専攻科</option>
 								<option value="3">情報工学科</option>
 								<option value="4">ネットワーク科</option>
+							</select>
+						</div>
+					</div>
+					
+					<p>入学年</p>
+					<div class="row">
+						<div class="input-field col s12">
+							<select name="useryear" required>
+								<% for(int year=isysYear-7;year<=isysYear;year++){ %>
+								<option value=<%=year%>><%=year%>年</option>
+								<%} %>
 							</select>
 						</div>
 					</div>
