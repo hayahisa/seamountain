@@ -77,7 +77,6 @@
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
-
     		</ul>
 
     		<!-- ハンバーガーメニュー -->

@@ -33,7 +33,6 @@
 
 	<div class="row"> <!-- 表示範囲の設定 -->
 		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-
 		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 			<!-- ここから書いて -->
 			<br>
@@ -41,13 +40,27 @@
 			<div class="container">
 				<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>新規登録完了</h5>
 			</div>
-			<div class="row container">
-				<div class="row">
-					<div class="input-field col s12">
-						<a href="main01.jsp">トップ</a>
+			<div class="row"> <!-- 表示範囲の設定 -->
+				<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+				<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+					<!-- ここから書いて -->
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="center-align">
+						<h5 class="">登録が完了しました</h5>
 					</div>
+					<br>
+					<br>
+					<div class="center-align">
+						<a href="Next_main" class="center-align waves-effect waves-light btn center onclick="document.main.submit();return false;">メイン画面へ</a>
+					</div>
+			
+					<!-- ここまで -->
 				</div>
-			</div>
+				<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+			</div> <!-- div row　終了 -->
 			<!-- ここまで -->
 		</div>
 
@@ -61,6 +74,9 @@
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
+	    
+	    
+		<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
 
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
