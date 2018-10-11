@@ -6,6 +6,7 @@ public class PasswordBean implements Serializable {
 	
 	private String userNo;
 	private String password;
+	private String komePass;
 	
 	public PasswordBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
@@ -25,6 +26,14 @@ public class PasswordBean implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getKomePass() {
+		return komePass;
+	}
+
+	public void setKomePass(String komePass) {
+		this.komePass = komePass;
 	}
 	
 }

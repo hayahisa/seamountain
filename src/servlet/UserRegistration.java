@@ -81,9 +81,17 @@ public class UserRegistration extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String course = request.getParameter("course");
 		int useryear = Integer.parseInt(request.getParameter("useryear"));
-	
+		
+		String encPass = "";
 		String path = "";
-
+		
+		//パスワードを"*"に変換
+		for(int count=0;count<pass.length();count++){
+			
+			encPass = encPass + "*";
+			
+		}
+		
 		UserDao userdao = new UserDao();
 		
 		boolean userFlg = userdao.userNocheck(number);
@@ -104,6 +112,8 @@ public class UserRegistration extends HttpServlet {
 			PasswordBean passbean = new PasswordBean();
 			passbean.setUserNo(number);
 			passbean.setPassword(pass);
+			passbean.setKomePass(encPass);
+			
 			
 			CourseDao coursedao = new CourseDao();
 			String courseName = coursedao.selectCourseName(course);

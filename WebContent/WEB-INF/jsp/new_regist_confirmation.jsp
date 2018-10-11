@@ -70,7 +70,7 @@
 								<th><p>メールアドレス<br><%=userbean.getMail() %></p></th>
 							</tr>
 							<tr>
-								<th><p>パスワード<br><%=passbean.getPassword() %></p></th>
+								<th><p>パスワード<br><%=passbean.getKomePass() %></p></th>
 							</tr>
 
 						</table>
