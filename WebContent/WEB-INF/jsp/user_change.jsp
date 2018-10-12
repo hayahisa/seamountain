@@ -2,11 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ page import="model.UserBean"%>
 <%UserBean userbean = (UserBean)session.getAttribute("userBean");%>
-<!DOCTYPE html>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <!-- Optional theme -->
 <meta charset="UTF-8">
 <meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
@@ -24,11 +22,8 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>MyPage</title> <!--画面名-->
-
-
+<title>ユーザ変更</title>
 </head>
-
 <body>
 
 <%@ include file="header.jsp"%>
@@ -71,13 +66,13 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getMail()%>" id="disabled" type="text" class="validate">
+                    <input value="<%=userbean.getMail()%>" id="disabled" type="text" class="validate">
                     <label for="disabled"></label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getUserName() %>" id="disabled" type="text" class="validate">
+                    <input value="<%=userbean.getUserName() %>" id="disabled" type="text" class="validate">
                     <label for="disabled"></label>
                 </div>
             </div>
