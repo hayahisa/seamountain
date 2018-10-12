@@ -7,6 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.TimeDetailDao;
+import model.UserBean;
 
 /**
  * Servlet implementation class Next_time_table
@@ -36,6 +40,26 @@ public class Next_time_table extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		//sessionに格納されたユーザ情報の時間割IDを取り出す
+		UserBean userbean = (UserBean)session.getAttribute("userBean");
+		int timeId = Integer.parseInt((String) request.getAttribute("timeId"));
+		String monday = "monday";
+		String tuesday = "tuesday";
+		String wednesday = "wednesday";
+		String thursday = "thursday";
+		String friday = "friday";
+
+		TimeDetailDao tddao = new TimeDetailDao();
+		session.setAttribute("monday", tddao.timetable(timeId,monday));
+		session.setAttribute("tuesday", tddao.timetable(timeId,tuesday));
+		session.setAttribute("wednesday", tddao.timetable(timeId,wednesday));
+		session.setAttribute("thursday", tddao.timetable(timeId,thursday));
+		session.setAttribute("friday", tddao.timetable(timeId,friday));
+
+
+
+		//画面遷移（時間割表示）
 		request.getRequestDispatcher("WEB-INF/jsp/time_table.jsp").forward(request, response);
 	}
 

@@ -22,11 +22,11 @@ public class TimeDetailDao extends DaoBase{
 							+ "ON td.one_subject_id = s.subject_id)"
 							+ "INNER JOIN room r"
 							+ "ON td.one_room_id = r.room_id"
-					+ "WHERE td.time_id = 1"
-					+ "AND td.day = 'monday';";
-
+					+ "WHERE td.time_id = ?"
+					+ "AND td.day = '?';";
 
 			stmt.setInt(1, time_id);
+			stmt.setString(2, day);
 			rs = stmt.executeQuery();
 			rs.next();
 

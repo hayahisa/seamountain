@@ -5,7 +5,7 @@ import model.UserPassBean;
 public class LoginDao extends DaoBase{
 
 	// ユーザーログイン
-		public UserPassBean User_loginDao(int user_no) {
+		public UserPassBean User_loginDao(String user_no) {
 			UserPassBean userpassbean = null;
 			try {
 				super.connection();
@@ -13,7 +13,7 @@ public class LoginDao extends DaoBase{
 				String sql = "SELECT user_no,password FROM password where user_no = ?";
 				stmt = con.prepareStatement(sql);
 
-				stmt.setInt(1,user_no);
+				stmt.setString(1,user_no);
 
 				rs = stmt.executeQuery();// 結果が返ってくるSQL実行文
 				// データベースから返ってきた管理者ログイン情報を格納
