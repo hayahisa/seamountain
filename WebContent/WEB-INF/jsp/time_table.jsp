@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.TimeTableBean" %>
+<% TimeTableBean monday = (TimeTableBean)session.getAttribute("monday"); %>
 <!DOCTYPE html>
 
 <html>
@@ -57,8 +59,8 @@
                 <tr>
                     <td>  <!-- 月曜１限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <a class="waves-effect waves-light btn"><%=monday.getOne_subject_name() %></a>
+                            <p><%=monday.getOne_room_name() %></p>
                         </div>
                         <div></div>
                     </td>

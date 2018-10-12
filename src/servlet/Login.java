@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.LoginDao;
+import dao.UserDao;
+import model.UserBean;
 import model.UserPassBean;
 
 /**
@@ -47,8 +49,12 @@ public class Login extends HttpServlet {
 		String path = null;	//遷移用path
 		int len; //user_noのlength
 
-		int user_no = Integer.parseInt(request.getParameter("user_number"));	//ユーザ番号
+		UserDao udao = new UserDao();
+		UserBean userbean = new UserBean();
+
+		String user_no = request.getParameter("user_number");	//ユーザ番号
 		String user_pass = request.getParameter("user_pass"); 	//ユーザパス
+		int no = Integer.parseInt(user_no);
 
 		//LoginDao
 		LoginDao ldao = new LoginDao();
@@ -56,9 +62,12 @@ public class Login extends HttpServlet {
 
 		if(ldao.User_loginDao(user_no) == null){
 			path = "/login.jsp";
-		}else if(userpassbean.getUser_number() ==  user_no && userpassbean.getUser_pass().equals(user_pass)){
+		}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(user_pass)){
 			session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
 			path = "WEB-INF/jsp/main01.jsp";
+			userbean = (UserBean)udao.userSession(user_no);
+
+			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 		}else{
 			path = "/login.jsp";
 		}
