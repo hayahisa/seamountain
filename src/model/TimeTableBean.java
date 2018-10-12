@@ -7,6 +7,7 @@ public class TimeTableBean implements Serializable {
 
 	private int time_id;				//時間割ID
 	private String time_name;			//時間割名
+	private String day;					//曜日
 	private String one_room_name;		//１限目教室名
 	private String one_subject_name;	//１限目教科名
 	private String two_room_name;		//2限目教室名
@@ -20,12 +21,14 @@ public class TimeTableBean implements Serializable {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public TimeTableBean(int time_id, String time_name, String one_room_name, String one_subject_name,
+	public TimeTableBean(int time_id, String time_name, String day,String one_room_name, String one_subject_name,
 			String two_room_name, String two_subject_name, String three_room_name, String three_subject_name,
 			String four_room_name, String four_subject_name) {
 		super();
+		//10項目
 		this.time_id = time_id;
 		this.time_name = time_name;
+		this.day = day;
 		this.one_room_name = one_room_name;
 		this.one_subject_name = one_subject_name;
 		this.two_room_name = two_room_name;
@@ -50,6 +53,14 @@ public class TimeTableBean implements Serializable {
 
 	public void setTime_name(String time_name) {
 		this.time_name = time_name;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
 	}
 
 	public String getOne_room_name() {
