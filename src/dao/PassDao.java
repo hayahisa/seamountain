@@ -32,4 +32,37 @@ public class PassDao extends DaoBase{
 			}
 		}
 	}
+	
+	public boolean passwordCheck(String userNo,String pass){
+		boolean flg = false;
+		try {
+			// connection確立
+			super.connection();
+
+			// ユーザーを登録するSQL
+			String SQL = "SELECT * FROM password WHERE user_id = ? and password = ?";
+
+			stmt = con.prepareStatement(SQL);
+			// SQLの？に値のセット
+			stmt.setString(1, userNo);
+			stmt.setString(2, pass);
+			rs = stmt.executeQuery();
+			
+			while(rs.next()){
+				flg = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return flg;
+		
+	}
 }
