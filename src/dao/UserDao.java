@@ -129,5 +129,29 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-	}
+    
+		public void userChange(String mail,String user_name,String user_no) {
+			try {
+				//connection確立
+				super.connection();
+
+
+		        String sql = "update `schedule` SET mail,user_name=?,? WHERE user_no= ?";
+
+		        stmt = con.prepareStatement(sql);
+		        stmt.setString(1,mail);
+		        stmt.setString(2,user_name);
+		        stmt.setString(3,user_no);
+		        rs= stmt.executeQuery();
+
+				}catch (Exception e){
+					e.printStackTrace();
+				}finally{
+					try{
+						super.DbClose();
+					} catch(Exception e){
+						System.out.println("error");
+					}
+				}
+		}
 }
