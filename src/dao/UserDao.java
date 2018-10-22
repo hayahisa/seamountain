@@ -129,6 +129,7 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
+	}
     
 		public void userChange(String mail,String user_name,String user_no) {
 			try {
