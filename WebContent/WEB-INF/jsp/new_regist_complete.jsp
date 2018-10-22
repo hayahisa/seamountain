@@ -54,7 +54,7 @@
 					<br>
 					<br>
 					<div class="center-align">
-						<a href="Next_main" class="center-align waves-effect waves-light btn center" onclick="document.main.submit();return false;">メイン画面へ</a>
+						<a href="Next_main" class="center-align waves-effect waves-light btn center onclick="document.main.submit();return false;">メイン画面へ</a>
 					</div>
 			
 					<!-- ここまで -->
@@ -66,8 +66,6 @@
 
 		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 	</div> <!-- div row　終了 -->
-	
-	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
 
 <!-- SCRIPT -->
       <script type="text/javascript">
@@ -76,6 +74,9 @@
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
+	    
+	    
+		<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
 
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
