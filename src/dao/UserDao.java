@@ -106,30 +106,31 @@ public class UserDao extends DaoBase{
 		}
 		return userbean;
 	}
-	
+
 	public void deleteUser(String userNo){
 		try {
 			// connection確立
 			super.connection();
 
 			String SQL = "DELETE FROM user WHERE user_id = ?";
-			
+
 			stmt = con.prepareStatement(SQL);
 			// SQLの？に値のセット
 			stmt.setString(1, userNo);
 			stmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				// エラー時はclose処理
-				super.DbClose();
-			} catch (Exception e) {
-				System.out.println("error");
+			} finally {
+				try {
+					// エラー時はclose処理
+					super.DbClose();
+				} catch (Exception e) {
+					System.out.println("error");
+				}
 			}
 		}
-    
+
 		public void userChange(String mail,String user_name,String user_no) {
 			try {
 				//connection確立
