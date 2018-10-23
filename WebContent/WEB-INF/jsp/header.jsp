@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
    <!-- Optional theme -->
@@ -29,23 +28,16 @@
     	<nav class="header">
 
     		<ul id="slide-out" class="sidenav">　<!-- サイドメニュー -->
-      			<li>
-      				<div class="user-view">
-        				<div class="background"></div>
-        				<!-- <span class="black-text name"></span> -->
-        					<li><a class="subheader"><i class="material-icons">account_box</i></a></li> <!-- ユーザー名 -->
-        			</div>
-       			</li>
+
+    		<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
+
+    		<li><div class="divider"></div></li>
 
        			<li>	<!-- マイページへ -->
        				<a class="waves-effect" href="Next_mypage" onclick="document.mypage.submit();return false;">
        					<i class="material-icons">mood</i>マイページ
        				</a>
        			</li>
-
-      			<li><div class="divider"></div></li>
-
-      			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
          		<li>	<!-- メインへ -->
 
