@@ -6,7 +6,7 @@ import model.TimeTableBean;
 
 public class TimeDetailDao extends DaoBase{
 
-	//時間割をDAOで作成・曜日ごとに格納
+	//時間割を格納
 	public TimeTableBean timetable(int time_id,String day){
 		TimeTableBean timetable = null;
 		try{
