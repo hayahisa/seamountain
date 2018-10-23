@@ -10,13 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.TimeDetailDao;
+import model.TimeTableBean;
 import model.UserBean;
 
 /**
  * Servlet implementation class Next_time_table
  */
 @WebServlet("/Next_time_table")
-public class Next_time_table extends HttpServlet {
+public class Next_time_table extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
     /**
@@ -40,14 +41,20 @@ public class Next_time_table extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		Next_time_table ntable = new Next_time_table();
+		ntable.timetable(request, response);
+
+		//画面遷移（時間割表示）
+		request.getRequestDispatcher("WEB-INF/jsp/time_table.jsp").forward(request, response);
+	}
+
+	public void timetable(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		//sessionに格納されたユーザ情報の時間割IDを取り出す
-		System.out.println("*01");
 		UserBean userbean = (UserBean)session.getAttribute("userBean");
-		System.out.println("*02*" + userbean.getTimeId() + "*");
 		int timeId = userbean.getTimeId();
-		//int timeId = Integer.parseInt((String)request.getAttribute("userId"));
-		System.out.println(timeId);
+
 		String monday = "monday";
 		String tuesday = "tuesday";
 		String wednesday = "wednesday";
@@ -55,16 +62,23 @@ public class Next_time_table extends HttpServlet {
 		String friday = "friday";
 
 		TimeDetailDao tddao = new TimeDetailDao();
-		session.setAttribute("monday", tddao.timetable(timeId,monday));
-		session.setAttribute("tuesday", tddao.timetable(timeId,tuesday));
-		session.setAttribute("wednesday", tddao.timetable(timeId,wednesday));
-		session.setAttribute("thursday", tddao.timetable(timeId,thursday));
-		session.setAttribute("friday", tddao.timetable(timeId,friday));
+		TimeTableBean mondaylist = new TimeTableBean();
+		TimeTableBean tuesdaylist = new TimeTableBean();
+		TimeTableBean wednesdaylist = new TimeTableBean();
+		TimeTableBean thursdaylist = new TimeTableBean();
+		TimeTableBean fridaylist = new TimeTableBean();
 
+		mondaylist = (TimeTableBean)tddao.timetable(timeId,monday);
+		tuesdaylist = (TimeTableBean)tddao.timetable(timeId,tuesday);
+		wednesdaylist = (TimeTableBean)tddao.timetable(timeId,wednesday);
+		thursdaylist = (TimeTableBean)tddao.timetable(timeId,thursday);
+		fridaylist = (TimeTableBean)tddao.timetable(timeId,friday);
 
-
-		//画面遷移（時間割表示）
-		request.getRequestDispatcher("WEB-INF/jsp/time_table.jsp").forward(request, response);
+		session.setAttribute("monday", mondaylist);
+		session.setAttribute("tuesday", tuesdaylist);
+		session.setAttribute("wednesday", wednesdaylist);
+		session.setAttribute("thursday", thursdaylist);
+		session.setAttribute("friday", fridaylist);
 	}
 
 }

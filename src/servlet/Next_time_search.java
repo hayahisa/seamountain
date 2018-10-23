@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Next_user_change
+ * Servlet implementation class Next_time_search
  */
-@WebServlet("/Next_user_change")
-public class Next_user_change extends HttpServlet {
+@WebServlet("/Next_time_search")
+public class Next_time_search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Next_user_change() {
+    public Next_time_search() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +28,7 @@ public class Next_user_change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/jsp/user_change.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -36,7 +36,8 @@ public class Next_user_change extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/jsp/user_change.jsp").forward(request, response);
+		System.out.println("@");
+		request.getRequestDispatcher("WEB-INF/jsp/time_search.jsp").forward(request, response);
 	}
 
 }

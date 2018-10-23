@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.UserBean"%>
-<%UserBean userbean = (UserBean)session.getAttribute("userBean");%>
 <!DOCTYPE html>
 
 <html>
@@ -24,7 +22,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>MyPage</title> <!--画面名-->
+<title>time_search</title> <!--画面名-->
 
 
 </head>
@@ -41,64 +39,6 @@
     <br>
     <br>
 
-    <div class="container">
-        <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>マイページ</h5>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="row container">
-
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s9 left-align">
-                    <p class="Heading h3">使用時間割:</p>
-                </div>
-            <div class="input-field col s3">
-                <input disabled value="0000000" id="disabled" type="text" class="validate">
-                <label for="disabled"></label>
-            </div>
-            </div>
-        </form>
-
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="0000000" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getMail()%>" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getUserName() %>" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
-                </div>
-            </div>
-        </form>
-
-    </div>
-
-
-    <div class="container">
-        <div class="row right-align">
-        <br>
-            <div>
-                <a href="Next_unsubscribe" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">&nbsp;&nbsp;&nbsp;&nbsp;退会&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="Next_user_change" class="waves-effect blue lighten-1 btn" >ユーザー情報変更</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="center-align">
-		<a class="waves-effect waves-light btn">トップ</a>
-	</div>
 
    <!-- ここまで -->
   </div>
