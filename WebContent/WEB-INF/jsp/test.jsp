@@ -16,9 +16,6 @@ nandedarou
 dousunnno
 wakannai
 daizyoubu?
-???****
-dousiyou
-dekinai
-nanndekana
+
 </body>
 </html>
