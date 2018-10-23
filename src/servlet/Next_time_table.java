@@ -42,8 +42,12 @@ public class Next_time_table extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		//sessionに格納されたユーザ情報の時間割IDを取り出す
+		System.out.println("*01");
 		UserBean userbean = (UserBean)session.getAttribute("userBean");
-		int timeId = Integer.parseInt((String) request.getAttribute("timeId"));
+		System.out.println("*02*" + userbean.getTimeId() + "*");
+		int timeId = userbean.getTimeId();
+		//int timeId = Integer.parseInt((String)request.getAttribute("userId"));
+		System.out.println(timeId);
 		String monday = "monday";
 		String tuesday = "tuesday";
 		String wednesday = "wednesday";

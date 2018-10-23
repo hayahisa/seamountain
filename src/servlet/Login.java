@@ -68,6 +68,7 @@ public class Login extends HttpServlet {
 			userbean = (UserBean)udao.userSession(user_no);
 
 			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+
 		}else{
 			path = "/login.jsp";
 		}

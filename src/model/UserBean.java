@@ -6,7 +6,7 @@ public class UserBean implements Serializable {
 
 	private String userNo;
 	private String courseId;
-	private String timeId;
+	private int timeId;
 	private String userName;
 	private String mail;
 	private int userYear;
@@ -16,10 +16,10 @@ public class UserBean implements Serializable {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public UserBean(String string, String string2, String string3, String string4, String string5, int int1,String string6) {
+	public UserBean(String string, String string2, int int0, String string4, String string5, int int1,String string6) {
 		this.userNo = string;
 		this.courseId = string2;
-		this.timeId = string3;
+		this.timeId = int0;
 		this.userName = string4;
 		this.mail = string5;
 		this.userYear = int1;
@@ -42,12 +42,12 @@ public class UserBean implements Serializable {
 		this.courseId = courseId;
 	}
 
-	public String getTimeId() {
+	public int getTimeId() {
 		return timeId;
 	}
 
-	public void setTimeId(String timeId) {
-		this.timeId = timeId;
+	public void setTimeId(int i) {
+		this.timeId = i;
 	}
 
 	public String getUserName() {

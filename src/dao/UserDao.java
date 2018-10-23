@@ -60,7 +60,7 @@ public class UserDao extends DaoBase{
 			// SQLの？に値のセット
 			stmt.setString(1, ubean.getUserNo());
 			stmt.setString(2, ubean.getCourseId());
-			stmt.setString(3, ubean.getTimeId());
+			stmt.setInt(3, ubean.getTimeId());
 			stmt.setString(4, ubean.getUserName());
 			stmt.setString(5, ubean.getMail());
 			stmt.setInt(6, ubean.getUserYear());
@@ -93,7 +93,15 @@ public class UserDao extends DaoBase{
 			rs.next();
 
 			// Beanにuse情報を格納
-			userbean = new UserBean(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(7));
+			userbean = new UserBean();
+			userbean.setUserNo(rs.getString(1));
+			userbean.setCourseId(rs.getString(2));
+			userbean.setTimeId(rs.getInt(3));
+			userbean.setUserName(rs.getString(4));
+			userbean.setMail(rs.getString(5));
+			userbean.setUserYear(rs.getInt(6));
+			userbean.setRoleFlg(rs.getString(7));
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -106,19 +114,19 @@ public class UserDao extends DaoBase{
 		}
 		return userbean;
 	}
-	
+
 	public void deleteUser(String userNo){
 		try {
 			// connection確立
 			super.connection();
 
 			String SQL = "DELETE FROM user WHERE user_id = ?";
-			
+
 			stmt = con.prepareStatement(SQL);
 			// SQLの？に値のセット
 			stmt.setString(1, userNo);
 			stmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -129,7 +137,8 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-    
+		}
+
 		public void userChange(String mail,String user_name,String user_no) {
 			try {
 				//connection確立
