@@ -14,5 +14,3 @@ onegaia
 WAKARANAI
 nandedarou
 
-</body><
-<html>
