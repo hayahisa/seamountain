@@ -37,7 +37,7 @@
     <br>
 
     <div class="container">
-        <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>マイページ</h5>
+        <h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>変更画面</h5>
     </div>
 
     <br>
@@ -57,7 +57,7 @@
             </div>
         </form>
 
-        <form class="col s12">
+        <form class="col s12" action="User_change" method="post" onsubmit="return_sousin()">
             <div class="row">
                 <div class="input-field col s12">
                     <input disabled value="0000000" id="disabled" type="text" class="validate">
@@ -66,30 +66,33 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input value="<%=userbean.getMail()%>" id="disabled" type="text" class="validate">
+                    <input value="<%=userbean.getMail()%>" name="mail" id="disabled" type="text" class="validate">
                     <label for="disabled"></label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input value="<%=userbean.getUserName() %>" id="disabled" type="text" class="validate">
+                    <input value="" name="name" id="disabled" type="text" class="validate" onClick="return sousin()">
+                   <%--  <%=userbean.getUserName() %> --%>
                     <label for="disabled"></label>
                 </div>
             </div>
+
+            <div class="container">
+        <div class="row right-align">
+        <br>
+            <div>
+                <input class="waves-effect blue lighten-1 btn"  value="ユーザー情報変更" type="submit">
+
+            </div>
+        </div>
+    </div>
         </form>
 
     </div>
 
 
-    <div class="container">
-        <div class="row right-align">
-        <br>
-            <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">&nbsp;&nbsp;&nbsp;&nbsp;退会&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a class="waves-effect blue lighten-1 btn">ユーザー情報変更</a>
-            </div>
-        </div>
-    </div>
+
 
     <div class="center-align">
 		<a class="waves-effect waves-light btn">トップ</a>
@@ -102,6 +105,10 @@
 
 <!-- SCRIPT -->
 <script type="text/javascript">
+
+		function sousin(){
+			return true;
+		}
 
 	    document.addEventListener('DOMContentLoaded', function() {
 	    var elems = document.querySelectorAll('.sidenav');
