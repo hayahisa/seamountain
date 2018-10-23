@@ -42,10 +42,10 @@
 
     <br>
     <br>
-	<div class="row container">
+
     <form class="col s12" action="Login" method="post" onsubmit="return login()">
 
-
+    <div class="row container">
 	    	<div class="row">
 	        	<div class="input-field col s12  ">
 	          		<input id="gakuseki" type="text" class="validate" name="user_number" required>
