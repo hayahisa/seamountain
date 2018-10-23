@@ -10,9 +10,9 @@
 <h1>Hello SeaMountain</h1>
 <p>welcome to my world</p>
 tasukete
-onegai
+onegaia
 WAKARANAI
 nandedarou
 
 </body><
-html>
+<html>
