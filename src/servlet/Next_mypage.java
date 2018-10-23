@@ -7,6 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.UserDao;
+import model.UserBean;
 
 /**
  * Servlet implementation class Next_mypage
@@ -36,6 +40,15 @@ public class Next_mypage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();	//セッション
+		UserDao udao = new UserDao();
+		UserBean userbean = new UserBean();
+
+		String user_no = (String)session.getAttribute("user_number");	//セッションにユーザナンバーを確認
+
+		userbean = (UserBean)udao.userSession(user_no);
+
+		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
 

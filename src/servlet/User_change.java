@@ -50,6 +50,10 @@ System.out.println("*userChange2");
 		UserDao udao = new UserDao();
 		udao.userChange(mail, user_name, user_no);
 System.out.println("*userChange3");
+
+//		UserBean userbean = new UserBean();
+//		userbean = (UserBean)udao.userSession(user_no);
+//		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
 
