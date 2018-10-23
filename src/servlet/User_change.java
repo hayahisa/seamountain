@@ -41,15 +41,15 @@ public class User_change extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String mail = (String)request.getAttribute("mail");
-		String user_name= (String)request.getAttribute("uname");
-
+		String mail = (String)request.getParameter("mail");
+		String user_name= (String)request.getParameter("name");
+System.out.println("*"+user_name);
 		HttpSession session = request.getSession();	//セッション
 		String user_no = (String)session.getAttribute("user_no");
-
+System.out.println("*userChange2");
 		UserDao udao = new UserDao();
 		udao.userChange(mail, user_name, user_no);
-
+System.out.println("*userChange3");
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
 
