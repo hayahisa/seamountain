@@ -243,17 +243,19 @@ TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
         <br>
 
 
-    <div class="row right-align">
-        <br>
+   		<div class="row right-align">
+       		<br>
             <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">キャンセル</a>
-                <a class="waves-effect blue lighten-1 btn">&nbsp;&nbsp;&nbsp;&nbsp;変更&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+           		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+            	<a href="Next_time_change" onclick="document.change.submit();return false;" class="waves-effect blue lighten-1 btn">&nbsp;&nbsp;&nbsp;&nbsp;変更&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </div>
         </div>
 
 
 
 
-
+	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+	<form action="Next_time_change" name="change" method="post"></form>	<!-- 変更画面へ -->
 
    <!-- ここまで -->
     </div>

@@ -22,7 +22,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>time_search</title> <!--画面名-->
+<title>time_table_change</title> <!--画面名-->
 
 
 </head>
@@ -35,8 +35,9 @@
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-		<!-- ここから書いて -->
-	<div class="nav-wrapper">
+	<!-- ここから書いて -->
+
+    <div class="nav-wrapper">
       <form>
         <div class="input-field" style="border-bottom: solid 1px #000000">
           <input id="search" type="search" name="search" required>
