@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.TimeDetailDao;
+import model.TimeTableBean;
 import model.UserBean;
 
 /**
@@ -47,7 +48,8 @@ public class Next_time_table extends HttpServlet {
 		System.out.println("*02*" + userbean.getTimeId() + "*");
 		int timeId = userbean.getTimeId();
 		//int timeId = Integer.parseInt((String)request.getAttribute("userId"));
-		System.out.println(timeId);
+		System.out.println("timeid="+timeId);
+
 		String monday = "monday";
 		String tuesday = "tuesday";
 		String wednesday = "wednesday";
@@ -55,14 +57,30 @@ public class Next_time_table extends HttpServlet {
 		String friday = "friday";
 
 		TimeDetailDao tddao = new TimeDetailDao();
-		session.setAttribute("monday", tddao.timetable(timeId,monday));
-		session.setAttribute("tuesday", tddao.timetable(timeId,tuesday));
-		session.setAttribute("wednesday", tddao.timetable(timeId,wednesday));
-		session.setAttribute("thursday", tddao.timetable(timeId,thursday));
-		session.setAttribute("friday", tddao.timetable(timeId,friday));
+		TimeTableBean mondaylist = new TimeTableBean();
+		TimeTableBean tuesdaylist = new TimeTableBean();
+		TimeTableBean wednesdaylist = new TimeTableBean();
+		TimeTableBean thursdaylist = new TimeTableBean();
+		TimeTableBean fridaylist = new TimeTableBean();
+
+		System.out.println("ニューのあと");
+
+		mondaylist = (TimeTableBean)tddao.timetable(timeId,monday);
+		tuesdaylist = (TimeTableBean)tddao.timetable(timeId,tuesday);
+		wednesdaylist = (TimeTableBean)tddao.timetable(timeId,wednesday);
+		thursdaylist = (TimeTableBean)tddao.timetable(timeId,thursday);
+		fridaylist = (TimeTableBean)tddao.timetable(timeId,friday);
+
+		System.out.println("リスト");
+
+		session.setAttribute("monday", mondaylist);
+		session.setAttribute("tuesday", tuesdaylist);
+		session.setAttribute("wednesday", wednesdaylist);
+		session.setAttribute("thursday", thursdaylist);
+		session.setAttribute("friday", fridaylist);
 
 
-
+		System.out.println("遷移前");
 		//画面遷移（時間割表示）
 		request.getRequestDispatcher("WEB-INF/jsp/time_table.jsp").forward(request, response);
 	}

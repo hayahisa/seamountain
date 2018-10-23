@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.TimeTableBean" %>
-<% TimeTableBean monday = (TimeTableBean)session.getAttribute("monday"); %>
+<%
+TimeTableBean monday = (TimeTableBean)session.getAttribute("monday");
+TimeTableBean tuesday = (TimeTableBean)session.getAttribute("tuesday");
+TimeTableBean wednesday = (TimeTableBean)session.getAttribute("wednesday");
+TimeTableBean thursday = (TimeTableBean)session.getAttribute("thursday");
+TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -59,7 +65,7 @@
                 <tr>
                     <td>  <!-- 月曜１限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn"><%=monday.getOne_subject_name() %></a>
+                            <label><%=monday.getOne_subject_name() %></label>
                             <p><%=monday.getOne_room_name() %></p>
                         </div>
                         <div></div>
@@ -67,32 +73,32 @@
 
                     <td>  <!-- 火曜1限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=tuesday.getOne_subject_name() %></label>
+                            <p><%=tuesday.getOne_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 水曜1限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=wednesday.getOne_subject_name() %></label>
+                            <p><%=wednesday.getOne_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 木曜1限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=thursday.getOne_subject_name() %></label>
+                            <p><%=thursday.getOne_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 金曜1限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=friday.getOne_subject_name() %></label>
+                            <p><%=friday.getOne_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
@@ -103,40 +109,40 @@
 
                     <td>  <!-- 月曜2限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=monday.getTwo_subject_name() %></label>
+                            <p><%=monday.getTwo_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 火曜2限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=tuesday.getTwo_subject_name() %></label>
+                            <p><%=tuesday.getTwo_subject_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 水曜2限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=wednesday.getTwo_subject_name() %></label>
+                            <p><%=wednesday.getTwo_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 木曜2限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=thursday.getTwo_subject_name() %></label>
+                            <p><%=thursday.getTwo_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 金曜2限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=friday.getTwo_subject_name() %></label>
+                            <p><%=friday.getTwo_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
@@ -147,40 +153,40 @@
 
                     <td>  <!-- 月曜3限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=monday.getThree_subject_name() %></label>
+                            <p><%=monday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 火曜3限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=tuesday.getThree_subject_name() %></label>
+                            <p><%=tuesday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 水曜3限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=wednesday.getThree_subject_name() %></label>
+                            <p><%=wednesday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 木曜3限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=thursday.getThree_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 金曜3限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=friday.getThree_subject_name() %></label>
+                            <p><%=friday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
@@ -191,40 +197,40 @@
 
                     <td>  <!-- 月曜4限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=monday.getFour_subject_name() %></label>
+                            <p><%=monday.getFour_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 火曜4限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=tuesday.getFour_subject_name() %></label>
+                            <p><%=tuesday.getFour_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 水曜4限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=wednesday.getFour_subject_name() %></label>
+                            <p><%=wednesday.getFour_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 木曜4限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=thursday.getFour_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
 
                     <td>  <!-- 金曜4限目　-->
                         <div class="center-align">
-                            <a class="waves-effect waves-light btn">教科</a>
-                            <p>test</p>
+                            <label><%=friday.getFour_subject_name() %></label>
+                            <p><%=friday.getFour_room_name() %></p>
                         </div>
                         <div></div>
                     </td>
