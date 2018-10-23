@@ -114,7 +114,6 @@ public class UserRegistration extends HttpServlet {
 			passbean.setPassword(pass);
 			passbean.setKomePass(encPass);
 			
-			
 			CourseDao coursedao = new CourseDao();
 			String courseName = coursedao.selectCourseName(course);
 			request.setAttribute("courseName", courseName);

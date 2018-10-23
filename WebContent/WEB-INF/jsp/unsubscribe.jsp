@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String msgflg = (String) request.getAttribute("error");
+	String msg = "";
+
+	//request変数に値が入っていたらエラーメッセージを格納
+	if (msgflg != null) {
+		msg = "正しいパスワードを入力してください。";
+
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +57,8 @@
 	        					<div class="input-field col s12">
 	          						<input id="pass" type="password" name="pass" required>
 	          						<label for="password">パスワード</label>
+	          						<%= msg%>
+	          						<input type="submit" value="送信">
 	        					</div>
 	        				</div>
 	        			</form>

@@ -39,8 +39,7 @@ public class PassDao extends DaoBase{
 			// connection確立
 			super.connection();
 
-			// ユーザーを登録するSQL
-			String SQL = "SELECT * FROM password WHERE user_id = ? and password = ?";
+			String SQL = "SELECT * FROM password WHERE user_no = ? and password = ?";
 
 			stmt = con.prepareStatement(SQL);
 			// SQLの？に値のセット

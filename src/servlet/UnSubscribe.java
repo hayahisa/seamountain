@@ -62,14 +62,16 @@ public class UnSubscribe extends HttpServlet {
 			PassDao passdao = new PassDao();
 			flg = passdao.passwordCheck(userbean.getUserNo(), encryptPass);
 			
+			System.out.println(flg);
+			
 			if(flg == true){
 				UserDao userdao = new UserDao();
 				userdao.deleteUser(userbean.getUserNo());
 				
 				path = "WEB-INF/jsp/unsubscribe_complete.jsp";
 			}else{
-				session.setAttribute("error", "パスワードを正しく入力してください");
-				path="WEB-INF/jsp/unsubscribe.jsp";
+				request.setAttribute("error", "1");
+				path = "WEB-INF/jsp/unsubscribe.jsp";
 			}
 		
 		request.getRequestDispatcher(path).forward(request, response);
