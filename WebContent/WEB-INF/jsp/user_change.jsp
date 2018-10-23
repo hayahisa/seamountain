@@ -85,7 +85,6 @@
         <div class="row right-align">
         <br>
             <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">&nbsp;&nbsp;&nbsp;&nbsp;退会&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <a class="waves-effect blue lighten-1 btn">ユーザー情報変更</a>
             </div>
         </div>
