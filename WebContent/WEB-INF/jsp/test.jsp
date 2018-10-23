@@ -13,9 +13,6 @@ tasukete
 onegai
 WAKARANAI
 nandedarou
-dousunnno
-wakannai
-daizyoubu?
 
-</body>
-</html>
+</body><
+html>
