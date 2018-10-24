@@ -42,7 +42,7 @@
 
 	<!-- 検索バー -->
     <div class="nav-wrapper">
-      <form>
+      <form action="Time_search" method="post">
         <div class="input-field" style="border-bottom: solid 1px #000000">
           <input id="search" type="search" name="search" required>
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>

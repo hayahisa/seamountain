@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,20 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.TimeChangeDao;
-import model.UserBean;
+import dao.SearchDao;
 
 /**
- * Servlet implementation class Time_change
+ * Servlet implementation class Time_search
  */
-@WebServlet("/Time_change")
-public class Time_change extends HttpServlet {
+@WebServlet("/Time_search")
+public class Time_search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Time_change() {
+    public Time_search() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,21 +41,19 @@ public class Time_change extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		System.out.println("11");
-		String tId = String.valueOf(session.getAttribute("selectTimeId"));
-		int timeId = Integer.parseInt(tId);//選択されている時間割のIDをセッションから取得
-		System.out.println("*");
+		String searchWord = request.getParameter("search");
 
-		UserBean userbean = (UserBean)session.getAttribute("userBean");//ユーザIDを取得
-		String userNo = userbean.getUserNo();
+		System.out.println("SW="+searchWord);
 
-		TimeChangeDao tdao = new TimeChangeDao();
-		tdao.timeChange(userNo, timeId);
+		SearchDao sdao = new SearchDao();
+		ArrayList<String> timelist = sdao.searchTime(searchWord);
 
-		//新しいtimeIdをuserのsessionに格納
-		userbean.setTimeId(timeId);
+		//検索結果があるか
+		if(!timelist.isEmpty()){
 
-		request.getRequestDispatcher("WEB-INF/jsp/time_change_confirmation.jsp").forward(request, response);
+		}
+
+		request.getRequestDispatcher("WEB-INF/jsp/time_table_change.jsp").forward(request, response);
 
 	}
 
