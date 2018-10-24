@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.TimeListBean"  import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 
 <html>
@@ -25,7 +22,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>time_table_change</title> <!--画面名-->
+<title>time_change_daetail</title> <!--画面名-->
 
 
 </head>
@@ -38,35 +35,9 @@
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-	<!-- ここから書いて -->
+		<!-- ここから書いて -->
 
-	<!-- 検索バー -->
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field" style="border-bottom: solid 1px #000000">
-          <input id="search" type="search" name="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
 
-    <!-- 時間割一覧表示 -->
-    <form>
-		<c:forEach var="obj" items="${allTime}" varStatus="status">
-			<div class="panel panel-default panel-size">
-				<a href="TimeDetail?time_id=${obj.time_id }">
-					<div class="panel-body">
-						<p>時間割名：${obj.time_name}</p>
-					</div>
-				</a>
-			</div>
-		</c:forEach>
-	</form>
-
-	<div>
-	<a href="javascript:history.back();" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
-	</div>
 
    <!-- ここまで -->
   </div>
