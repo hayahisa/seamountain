@@ -59,7 +59,7 @@ public class UserRegistration extends HttpServlet {
 			// ユーザ情報をuserテーブルに格納
 			UserDao userdao = new UserDao();
 			userdao.registrationUser(userBean);
-			// パスワードをauth_infoテーブルに格納
+			// パスワードをpasswordテーブルに格納
 			PassDao passDao = new PassDao();
 			passDao.registrationPassword(userBean.getUserNo(), encryptPass);
 
@@ -106,6 +106,7 @@ public class UserRegistration extends HttpServlet {
 			userbean.setUserName(username);
 			userbean.setMail(mail);
 			userbean.setCourseId(course);
+			userbean.setTimeId(1);
 			userbean.setUserYear(useryear);
 			userbean.setRoleFlg("S");
 
