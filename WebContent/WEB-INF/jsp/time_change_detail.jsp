@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.TimeTableBean" %>
+<%
+TimeTableBean monday = (TimeTableBean)session.getAttribute("monday");
+TimeTableBean tuesday = (TimeTableBean)session.getAttribute("tuesday");
+TimeTableBean wednesday = (TimeTableBean)session.getAttribute("wednesday");
+TimeTableBean thursday = (TimeTableBean)session.getAttribute("thursday");
+TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -36,8 +44,214 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
+		<h5>時間割名：<%=monday.getTime_name() %></h5>
 
+		<table>
 
+            <thead>
+                <tr>
+                    <th class="center-align">月</th>
+                    <th class="center-align">火</th>
+                    <th class="center-align">水</th>
+                    <th class="center-align">木</th>
+                    <th class="center-align">金</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            <!-- 時間割の中身 -->
+    <!-- ***********************1限目********************************* -->
+                <tr>
+                    <td>  <!-- 月曜１限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getOne_subject_name() %></label>
+                            <p><%=monday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 火曜1限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getOne_subject_name() %></label>
+                            <p><%=tuesday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 水曜1限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getOne_subject_name() %></label>
+                            <p><%=wednesday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 木曜1限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getOne_subject_name() %></label>
+                            <p><%=thursday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 金曜1限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getOne_subject_name() %></label>
+                            <p><%=friday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
+
+    <!-- ***********************2限目********************************* -->
+                <tr>
+
+                    <td>  <!-- 月曜2限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getTwo_subject_name() %></label>
+                            <p><%=monday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 火曜2限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getTwo_subject_name() %></label>
+                            <p><%=tuesday.getTwo_subject_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 水曜2限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getTwo_subject_name() %></label>
+                            <p><%=wednesday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 木曜2限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getTwo_subject_name() %></label>
+                            <p><%=thursday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 金曜2限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getTwo_subject_name() %></label>
+                            <p><%=friday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
+
+    <!-- ***********************3限目********************************* -->
+                <tr>
+
+                    <td>  <!-- 月曜3限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getThree_subject_name() %></label>
+                            <p><%=monday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 火曜3限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getThree_subject_name() %></label>
+                            <p><%=tuesday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 水曜3限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getThree_subject_name() %></label>
+                            <p><%=wednesday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 木曜3限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getThree_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 金曜3限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getThree_subject_name() %></label>
+                            <p><%=friday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
+
+    <!-- ***********************4限目********************************* -->
+                <tr>
+
+                    <td>  <!-- 月曜4限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getFour_subject_name() %></label>
+                            <p><%=monday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 火曜4限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getFour_subject_name() %></label>
+                            <p><%=tuesday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 水曜4限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getFour_subject_name() %></label>
+                            <p><%=wednesday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 木曜4限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getFour_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+
+                    <td>  <!-- 金曜4限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getFour_subject_name() %></label>
+                            <p><%=friday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
+
+                <!--　時間割内容終了　-->
+
+            </tbody>
+        </table>
+
+        <br>
+        <br>
+
+        <div class="row right-align">
+			<div>
+			<a href="javascript:history.back();" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+			<a href="Time_change" onclick="document.change.submit();return false;" class="waves-effect blue lighten-1 btn">　適用　</a>
+			</div>
+		</div>
+
+		<form action="Time_change" name="change" method="post"></form>
 
    <!-- ここまで -->
   </div>
