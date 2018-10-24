@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.LogoutDao;
-
 /**
  * Servlet implementation class Logout
  */
@@ -43,9 +41,9 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		session.invalidate();
 
-		//ログインフラグの変更
+		/*//ログインフラグの変更
 		LogoutDao ldao = new LogoutDao();
-		ldao.logout();
+		ldao.logout();*/
 
 		String path = "WEB-INF/jsp/logout.jsp";
 

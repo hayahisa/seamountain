@@ -54,6 +54,7 @@ public class Login extends HttpServlet {
 
 		String user_no = request.getParameter("user_number");	//ユーザ番号
 		String user_pass = request.getParameter("user_pass"); 	//ユーザパス
+		String encryptPass = "";
 		int no = Integer.parseInt(user_no);
 
 		//LoginDao

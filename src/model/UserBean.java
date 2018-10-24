@@ -16,16 +16,6 @@ public class UserBean implements Serializable {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public UserBean(String string, String string2, int int0, String string4, String string5, int int1,String string6) {
-		this.userNo = string;
-		this.courseId = string2;
-		this.timeId = int0;
-		this.userName = string4;
-		this.mail = string5;
-		this.userYear = int1;
-		this.roleFlg = string6;
-	}
-
 	public String getUserNo() {
 		return userNo;
 	}
@@ -46,8 +36,8 @@ public class UserBean implements Serializable {
 		return timeId;
 	}
 
-	public void setTimeId(int i) {
-		this.timeId = i;
+	public void setTimeId(int timeId) {
+		this.timeId = timeId;
 	}
 
 	public String getUserName() {

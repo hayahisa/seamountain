@@ -45,7 +45,7 @@ public class PassDao extends DaoBase{
 			// SQLの？に値のセット
 			stmt.setString(1, userNo);
 			stmt.setString(2, pass);
-			rs = stmt.executeQuery();
+			rs = stmt.executeQuery(); 
 			
 			while(rs.next()){
 				flg = true;
