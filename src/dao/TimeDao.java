@@ -1,5 +1,9 @@
 package dao;
 
+import java.util.ArrayList;
+
+import model.TimeListBean;
+
 public class TimeDao extends DaoBase{
 
 	public TimeDao(){
@@ -7,14 +11,19 @@ public class TimeDao extends DaoBase{
 	}
 
 	//時間割一覧
-	public void timeList(){
+	public ArrayList<TimeListBean> timeList(){
+		ArrayList<TimeListBean> timeArray = new ArrayList<>();
 		try{
 			super.connection();
 			String sql = "SELECT * FROM time;";
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
-			rs.next();
+			while(rs.next()){
+				TimeListBean timelistbean = new TimeListBean(rs.getInt(1),rs.getString(2));
+				timeArray.add(timelistbean);
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -25,7 +34,7 @@ public class TimeDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-//		return
+		return timeArray;
 	}
 
 }
