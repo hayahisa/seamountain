@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.TimeListBean"  import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 
 <html>
@@ -25,7 +22,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>time_table_change</title> <!--画面名-->
+<title>time_change_confirmation</title> <!--画面名-->
 
 
 </head>
@@ -40,36 +37,17 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 	<!-- ここから書いて -->
 
-	<!-- 検索バー -->
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field" style="border-bottom: solid 1px #000000">
-          <input id="search" type="search" name="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-
-    <!-- 時間割一覧表示 -->
-    <form>
-		<c:forEach var="obj" items="${allTime}" varStatus="status">
-			<div class="panel panel-default panel-size">
-				<a href="TimeDetail?time_id=${obj.time_id }">
-					<div class="panel-body">
-						<p>時間割名：${obj.time_name}</p>
-					</div>
-				</a>
-			</div>
-		</c:forEach>
-	</form>
+	<h5>適用時間割を変更しました</h5>
 
 	<div class="row right-align">
-	<br>
-		<div>
-		<a href="javascript:history.back();" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
-		</div>
+    <br>
+    	<div>
+       		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+        </div>
 	</div>
+
+	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+
 
    <!-- ここまで -->
   </div>
