@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.RoomBean"  import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 
 <html>
@@ -22,7 +25,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>time_search</title> <!--画面名-->
+<title>class_list</title> <!--画面名-->
 
 
 </head>
@@ -36,7 +39,7 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-	<div class="nav-wrapper">
+<!-- 	<div class="nav-wrapper">
       <form>
         <div class="input-field" style="border-bottom: solid 1px #000000">
           <input id="search" type="search" name="search" required>
@@ -44,8 +47,28 @@
           <i class="material-icons">close</i>
         </div>
       </form>
-    </div>
+    </div> -->
 
+    <!-- 教室一覧 -->
+    <h5>鍵状態一覧</h5>
+    <br>
+    <form>
+		<c:forEach var="obj" items="${roomList}" varStatus="status">
+			<div class="panel panel-default panel-size">
+					<div class="panel-body">教室名：${obj.room_name}
+						<span class="badge red">
+						<span class="white-text text-darken-2">${obj.ky_state_name}</span>
+	    				</span>
+					</div>
+			</div>
+		</c:forEach>
+	</form>
+
+	<div class="row right-align">
+		<div>
+		<a href="javascript:history.back();" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+		</div>
+	</div>
 
    <!-- ここまで -->
   </div>

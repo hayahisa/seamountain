@@ -29,13 +29,13 @@
     	<nav class="header">
 
     		<ul id="slide-out" class="sidenav">　<!-- サイドメニュー -->
-      			<li>
+      			<!-- <li>
       				<div class="user-view">
         				<div class="background"></div>
-        				<!-- <span class="black-text name"></span> -->
-        					<li><a class="subheader"><i class="material-icons">account_box</i></a></li> <!-- ユーザー名 -->
+        				<span class="black-text name"></span>
+        					<li><a class="subheader"><i class="material-icons">account_box</i></a></li> ユーザー名
         			</div>
-       			</li>
+       			</li> -->
 
        			<li>	<!-- マイページへ -->
        				<a class="waves-effect" href="Next_mypage" onclick="document.mypage.submit();return false;">
@@ -68,7 +68,7 @@
 
   				<li>	<!-- 時間割検索へ -->
   					<a class="waves-effect" href="Next_time_search" onclick="document.time_search.submit();return false;">
-  						<i class="material-icons">search</i>時間割検索
+  						<i class="material-icons">search</i>鍵状態一覧
   					</a>
   				</li>
 

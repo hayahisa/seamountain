@@ -49,6 +49,11 @@ public class Next_mypage extends HttpServlet {
 		userbean = (UserBean)udao.userSession(user_no);
 
 		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+
+		int timeId = userbean.getTimeId();
+		TimeTableDisplay timetable = new TimeTableDisplay();
+		timetable.doPost(request, response, timeId);
+
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
 
