@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
+import model.UserBean;
 
 
 /**
@@ -43,17 +44,19 @@ public class User_change extends HttpServlet {
 
 		String mail = (String)request.getParameter("mail");
 		String user_name= (String)request.getParameter("name");
-System.out.println("*"+user_name);
+		
+		
 		HttpSession session = request.getSession();	//セッション
-		String user_no = (String)session.getAttribute("user_no");
-System.out.println("*userChange2");
+		UserBean userbean = new UserBean();
+		userbean=(UserBean)session.getAttribute("userBean");
+		String user_no = userbean.getUserNo();
+		
 		UserDao udao = new UserDao();
-		udao.userChange(mail, user_name, user_no);
-System.out.println("*userChange3");
+		udao.userChange(mail,user_name,user_no);
 
-//		UserBean userbean = new UserBean();
-//		userbean = (UserBean)udao.userSession(user_no);
-//		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+		
+		userbean = (UserBean)udao.userSession(user_no);
+		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
 
