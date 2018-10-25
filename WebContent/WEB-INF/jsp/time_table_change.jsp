@@ -51,6 +51,8 @@
       </form>
     </div>
 
+    <!-- 検索結果がなかった場合 -->
+    <p>${message}</p>
     <!-- 時間割一覧表示 -->
     <form>
 		<c:forEach var="obj" items="${allTime}" varStatus="status">
@@ -67,9 +69,11 @@
 	<div class="row right-align">
 	<br>
 		<div>
-		<a href="javascript:history.back();" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+		<a href="Next_time_table" onclick="document.time.submit();return false;" class="waves-effect grey lighten-1 btn">　戻る　</a>
 		</div>
 	</div>
+
+	<form action="Next_time_table" name="time" method="post"></form>	<!-- 変更画面へ -->
 
    <!-- ここまで -->
   </div>

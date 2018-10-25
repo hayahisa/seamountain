@@ -251,9 +251,6 @@ TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
             </div>
         </div>
 
-
-
-
 	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
 	<form action="Next_time_change" name="change" method="post"></form>	<!-- 変更画面へ -->
 

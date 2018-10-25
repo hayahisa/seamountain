@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.SearchDao;
+import model.TimeListBean;
 
 /**
  * Servlet implementation class Time_search
@@ -43,14 +44,16 @@ public class Time_search extends HttpServlet {
 		HttpSession session = request.getSession();
 		String searchWord = request.getParameter("search");
 
-		System.out.println("SW="+searchWord);
-
 		SearchDao sdao = new SearchDao();
-		ArrayList<String> timelist = sdao.searchTime(searchWord);
+		ArrayList<TimeListBean> timelist = sdao.searchTime(searchWord);
+
+		session.setAttribute("allTime",timelist);
 
 		//検索結果があるか
-		if(!timelist.isEmpty()){
+		if(!timelist.isEmpty()){	//検索結果あり
 
+		}else{	//検索結果なし
+			request.setAttribute("message", "該当する対象がありません");
 		}
 
 		request.getRequestDispatcher("WEB-INF/jsp/time_table_change.jsp").forward(request, response);
