@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.UserBean"%>
+<%@ page import="model.TimeTableBean" %>
 <%UserBean userbean = (UserBean)session.getAttribute("userBean");%>
+<%TimeTableBean time = (TimeTableBean)session.getAttribute("monday");%>
 <!DOCTYPE html>
 
 <html>
@@ -53,7 +55,7 @@
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s9 left-align">
-                    <p class="Heading h3">使用時間割:</p>
+                    <p class="Heading h3">使用時間割:<%=time.getTime_name() %></p>
                 </div>
             <div class="input-field col s3">
                 <input disabled value="0000000" id="disabled" type="text" class="validate">

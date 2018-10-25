@@ -118,7 +118,7 @@ TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
                     <td>  <!-- 火曜2限目　-->
                         <div class="center-align">
                             <label><%=tuesday.getTwo_subject_name() %></label>
-                            <p><%=tuesday.getTwo_subject_name() %></p>
+                            <p><%=tuesday.getTwo_room_name() %></p>
                         </div>
                         <div></div>
                     </td>

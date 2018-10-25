@@ -1,24 +1,29 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.RoomDao;
+import model.RoomBean;
 
 /**
  * Servlet implementation class Next_time_search
  */
 @WebServlet("/Next_time_search")
-public class Next_time_search extends HttpServlet {
+public class Next_class_list extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Next_time_search() {
+    public Next_class_list() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +33,6 @@ public class Next_time_search extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -36,8 +40,17 @@ public class Next_time_search extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("@");
-		request.getRequestDispatcher("WEB-INF/jsp/time_search.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+
+		//教室の一覧を表示
+		RoomDao rdao = new RoomDao();
+
+		ArrayList<RoomBean> roomlist = rdao.roomList();
+
+		session.setAttribute("roomList", roomlist);
+
+
+		request.getRequestDispatcher("WEB-INF/jsp/class_list.jsp").forward(request, response);
 	}
 
 }

@@ -49,6 +49,7 @@ public class TimeTableDisplay extends HttpServlet {
 		String friday = "friday";
 
 		TimeDetailDao tddao = new TimeDetailDao();
+
 		TimeTableBean mondaylist = new TimeTableBean();
 		TimeTableBean tuesdaylist = new TimeTableBean();
 		TimeTableBean wednesdaylist = new TimeTableBean();
