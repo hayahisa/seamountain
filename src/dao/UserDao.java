@@ -145,15 +145,12 @@ public class UserDao extends DaoBase{
 				//connection確立
 				super.connection();
 
-
-		        String sql = "update `user` SET mail=?, user_name=? WHERE user_no= ?";
-
+		        String sql = "update `user` SET mail=?,user_name=? WHERE user_no=?";
 		        stmt = con.prepareStatement(sql);
 		        stmt.setString(1,mail);
 		        stmt.setString(2,user_name);
 		        stmt.setString(3,user_no);
 		        stmt.executeUpdate();
-
 				}catch (Exception e){
 					e.printStackTrace();
 				}finally{
