@@ -2,14 +2,16 @@ package dao;
 
 import java.util.ArrayList;
 
+import model.TimeListBean;
+
 public class SearchDao extends DaoBase{
 
 	//時間割検索(timeNameを返す）
-	public ArrayList<String> searchTime(String word){
-		ArrayList<String> searchList = new ArrayList<>();
+	public ArrayList<TimeListBean> searchTime(String word){
+		ArrayList<TimeListBean> searchList = new ArrayList<>();
 		try{
 			super.connection();
-			String sql = "SELECT `time_name` FROM time "
+			String sql = "SELECT * FROM time "
 					+ "WHERE `time_name` LIKE ?;";
 
 			stmt = con.prepareStatement(sql);
@@ -18,8 +20,8 @@ public class SearchDao extends DaoBase{
 			rs = stmt.executeQuery();
 
 			while(rs.next()){
-				String timeName = rs.getString(1);
-				searchList.add(timeName);
+				TimeListBean timelistbean = new TimeListBean(rs.getInt(1),rs.getString(2));
+				searchList.add(timelistbean);
 			}
 		}catch(Exception e){
 			System.out.println(e);
