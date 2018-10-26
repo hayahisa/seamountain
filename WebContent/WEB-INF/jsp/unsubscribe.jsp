@@ -41,16 +41,17 @@
 	
 	<div class="row"> <!-- 表示範囲の設定 -->
 		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+		<div class="middle col-lg-10 col-md-10 col-xs-10"> <!-- 中央表示 -->
 			<!-- ここから書いて -->
 			<br>
 			<br>
 			<div class="container">
-				<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>退会しますか？</h5>
-			</div>
+				<div class="row"> <!-- 表示範囲の設定 -->
+					<h5 class="center-align valign-wrapper"><i class="material-icons medium ">person</i>退会しますか？</h5>
+				</div>
 			<div class="row"> <!-- 表示範囲の設定 -->
-				<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-				<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+				
+				<div class="middle col-lg-12 col-md-12 col-xs-12"> <!-- 中央表示 -->
 					<div class="center-align">
 						<form action="UnSubscribe" method="post" class="col s12">
 							<div class="row">
@@ -58,22 +59,34 @@
 	          						<input id="pass" type="password" name="pass" required>
 	          						<label for="password">パスワード</label>
 	          						<%= msg%>
-	          						<input type="submit" value="送信">
+	          						<input type="submit" class="waves-effect blue lighten-1 btn" value="送信" onClick="return check()">
 	        					</div>
 	        				</div>
 	        			</form>
 	      			</div>
 				</div>
-			
+			</div>
 					<!-- ここまで -->
-				</div>
+			</div>
 				<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 			</div> <!-- div row　終了 -->
 			<!-- ここまで -->
 		</div>
 
 		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
-	</div> <!-- div row　終了 -->
+	 <!-- div row　終了 -->
+	<script type="text/javascript">
+		function check(){
+			
+			if(window.confirm('退会しますか？')){
+				return true;
+			}else{
+				
+				window.alert('キャンセルされました'); // 警告ダイアログを表示
+				return false;
+		}
+	}
+	</script>
 	
 </body>
 </html>

@@ -43,10 +43,10 @@ public class Next_mypage extends HttpServlet {
 		HttpSession session = request.getSession();	//セッション
 		UserDao udao = new UserDao();
 		UserBean userbean = new UserBean();
+		
+		userbean = (UserBean)session.getAttribute("userBean");
 
-		String user_no = (String)session.getAttribute("user_number");	//セッションにユーザナンバーを確認
-
-		userbean = (UserBean)udao.userSession(user_no);
+		userbean = (UserBean)udao.userSession(userbean.getUserNo());
 
 		session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);

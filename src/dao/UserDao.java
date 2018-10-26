@@ -120,7 +120,7 @@ public class UserDao extends DaoBase{
 			// connection確立
 			super.connection();
 
-			String SQL = "DELETE FROM user WHERE user_id = ?";
+			String SQL = "DELETE FROM user WHERE user_no = ?";
 
 			stmt = con.prepareStatement(SQL);
 			// SQLの？に値のセット

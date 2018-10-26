@@ -62,8 +62,6 @@ public class UnSubscribe extends HttpServlet {
 			PassDao passdao = new PassDao();
 			flg = passdao.passwordCheck(userbean.getUserNo(), encryptPass);
 			
-			System.out.println(flg);
-			
 			if(flg == true){
 				UserDao userdao = new UserDao();
 				userdao.deleteUser(userbean.getUserNo());
