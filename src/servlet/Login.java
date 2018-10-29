@@ -73,6 +73,8 @@ public class Login extends HttpServlet {
 		}else{
 			path = "/login.jsp";
 		}
+		 Timeget time = new Timeget();
+		 time.doPost(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 
 	}
