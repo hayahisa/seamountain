@@ -25,6 +25,10 @@
 </head>
 <body>
 	
+	<header>
+		<nav></nav>
+	</header>
+	
 	<div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
