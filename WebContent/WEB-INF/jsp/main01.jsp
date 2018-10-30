@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="javax.servlet.http.HttpSession"%>
 
 <!DOCTYPE html>
 <html>
@@ -28,9 +29,10 @@
 <body>
 
 <%@ include file="header.jsp"%>
-<%String nextsubject=(String)request.getAttribute("nextsubject"); 
-  String nextroom=(String)request.getAttribute("nextroom"); 
-  String ky=(String)request.getAttribute("ky"); 
+<%
+String nextsubject=(String)session.getAttribute("nextsubject"); 
+  String nextroom=(String)session.getAttribute("nextroom"); 
+  String ky=(String)session.getAttribute("ky"); 
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->

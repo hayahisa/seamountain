@@ -174,11 +174,11 @@ public class Timeget extends HttpServlet {
 		 }
 		 System.out.println(nextsubject);
 		 System.out.println(nextroom);
-		 request.setAttribute("nextsubject", nextsubject);
-		 request.setAttribute("nextroom", nextroom);
+		 session.setAttribute("nextsubject", nextsubject);
+		 session.setAttribute("nextroom", nextroom);
 		 KyStateDao KyDao = new KyStateDao();	
 		 String ky=KyDao.getKeyState(nextroom);
-		 request.setAttribute("ky", ky);
+		 session.setAttribute("ky", ky);
 		doGet(request, response);
 	}
 
