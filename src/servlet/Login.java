@@ -53,13 +53,18 @@ public class Login extends HttpServlet {
 		UserDao udao = new UserDao();
 		UserBean userbean = new UserBean();
 
+		System.out.println("*1");
+
 		String user_no = request.getParameter("user_number");	//ユーザ番号
 		String user_pass = request.getParameter("user_pass"); 	//ユーザパス
 		int no = Integer.parseInt(user_no);
-		
+
+		System.out.println("pass="+user_pass);
+
 		// パスワードをSHA-256でハッシュ化
 		HashPassword hashPass = new HashPassword();
 		String encryptPass = hashPass.encryptPass(user_pass);
+
 
 		//LoginDao
 		LoginDao ldao = new LoginDao();
