@@ -64,7 +64,7 @@ public class Login extends HttpServlet {
 		//LoginDao
 		LoginDao ldao = new LoginDao();
 		UserPassBean userpassbean = ldao.User_loginDao(user_no);
-
+		
 		if(ldao.User_loginDao(user_no) == null){
 			path = "/login.jsp";
 		}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(encryptPass)){

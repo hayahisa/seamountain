@@ -122,7 +122,7 @@
 	      			<div class="row container">
 	      				<div class="col s12 right-align">
 	      					<button type="button" class="left-align btn waves-effect waves-light green lighten-1" onclick="history.back()">戻る</button>
-	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onclick="return errorcheck()">確認
+	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="errorcheck();return numberCheck();">確認
 							<i class="material-icons right">send</i>
 							</button>
 						</div>
@@ -191,6 +191,18 @@
 		      return true;
 		    }
 		};
+		
+		/* ログインのエラー確認 */
+	    function numberCheck(){
+	    	var number = document.getElementById('gakuseki').value;
+
+	    	if(isNaN(number) == true){
+	    		alert('数字で入力してください');
+	    		return false;
+	    	}else{
+	    		return true;
+	    	}
+	    }
 
 	   </script>
 
