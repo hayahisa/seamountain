@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.KyStateDao;
 import model.TimeTableBean;
 import model.UserBean;
 
@@ -77,8 +78,10 @@ public class Timeget extends HttpServlet {
 			 
 			 break;
 		 }
-		 int hour=cal.get(Calendar.HOUR_OF_DAY);
-		 int min=cal.get(Calendar.MINUTE);
+		 //int hour=cal.get(Calendar.HOUR_OF_DAY);
+		 //int min=cal.get(Calendar.MINUTE);
+		 int hour=12;
+		 int min=20;
 		 if(hour<=9){
 			if(hour==9&&min>=45){//9:45分以上
 				System.out.println("9:45");
@@ -111,8 +114,12 @@ public class Timeget extends HttpServlet {
 				 nextroom=Timelist.getFour_room_name();
 			 }
 		 }else if(hour==14){
+			 System.out.println("14:00");
 			 nextsubject=Timelist.getFour_subject_name();
-			     nextroom=Timelist.getFour_room_name();
+			  nextroom=Timelist.getFour_room_name();
+			  System.out.println("14:00");
+				 System.out.println(nextsubject);
+				 System.out.println(nextroom);
 		 }else if(hour==15){
 			 if(min<=34){
 			     nextsubject=Timelist.getFour_subject_name();
@@ -165,8 +172,13 @@ public class Timeget extends HttpServlet {
 			nextsubject=Nexttimelist.getOne_subject_name();
 			nextroom=Nexttimelist.getOne_room_name();
 		 }
+		 System.out.println(nextsubject);
+		 System.out.println(nextroom);
 		 request.setAttribute("nextsubject", nextsubject);
 		 request.setAttribute("nextroom", nextroom);
+		 KyStateDao KyDao = new KyStateDao();	
+		 String ky=KyDao.getKeyState(nextroom);
+		 request.setAttribute("ky", ky);
 		doGet(request, response);
 	}
 

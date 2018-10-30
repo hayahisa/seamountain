@@ -30,6 +30,7 @@
 <%@ include file="header.jsp"%>
 <%String nextsubject=(String)request.getAttribute("nextsubject"); 
   String nextroom=(String)request.getAttribute("nextroom"); 
+  String ky=(String)request.getAttribute("ky"); 
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
@@ -51,7 +52,7 @@
 
         <div class="center-align">
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
-        	<label class="btn-large blue"><i class="material-icons right">edit</i>登録されていません</label>
+        	<label class="btn-large blue"><i class="material-icons right">edit</i><%=ky%></label>
         </div>
 
         <br>

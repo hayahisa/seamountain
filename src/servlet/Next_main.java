@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,10 +49,8 @@ public class Next_main extends HttpServlet {
 			path = "login.jsp";
 
 		} else {
-			path = "WEB-INF/jsp/main01.jsp";
-		
+		     path = "WEB-INF/jsp/main01.jsp";
 		}
-		
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
