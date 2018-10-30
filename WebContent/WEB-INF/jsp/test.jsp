@@ -28,7 +28,7 @@
 </head>
 
 <body>
-
+あ
 <%@ include file="header.jsp"%>
 
 <div class="row"> <!-- 表示範囲の設定 -->
