@@ -44,6 +44,7 @@ public class Next_time_table extends HttpServlet{
 		UserBean userbean = (UserBean)session.getAttribute("userBean");
 		int timeId = userbean.getTimeId();
 
+		
 		//時間割をセッションに格納するメソッドを呼び出している
 		TimeTableDisplay timetable = new TimeTableDisplay();
 		timetable.doPost(request, response, timeId);
