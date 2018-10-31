@@ -30,9 +30,9 @@
 
 <%@ include file="header.jsp"%>
 <%
-String nextsubject=(String)session.getAttribute("nextsubject"); 
-  String nextroom=(String)session.getAttribute("nextroom"); 
-  String ky=(String)session.getAttribute("ky"); 
+String nextsubject=(String)session.getAttribute("nextsubject");
+  String nextroom=(String)session.getAttribute("nextroom");
+  String ky=(String)session.getAttribute("ky");
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
@@ -42,38 +42,26 @@ String nextsubject=(String)session.getAttribute("nextsubject");
 
         <div class="center-align">
             <p class="Heading h4">次の授業<i class="material-icons">school</i></p>
-        	<label class="btn-large blue"><i class="material-icons right">edit</i><%=nextroom%></label>
+        	<label class="btn-large blue"><%=nextroom%></label>
         </div>
 
         <div class="center-align">
             <p class="Heading h4">次の教室<i class="material-icons">place</i></p>
-        	<label class="btn-large blue"><i class="material-icons right">edit</i><%=nextsubject%></label>
+        	<label class="btn-large blue"><%=nextsubject%></label>
         </div>
-
-        <br>
 
         <div class="center-align">
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
-        	<label class="btn-large blue"><i class="material-icons right">edit</i><%=ky%></label>
+        	<label class="btn-large blue"><%=ky%></label>
         </div>
 
         <br>
 
         <div class="center-align">
-            <a class="waves-effect waves-light btn">登録・変更</a>
+            <a href="Next_time_change" onclick="document.time_change.submit();return false;" class="waves-effect waves-light btn" style="margin:0px 5px 0px 0px">登録・変更</a>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
+        <form action="Next_time_change" name="time_change" method="post"></form>	<!-- 時間割登録 -->
 
    <!-- ここまで -->
 	</div>

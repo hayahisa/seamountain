@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.TimeListBean"  import="java.util.ArrayList"%>
+<%@ page import="model.RoomBean"  import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 
 <html>
@@ -25,7 +24,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>time_table_change</title> <!--画面名-->
+<title>reservation_top</title> <!--画面名-->
 
 
 </head>
@@ -38,42 +37,67 @@
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-	<!-- ここから書いて -->
+		<!-- ここから書いて -->
 
-	<!-- 検索バー -->
-    <div class="nav-wrapper">
-      <form action="Time_search" method="post">
-        <div class="input-field" style="border-bottom: solid 1px #000000">
-          <input id="search" type="search" name="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
+<!--
+      <div class="left-align">
+        <label class="badge green" style="padding:10px 20px 10px 20px;font-size: 20px;">教室予約</label>
+      </div>
+ -->
 
-    <!-- 検索結果がなかった場合 -->
-    <p>${message}</p>
-    <!-- 時間割一覧表示 -->
-    <form>
-		<c:forEach var="obj" items="${allTime}" varStatus="status">
-			<div class="panel panel-default panel-size">
-				<a href="TimeDetail?time_id=${obj.time_id }">
-					<div class="panel-body">
-						<p>時間割名：${obj.time_name}</p>
-					</div>
-				</a>
-			</div>
-		</c:forEach>
-	</form>
+ 	<h5>教室予約</h5>
 
-	<div class="row right-align">
-	<br>
+ 	<br>
+
+      <form class="" action="index.html" method="post">
+      	<div>
+	      	<select name="room">
+	      	<option value="" disabled selected>教室選択</option>
+		      	<c:forEach var="obj" items="${roomList}" varStatus="status">
+			      <option value="${obj.room_id }"><p>${obj.room_name}</p></option>
+				</c:forEach>
+	      	</select>
+      	</div>
+
 		<div>
-		<a href="javascript:history.back();" class="waves-effect grey lighten-1 btn">　戻る　</a>
+			<select name="day">
+			<option value="" disabled selected>曜日選択</option>
+			<option value="nothing">無し</option>
+			<option value="monday">月曜日</option>
+			<option value="tuesday">火曜日</option>
+			<option value="wednesday">水曜日</option>
+			<option value="thursday">木曜日</option>
+			<option value="friday">金曜日</option>
+			</select>
+			<select name="time">
+			<option value="" disabled selected>時間選択</option>
+			<option value="nothing">無し</option>
+			<option value="1">1限目</option>
+			<option value="2">2限目</option>
+			<option value="3">3限目</option>
+			<option value="4">4限目</option>
+			</select>
 		</div>
-	</div>
+		<br>
+			<div class="right-align">
+				<input type="submit" name="" value="検索" class="waves-effect blue btn">
+			</div>
+		</form>
 
-	<form action="Next_time_table" name="time" method="post"></form>	<!-- 変更画面へ -->
+		<div>
+
+  <br><br>
+
+  <div class="row right-align">
+    <div>
+      <a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+    </div>
+  </div>
+
+	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+
+
+
 
    <!-- ここまで -->
   </div>
@@ -87,10 +111,15 @@
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
-            document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
+	    document.addEventListener('DOMContentLoaded', function() {
+	        var elems = document.querySelectorAll('select');
+	        var instances = M.FormSelect.init(elems);
+	      });
+
+     $(document).ready(function(){
+       $('select').formSelect();
+     });
+
 
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
