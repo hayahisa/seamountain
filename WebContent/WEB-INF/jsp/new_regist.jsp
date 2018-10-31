@@ -1,8 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"
+		import="model.CourseBean"
+ %>
 <%
 	String sysYear = (new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()));
 	int isysYear = Integer.parseInt(sysYear);
+%>
+<% 
+	ArrayList<CourseBean> courseArray = new ArrayList<CourseBean>();
+	courseArray = (ArrayList<CourseBean>)session.getAttribute("courseArray");
 %>
 <%
 	String msgflg = (String) request.getAttribute("msgflg");
@@ -11,7 +18,6 @@
 	//request変数に値が入っていたらエラーメッセージを格納
 	if (msgflg != null) {
 		msg = "学籍番号が重複しています。";
-
 	}
 %>
 <!DOCTYPE html>
@@ -70,10 +76,9 @@
 	      			<div class="row">
 						<div class="input-field col s12">
 							<select name="course" required>
-								<option value="1">情報システム科</option>
-								<option value="2">情報システム専攻科</option>
-								<option value="3">情報工学科</option>
-								<option value="4">ネットワーク科</option>
+								<% for(int count=0;count<courseArray.size();count++){ %>
+									<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
+								<%} %>								
 							</select>
 						</div>
 					</div>
