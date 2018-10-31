@@ -60,23 +60,12 @@
 	
 	
 	<div class="row container">
-		<div class="col s9 left-align">
-			<a href="Next_re_pass" onclick="document.repass.submit();return false;">パスワードを忘れた場合</a>
-		</div>
 		<div class="col s3 right-align">
 			<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">ログイン</button>
 		</div>
-		</div>
-		
-		</form>
 	</div>
 		
-		
-  	<div class="row container">
-   		<div class="col s12 left-align">
-   			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
-   		</div>
-   		<div class="row right-align"></div>
+		</form>
 	</div>
 	
 
@@ -84,7 +73,6 @@
 
 
 	<form action="Next_re_pass" name="repass" method="post"></form> <!-- パスワードを忘れた遷移用フォーム -->
-   	<form action="Next_new_regist" name="newregist" method="post"></form> <!-- 新規登録遷移 -->
 
    <!-- ここまで -->
 	</div>
