@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.TimeChangeDao;
+import dao.TimeDao;
+import model.TimeListBean;
 import model.UserBean;
 
 /**
@@ -54,6 +57,13 @@ public class Time_change extends HttpServlet {
 
 		//新しいtimeIdをuserのsessionに格納
 		userbean.setTimeId(timeId);
+
+		TimeDao timedao = new TimeDao();
+		//時間割の一覧を表示させる
+		ArrayList<TimeListBean> time_all = timedao.timeList();
+		session.setAttribute("allTime",time_all);
+		Timeget tg = new Timeget();
+		tg.doPost(request, response);
 
 		request.getRequestDispatcher("WEB-INF/jsp/time_change_confirmation.jsp").forward(request, response);
 
