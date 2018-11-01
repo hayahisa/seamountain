@@ -13,7 +13,7 @@ public class AdminPassDao extends DaoBase{
 			// connection確立
 			super.connection();
 
-			String selectSQL = "select count(*) from admin_password where amind_no = ? and admin_password = ?";
+			String selectSQL = "select count(*) from admin_password where admin_no = ? and admin_password = ?";
 
 			stmt = con.prepareStatement(selectSQL);
 			// SQLの？に値のセット
