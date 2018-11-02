@@ -50,13 +50,13 @@
  	<br>
 
       <form class="" action="Next_reservation_list" method="post">
-	      	<c:forEach var="obj" items="${reservatioinArray}" varStatus="status">
+	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
 						<span style="font-size:15px">
-						教室名：${obj.time_id}
+						教室名：${obj.time_name}
 						<br>
-						曜日：
+						曜日：${obj.day}
 						<br>
 						時間：
 						<div class="row right-align">
@@ -70,16 +70,13 @@
 
   <br><br>
 
+  <form action="Next_reservation" name="reservation" method="post"> <!-- reservation(予約）へ -->
   <div class="row right-align">
     <div>
-      <a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+    	<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">
     </div>
   </div>
-
-	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
-
-
-
+  </form>
 
    <!-- ここまで -->
   </div>

@@ -40,22 +40,62 @@ public class Next_reservation_list extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		ReservationDao rdao = new ReservationDao();	//予約に関するDAO
 
-		int roomId = Integer.parseInt(request.getParameter("room"));	//x限目
+		int roomId = Integer.parseInt(request.getParameter("room"));	//x教室
 		String day = request.getParameter("day");						//x曜日
-		int timeId = Integer.parseInt(request.getParameter("time"));	//時間割
-		//初期値 1 monday 1
+		int time = Integer.parseInt(request.getParameter("time"));	//x限目
+		//何も選ばなければ「0」を取得 timeは何限目かだよ
 
-		System.out.println(roomId + day + timeId);
-		if(roomId == 1){
+		String timeNo = null;
+		if(time == 1){			//1限目
+			timeNo = "one_subject_id";
+		}else if(time == 2){	//2限目
+			timeNo = "two_subject_id";
+		}else if(time == 3){	//3限目
+			timeNo = "three_subject_id";
+		}else if(time == 4){	//4限目
+			timeNo = "four_subject_id";
+		}
 
-		}else if(timeId == 1){
+		System.out.println(roomId + day + time);
+		if(roomId == 0 && day.equals("0") && time == 0){
+			//選択無し（全て表示）
+			System.out.println("all is no");
+			ArrayList<ReservationBean> reservatioinList = rdao.rdtReservation();
+			session.setAttribute("reservatioinList", reservatioinList);
+
+		}else if(roomId == 0 && day.equals("0")){
+			//roomId,dayが無し
+			System.out.println("roomId,day is no");
+			ArrayList<ReservationBean> reservatioinList = rdao.rdReservation();
+			session.setAttribute("reservatioinList", reservatioinList);
+
+		}else if(day.equals("0") && time == 0){
+			//day,timeIdが無し
+			System.out.println("day,time is no");
+
+		}else if(roomId == 0 && time == 0){
+			//roomId,timeIdが無し
+			System.out.println("room,timeId is no");
+
+		}else if(roomId == 0){
+			//roomIdが無し
+			System.out.println("room,timeId is no");
+
+		}else if(day.equals("0")){
+			//dayが無し
+			System.out.println("room,timeId is no");
+
+		}else if(time == 0){
+			//timeIdが無し
+			System.out.println("room,timeId is no");
+
+		}else{
+			//全て選択
+			System.out.println("all is getting");
 
 		}
-		ReservationDao rdao = new ReservationDao();
-		ArrayList<ReservationBean> reservatioinArray = rdao.reservatioin(timeId,day);
-		session.setAttribute("reservatioinArray", reservatioinArray);
-
 
 		request.getRequestDispatcher("WEB-INF/jsp/reservation_list.jsp").forward(request, response);
 	}

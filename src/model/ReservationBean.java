@@ -22,6 +22,7 @@ public class ReservationBean implements Serializable{
 	private String four_subject_name;	//16
 	private int four_room_id;			//17
 	private String four_room_name;		//18
+	private String time_name;			//19
 
 	public ReservationBean(){
 
@@ -32,7 +33,8 @@ public class ReservationBean implements Serializable{
 			int one_subject_id, String one_subject_name, int one_room_id,String one_room_name,
 			int two_subject_id, String two_subject_name, int two_room_id, String two_room_name,
 			int three_subject_id, String three_subject_name, int three_room_id, String three_room_name,
-			int four_subject_id, String four_subject_name, int four_room_id, String four_room_name
+			int four_subject_id, String four_subject_name, int four_room_id, String four_room_name,
+			String time_name
 			) {
 
 		super();
@@ -54,6 +56,7 @@ public class ReservationBean implements Serializable{
 		this.four_subject_name = four_subject_name;
 		this.four_room_id = four_room_id;
 		this.four_room_name = four_room_name;
+		this.time_name = time_name;
 	}
 
 	public int getTime_id() {
@@ -198,6 +201,14 @@ public class ReservationBean implements Serializable{
 
 	public void setFour_room_name(String four_room_name) {
 		this.four_room_name = four_room_name;
+	}
+
+	public String getTime_name() {
+		return time_name;
+	}
+
+	public void setTime_name(String time_name) {
+		this.time_name = time_name;
 	}
 
 
