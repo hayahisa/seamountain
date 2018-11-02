@@ -24,7 +24,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>reservation_top</title> <!--画面名-->
+<title>reservation_list</title> <!--画面名-->
 
 
 </head>
@@ -45,44 +45,28 @@
       </div>
  -->
 
- 	<h5>教室予約</h5>
+ 	<h5>空き教室一覧</h5>
 
  	<br>
 
       <form class="" action="Next_reservation_list" method="post">
-      	<div>
-	      	<select name="room">
-	      	<option value="0" selected>教室選択</option>
-		      	<c:forEach var="obj" items="${roomList}" varStatus="status">
-			      <option value="${obj.room_id }"><p>${obj.room_name}</p></option>
-				</c:forEach>
-	      	</select>
-      	</div>
-
-		<div>
-			<select name="day">
-			<option value="0" selected>曜日選択</option>
-			<option value="monday">月曜日</option>
-			<option value="tuesday">火曜日</option>
-			<option value="wednesday">水曜日</option>
-			<option value="thursday">木曜日</option>
-			<option value="friday">金曜日</option>
-			</select>
-			<select name="time">
-			<option value="0" selected>時間選択</option>
-			<option value="1">1限目</option>
-			<option value="2">2限目</option>
-			<option value="3">3限目</option>
-			<option value="4">4限目</option>
-			</select>
-		</div>
-		<br>
-			<div class="right-align">
-				<input type="submit" name="" value="検索" class="waves-effect blue btn">
+	      	<c:forEach var="obj" items="${reservatioinArray}" varStatus="status">
+			<div class="panel panel-default panel-size">
+					<div class="panel-body">
+						<span style="font-size:15px">
+						教室名：${obj.time_id}
+						<br>
+						曜日：
+						<br>
+						時間：
+						<div class="row right-align">
+							<input class="waves-effect red btn" type="button" value="予約する">
+						</div>
+						</span>
+					</div>
 			</div>
+			</c:forEach>
 		</form>
-
-		<div>
 
   <br><br>
 
@@ -117,8 +101,6 @@
      $(document).ready(function(){
        $('select').formSelect();
      });
-
-
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
