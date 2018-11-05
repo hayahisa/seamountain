@@ -37,44 +37,32 @@
         			</div>
        			</li> -->
 
-       			<li>	<!-- マイページへ -->
-       				<a class="waves-effect" href="Next_mypage" onclick="document.mypage.submit();return false;">
-       					<i class="material-icons">mood</i>マイページ
-       				</a>
-       			</li>
-
       			<li><div class="divider"></div></li>
 
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
          		<li>	<!-- メインへ -->
 
-         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;">
-         				<i class="material-icons">star_border</i>トップ
+         			<a class="waves-effect" href="Next_User_Management">
+         				<i class="material-icons">star_border</i>ユーザ管理
          			</a>
          		</li>
 
   				<li>	<!-- 時間割作成へ -->
-  					<a class="waves-effect" href="Next_create_table" onclick="document.create_table.submit();return false;">
-  						<i class="material-icons">rate_review</i>時間割作成
+  					<a class="waves-effect" href="Next_create_table">
+  						<i class="material-icons">rate_review</i>鍵管理
   					</a>
   				</li>
 
   				<li>	<!-- 時間割へ -->
-  					<a class="waves-effect" href="Next_time_table" onclick="document.time_table.submit();return false;">
-  						<i class="material-icons">view_comfy</i>時間割
+  					<a class="waves-effect" href="Next_Room_Management">
+  						<i class="material-icons">view_comfy</i>教室管理
   					</a>
   				</li>
 
   				<li>	<!-- 時間割検索へ -->
-  					<a class="waves-effect" href="Next_time_search" onclick="document.time_search.submit();return false;">
-  						<i class="material-icons">search</i>鍵状態一覧
-  					</a>
-  				</li>
-
-  				<li>	<!-- 教室予約へ -->
-  					<a class="waves-effect" href="Next_reservation" onclick="document.reservation.submit();return false;">
-  						<i class="material-icons">bookmark_border</i>教室予約
+  					<a class="waves-effect" href="" onclick="document.time_search.submit();return false;">
+  						<i class="material-icons">search</i>授業管理
   					</a>
   				</li>
 

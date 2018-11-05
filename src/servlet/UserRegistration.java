@@ -62,6 +62,10 @@ public class UserRegistration extends HttpServlet {
 			// パスワードをpasswordテーブルに格納
 			PassDao passDao = new PassDao();
 			passDao.registrationPassword(userBean.getUserNo(), encryptPass);
+			
+			//時間割を取得
+			Timeget time = new Timeget();
+			time.doPost(request, response);
 
 			path = "WEB-INF/jsp/new_regist_complete.jsp";
 		}
