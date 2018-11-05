@@ -46,6 +46,7 @@ public class Next_reservation_list extends HttpServlet {
 		String day = request.getParameter("day");						//x曜日
 		int time = Integer.parseInt(request.getParameter("time"));	//x限目
 		//何も選ばなければ「0」を取得 timeは何限目かだよ
+		int x = 1;	//何限目を選んだか
 
 		String timeNo = null;
 		if(time == 1){			//1限目
@@ -58,22 +59,23 @@ public class Next_reservation_list extends HttpServlet {
 			timeNo = "four_subject_id";
 		}
 
+		ArrayList<ReservationBean> reservatioinList = new ArrayList<ReservationBean>();
 		System.out.println(roomId + day + time);
 		if(roomId == 0 && day.equals("0") && time == 0){
 			//選択無し（全て表示）
 			System.out.println("all is no");
-			ArrayList<ReservationBean> reservatioinList = rdao.rdtReservation();
-			session.setAttribute("reservatioinList", reservatioinList);
+			reservatioinList = rdao.rdtReservation();
+			x  = 0;
 
 		}else if(roomId == 0 && day.equals("0")){
 			//roomId,dayが無し
 			System.out.println("roomId,day is no");
-			ArrayList<ReservationBean> reservatioinList = rdao.rdReservation();
-			session.setAttribute("reservatioinList", reservatioinList);
+			reservatioinList = rdao.rdReservation();
 
 		}else if(day.equals("0") && time == 0){
 			//day,timeIdが無し
 			System.out.println("day,time is no");
+			reservatioinList = rdao.dtReservation(roomId);
 
 		}else if(roomId == 0 && time == 0){
 			//roomId,timeIdが無し
@@ -97,6 +99,10 @@ public class Next_reservation_list extends HttpServlet {
 
 		}
 
+		//何限目を指定したかどうかのセッション
+		session.setAttribute("timeX",x);
+		session.setAttribute("time",time);
+		session.setAttribute("reservatioinList", reservatioinList);
 		request.getRequestDispatcher("WEB-INF/jsp/reservation_list.jsp").forward(request, response);
 	}
 
