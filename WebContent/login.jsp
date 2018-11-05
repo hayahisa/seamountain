@@ -36,11 +36,13 @@
 	<br>
 	<br>
 
+
 	<div class="container">
     	<h5 class="left-align valign-wrapper"><i class="material-icons small ">input</i>ログイン</h5>
     </div>
 
     <br>
+
     <br>
 	<div class="row container">
 		<form class="col s12" action="Login" method="post" onsubmit="return login()">
@@ -56,9 +58,9 @@
 	         		 <label for="password">パスワード</label>
 				</div>
 			</div>
-		
-	
-	
+
+
+
 	<div class="row container">
 		<div class="col s9 left-align">
 			<a href="Next_re_pass" onclick="document.repass.submit();return false;">パスワードを忘れた場合</a>
@@ -67,18 +69,18 @@
 			<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="return login()">ログイン</button>
 		</div>
 		</div>
-		
+
 		</form>
 	</div>
-		
-		
+
+
   	<div class="row container">
    		<div class="col s12 left-align">
    			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
    		</div>
    		<div class="row right-align"></div>
 	</div>
-	
+
 
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 

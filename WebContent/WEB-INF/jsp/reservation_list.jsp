@@ -48,17 +48,63 @@
  	<h5>空き教室一覧</h5>
 
  	<br>
+<%
+int x = Integer.parseInt(String.valueOf(session.getAttribute("timeX")));
+String JPday = "選択されていません";
+%>
 
-      <form class="" action="Next_reservation_list" method="post">
+%>
+
+<%-- <%
+	      		if(day.equals("monday")){
+					JPday = "月曜日";
+				}else if(day.equals("tuesday")){
+					JPday = "火曜日";
+				}else if(day.equals("wednesday")){
+					JPday = "水曜日";
+				}else if(day.equals("thursday")){
+					JPday = "木曜日";
+				}else if(day.equals("friday")){
+					JPday = "金曜日";
+				}
+%> --%>
+
+<!-- 何限目かの指定がなかった場合（１から４限目まで表示） -->
+<%if(x == 0){%>
+ 		<form class="" action="Next_reservation_list" method="post">
 	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
+	      	<%for(int i = 1;i < 5; i++){	%>
+
+
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
 						<span style="font-size:15px">
 						教室名：${obj.time_name}
 						<br>
-						曜日：${obj.day}
+						曜日：<%= JPday %>
 						<br>
-						時間：
+						時間：<%= i %> 限目
+						<div class="row right-align">
+							<input class="waves-effect red btn" type="button" value="予約する">
+						</div>
+						</span>
+					</div>
+			</div>
+			<%} %>
+			</c:forEach>
+		</form>
+<%}else{ %>
+		<form class="" action="Next_reservation_list" method="post">
+	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
+
+			<div class="panel panel-default panel-size">
+					<div class="panel-body">
+						<span style="font-size:15px">
+						教室名：${obj.time_name}
+						<br>
+						曜日：<%= JPday %>
+						<br>
+						時間：<%= session.getAttribute("time") %> 限目
 						<div class="row right-align">
 							<input class="waves-effect red btn" type="button" value="予約する">
 						</div>
@@ -67,6 +113,8 @@
 			</div>
 			</c:forEach>
 		</form>
+
+<%} %>
 
   <br><br>
 
