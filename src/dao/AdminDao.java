@@ -15,14 +15,12 @@ public class AdminDao extends DaoBase{
 		
 		try {
 			super.connection();
-			//ログイン認証sql
 			String sql = "SELECT * FROM admin where admin_no = ?";
 			stmt = con.prepareStatement(sql);
 
 			stmt.setString(1,admin_id);
 
-			rs = stmt.executeQuery();// 結果が返ってくるSQL実行文
-			// データベースから返ってきた管理者ログイン情報を格納
+			rs = stmt.executeQuery();
 			rs.next();
 			
 			adminbean.setAdmin_id(rs.getString(1));

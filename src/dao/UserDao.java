@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.ArrayList;
+
 import model.UserBean;
 
 public class UserDao extends DaoBase{
@@ -156,5 +158,38 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
+	}
+	
+	//年度、学科別表示
+		public ArrayList<UserBean> UserGetSelect(){
+		
+		ArrayList<UserBean> arrayUser = new ArrayList<UserBean>();
+		
+		try {
+			super.connection();
+			String sql = "SELECT * FROM  where  = ?";
+			stmt = con.prepareStatement(sql);
+
+			stmt.setString(1,admin_id);
+
+			rs = stmt.executeQuery();
+			rs.next();
+			
+			adminbean.setAdmin_id(rs.getString(1));
+			adminbean.setAdmin_name(rs.getString(2));
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			try {
+				// エラーじはclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		
+		return arrayUser;
+		
 	}
 }

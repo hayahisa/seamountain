@@ -64,7 +64,7 @@ public class AdminLogin extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("adminbean", adminbean);
 			
-			path = "WEB-INF/jsp/Admin_Top.jsp";
+			path = "WEB-INF/jsp/admin_Top.jsp";
 		}else{
 			path = "/Admin_login.jsp";
 		}
