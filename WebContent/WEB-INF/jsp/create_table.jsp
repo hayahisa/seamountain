@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.SubjectInfoBean"%>
+    <%@ page import="model.SubjectBean"%>
+    <%@ page import="java.util.ArrayList"%>
+    <%@ page import="model.RoomBean"%>
+    
+    <%
+    ArrayList<RoomBean> room=(ArrayList<RoomBean>)request.getAttribute("room");
+ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -38,6 +47,7 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
         <br>
+        <form action="Next_re_pass" name="repass" method="post">
 
               <table>
         <thead>
@@ -60,32 +70,22 @@
             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=mon1_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=mon1_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -95,32 +95,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=tues1_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=tues1_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -130,32 +120,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=wed1_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=wed1_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -165,32 +145,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=thu1_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=thu1_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -200,32 +170,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=fry1_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=fry1_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -239,32 +199,22 @@
                         <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+      <select name=mon2_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=mon2_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -274,32 +224,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=tues2_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=tues2_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -309,32 +249,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=wed2_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=wed2_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -344,32 +274,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=thu2_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=thu2_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -379,32 +299,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=fry2_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=fry2_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -418,32 +328,22 @@
                                     <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=mon3_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=mon3_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -453,32 +353,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=tues3_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=tues3_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -488,32 +378,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=wed3_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=wed3_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -523,32 +403,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=thu3_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=thu3_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -558,32 +428,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=fry3_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=fry3_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -597,32 +457,22 @@
               <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=mon4_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=mon4_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -632,32 +482,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=tues4_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=tues4_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -667,32 +507,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=wed4_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=wed4_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -702,32 +532,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=thu4_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=thu4_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -737,32 +557,22 @@
                             <td>
 
   <div>
-    <select>
-      <optgroup label="情報システム専攻科">
-        <option value="1">item1</option>
-        <option value="2">item2</option>
-        <option value="3">item3</option>
-        <option value="4">item4</option>
-      </optgroup>
-      <optgroup label="ネットワーク科">
-        <option value="5">item1</option>
-        <option value="6">item2</option>
-        <option value="7">item3</option>
-        <option value="8">item4</option>
-      </optgroup>
-         <optgroup label="電子システム科">
-        <option value="9">item1</option>
-        <option value="10">item2</option>
-        <option value="11">item3</option>
-        <option value="12">item4</option>
-      </optgroup>
+    <select name=fry4_sub>
+    <optgroup label="教科名">
+     <option value="" disabled selected>教科名</option>
+                <% for (SubjectBean bean : sub) {%>
+                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+                <% }%>
+                </optgroup>
         </select>
        <div>
-    <select>
+    <select name=fry4_room>
       <option value="" disabled selected>教室</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+          <optgroup label="教室名">
+                <% for (RoomBean bean : room) {%>
+                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                <% }%>
+                </optgroup>
     </select>
   </div>
                 </div>
@@ -777,9 +587,9 @@
         <br>
             <div>
                 <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">キャンセル</a>
-                <a class="waves-effect blue lighten-1 btn">&nbsp;&nbsp;&nbsp;&nbsp;保存&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+                 <a class="waves-effect blue lighten-1 btn"><input type="button" value="保存する"></a></div>
         </div>
-
+</form>
 
 
 
