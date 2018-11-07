@@ -74,12 +74,13 @@ public class Login extends HttpServlet {
 			userbean = (UserBean)udao.userSession(user_no);
 
 			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+			
+			 Timeget time = new Timeget();
+			 time.doPost(request, response);
 
 		}else{
 			path = "/login.jsp";
 		}
-		 Timeget time = new Timeget();
-		 time.doPost(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 
 	}
