@@ -62,6 +62,6 @@ public class AdminUserSelect extends HttpServlet {
 		
 		request.setAttribute("userArray", userArray);
 		
-		
+		request.getRequestDispatcher("WEB-INF/").forward(request, response);
 	}
 }
