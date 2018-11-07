@@ -66,7 +66,7 @@
 					<div class="row">
 						<label style="color:red"><%=msg %></label>
 	        			<div class="input-field col s12  ">
-	          				<input id="gakuseki" type="text" class="validate" name="number" required>
+	          				<input id="gakuseki" type="text" class="validate" name="number" maxlength="7" required>
 	          				<label for="gakuseki">学籍番号</label>
 	        			</div>
 	      			</div>
@@ -96,19 +96,19 @@
 	      			
 	      			<div class="row">
 	        			<div class="input-field col s12">
-	          				<input id="username" type="text" class="validate" name="username" required>
+	          				<input id="username" type="text" class="validate" name="username" maxlength="32" required>
 	          				<label for="username">ユーザーネーム</label>
 	        			</div>
 	      			</div>
 					<div class="row">
 	        			<div class="input-field col s12">
-	          				<input id="email" type="email" class="validate" name="mail" required>
+	          				<input id="email" type="email" class="validate" name="mail" maxlength="64" required>
 	          				<label for="email">メールアドレス</label>
 	        			</div>
 	        		</div>
 	        		<div class="row">
 	        			<div class="input-field col s12">
-	        				<input id="email2" type="email" class="validate" required>
+	        				<input id="email2" type="email" class="validate" maxlength="64" required>
 	        				<label for="email2">メールアドレス確認</label>
 						</div>
 	      			</div>

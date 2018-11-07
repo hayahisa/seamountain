@@ -41,31 +41,6 @@
 
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
-         		<li>	<!-- メインへ -->
-
-         			<a class="waves-effect" href="Next_User_Management">
-         				<i class="material-icons">star_border</i>ユーザ管理
-         			</a>
-         		</li>
-
-  				<li>	<!-- 時間割作成へ -->
-  					<a class="waves-effect" href="Next_create_table">
-  						<i class="material-icons">rate_review</i>鍵管理
-  					</a>
-  				</li>
-
-  				<li>	<!-- 時間割へ -->
-  					<a class="waves-effect" href="Next_Room_Management">
-  						<i class="material-icons">view_comfy</i>教室管理
-  					</a>
-  				</li>
-
-  				<li>	<!-- 時間割検索へ -->
-  					<a class="waves-effect" href="" onclick="document.time_search.submit();return false;">
-  						<i class="material-icons">search</i>授業管理
-  					</a>
-  				</li>
-
   				<li>	<!-- ログアウトへ -->
   					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;">
   						<i class="material-icons">directions_bike</i>ログアウト

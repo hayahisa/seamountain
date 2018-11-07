@@ -56,10 +56,10 @@
 		<!-- ここから書いて -->
         
         <br><br>
-		
+        
 		<form action="AdminUserSelect" method="post">
 			<div class="input-field col s12">
-    			<select multiple name="year">
+    			<select multiple name="year" required>
 					<option value="" disabled selected></option>
 						<% for(int year=isysYear-7;year<=isysYear;year++){ %>
 							<option value=<%=year%>><%=year%>年</option>
@@ -69,7 +69,7 @@
 			</div>
 			
 			<div class="input-field col s12">
-				<select multiple name="course">
+				<select multiple name="course" required>
 					<% for(int count=0;count<courseArray.size();count++){ %>
 						<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
 					<%} %>
@@ -105,10 +105,8 @@
   $(document).ready(function(){
     $('select').formSelect();
   });
-        
-          
 
-
+  
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
