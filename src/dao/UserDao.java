@@ -57,7 +57,7 @@ public class UserDao extends DaoBase{
 
 			// SQLの？に値のセット
 			stmt.setString(1, ubean.getUserNo());
-			stmt.setString(2, ubean.getCourseId());
+			stmt.setInt(2, ubean.getCourseId());
 			stmt.setInt(3, ubean.getTimeId());
 			stmt.setString(4, ubean.getUserName());
 			stmt.setString(5, ubean.getMail());
@@ -93,7 +93,7 @@ public class UserDao extends DaoBase{
 			// Beanにuse情報を格納
 			userbean = new UserBean();
 			userbean.setUserNo(rs.getString(1));
-			userbean.setCourseId(rs.getString(2));
+			userbean.setCourseId(rs.getInt(2));
 			userbean.setTimeId(rs.getInt(3));
 			userbean.setUserName(rs.getString(4));
 			userbean.setMail(rs.getString(5));
@@ -161,23 +161,56 @@ public class UserDao extends DaoBase{
 	}
 	
 	//年度、学科別表示
-		public ArrayList<UserBean> UserGetSelect(){
-		
-		ArrayList<UserBean> arrayUser = new ArrayList<UserBean>();
+	public ArrayList<UserBean> UserGetSelect(ArrayList<Integer> yearArray,ArrayList<String> courseArray){
+			
+		ArrayList<UserBean> userArray = new ArrayList<UserBean>();
 		
 		try {
 			super.connection();
-			String sql = "SELECT * FROM  where  = ?";
+			
+			String insertyearQ = " or user_year = ?";
+			String insertcourseQ = " or course_id = ?";
+			String insertyear = "";
+			String insertcourse = "";
+			
+			//年度を選択された数"?"を追加
+			for(int count=0;count<yearArray.size()-1;count++){
+				insertyear = insertyear + insertyearQ;
+			}
+			
+			//学科を選択された数"?"を追加
+			for(int count=0;count<courseArray.size()-1;count++){
+				insertcourse = insertcourse + insertcourseQ;
+			}
+			
+			String sql = "SELECT * FROM user WHERE user_year = ?" + insertyear + " AND " + "course_id = ?" + insertcourse;
+			
 			stmt = con.prepareStatement(sql);
-
-			stmt.setString(1,admin_id);
-
+			
+			for(int stmtCount=1;stmtCount<=yearArray.size();stmtCount++){
+				stmt.setInt(stmtCount, yearArray.get(stmtCount-1));
+			}
+			for(int stmtCount=yearArray.size()+1;stmtCount<=courseArray.size()+yearArray.size();stmtCount++){
+				int countArray = 0;
+				stmt.setString(stmtCount, courseArray.get(countArray));
+				countArray++;
+			}
 			rs = stmt.executeQuery();
-			rs.next();
 			
-			adminbean.setAdmin_id(rs.getString(1));
-			adminbean.setAdmin_name(rs.getString(2));
-			
+			while(rs.next()){
+				
+				UserBean userbean = new UserBean();
+				userbean.setUserNo(rs.getString(1));
+				userbean.setCourseId(rs.getInt(2));
+				userbean.setTimeId(rs.getInt(3));
+				userbean.setUserName(rs.getString(4));
+				userbean.setMail(rs.getString(5));
+				userbean.setUserYear(rs.getInt(6));
+				userbean.setRoleFlg(rs.getString(7));
+				
+				userArray.add(userbean);
+				
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
@@ -188,8 +221,7 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-		
-		return arrayUser;
+		return userArray;
 		
 	}
 }

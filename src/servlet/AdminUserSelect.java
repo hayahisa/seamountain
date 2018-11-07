@@ -1,12 +1,16 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.UserDao;
+import model.UserBean;
 
 /**
  * Servlet implementation class AdminUserSelect
@@ -41,8 +45,22 @@ public class AdminUserSelect extends HttpServlet {
 		String year[] = request.getParameterValues("year");
 		String course[] = request.getParameterValues("course");
 		
-		System.out.println("alkhalkchlkchl");
+		ArrayList<UserBean> userArray = new ArrayList<UserBean>();
+		ArrayList<Integer> yearArray = new ArrayList<Integer>();
+		ArrayList<String> courseArray = new ArrayList<String>();
+		
+		for(int count=0;count<year.length;count++){
+			yearArray.add(Integer.parseInt(year[count]));
+		}
+		
+		for(int count=0;count<course.length;count++){
+			courseArray.add(course[count]);
+		}
+		
+		UserDao userdao = new UserDao();
+		userArray = userdao.UserGetSelect(yearArray,courseArray);
+		
+		request.setAttribute("userArray", userArray);
 		
 	}
-
 }
