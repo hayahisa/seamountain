@@ -3,16 +3,16 @@ package dao;
 import model.AdminBean;
 
 public class AdminDao extends DaoBase{
-	
+
 	public AdminDao(){
-		
+
 	}
-	
+
 	//管理者の情報取得
 	public AdminBean getAdminInfo(String admin_id){
-		
+
 		AdminBean adminbean = new AdminBean();
-		
+
 		try {
 			super.connection();
 			String sql = "SELECT * FROM admin where admin_no = ?";
@@ -22,10 +22,10 @@ public class AdminDao extends DaoBase{
 
 			rs = stmt.executeQuery();
 			rs.next();
-			
+
 			adminbean.setAdmin_id(rs.getString(1));
 			adminbean.setAdmin_name(rs.getString(2));
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
@@ -36,9 +36,9 @@ public class AdminDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-		
+
 		return adminbean;
-		
+
 	}
-	
+
 }

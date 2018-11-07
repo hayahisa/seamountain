@@ -25,7 +25,7 @@ public class UserDao extends DaoBase{
 			// SQLの？に値のセット
 			stmt.setString(1, userno);
 			rs = stmt.executeQuery();
-			
+
 			while(rs.next()){
 				flg = true;
 			}
@@ -134,7 +134,7 @@ public class UserDao extends DaoBase{
 			} catch (Exception e) {
 				System.out.println("error");
 			}
-		
+
 		}
 	}
 
@@ -159,7 +159,7 @@ public class UserDao extends DaoBase{
 			}
 		}
 	}
-	
+
 	//年度、学科別表示
 	public ArrayList<UserBean> UserGetSelect(ArrayList<Integer> yearArray,ArrayList<String> courseArray){
 			
@@ -222,6 +222,5 @@ public class UserDao extends DaoBase{
 			}
 		}
 		return userArray;
-		
 	}
 }

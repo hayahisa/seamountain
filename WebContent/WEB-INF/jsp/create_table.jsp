@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="model.SubjectInfoBean"%>
-    <%@ page import="model.SubjectBean"%>
-    <%@ page import="java.util.ArrayList"%>
-    <%@ page import="model.RoomBean"%>
-    
-    <%
-    ArrayList<RoomBean> room=(ArrayList<RoomBean>)request.getAttribute("room");
+<%@ page import="model.SubjectInfoBean"%>
+<%@ page import="model.SubjectBean"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.RoomBean"%>
+
+<%
+ArrayList<RoomBean> room=(ArrayList<RoomBean>)request.getAttribute("room");
 ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub");
 %>
 <!DOCTYPE html>
@@ -46,554 +46,542 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-        <br>
-        <form action="Next_re_pass" name="repass" method="post">
+  	<h5>時間割作成</h5>
+   	<form action=Create_Table name="create" method="post">
 
-              <table>
+<!-- 時間割名入力 -->
+	<input type="text" name="index" placeholder="時間割名入力欄" required>
+
+        <table>
         <thead>
-          <tr>
-              <th></th>
-              <th class="center-align">月</th>
-              <th class="center-align">火</th>
-              <th class="center-align">水</th>
-              <th class="center-align">木</th>
-              <th class="center-align">金</th>
-          </tr>
+        <tr>
+	        <th></th>
+	        <th class="center-align">月</th>
+	        <th class="center-align">火</th>
+	        <th class="center-align">水</th>
+	        <th class="center-align">木</th>
+	        <th class="center-align">金</th>
+        </tr>
         </thead>
 
         <tbody>
-      <!1------------------------------------------------------>
+<!-- ***************１限目 *************** -->
+		<tr>
+		<td>1</td>
 
-            <tr>
-            <td>1</td>
-
-            <td>
-
-  <div>
-    <select name=mon1_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
+<!-- *************** 月曜日 *************** -->
+		<td>
+		<div>
+			<select name="mon1_sub">
+			<optgroup label="教科名">
+			<option value="0">教科名</option>
+				<% for (SubjectBean bean : sub) {%>
+			<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+				<% }%>
+			</optgroup>
+	        </select>
+      		<div>
+      			<select name="mon1_room">
+      			<optgroup label="教室名">
+      			<option value="0">教室</option>
+                	<% for (RoomBean bean : room) {%>
+                <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+                	<% }%>
                 </optgroup>
+                </select>
+			</div>
+		</div>
+		</td>
+
+<!-- *************** 火曜日 *************** -->
+		<td>
+		<div>
+		<select name="tues1_sub">
+		<optgroup label="教科名">
+		<option value="0">教科名</option>
+               <% for (SubjectBean bean : sub) {%>
+ 		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+               <% }%>
+        </optgroup>
         </select>
-       <div>
-    <select name=mon1_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
-                <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+        	<div>
+    		<select name="tues1_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+             	<% for (RoomBean bean : room) {%>
+           	 <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+              	<% }%>
+           	</optgroup>
+   			</select>
+  			</div>
+     		</div>
+     	</td>
 
-                </td>
+<!-- *************** 水曜日 *************** -->
 
-                            <td>
-
-  <div>
-    <select name=tues1_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+		<td>
+		<div>
+   		<select name="wed1_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+     		<% for (SubjectBean bean : sub) {%>
+   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+        	<% }%>
+     	</optgroup>
         </select>
-       <div>
-    <select name=tues1_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+       		<div>
+    		<select name="wed1_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+            	<% for (RoomBean bean : room) {%>
+           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+        	</optgroup>
+    		</select>
+  			</div>
+      	</div>
+      	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=wed1_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 木曜日 *************** -->
+      	<td>
+      	<div>
+    	<select name="thu1_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+   			<% for (SubjectBean bean : sub) {%>
+   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+     		<% }%>
+		</optgroup>
         </select>
-       <div>
-    <select name=wed1_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+       		<div>
+  			<select name="thu1_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+          		<% for (RoomBean bean : room) {%>
+          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+   			</optgroup>
+    		</select>
+  			</div>
+  		</div>
+  		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=thu1_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 金曜日 *************** -->
+		<td>
+  		<div>
+    	<select name="fry1_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+       		<% for (SubjectBean bean : sub) {%>
+		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+         	<% }%>
+       	</optgroup>
         </select>
-       <div>
-    <select name=thu1_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="fry1_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+			<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
-
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=fry1_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
-        </select>
-       <div>
-    <select name=fry1_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
-                <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
-
-                </td>
+     		</optgroup>
+   	 		</select>
+  			</div>
+  		</div>
+  		</td>
         </tr>
-      <!2------------------------------------------------------>
-            <tr>
-            <td>2</td>
 
-                        <td>
+<!-- ***************２限目 *************** -->
+      	<tr>
+      	<td>2</td>
 
-  <div>
-      <select name=mon2_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 月曜日 *************** -->
+      	<td>
+      	<div>
+      	<select name="mon2_sub">
+   		<optgroup label="教科名">
+     	<option value="0">教科名</option>
+			<% for (SubjectBean bean : sub) {%>
+       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+         	<% }%>
+      	</optgroup>
         </select>
-       <div>
-    <select name=mon2_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="mon2_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+         	</optgroup>
+    		</select>
+  			</div>
+      	</div>
+      	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=tues2_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 火曜日 *************** -->
+       	<td>
+       	<div>
+    	<select name="tues2_sub">
+   		<optgroup label="教科名">
+     	<option value="0">教科名</option>
+        	<% for (SubjectBean bean : sub) {%>
+		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+          	<% }%>
+  		</optgroup>
         </select>
-       <div>
-    <select name=tues2_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+       		<div>
+    		<select name="tues2_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+            	<% for (RoomBean bean : room) {%>
+          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+   			</optgroup>
+   	 		</select>
+  			</div>
+       	</div>
+       	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=wed2_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 水曜日 *************** -->
+       	<td>
+       	<div>
+    	<select name="wed2_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+       		<% for (SubjectBean bean : sub) {%>
+      	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+    		<% }%>
+    	</optgroup>
         </select>
-       <div>
-    <select name=wed2_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="wed2_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+     		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+         	</optgroup>
+    		</select>
+  			</div>
+       	</div>
+       	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=thu2_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 木曜日 *************** -->
+		<td>
+		<div>
+    	<select name="thu2_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+        	<% for (SubjectBean bean : sub) {%>
+       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+            <% }%>
+     	</optgroup>
         </select>
-       <div>
-    <select name=thu2_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
-                <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+	       	<div>
+	    	<select name="thu2_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+	      		<% for (RoomBean bean : room) {%>
+	       	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+	          	<% }%>
+	       	</optgroup>
+	    	</select>
+  			</div>
+     	</div>
+     	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=fry2_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 金曜日 *************** -->
+		<td>
+		<div>
+    	<select name="fry2_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+        	<% for (SubjectBean bean : sub) {%>
+  		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+          	<% }%>
+        </optgroup>
         </select>
-       <div>
-    <select name=fry2_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+      		<div>
+    		<select name="fry2_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
-
-                </td>
+      		</optgroup>
+    		</select>
+  			</div>
+    	</div>
+    	</td>
         </tr>
-      <!3------------------------------------------------------>
-                        <tr>
-            <td>3</td>
 
-                                    <td>
+<!-- ***************３限目 *************** -->
+		<tr>
+      	<td>3</td>
 
-  <div>
-    <select name=mon3_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 月曜日 *************** -->
+      	<td>
+      	<div>
+    	<select name="mon3_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+  			<% for (SubjectBean bean : sub) {%>
+   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+           	<% }%>
+      	</optgroup>
         </select>
-       <div>
-    <select name=mon3_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="mon3_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+       		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+           	</optgroup>
+    		</select>
+ 			</div>
+ 		</div>
+ 		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=tues3_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 火曜日 *************** -->
+		<td>
+		<div>
+    	<select name="tues3_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+       		<% for (SubjectBean bean : sub) {%>
+      	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+         	<% }%>
+      	</optgroup>
         </select>
-       <div>
-    <select name=tues3_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="tues3_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+         	</optgroup>
+    		</select>
+  			</div>
+      	</div>
+      	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=wed3_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 水曜日 *************** -->
+		<td>
+		<div>
+    	<select name="wed3_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+     		<% for (SubjectBean bean : sub) {%>
+       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+        	<% }%>
+     	</optgroup>
         </select>
-       <div>
-    <select name=wed3_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="wed3_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+     		</optgroup>
+    		</select>
+  			</div>
+		</div>
+		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=thu3_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 木曜日 *************** -->
+		<td>
+		<div>
+    	<select name="thu3_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+    		<% for (SubjectBean bean : sub) {%>
+      	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+     		<% }%>
+ 		</optgroup>
         </select>
-       <div>
-    <select name=thu3_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="thu3_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+        	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+         	</optgroup>
+    		</select>
+  			</div>
+      	</div>
+    	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=fry3_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 金曜日 *************** -->
+      	<td>
+      	<div>
+    	<select name="fry3_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+     		<% for (SubjectBean bean : sub) {%>
+     	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+       		<% }%>
+        </optgroup>
         </select>
-       <div>
-    <select name=fry3_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="fry3_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+   			<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
-
-                </td>
+          	</optgroup>
+    		</select>
+  			</div>
+   		</div>
+   		</td>
         </tr>
-      <!4------------------------------------------------------>
-                        <tr>
-            <td>4</td>
 
-              <td>
+<!-- ***************４限目 *************** -->
+		<tr>
+		<td>4</td>
 
-  <div>
-    <select name=mon4_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 月曜日 *************** -->
+      	<td>
+      	<div>
+    	<select name="mon4_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+      		<% for (SubjectBean bean : sub) {%>
+   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+          	<% }%>
+  		</optgroup>
         </select>
-       <div>
-    <select name=mon4_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="mon4_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+    		</optgroup>
+    		</select>
+  			</div>
+    	</div>
+    	</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=tues4_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 火曜日 *************** -->
+		<td>
+		<div>
+    	<select name="tues4_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+      		<% for (SubjectBean bean : sub) {%>
+       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+  			<% }%>
+  		</optgroup>
         </select>
-       <div>
-    <select name=tues4_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="tues4_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+        	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+       		</optgroup>
+    		</select>
+  			</div>
+   		</div>
+   		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=wed4_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 水曜日 *************** -->
+		<td>
+		<div>
+    	<select name="wed4_sub">
+    	<optgroup label="教科名">
+    	<option value="0">教科名</option>
+      		<% for (SubjectBean bean : sub) {%>
+  		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+   			<% }%>
+       	</optgroup>
         </select>
-       <div>
-    <select name=wed4_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
-                <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+       		<div>
+    		<select name="wed4_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+         		<% for (RoomBean bean : room) {%>
+         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+      			<% }%>
+        	</optgroup>
+    		</select>
+  			</div>
+  		</div>
+  		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=thu4_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 木曜日 *************** -->
+     	<td>
+     	<div>
+    	<select name="thu4_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+       		<% for (SubjectBean bean : sub) {%>
+  		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+          	<% }%>
+      	</optgroup>
         </select>
-       <div>
-    <select name=thu4_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
-                <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+       		<div>
+    		<select name="thu4_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
+       			<% for (RoomBean bean : room) {%>
+       		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
+      		</optgroup>
+    		</select>
+  			</div>
+   		</div>
+   		</td>
 
-                </td>
-
-                            <td>
-
-  <div>
-    <select name=fry4_sub>
-    <optgroup label="教科名">
-     <option value="" disabled selected>教科名</option>
-                <% for (SubjectBean bean : sub) {%>
-                    <option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
-                <% }%>
-                </optgroup>
+<!-- *************** 金曜日 *************** -->
+		<td>
+		<div>
+    	<select name="fry4_sub">
+    	<optgroup label="教科名">
+     	<option value="0">教科名</option>
+      		<% for (SubjectBean bean : sub) {%>
+     	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
+ 			<% }%>
+ 		</optgroup>
         </select>
-       <div>
-    <select name=fry4_room>
-      <option value="" disabled selected>教室</option>
-          <optgroup label="教室名">
+       		<div>
+    		<select name="fry4_room">
+			<optgroup label="教室名">
+      		<option value="0">教室</option>
                 <% for (RoomBean bean : room) {%>
-                    <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
+         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
-                </optgroup>
-    </select>
-  </div>
-                </div>
-
-                </td>
+        	</optgroup>
+    		</select>
+  			</div>
+     	</div>
+     	</td>
         </tr>
-                  </tbody></table>
+
+        </tbody>
+        </table>
+
         <br>
 
-
-    <div class="row right-align">
+    	<div class="row right-align">
         <br>
-            <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">キャンセル</a>
-                 <a class="waves-effect blue lighten-1 btn"><input type="button" value="保存する"></a></div>
+       		<div>
+       		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+       		<input type="submit" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="　保存　">
+    		</div>
         </div>
-</form>
+	</form>
 
-
-
-
+	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+	<form action="Create_Table" name="create" method="post"></form>	<!-- 保存画面へ -->
 
    <!-- ここまで -->
     </div>
@@ -608,14 +596,11 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 	    var instances = M.Sidenav.init(elems);
 	  });
 
-
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
 	  // Or with jQuery
-
-
 
 	   </script>
     <script>
