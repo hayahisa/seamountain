@@ -53,8 +53,6 @@ int x = Integer.parseInt(String.valueOf(session.getAttribute("timeX")));
 String JPday = "選択されていません";
 %>
 
-%>
-
 <%-- <%
 	      		if(day.equals("monday")){
 					JPday = "月曜日";
@@ -81,7 +79,7 @@ String JPday = "選択されていません";
 						<span style="font-size:15px">
 						教室名：${obj.time_name}
 						<br>
-						曜日：<%= JPday %>
+						曜日：${obj.day}
 						<br>
 						時間：<%= i %> 限目
 						<div class="row right-align">
@@ -102,7 +100,7 @@ String JPday = "選択されていません";
 						<span style="font-size:15px">
 						教室名：${obj.time_name}
 						<br>
-						曜日：<%= JPday %>
+						曜日：${obj.day}
 						<br>
 						時間：<%= session.getAttribute("time") %> 限目
 						<div class="row right-align">

@@ -25,7 +25,7 @@ public class UserDao extends DaoBase{
 			// SQLの？に値のセット
 			stmt.setString(1, userno);
 			rs = stmt.executeQuery();
-			
+
 			while(rs.next()){
 				flg = true;
 			}
@@ -134,7 +134,7 @@ public class UserDao extends DaoBase{
 			} catch (Exception e) {
 				System.out.println("error");
 			}
-		
+
 		}
 	}
 
@@ -159,12 +159,12 @@ public class UserDao extends DaoBase{
 			}
 		}
 	}
-	
+
 	//年度、学科別表示
 		public ArrayList<UserBean> UserGetSelect(){
-		
+
 		ArrayList<UserBean> arrayUser = new ArrayList<UserBean>();
-		
+
 		try {
 			super.connection();
 			String sql = "SELECT * FROM  where  = ?";
@@ -174,10 +174,10 @@ public class UserDao extends DaoBase{
 
 			rs = stmt.executeQuery();
 			rs.next();
-			
+
 			adminbean.setAdmin_id(rs.getString(1));
 			adminbean.setAdmin_name(rs.getString(2));
-			
+
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
@@ -188,8 +188,8 @@ public class UserDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
-		
+
 		return arrayUser;
-		
+
 	}
 }
