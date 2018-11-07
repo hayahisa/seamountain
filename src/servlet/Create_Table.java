@@ -152,6 +152,16 @@ public class Create_Table extends HttpServlet {
 			i++;
 		}
 
+		for(int id : monArray){
+			int i = 1;
+			if(i % 2 == 0){	//room
+				room_name = cdao.roomName(id);
+			}else{	//subject
+				subject_name = cdao.subjectName(id);
+			}
+			i++;
+		}
+
 //		時間割名を挿入しIDを取得する
 		int time_id = cdao.setTime(time_name);
 
