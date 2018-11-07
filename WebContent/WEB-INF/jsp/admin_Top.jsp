@@ -35,7 +35,7 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-        
+
 <br><br>
   <ul class="collapsible">
     <li>
@@ -69,18 +69,22 @@
                 <p></p>
             </span>
         </div>
-    </li>  
+    </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">place</i>授業管理</div>
         <div class="collapsible-body">
             <span>
+            <a href="department_add.jsp">
                 <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+           </a>
                 <p></p>
+           <a href="department_change.jsp">
                 <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
+           </a>
                 <p></p>
             </span>
         </div>
-    </li>    
+    </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">school</i>教室管理</div>
         <div class="collapsible-body">
@@ -93,7 +97,7 @@
         </div>
     </li>
 </ul>
-        
+
 
 
 
@@ -117,7 +121,7 @@
   $(document).ready(function(){
     $('.collapsible').collapsible();
   });
-          
+
 	   </script>
 
 </body>
