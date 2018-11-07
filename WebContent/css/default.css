@@ -8,7 +8,7 @@ body{
 }
 
 table tr th{
-  text-align: center;
+	padding-left: 0
 }
 
 table tr td{

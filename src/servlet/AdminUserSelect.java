@@ -60,8 +60,15 @@ public class AdminUserSelect extends HttpServlet {
 		UserDao userdao = new UserDao();
 		userArray = userdao.UserGetSelect(yearArray,courseArray);
 		
-		request.setAttribute("userArray", userArray);
+		if(userArray.size() != 0){
+			request.setAttribute("userArray", userArray);
+		}else{
+			
+			String notResult = "検索結果がありませんでした";
+			request.setAttribute("notResult", notResult);
+		}
 		
-		request.getRequestDispatcher("WEB-INF/").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_details.jsp").forward(request, response);
+		
 	}
 }
