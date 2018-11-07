@@ -59,20 +59,20 @@
 		
 		<form action="AdminUserSelect" method="post">
 			<div class="input-field col s12">
-    			<select multiple>
+    			<select multiple name="year">
 					<option value="" disabled selected></option>
 						<% for(int year=isysYear-7;year<=isysYear;year++){ %>
-							<option value=<%=year%> name="year"><%=year%>年</option>
+							<option value=<%=year%>><%=year%>年</option>
 						<%} %>
 				</select>
 				<label>年度</label>
 			</div>
 			
 			<div class="input-field col s12">
-				<select multiple>
+				<select multiple name="course">
 					<% for(int count=0;count<courseArray.size();count++){ %>
-						<option value=<%=courseArray.get(count).getCourse_id()%> name="course"><%=courseArray.get(count).getCourse_name()%></option>
-					<%} %>								
+						<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
+					<%} %>
 				</select>
     			<label>学科</label>
 			</div>

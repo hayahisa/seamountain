@@ -83,7 +83,7 @@ public class UserRegistration extends HttpServlet {
 		String username = request.getParameter("username");
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
-		String course = request.getParameter("course");
+		int course = Integer.parseInt(request.getParameter("course"));
 		int useryear = Integer.parseInt(request.getParameter("useryear"));
 		
 		String encPass = "";

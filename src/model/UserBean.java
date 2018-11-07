@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class UserBean implements Serializable {
 
 	private String userNo;
-	private String courseId;
+	private int courseId;
 	private int timeId;
 	private String userName;
 	private String mail;
@@ -24,11 +24,11 @@ public class UserBean implements Serializable {
 		this.userNo = userNo;
 	}
 
-	public String getCourseId() {
+	public int getCourseId() {
 		return courseId;
 	}
 
-	public void setCourseId(String courseId) {
+	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
 

@@ -45,7 +45,7 @@ public class CourseDao extends DaoBase{
 	}
 	
 	//学科名取得
-	public String selectCourseName(String courseId){
+	public String selectCourseName(int courseId){
 		
 		String courseName = null;
 		
@@ -55,7 +55,7 @@ public class CourseDao extends DaoBase{
 			String sql = "SELECT course_name FROM course where course_id = ?";
 			stmt = con.prepareStatement(sql);
 
-			stmt.setString(1,courseId);
+			stmt.setInt(1,courseId);
 
 			rs = stmt.executeQuery();
 			rs.next();
