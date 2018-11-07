@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class TimeDetailBean implements Serializable{
 
+	public TimeDetailBean(){
+
+	}
+
 	private int time_id;				//1
 	private String day;					//2
 	private int one_subject_id;			//3
