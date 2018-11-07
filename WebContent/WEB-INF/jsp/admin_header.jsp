@@ -78,7 +78,7 @@
   				<i class="material-icons">menu</i>
   			</a>
 
-  			<a href="Next_main" onclick="document.main.submit();return false;">鍵管理システム</a>
+  			<a href="Next_admin_top">鍵管理システム</a>
 
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
