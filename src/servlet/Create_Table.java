@@ -360,6 +360,12 @@ public class Create_Table extends HttpServlet {
 		cdao.setTimeTable(thubean);
 		cdao.setTimeTable(fribean);
 
+//		時間割を表示するための処理
+		TimeTableDisplay timetable = new TimeTableDisplay();
+		timetable.doPost(request, response, time_id);
+
+		request.getRequestDispatcher("WEB-INF/jsp/create_table_confirmation.jsp").forward(request, response);
+
 	}
 
 }

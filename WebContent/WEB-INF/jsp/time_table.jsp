@@ -46,6 +46,9 @@ TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
 		<!-- ここから書いて -->
         <br>
 
+        <h5>時間割名：<%=monday.getTime_name() %></h5>
+
+
         <table>
 
             <thead>
