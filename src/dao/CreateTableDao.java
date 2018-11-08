@@ -9,24 +9,22 @@ public class CreateTableDao extends DaoBase{
 	}
 	//時間割を挿入
 	public void setTimeTable(TimeDetailBean timedetailbean){
+		int num = 0;
 		TimeDetailBean timedetail = timedetailbean;
-		System.out.println("timedetail.getOne_subject_name="+timedetail.getOne_subject_name());
 		try{
 			super.connection();
-			String sql = "INSERT INTO `time_detail`("
-					+ "`time_id`, `day`, "
+			String sql = "INSERT INTO `time_detail`(`time_id`, `day`, "
 					+ "`one_subject_id`, `one_subject_name`, `one_room_id`, `one_room_name`, "
 					+ "`two_subject_id`, `two_subject_name`, `two_room_id`, `two_room_name`, "
 					+ "`three_subject_id`, `three_subject_name`, `three_room_id`, `three_room_name`, "
 					+ "`four_subject_id`, `four_subject_name`, `four_room_id`, `four_room_name`) "
-					+ "VALUES ("
+					+ "VALUES ( "
 					+ "?,?, "
 					+ "?,?,?,?, "
 					+ "?,?,?,?, "
 					+ "?,?,?,?, "
-					+ "?,?,?,?, "
-					+ ")";
-
+					+ "?,?,?,? "
+					+ ");";
 			stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1,timedetail.getTime_id());
@@ -48,7 +46,7 @@ public class CreateTableDao extends DaoBase{
 			stmt.setInt(17,timedetail.getFour_room_id());
 			stmt.setString(18,timedetail.getFour_room_name());
 
-			stmt.executeUpdate();
+			num = stmt.executeUpdate();
 
 		} catch(Exception e){
 			e.printStackTrace();
@@ -86,13 +84,14 @@ public class CreateTableDao extends DaoBase{
 
 //	IDをとる
 	public int getTimeId(){
+		System.out.println("in getTimeId dao");
 		int time_id = 0;
 		try{
 			super.connection();
-			String sql = "SELECT MAX(time_id) FROM time";
+			String sql = "SELECT MAX(t.time_id) FROM time t";
 
 			stmt = con.prepareStatement(sql);
-			stmt.executeQuery();
+			rs = stmt.executeQuery();
 			rs.next();
 			time_id = rs.getInt(1);
 			System.out.println("*T="+rs.getInt(1));
