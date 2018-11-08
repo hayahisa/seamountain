@@ -74,7 +74,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
 			<select name="mon1_sub">
 			<optgroup label="教科名">
-			<option value="0">教科名</option>
+			<option value="1">教科名</option>
 				<% for (SubjectBean bean : sub) {%>
 			<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
 				<% }%>
@@ -83,7 +83,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       		<div>
       			<select name="mon1_room">
       			<optgroup label="教室名">
-      			<option value="0">教室</option>
+      			<option value="1">教室</option>
                 	<% for (RoomBean bean : room) {%>
                 <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 	<% }%>
@@ -98,7 +98,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
 		<select name="tues1_sub">
 		<optgroup label="教科名">
-		<option value="0">教科名</option>
+		<option value="1">教科名</option>
                <% for (SubjectBean bean : sub) {%>
  		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
                <% }%>
@@ -107,7 +107,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
         	<div>
     		<select name="tues1_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
              	<% for (RoomBean bean : room) {%>
            	 <option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
               	<% }%>
@@ -123,7 +123,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
    		<select name="wed1_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
      		<% for (SubjectBean bean : sub) {%>
    		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
         	<% }%>
@@ -132,7 +132,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="wed1_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
             	<% for (RoomBean bean : room) {%>
            	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -147,7 +147,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       	<div>
     	<select name="thu1_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
    			<% for (SubjectBean bean : sub) {%>
    		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
      		<% }%>
@@ -156,7 +156,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
   			<select name="thu1_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
           		<% for (RoomBean bean : room) {%>
           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -171,7 +171,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
   		<div>
     	<select name="fry1_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
        		<% for (SubjectBean bean : sub) {%>
 		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
          	<% }%>
@@ -180,7 +180,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="fry1_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
 			<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -200,7 +200,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       	<div>
       	<select name="mon2_sub">
    		<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
 			<% for (SubjectBean bean : sub) {%>
        	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
          	<% }%>
@@ -209,7 +209,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="mon2_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -224,7 +224,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        	<div>
     	<select name="tues2_sub">
    		<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
         	<% for (SubjectBean bean : sub) {%>
 		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
           	<% }%>
@@ -233,7 +233,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="tues2_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
             	<% for (RoomBean bean : room) {%>
           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -248,7 +248,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        	<div>
     	<select name="wed2_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
        		<% for (SubjectBean bean : sub) {%>
       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
     		<% }%>
@@ -257,7 +257,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="wed2_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
      		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -272,7 +272,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="thu2_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
         	<% for (SubjectBean bean : sub) {%>
        	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
             <% }%>
@@ -281,7 +281,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 	       	<div>
 	    	<select name="thu2_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
 	      		<% for (RoomBean bean : room) {%>
 	       	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
 	          	<% }%>
@@ -296,7 +296,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="fry2_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
         	<% for (SubjectBean bean : sub) {%>
   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
           	<% }%>
@@ -305,7 +305,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       		<div>
     		<select name="fry2_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
            	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -325,7 +325,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       	<div>
     	<select name="mon3_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
   			<% for (SubjectBean bean : sub) {%>
    		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
            	<% }%>
@@ -334,7 +334,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="mon3_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
        		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -349,7 +349,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="tues3_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
        		<% for (SubjectBean bean : sub) {%>
       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
          	<% }%>
@@ -358,7 +358,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="tues3_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -373,7 +373,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="wed3_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
      		<% for (SubjectBean bean : sub) {%>
        	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
         	<% }%>
@@ -382,7 +382,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="wed3_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -397,7 +397,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="thu3_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
     		<% for (SubjectBean bean : sub) {%>
       	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
      		<% }%>
@@ -406,7 +406,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="thu3_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -421,7 +421,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       	<div>
     	<select name="fry3_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
      		<% for (SubjectBean bean : sub) {%>
      	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
        		<% }%>
@@ -430,7 +430,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="fry3_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
    			<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -450,7 +450,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
       	<div>
     	<select name="mon4_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
       		<% for (SubjectBean bean : sub) {%>
    		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
           	<% }%>
@@ -459,7 +459,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="mon4_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
           	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -474,7 +474,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="tues4_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
       		<% for (SubjectBean bean : sub) {%>
        	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
   			<% }%>
@@ -483,7 +483,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="tues4_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
         	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -498,7 +498,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="wed4_sub">
     	<optgroup label="教科名">
-    	<option value="0">教科名</option>
+    	<option value="1">教科名</option>
       		<% for (SubjectBean bean : sub) {%>
   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
    			<% }%>
@@ -507,7 +507,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="wed4_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
          		<% for (RoomBean bean : room) {%>
          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
       			<% }%>
@@ -522,7 +522,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
      	<div>
     	<select name="thu4_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
        		<% for (SubjectBean bean : sub) {%>
   		<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
           	<% }%>
@@ -531,7 +531,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="thu4_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
        			<% for (RoomBean bean : room) {%>
        		<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
@@ -546,7 +546,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
 		<div>
     	<select name="fry4_sub">
     	<optgroup label="教科名">
-     	<option value="0">教科名</option>
+     	<option value="1">教科名</option>
       		<% for (SubjectBean bean : sub) {%>
      	<option value=<%=bean.getSub_id()%>><%= bean.getSub_name()%></option>
  			<% }%>
@@ -555,7 +555,7 @@ ArrayList<SubjectBean> sub=(ArrayList<SubjectBean>)request.getAttribute("getSub"
        		<div>
     		<select name="fry4_room">
 			<optgroup label="教室名">
-      		<option value="0">教室</option>
+      		<option value="1">教室</option>
                 <% for (RoomBean bean : room) {%>
          	<option value=<%=bean.getRoom_id()%>><%=bean.getRoom_name()%></option>
                 <% }%>
