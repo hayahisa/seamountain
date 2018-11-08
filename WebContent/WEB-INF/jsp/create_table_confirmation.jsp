@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.TimeTableBean" %>
+<%
+TimeTableBean monday = (TimeTableBean)session.getAttribute("monday");
+TimeTableBean tuesday = (TimeTableBean)session.getAttribute("tuesday");
+TimeTableBean wednesday = (TimeTableBean)session.getAttribute("wednesday");
+TimeTableBean thursday = (TimeTableBean)session.getAttribute("thursday");
+TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -23,13 +31,12 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 
-<title></title> <!--画面名-->
+<title>create_table_con</title> <!--画面名-->
 
 
 </head>
 
 <body>
-
 <%@ include file="header.jsp"%>
 
 <div class="row"> <!-- 表示範囲の設定 -->
@@ -39,192 +46,214 @@
 		<!-- ここから書いて -->
         <br>
 
-              <table>
-        <thead>
-          <tr>
-              <th></th>
-              <th class="center-align">月</th>
-              <th class="center-align">火</th>
-              <th class="center-align">水</th>
-              <th class="center-align">木</th>
-              <th class="center-align">金</th>
-          </tr>
-        </thead>
+        <h5>時間割名：<%=monday.getTime_name() %></h5>
 
-        <tbody>
-      <!1------------------------------------------------------>
+        <table>
 
-            <tr>
-            <td>1</td>
+            <thead>
+                <tr>
+                    <th class="center-align">月</th>
+                    <th class="center-align">火</th>
+                    <th class="center-align">水</th>
+                    <th class="center-align">木</th>
+                    <th class="center-align">金</th>
+                </tr>
+            </thead>
 
-            <td>
+            <tbody>
 
- <div><a class="waves-effect waves-light btn">button</a><div>
- </div></div>
+            <!-- 時間割の中身 -->
+    <!-- ***********************1限目********************************* -->
+                <tr>
+                    <td>  <!-- 月曜１限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getOne_subject_name() %></label>
+                            <p><%=monday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                </td>
+                    <td>  <!-- 火曜1限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getOne_subject_name() %></label>
+                            <p><%=tuesday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                            <td>
+                    <td>  <!-- 水曜1限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getOne_subject_name() %></label>
+                            <p><%=wednesday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
- <div><div>
- </div></div>
-                </td>
+                    <td>  <!-- 木曜1限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getOne_subject_name() %></label>
+                            <p><%=thursday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                            <td>
+                    <td>  <!-- 金曜1限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getOne_subject_name() %></label>
+                            <p><%=friday.getOne_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
 
+    <!-- ***********************2限目********************************* -->
+                <tr>
 
-  <div><div>
-  </div></div>
+                    <td>  <!-- 月曜2限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getTwo_subject_name() %></label>
+                            <p><%=monday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                </td>
+                    <td>  <!-- 火曜2限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getTwo_subject_name() %></label>
+                            <p><%=tuesday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                            <td>
+                    <td>  <!-- 水曜2限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getTwo_subject_name() %></label>
+                            <p><%=wednesday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-   <div><div>
- </div></div>
+                    <td>  <!-- 木曜2限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getTwo_subject_name() %></label>
+                            <p><%=thursday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
+                    <td>  <!-- 金曜2限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getTwo_subject_name() %></label>
+                            <p><%=friday.getTwo_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
 
+    <!-- ***********************3限目********************************* -->
+                <tr>
 
-                </td>
+                    <td>  <!-- 月曜3限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getThree_subject_name() %></label>
+                            <p><%=monday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                            <td>
+                    <td>  <!-- 火曜3限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getThree_subject_name() %></label>
+                            <p><%=tuesday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-  <div><div>
- </div></div>
+                    <td>  <!-- 水曜3限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getThree_subject_name() %></label>
+                            <p><%=wednesday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
+                    <td>  <!-- 木曜3限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getThree_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                </td>
-        </tr>
-      <!2------------------------------------------------------>
-            <tr>
-            <td>2</td>
+                    <td>  <!-- 金曜3限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getThree_subject_name() %></label>
+                            <p><%=friday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
 
-                        <td>
-    <div><div>
- </div></div>
+    <!-- ***********************4限目********************************* -->
+                <tr>
 
+                    <td>  <!-- 月曜4限目　-->
+                        <div class="center-align">
+                            <label><%=monday.getFour_subject_name() %></label>
+                            <p><%=monday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                </td>
+                    <td>  <!-- 火曜4限目　-->
+                        <div class="center-align">
+                            <label><%=tuesday.getFour_subject_name() %></label>
+                            <p><%=tuesday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                            <td>
+                    <td>  <!-- 水曜4限目　-->
+                        <div class="center-align">
+                            <label><%=wednesday.getFour_subject_name() %></label>
+                            <p><%=wednesday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-<div><div>
- </div></div>
+                    <td>  <!-- 木曜4限目　-->
+                        <div class="center-align">
+                            <label><%=thursday.getFour_subject_name() %></label>
+                            <p><%=thursday.getThree_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
 
-                </td>
+                    <td>  <!-- 金曜4限目　-->
+                        <div class="center-align">
+                            <label><%=friday.getFour_subject_name() %></label>
+                            <p><%=friday.getFour_room_name() %></p>
+                        </div>
+                        <div></div>
+                    </td>
+                </tr>
 
-                            <td>
+                <!--　時間割内容終了　-->
 
-<div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-<div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-<div><div>
- </div></div>
-
-                </td>
-        </tr>
-      <!3------------------------------------------------------>
-                        <tr>
-            <td>3</td>
-
-                                    <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-<div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-        </tr>
-      <!4------------------------------------------------------>
-                        <tr>
-            <td>4</td>
-
-              <td>
-
- <div><div>
- </div></div>
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
- <div><div>
- </div></div>
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-
-                            <td>
-
-  <div><div>
- </div></div>
-
-                </td>
-        </tr>
-                  </tbody></table>
+            </tbody>
+        </table>
         <br>
 
 
-    <div class="row right-align">
-        <br>
+   		<div class="row right-align">
+       		<br>
             <div>
-                <a class="waves-effect grey btn" style="margin:0px 5px 0px 0px">キャンセル</a>
-                <a class="waves-effect blue lighten-1 btn">&nbsp;&nbsp;&nbsp;&nbsp;変更&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+           		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">トップ画面へ</a>
+            </div>
         </div>
 
-
-
-
-
+	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+	<form action="Next_time_change" name="change" method="post"></form>	<!-- 変更画面へ -->
 
    <!-- ここまで -->
     </div>

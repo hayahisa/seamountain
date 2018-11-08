@@ -55,32 +55,29 @@
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s9 left-align">
-                    <p class="Heading h3">使用時間割:<%=time.getTime_name() %></p>
+                    <p class="Heading h3">使用時間割：<br>　<%=time.getTime_name() %></p>
                 </div>
-            <div class="input-field col s3">
-                <input disabled value="0000000" id="disabled" type="text" class="validate">
-                <label for="disabled"></label>
+            	<div class="input-field col s3">
             </div>
             </div>
         </form>
 
         <form class="col s12">
             <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="0000000" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
+            	<div style="border-bottom:solid 2px; margin-left:10px; border-color:grey;">
+                	<p>　ユーザ番号：<%=userbean.getUserNo() %></p>
                 </div>
             </div>
+            <br><br>
             <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getMail()%>" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
+            	<div style="border-bottom:solid 2px; margin-left:10px; border-color:grey;">
+                	<p>　アドレス：<%=userbean.getMail()%></p>
                 </div>
             </div>
+            <br><br>
             <div class="row">
-                <div class="input-field col s12">
-                    <input disabled value="<%=userbean.getUserName() %>" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
+            	<div style="border-bottom:solid 2px; margin-left:10px; border-color:grey;">
+                	<p>　ユーザ名：<%=userbean.getUserName()%></p>
                 </div>
             </div>
         </form>
@@ -99,7 +96,7 @@
     </div>
 
     <div class="center-align">
-		<a class="waves-effect waves-light btn">トップ</a>
+		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect green btn" style="margin:0px 5px 0px 0px">トップ</a>
 	</div>
 
    <!-- ここまで -->
