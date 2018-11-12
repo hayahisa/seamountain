@@ -70,6 +70,7 @@
 			
 			<div class="input-field col s12">
 				<select multiple name="course" required>
+					<option value="" disabled selected></option>
 					<% for(int count=0;count<courseArray.size();count++){ %>
 						<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
 					<%} %>
@@ -92,30 +93,23 @@
 <!-- SCRIPT -->
     
     
-      <script type="text/javascript">
-          
+	<script type="text/javascript">
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-  });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-
-  
+		document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('select');
+			var instances = M.FormSelect.init(elems);
+		});
+		
+		// Or with jQuery
+		
+		$(document).ready(function(){
+			$('select').formSelect();
+ 		});
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
 	  // Or with jQuery
-          
-        
-          
-          
 
 	   </script>
 
