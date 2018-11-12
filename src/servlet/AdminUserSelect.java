@@ -59,6 +59,7 @@ public class AdminUserSelect extends HttpServlet {
 		
 		UserDao userdao = new UserDao();
 		userArray = userdao.UserGetSelect(yearArray,courseArray);
+		System.out.println(userArray.get(0).getUserYear());
 		
 		if(userArray.size() != 0){
 			request.setAttribute("userArray", userArray);

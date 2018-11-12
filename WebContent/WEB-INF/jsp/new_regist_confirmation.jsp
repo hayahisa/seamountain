@@ -53,7 +53,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<table border="1">
+						<table border="1" id="registtable">
 							<tr>
 								<th><p>学籍番号<br><%=userbean.getUserNo() %></p></th>
 							</tr>
