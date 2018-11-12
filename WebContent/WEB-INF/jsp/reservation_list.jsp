@@ -69,10 +69,9 @@ String JPday = "選択されていません";
 
 <!-- 何限目かの指定がなかった場合（１から４限目まで表示） -->
 <%if(x == 0){%>
- 		<form class="" action="Next_reservation_list" method="post">
+ 		<form class="" action="Next_reservation_conf" method="post">
 	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
 	      	<%for(int i = 1;i < 5; i++){	%>
-
 
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
@@ -83,7 +82,7 @@ String JPday = "選択されていません";
 						<br>
 						時間：<%= i %> 限目
 						<div class="row right-align">
-							<input class="waves-effect red btn" type="button" value="予約する">
+							<input class="waves-effect red btn" type="submit" value="予約する">
 						</div>
 						</span>
 					</div>
@@ -92,7 +91,7 @@ String JPday = "選択されていません";
 			</c:forEach>
 		</form>
 <%}else{ %>
-		<form class="" action="Next_reservation_list" method="post">
+		<form class="" action="Next_reservation_conf" method="post">
 	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
 
 			<div class="panel panel-default panel-size">
@@ -104,7 +103,7 @@ String JPday = "選択されていません";
 						<br>
 						時間：<%= session.getAttribute("time") %> 限目
 						<div class="row right-align">
-							<input class="waves-effect red btn" type="button" value="予約する">
+							<input class="waves-effect red btn" type="submit" value="予約する">
 						</div>
 						</span>
 					</div>
@@ -116,7 +115,7 @@ String JPday = "選択されていません";
 
   <br><br>
 
-  <form action="Next_reservation" name="reservation" method="post"> <!-- reservation(予約）へ -->
+  <form action="Next_reservation_conf" name="reservation" method="post"> <!-- reservation_conf(予約確認）へ -->
   <div class="row right-align">
     <div>
     	<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">

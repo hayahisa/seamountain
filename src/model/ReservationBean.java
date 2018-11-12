@@ -211,6 +211,4 @@ public class ReservationBean implements Serializable{
 		this.time_name = time_name;
 	}
 
-
-
 }
