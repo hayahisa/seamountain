@@ -178,24 +178,25 @@ public class UserDao extends DaoBase{
 				insertyear = insertyear + insertyearQ;
 			}
 			
+			System.out.println(insertyear);
+			
 			//学科を選択された数"?"を追加
 			for(int count=0;count<courseArray.size()-1;count++){
 				insertcourse = insertcourse + insertcourseQ;
 			}
 			
-			String sql = "SELECT * FROM user WHERE user_year = ?" + insertyear + " AND " + "course_id = ?" + insertcourse;
+			System.out.println(insertcourse);
+			
+			String sql = "SELECT * FROM user WHERE (user_year = ?" + insertyear + ") AND (" + "course_id = ?" + insertcourse + ")";
 			
 			stmt = con.prepareStatement(sql);
 			
 			for(int stmtCount=1;stmtCount<=yearArray.size();stmtCount++){
-				System.out.println("PPPP" + yearArray.get(stmtCount-1));
 				stmt.setInt(stmtCount, yearArray.get(stmtCount-1));
 			}
 			
 			int countArray = 0;
-			
 			for(int stmtCount=yearArray.size()+1;stmtCount<=courseArray.size()+yearArray.size();stmtCount++){
-				System.out.println("QQQQ" + courseArray.get(countArray) + "pp" + countArray);
 				stmt.setString(stmtCount, courseArray.get(countArray));
 				countArray++;
 			}
@@ -226,5 +227,42 @@ public class UserDao extends DaoBase{
 			}
 		}
 		return userArray;
+	}
+	
+	//チェックボックスで選択されたユーザーの削除
+	public void userCheckDelete(String userno[]){
+		try {
+			// connection確立
+			super.connection();
+			
+			String insertuser = "";
+			String insertuserQ = " AND user_no = ?";
+			
+			//ユーザを選択された数"?"を追加
+			for(int count=0;count<userno.length - 1;count++){
+				insertuser = insertuser + insertuserQ;
+			}
+			
+			String SQL = "DELETE FROM user WHERE user_no = ?" + insertuser;
+
+			stmt = con.prepareStatement(SQL);
+			
+			for(int stmtCount=0;stmtCount<=userno.length - 1;stmtCount++){
+				stmt.setString(stmtCount + 1, userno[stmtCount]);
+			}
+			// SQLの？に値のセット
+			stmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+
+		}
 	}
 }

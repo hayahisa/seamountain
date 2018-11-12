@@ -31,15 +31,26 @@ public class AdminUserSelect extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
+	//ユーザー詳細
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String user_no = request.getParameter("user_no");
+		
+		UserDao userdao = new UserDao();
+		UserBean userdetails = new UserBean();
+		userdetails = userdao.userSession(user_no);
+		
+		request.setAttribute("userdetails", userdetails);
+		
+		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_details.jsp").forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
+	//ユーザー一覧
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String year[] = request.getParameterValues("year");
@@ -59,7 +70,6 @@ public class AdminUserSelect extends HttpServlet {
 		
 		UserDao userdao = new UserDao();
 		userArray = userdao.UserGetSelect(yearArray,courseArray);
-		System.out.println(userArray.get(0).getUserYear());
 		
 		if(userArray.size() != 0){
 			request.setAttribute("userArray", userArray);
@@ -69,7 +79,7 @@ public class AdminUserSelect extends HttpServlet {
 			request.setAttribute("notResult", notResult);
 		}
 		
-		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_details.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_list.jsp").forward(request, response);
 		
 	}
 }
