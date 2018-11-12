@@ -54,7 +54,7 @@
             <span>
                 <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
                 <p></p>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
+                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align" href="Ky_delete">変更・削除</a></div>
                 <p></p>
             </span>
         </div>
