@@ -208,147 +208,145 @@ public class Create_Table extends HttpServlet {
 
 		for(int id : monArray){		//月曜日
 			if(i == 1){
-				room_name = cdao.roomName(id);
-				monbean.setOne_room_name(room_name);
-
-			}else if(i == 2){
 				subject_name = cdao.subjectName(id);
 				monbean.setOne_subject_name(subject_name);
-			}else if(i == 3){
+			}else if(i == 2){
 				room_name = cdao.roomName(id);
-				monbean.setTwo_room_name(room_name);
-			}else if(i == 4){
+				monbean.setOne_room_name(room_name);
+			}else if(i == 3){
 				subject_name = cdao.subjectName(id);
 				monbean.setTwo_subject_name(subject_name);
-			}else if(i == 5){
+			}else if(i == 4){
 				room_name = cdao.roomName(id);
-				monbean.setThree_room_name(room_name);
-			}else if(i == 6){
+				monbean.setTwo_room_name(room_name);
+			}else if(i == 5){
 				subject_name = cdao.subjectName(id);
 				monbean.setThree_subject_name(subject_name);
-			}else if(i == 7){
+			}else if(i == 6){
 				room_name = cdao.roomName(id);
-				monbean.setFour_room_name(room_name);
-			}else if(i == 8){
+				monbean.setThree_room_name(room_name);
+			}else if(i == 7){
 				subject_name = cdao.subjectName(id);
 				monbean.setFour_subject_name(subject_name);
+			}else if(i == 8){
+				room_name = cdao.roomName(id);
+				monbean.setFour_room_name(room_name);
 			}
 			i++;
 		}
 		i = 1;
 		for(int id : tuesArray){		//火曜日
 			if(i == 1){
-				room_name = cdao.roomName(id);
-				tuesbean.setOne_room_name(room_name);
-
-			}else if(i == 2){
 				subject_name = cdao.subjectName(id);
 				tuesbean.setOne_subject_name(subject_name);
-			}else if(i == 3){
+			}else if(i == 2){
 				room_name = cdao.roomName(id);
-				tuesbean.setTwo_room_name(room_name);
-			}else if(i == 4){
+				tuesbean.setOne_room_name(room_name);
+			}else if(i == 3){
 				subject_name = cdao.subjectName(id);
 				tuesbean.setTwo_subject_name(subject_name);
-			}else if(i == 5){
+			}else if(i == 4){
 				room_name = cdao.roomName(id);
-				tuesbean.setThree_room_name(room_name);
-			}else if(i == 6){
+				tuesbean.setTwo_room_name(room_name);
+			}else if(i == 5){
 				subject_name = cdao.subjectName(id);
 				tuesbean.setThree_subject_name(subject_name);
-			}else if(i == 7){
+			}else if(i == 6){
 				room_name = cdao.roomName(id);
-				tuesbean.setFour_room_name(room_name);
-			}else if(i == 8){
+				tuesbean.setThree_room_name(room_name);
+			}else if(i == 7){
 				subject_name = cdao.subjectName(id);
 				tuesbean.setFour_subject_name(subject_name);
+			}else if(i == 8){
+				room_name = cdao.roomName(id);
+				tuesbean.setFour_room_name(room_name);
 			}
 			i++;
 		}
 		i = 1;
 		for(int id : wedArray){		//水曜日
 			if(i == 1){
-				room_name = cdao.roomName(id);
-				wedbean.setOne_room_name(room_name);
-			}else if(i == 2){
 				subject_name = cdao.subjectName(id);
 				wedbean.setOne_subject_name(subject_name);
-			}else if(i == 3){
+			}else if(i == 2){
 				room_name = cdao.roomName(id);
-				wedbean.setTwo_room_name(room_name);
-			}else if(i == 4){
+				wedbean.setOne_room_name(room_name);
+			}else if(i == 3){
 				subject_name = cdao.subjectName(id);
 				wedbean.setTwo_subject_name(subject_name);
-			}else if(i == 5){
+			}else if(i == 4){
 				room_name = cdao.roomName(id);
-				wedbean.setThree_room_name(room_name);
-			}else if(i == 6){
+				wedbean.setTwo_room_name(room_name);
+			}else if(i == 5){
 				subject_name = cdao.subjectName(id);
 				wedbean.setThree_subject_name(subject_name);
-			}else if(i == 7){
+			}else if(i == 6){
 				room_name = cdao.roomName(id);
-				wedbean.setFour_room_name(room_name);
-			}else if(i == 8){
+				wedbean.setThree_room_name(room_name);
+			}else if(i == 7){
 				subject_name = cdao.subjectName(id);
 				wedbean.setFour_subject_name(subject_name);
+			}else if(i == 8){
+				room_name = cdao.roomName(id);
+				wedbean.setFour_room_name(room_name);
 			}
 			i++;
 		}
 		i = 1;
 		for(int id : thuArray){		//木曜日
 			if(i == 1){
-				room_name = cdao.roomName(id);
-				thubean.setOne_room_name(room_name);
-			}else if(i == 2){
 				subject_name = cdao.subjectName(id);
 				thubean.setOne_subject_name(subject_name);
-			}else if(i == 3){
+			}else if(i == 2){
 				room_name = cdao.roomName(id);
-				thubean.setTwo_room_name(room_name);
-			}else if(i == 4){
+				thubean.setOne_room_name(room_name);
+			}else if(i == 3){
 				subject_name = cdao.subjectName(id);
 				thubean.setTwo_subject_name(subject_name);
-			}else if(i == 5){
+			}else if(i == 4){
 				room_name = cdao.roomName(id);
-				thubean.setThree_room_name(room_name);
-			}else if(i == 6){
+				thubean.setTwo_room_name(room_name);
+			}else if(i == 5){
 				subject_name = cdao.subjectName(id);
 				thubean.setThree_subject_name(subject_name);
-			}else if(i == 7){
+			}else if(i == 6){
 				room_name = cdao.roomName(id);
-				thubean.setFour_room_name(room_name);
-			}else if(i == 8){
+				thubean.setThree_room_name(room_name);
+			}else if(i == 7){
 				subject_name = cdao.subjectName(id);
 				thubean.setFour_subject_name(subject_name);
+			}else if(i == 8){
+				room_name = cdao.roomName(id);
+				thubean.setFour_room_name(room_name);
 			}
 			i++;
 		}
 		i = 1;
 		for(int id : friArray){		//金曜日
 			if(i == 1){
-				room_name = cdao.roomName(id);
-				fribean.setOne_room_name(room_name);
-			}else if(i == 2){
 				subject_name = cdao.subjectName(id);
 				fribean.setOne_subject_name(subject_name);
-			}else if(i == 3){
+			}else if(i == 2){
 				room_name = cdao.roomName(id);
-				fribean.setTwo_room_name(room_name);
-			}else if(i == 4){
+				fribean.setOne_room_name(room_name);
+			}else if(i == 3){
 				subject_name = cdao.subjectName(id);
 				fribean.setTwo_subject_name(subject_name);
-			}else if(i == 5){
+			}else if(i == 4){
 				room_name = cdao.roomName(id);
-				fribean.setThree_room_name(room_name);
-			}else if(i == 6){
+				fribean.setTwo_room_name(room_name);
+			}else if(i == 5){
 				subject_name = cdao.subjectName(id);
 				fribean.setThree_subject_name(subject_name);
-			}else if(i == 7){
+			}else if(i == 6){
 				room_name = cdao.roomName(id);
-				fribean.setFour_room_name(room_name);
-			}else if(i == 8){
+				fribean.setThree_room_name(room_name);
+			}else if(i == 7){
 				subject_name = cdao.subjectName(id);
 				fribean.setFour_subject_name(subject_name);
+			}else if(i == 8){
+				room_name = cdao.roomName(id);
+				fribean.setFour_room_name(room_name);
 			}
 			i++;
 		}
