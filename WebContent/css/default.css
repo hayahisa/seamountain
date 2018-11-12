@@ -11,6 +11,10 @@ table tr th{
 	padding-left: 0
 }
 
+#registtable tr th p{
+	text-align:center;
+}
+
 table tr td{
   margin-left: 0px;
   padding-left: 0px;

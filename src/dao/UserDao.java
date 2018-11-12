@@ -188,10 +188,14 @@ public class UserDao extends DaoBase{
 			stmt = con.prepareStatement(sql);
 			
 			for(int stmtCount=1;stmtCount<=yearArray.size();stmtCount++){
+				System.out.println("PPPP" + yearArray.get(stmtCount-1));
 				stmt.setInt(stmtCount, yearArray.get(stmtCount-1));
 			}
+			
+			int countArray = 0;
+			
 			for(int stmtCount=yearArray.size()+1;stmtCount<=courseArray.size()+yearArray.size();stmtCount++){
-				int countArray = 0;
+				System.out.println("QQQQ" + courseArray.get(countArray) + "pp" + countArray);
 				stmt.setString(stmtCount, courseArray.get(countArray));
 				countArray++;
 			}
