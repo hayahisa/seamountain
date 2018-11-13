@@ -99,11 +99,15 @@ public class UserRegistration extends HttpServlet {
 		UserDao userdao = new UserDao();
 		
 		boolean userFlg = userdao.userNocheck(number);
+		boolean mailFlg = userdao.mailCheck(mail);
 		//学籍番号重複チェック
 		if(userFlg == false){
 			request.setAttribute("msgflg","1");
 			path = "WEB-INF/jsp/new_regist.jsp";
-
+		//学籍番号重複チェック
+		}else if(mailFlg == false){
+			request.setAttribute("msgflg","1");
+			path = "WEB-INF/jsp/new_regist.jsp";
 		}else if(userFlg == true){
 			UserBean userbean = new UserBean();
 			userbean.setUserNo(number);

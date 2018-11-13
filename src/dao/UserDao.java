@@ -42,6 +42,39 @@ public class UserDao extends DaoBase{
 		}
 		return flg;
 	}
+	
+	//ユーザIDの重複チェック
+	public boolean mailCheck(String mail) {
+	
+		boolean flg = false;
+	
+		try {
+			// connection確立
+			super.connection();
+	
+			String selectSQL = "select count(*) from user where mail = ?";
+	
+			stmt = con.prepareStatement(selectSQL);
+			// SQLの？に値のセット
+			stmt.setString(1, mail);
+			rs = stmt.executeQuery();
+	
+			while(rs.next()){
+				flg = true;
+			}
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return flg;
+	}
 
 	// ユーザ登録
 	public void registrationUser(UserBean ubean) {
