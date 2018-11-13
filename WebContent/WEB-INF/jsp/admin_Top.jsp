@@ -63,9 +63,9 @@
         <div class="collapsible-header"><i class="material-icons">dashboard</i>学科管理</div>
         <div class="collapsible-body">
             <span>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+                <div class="center-align"><a href="department_add.jsp" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
                 <p></p>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
+                <div class="center-align"><a href="department_change.jsp" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
                 <p></p>
             </span>
         </div>

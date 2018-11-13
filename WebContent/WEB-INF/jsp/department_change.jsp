@@ -66,17 +66,16 @@
 <br><br><br><br><br><br><br>
 
 <div class="row">
+<form action="Department_Change.java" method="post">
     <div class="input-field col s12">
-         <input value="" id="first_name2" type="text" class="validate">
+         <input value="" id="first_name2" type="text" class="validate" name="name">
          <label class="active" for="first_name2">情報システム専攻科</label>
      </div>
-</div>
-        <br><br>
-
-<div class="row">
     <div class="right-align col s11">
+    <innput type="submit" class="waves-effect waves-light btn-large" value="変更">
         <a class="waves-effect waves-light btn-large">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;変更&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
     </div>
+    </form>
     <div class="col s1"></div>
 
 
