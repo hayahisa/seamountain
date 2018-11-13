@@ -46,7 +46,6 @@ public class Admin_ky_change extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.print("aaaa1");
 		doGet(request, response);
 	}
 
