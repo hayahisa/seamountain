@@ -16,7 +16,7 @@ import dao.KyDao;
 /**
  * Servlet implementation class Admin_ky_change
  */
-@WebServlet("/Admin_ky_change")
+@WebServlet("/Admin_ky_delete")
 public class Admin_ky_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
