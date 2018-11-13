@@ -43,14 +43,17 @@ public class Next_create_table extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		SubjectDao SD=new SubjectDao();
-		SubjectInfoBean SIB=new SubjectInfoBean();
+		SubjectDao SD = new SubjectDao();
+		SubjectInfoBean SIB = new SubjectInfoBean();
+
 		ArrayList<RoomBean> roomArray = new ArrayList<>();
-		RoomDao RD=new RoomDao();
+		RoomDao RD = new RoomDao();
 		roomArray=RD.roomList();
-		SIB=SD.getSubject();
+		SIB = SD.getSubject();
+
 		ArrayList<SubjectBean> mo = new ArrayList<SubjectBean>();
-		mo=SIB.getSubjectArray();
+		mo = SIB.getSubjectArray();
+
 		request.setAttribute("room",roomArray);
 		request.setAttribute("getSub", mo);
 		request.getRequestDispatcher("WEB-INF/jsp/create_table.jsp").forward(request, response);

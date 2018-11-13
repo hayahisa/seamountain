@@ -71,24 +71,23 @@ String JPday = "選択されていません";
 <%if(x == 0){%>
  		<form class="" action="Next_reservation_conf" method="post">
 	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
-	      	<%for(int i = 1;i < 5; i++){	%>
 
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
 						<span style="font-size:15px">
-						教室名：${obj.time_name}
+						教室名：${obj.room_name}
 						<br>
 						曜日：${obj.day}
 						<br>
-						時間：<%= i %> 限目
+						時間：${obj.lecture }限目
 						<div class="row right-align">
 							<input class="waves-effect red btn" type="submit" value="予約する">
 						</div>
 						</span>
 					</div>
 			</div>
-			<%} %>
 			</c:forEach>
+
 		</form>
 <%}else{ %>
 		<form class="" action="Next_reservation_conf" method="post">
@@ -97,12 +96,12 @@ String JPday = "選択されていません";
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
 						<span style="font-size:15px">
-						教室名：${obj.time_name}
+						教室名：${obj.room_name}
 						<br>
 						曜日：${obj.day}
 						<br>
-						時間：<%= session.getAttribute("time") %> 限目
-						<div class="row right-align">
+						時間：${obj.lecture }限目
+							<div class="row right-align">
 							<input class="waves-effect red btn" type="submit" value="予約する">
 						</div>
 						</span>
