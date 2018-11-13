@@ -65,20 +65,23 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 <br><br><br><br><br><br><br>
-
+<form action="Admin_ky_change"> 
  <div class="row">
     <div class="input-field col s12">
-    <form action="Admin_ky_change">
       <input value="" id="first_name2" type="text" class="validate" name="Ky_change">
-      <label class="active" for="first_name2"><%=request.getParameter("Ky_name")%><input type="hidden" name="Ky_id" value=<%=request.getParameter("Ky_id")%>></label>
+      <label class="active" for="first_name2">
+      <%=request.getParameter("Ky_name")%>
+      <input type="hidden" name="Ky_id" value=<%=request.getParameter("Ky_id")%>>
+      </label>
     </div>
   </div>
         <br><br>
-        
 <div class="row">
     <div class="right-align col s11">
        <a class="waves-effect waves-light btn-large"> <input type="submit" value="変更"></a>
     </div>
+    </div>
+    </form>
     <div class="col s1"></div>
 
              

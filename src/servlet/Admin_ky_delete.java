@@ -36,12 +36,10 @@ public class Admin_ky_delete extends HttpServlet {
     	HttpSession session = request.getSession();
 
         // GETメソッドのパラメータ名を取得
-    	System.out.print("aaaa1");
         Enumeration<String> names = request.getParameterNames();
 
         String name;        // 現在のパラメータ名
         int Ky_id = 0;        // KyID
-        System.out.print("aaaa");
 
         // 削除ボタンがクリックされた場所を特定
         while (names.hasMoreElements()) {
@@ -61,7 +59,6 @@ public class Admin_ky_delete extends HttpServlet {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Ky_delete");
         dispatcher.forward(request, response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

@@ -90,7 +90,7 @@
                     <span></span>
         　    </label>
              </td>
-            <td><a href="Admin_ky_change?Ky_id=<%=bean.getKy_id()%>&Ky_name<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
+            <td><a href="Admin_ky_changego?Ky_id=<%=bean.getKy_id()%>&Ky_name=<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
             <td><input class="common_button" type="submit" value="削除" name="<%=bean.getKy_id()%>"></td>
           </tr>
           <%} %>
