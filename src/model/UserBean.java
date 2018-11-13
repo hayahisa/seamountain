@@ -6,6 +6,7 @@ public class UserBean implements Serializable {
 
 	private String userNo;
 	private int courseId;
+	private String courseName;
 	private int timeId;
 	private String userName;
 	private String mail;
@@ -30,6 +31,14 @@ public class UserBean implements Serializable {
 
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
 
 	public int getTimeId() {
