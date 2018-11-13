@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CreateTableDao;
+import model.RoomStateDetailBean;
 import model.TimeDetailBean;
 
 /**
@@ -43,6 +44,12 @@ public class Create_Table extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 
+//		初期値設定
+		String one = "one_room_state_id";
+		String two = "two_room_state_id";
+		String three = "three_room_state_id";
+		String four = "four_room_state_id";
+
 //		time_detailに入れるためのBean
 		TimeDetailBean monbean = new TimeDetailBean();
 		TimeDetailBean tuesbean = new TimeDetailBean();
@@ -56,6 +63,14 @@ public class Create_Table extends HttpServlet {
 		ArrayList<Integer> wedArray = new ArrayList<Integer>();
 		ArrayList<Integer> thuArray = new ArrayList<Integer>();
 		ArrayList<Integer> friArray = new ArrayList<Integer>();
+
+//		room_state_detailの準備
+//		Bean
+		RoomStateDetailBean roombean = new RoomStateDetailBean();
+//		ArrayList
+		ArrayList<RoomStateDetailBean> roomStateArray = new ArrayList<>();
+//		update用の初期値
+		int state = 1;
 
 //		DAO
 		CreateTableDao cdao = new CreateTableDao();
@@ -79,52 +94,151 @@ public class Create_Table extends HttpServlet {
 //		月曜日
 		int mon1_sub = Integer.parseInt(request.getParameter("mon1_sub"));
 		int mon1_room = Integer.parseInt(request.getParameter("mon1_room"));
+		if(mon1_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(one, mon1_room, monday, state);
+		}
+		state = 1;
 		int mon2_sub = Integer.parseInt(request.getParameter("mon2_sub"));
 		int mon2_room = Integer.parseInt(request.getParameter("mon2_room"));
+		if(mon2_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(two, mon1_room, monday, state);
+		}
+		state = 1;
 		int mon3_sub = Integer.parseInt(request.getParameter("mon3_sub"));
 		int mon3_room = Integer.parseInt(request.getParameter("mon3_room"));
+		if(mon3_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(three, mon3_room, monday, state);
+		}
+		state = 1;
 		int mon4_sub = Integer.parseInt(request.getParameter("mon4_sub"));
 		int mon4_room = Integer.parseInt(request.getParameter("mon4_room"));
+		if(mon4_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, mon4_room, monday, state);
+		}
 
 //		火曜日
+		state = 1;
 		int tues1_sub = Integer.parseInt(request.getParameter("tues1_sub"));
 		int tues1_room = Integer.parseInt(request.getParameter("tues1_room"));
+		if(tues1_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(one, tues1_room, tuesday, state);
+		}
+		state = 1;
 		int tues2_sub = Integer.parseInt(request.getParameter("tues2_sub"));
 		int tues2_room = Integer.parseInt(request.getParameter("tues2_room"));
+		if(tues2_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(two, tues2_room, tuesday, state);
+		}
+		state = 1;
 		int tues3_sub = Integer.parseInt(request.getParameter("tues3_sub"));
 		int tues3_room = Integer.parseInt(request.getParameter("tues3_room"));
+		if(tues3_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(three, tues3_room, tuesday, state);
+		}
+		state = 1;
 		int tues4_sub = Integer.parseInt(request.getParameter("tues4_sub"));
 		int tues4_room = Integer.parseInt(request.getParameter("tues4_room"));
+		if(tues4_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, tues4_room, tuesday, state);
+		}
 
 //		水曜日
+		state = 1;
 		int wed1_sub = Integer.parseInt(request.getParameter("wed1_sub"));
 		int wed1_room = Integer.parseInt(request.getParameter("wed1_room"));
+		if(wed1_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, wed1_room, wednesday, state);
+		}
+		state = 1;
 		int wed2_sub = Integer.parseInt(request.getParameter("wed2_sub"));
 		int wed2_room = Integer.parseInt(request.getParameter("wed2_room"));
+		if(wed2_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(two, wed2_room, wednesday, state);
+		}
+		state = 1;
 		int wed3_sub = Integer.parseInt(request.getParameter("wed3_sub"));
 		int wed3_room = Integer.parseInt(request.getParameter("wed3_room"));
+		if(wed3_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(three, wed3_room, wednesday, state);
+		}
+		state = 1;
 		int wed4_sub = Integer.parseInt(request.getParameter("wed4_sub"));
 		int wed4_room = Integer.parseInt(request.getParameter("wed4_room"));
+		if(wed4_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, wed4_room, wednesday, state);
+		}
 
 //		木曜日
+		state = 1;
 		int thu1_sub = Integer.parseInt(request.getParameter("thu1_sub"));
 		int thu1_room = Integer.parseInt(request.getParameter("tues1_room"));
+		if(thu1_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(one, thu1_room, thursday, state);
+		}
+		state = 1;
 		int thu2_sub = Integer.parseInt(request.getParameter("thu2_sub"));
 		int thu2_room = Integer.parseInt(request.getParameter("tues2_room"));
+		if(thu2_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(two, thu2_room, thursday, state);
+		}
+		state = 1;
 		int thu3_sub = Integer.parseInt(request.getParameter("thu3_sub"));
 		int thu3_room = Integer.parseInt(request.getParameter("tues3_room"));
+		if(thu3_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(three, thu3_room, thursday, state);
+		}
+		state = 1;
 		int thu4_sub = Integer.parseInt(request.getParameter("thu4_sub"));
 		int thu4_room = Integer.parseInt(request.getParameter("tues4_room"));
+		if(thu4_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, thu4_room, thursday, state);
+		}
 
 //		金曜日
+		state = 1;
 		int fry1_sub = Integer.parseInt(request.getParameter("fry1_sub"));
 		int fry1_room = Integer.parseInt(request.getParameter("fry1_room"));
+		if(fry1_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(one, fry1_room, friday, state);
+		}
+		state = 1;
 		int fry2_sub = Integer.parseInt(request.getParameter("fry2_sub"));
 		int fry2_room = Integer.parseInt(request.getParameter("fry2_room"));
+		if(fry2_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(two, fry2_room, friday, state);
+		}
+		state = 1;
 		int fry3_sub = Integer.parseInt(request.getParameter("fry3_sub"));
 		int fry3_room = Integer.parseInt(request.getParameter("fry3_room"));
+		if(fry3_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(three, fry3_room, friday, state);
+		}
+		state = 1;
 		int fry4_sub = Integer.parseInt(request.getParameter("fry4_sub"));
 		int fry4_room = Integer.parseInt(request.getParameter("fry4_room"));
+		if(fry4_room != 1){
+			state = 3;
+			cdao.updateRoomStateId(four, fry4_room, friday, state);
+		}
 
 //		Arrayに格納
 		for (int item : new int[]{mon1_sub, mon1_room, mon2_sub, mon2_room, mon3_sub, mon3_room, mon4_sub, mon4_room}) {

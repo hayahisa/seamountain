@@ -68,7 +68,7 @@ public class Next_reservation_list extends HttpServlet {
 		ArrayList<ReservationBean> reservatioinList = new ArrayList<ReservationBean>();
 		System.out.println(roomId + day + time);
 
-		reservatioinList = rdao.Room(one_room);
+		reservatioinList = rdao.Reservation(one_room,1);
 
 //		if(roomId == 0 && day.equals("0") && time == 0){
 //			//選択無し（全て表示）
