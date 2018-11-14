@@ -25,8 +25,10 @@ public class UserDao extends DaoBase{
 			// SQLの？に値のセット
 			stmt.setString(1, userno);
 			rs = stmt.executeQuery();
-
-			while(rs.next()){
+			
+			rs.next();
+			
+			if(!(rs.getString(1).equals("0"))){
 				flg = true;
 			}
 
@@ -43,26 +45,28 @@ public class UserDao extends DaoBase{
 		return flg;
 	}
 	
-	//ユーザIDの重複チェック
+	//メールアドレス重複チェック
 	public boolean mailCheck(String mail) {
-	
+		
 		boolean flg = false;
-	
+		
 		try {
 			// connection確立
 			super.connection();
-	
+			
 			String selectSQL = "select count(*) from user where mail = ?";
-	
+			
 			stmt = con.prepareStatement(selectSQL);
 			// SQLの？に値のセット
 			stmt.setString(1, mail);
 			rs = stmt.executeQuery();
-	
-			while(rs.next()){
+			
+			rs.next();
+			
+			if(!(rs.getString(1).equals("0"))){
 				flg = true;
 			}
-	
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -211,14 +215,10 @@ public class UserDao extends DaoBase{
 				insertyear = insertyear + insertyearQ;
 			}
 			
-			System.out.println(insertyear);
-			
 			//学科を選択された数"?"を追加
 			for(int count=0;count<courseArray.size()-1;count++){
 				insertcourse = insertcourse + insertcourseQ;
 			}
-			
-			System.out.println(insertcourse);
 			
 			String sql = "SELECT * FROM user WHERE (user_year = ?" + insertyear + ") AND (" + "course_id = ?" + insertcourse + ")";
 			
@@ -269,14 +269,16 @@ public class UserDao extends DaoBase{
 			super.connection();
 			
 			String insertuser = "";
-			String insertuserQ = " AND user_no = ?";
+			String insertuserQ = ",?";
+			
+			System.out.println(userno.length);
 			
 			//ユーザを選択された数"?"を追加
 			for(int count=0;count<userno.length - 1;count++){
 				insertuser = insertuser + insertuserQ;
 			}
 			
-			String SQL = "DELETE FROM user WHERE user_no = ?" + insertuser;
+			String SQL = "DELETE FROM user WHERE user_no IN(?" + insertuser + ")";
 
 			stmt = con.prepareStatement(SQL);
 			

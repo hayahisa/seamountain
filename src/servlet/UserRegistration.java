@@ -100,39 +100,41 @@ public class UserRegistration extends HttpServlet {
 		
 		boolean userFlg = userdao.userNocheck(number);
 		boolean mailFlg = userdao.mailCheck(mail);
-		//学籍番号重複チェック
-		if(userFlg == false){
-			request.setAttribute("msgflg","1");
+		
+		//学籍番号重複チェック(重複:true)
+		if(userFlg == true){
+			request.setAttribute("noflg","1");
 			path = "WEB-INF/jsp/new_regist.jsp";
-		//学籍番号重複チェック
-		}else if(mailFlg == false){
-			request.setAttribute("msgflg","1");
-			path = "WEB-INF/jsp/new_regist.jsp";
-		}else if(userFlg == true){
-			UserBean userbean = new UserBean();
-			userbean.setUserNo(number);
-			userbean.setUserName(username);
-			userbean.setMail(mail);
-			userbean.setCourseId(course);
-			userbean.setTimeId(1);
-			userbean.setUserYear(useryear);
-			userbean.setRoleFlg("S");
-
-			PasswordBean passbean = new PasswordBean();
-			passbean.setUserNo(number);
-			passbean.setPassword(pass);
-			passbean.setKomePass(encPass);
-			
-			CourseDao coursedao = new CourseDao();
-			String courseName = coursedao.selectCourseName(course);
-			request.setAttribute("courseName", courseName);
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("userBean",userbean);
-			session.setAttribute("passBean",passbean);
-
-			path = "WEB-INF/jsp/new_regist_confirmation.jsp";
-
+		}else{
+			//メールアドレス重複チェック(重複:true)
+			if(mailFlg == true){
+				request.setAttribute("mailflg","1");
+				path = "WEB-INF/jsp/new_regist.jsp";
+			}else{
+				UserBean userbean = new UserBean();
+				userbean.setUserNo(number);
+				userbean.setUserName(username);
+				userbean.setMail(mail);
+				userbean.setCourseId(course);
+				userbean.setTimeId(1);
+				userbean.setUserYear(useryear);
+				userbean.setRoleFlg("S");
+	
+				PasswordBean passbean = new PasswordBean();
+				passbean.setUserNo(number);
+				passbean.setPassword(pass);
+				passbean.setKomePass(encPass);
+				
+				CourseDao coursedao = new CourseDao();
+				String courseName = coursedao.selectCourseName(course);
+				request.setAttribute("courseName", courseName);
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("userBean",userbean);
+				session.setAttribute("passBean",passbean);
+	
+				path = "WEB-INF/jsp/new_regist_confirmation.jsp";
+			}
 		}
 
 		request.getRequestDispatcher(path).forward(request, response);

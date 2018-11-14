@@ -69,10 +69,8 @@ public class AdminUserSelect extends HttpServlet {
 			year = request.getParameterValues("year");
 			course = request.getParameterValues("course");
 		}else{
-			
 			year = (String[])session.getAttribute("year");
 			course = (String[])session.getAttribute("course");
-			
 		}
 		
 		ArrayList<UserBean> userArray = new ArrayList<UserBean>();
