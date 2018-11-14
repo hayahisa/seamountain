@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DepartmentDao;
+
 /**
  * Servlet implementation class Department_Change
  */
@@ -36,7 +38,8 @@ public class Department_Change extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = (String)request.getParameter("name");
-
+		DepartmentDao ddao = new DepartmentDao();
+		ddao.subjectChange(name);
 
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}

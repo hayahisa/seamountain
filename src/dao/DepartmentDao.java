@@ -27,4 +27,27 @@ public class DepartmentDao extends DaoBase{
 			}
 		}
 	}
+	public void subjectChange(String name) {
+		try {
+
+			// connection確立
+			super.connection();
+
+			//sql
+	     	 String sql = "update `subject` SET subject_name=?";
+
+			stmt.setString(1, name);
+			stmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
 }
