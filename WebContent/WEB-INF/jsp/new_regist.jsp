@@ -12,12 +12,18 @@
 	courseArray = (ArrayList<CourseBean>)session.getAttribute("courseArray");
 %>
 <%
-	String msgflg = (String) request.getAttribute("msgflg");
-	String msg = "";
+	String noflg = (String) request.getAttribute("noflg");
+	String mailflg = (String) request.getAttribute("mailflg");
+	String nomsg = "";
+	String mailmsg = "";
 
 	//request変数に値が入っていたらエラーメッセージを格納
-	if (msgflg != null) {
-		msg = "学籍番号が重複しています。";
+	if (noflg != null) {
+		nomsg = "学籍番号が重複しています。";
+	}
+	
+	if(mailflg != null){
+		mailmsg = "メールアドレスが重複しています。";
 	}
 %>
 <!DOCTYPE html>
@@ -64,7 +70,7 @@
 	        
 	    		<form class="col s12" action="UserRegistration" method="post">
 					<div class="row">
-						<label style="color:red"><%=msg %></label>
+						<label style="color:red"><%=nomsg %></label>
 	        			<div class="input-field col s12  ">
 	          				<input id="gakuseki" type="text" class="validate" name="number" maxlength="7" required>
 	          				<label for="gakuseki">学籍番号</label>
@@ -101,6 +107,7 @@
 	        			</div>
 	      			</div>
 					<div class="row">
+						<label style="color:red"><%=mailmsg %></label>
 	        			<div class="input-field col s12">
 	          				<input id="email" type="email" class="validate" name="mail" maxlength="64" required>
 	          				<label for="email">メールアドレス</label>
@@ -124,15 +131,13 @@
 							<label for="password2">パスワード確認</label>
 	        			</div>
 	      			</div>
-	      			<div class="row container">
-	      				<div class="col s12 right-align">
-	      					<button type="button" class="left-align btn waves-effect waves-light green lighten-1" onclick="history.back()">戻る</button>
-	    					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="errorcheck();return numberCheck();">確認
-							<i class="material-icons right">send</i>
-							</button>
+	      			<div class="row right-align">
+						<br>
+						<div class="col-md-12">
+							<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+							<input type="submit" value="確認" class="waves-effect blue lighten-1 btn">
 						</div>
-	    			</div>
-	      			
+					</div>
 	    		</form>
 	  		</div>
 	

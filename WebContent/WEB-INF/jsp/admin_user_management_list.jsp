@@ -54,10 +54,10 @@
         <br><br>
         
         <% if(notResult != null){%>
-					<h5><%=notResult %></h5>
+				<h5><%=notResult %></h5>
 		<% }else{ %>
         
-		<form action="AdminManagementDelete" method="post" name="form">
+		<form action="AdminManagementDeleteList" method="post" name="form">
 			<table>
 				<tbody>
 					<thead>
@@ -92,7 +92,7 @@
 			<br>
 			<br>
 			<div class="right-align">
-				<input type="submit" value="削除" class="waves-effect waves-light btn-large right-align red right-align">
+				<input type="submit" value="削　除" class="waves-effect waves-light btn-large right-align red right-align" onClick="return check()">
 			</div>
 		</form>
 		
@@ -126,6 +126,15 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
+     
+     function check(){
+ 		if(window.confirm('選択されたユーザーを削除しますか？')){
+ 			return true;
+ 		}else{
+ 			window.alert('キャンセルされました'); // 警告ダイアログを表示
+ 			return false;
+ 		}
+ 	}
 </script>
 
 </body>
