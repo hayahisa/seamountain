@@ -40,7 +40,6 @@ public class Test extends HttpServlet {
 
 		System.out.println("テストだよ！！！");
 		System.out.println("aa");
-		System.out.println("eeeee");
 
 
 		// TODO Auto-generated method stub
