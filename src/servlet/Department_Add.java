@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DepartmentDao;
+
 /**
  * Servlet implementation class Department_Add
  */
@@ -37,7 +39,8 @@ public class Department_Add extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String name = (String)request.getParameter("name");
-		System.out.println("x");
+		DepartmentDao ddao = new DepartmentDao();
+		ddao.subjectAdd(name);
 
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
