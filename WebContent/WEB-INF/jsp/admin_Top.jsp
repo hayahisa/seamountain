@@ -67,6 +67,7 @@
                 <p></p>
                 <div class="center-align"><a href="department_change.jsp" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
                 <p></p>
+                
             </span>
         </div>
     </li>
