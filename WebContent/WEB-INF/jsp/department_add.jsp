@@ -66,10 +66,10 @@
 <br><br><br><br><br><br><br>
 
 <div class="row">
-    <form class="col s12" method="post" action="s">
+    <form class="col s12" method="post" action="Department_Add.java">
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="学科名" id="first_name" type="text" class="validate">
+                <input placeholder="学科名" id="first_name" type="text" class="validate" name="name">
                 <label for="first_name">学科名</label>
             </div>
         </div>
