@@ -53,31 +53,15 @@ int x = Integer.parseInt(String.valueOf(session.getAttribute("timeX")));
 String JPday = "選択されていません";
 %>
 
-<%-- <%
-	      		if(day.equals("monday")){
-					JPday = "月曜日";
-				}else if(day.equals("tuesday")){
-					JPday = "火曜日";
-				}else if(day.equals("wednesday")){
-					JPday = "水曜日";
-				}else if(day.equals("thursday")){
-					JPday = "木曜日";
-				}else if(day.equals("friday")){
-					JPday = "金曜日";
-				}
-%> --%>
-
-<!-- 何限目かの指定がなかった場合（１から４限目まで表示） -->
-<%if(x == 0){%>
  		<form class="" action="Next_reservation_conf" method="post">
-	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
+	      	<c:forEach var="obj" items="${reservationList}" varStatus="status">
 
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">
 						<span style="font-size:15px">
 						教室名：${obj.room_name}
 						<br>
-						曜日：${obj.day}
+						曜日：${obj.day}曜日
 						<br>
 						時間：${obj.lecture }限目
 						<div class="row right-align">
@@ -89,38 +73,25 @@ String JPday = "選択されていません";
 			</c:forEach>
 
 		</form>
-<%}else{ %>
-		<form class="" action="Next_reservation_conf" method="post">
-	      	<c:forEach var="obj" items="${reservatioinList}" varStatus="status">
 
-			<div class="panel panel-default panel-size">
-					<div class="panel-body">
-						<span style="font-size:15px">
-						教室名：${obj.room_name}
-						<br>
-						曜日：${obj.day}
-						<br>
-						時間：${obj.lecture }限目
-							<div class="row right-align">
-							<input class="waves-effect red btn" type="submit" value="予約する">
-						</div>
-						</span>
-					</div>
-			</div>
-			</c:forEach>
-		</form>
 
-<%} %>
 
   <br><br>
 
   <form action="Next_reservation_conf" name="reservation" method="post"> <!-- reservation_conf(予約確認）へ -->
   <div class="row right-align">
     <div>
-    	<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">
+    	<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="予約確認">
     </div>
   </div>
   </form>
+
+  	<form action="Next_reservation" method="post">
+   		<div class="right-align">
+   			<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">
+		</div>
+	</form>
+
 
    <!-- ここまで -->
   </div>
