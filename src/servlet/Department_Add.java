@@ -37,6 +37,7 @@ public class Department_Add extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String name = (String)request.getParameter("name");
+		System.out.println("x");
 
 		request.getRequestDispatcher("WEB-INF/jsp/mypage.jsp").forward(request, response);
 	}
