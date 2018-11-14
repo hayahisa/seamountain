@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.SubjectBean"%>
+    <%@ page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
 
@@ -16,6 +19,7 @@
 <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/default.css" >
+    <link rel="stylesheet" href="css/123.css" >
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -64,26 +68,40 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-<br><br><br><br><br><br><br>
-<form action="Department_Change.java" >
-  <div class="row">
-    <div class="input-field col s12">
-         <input value="" id="first_name2" type="text" class="validate" name="name">
-         <label class="active" for="first_name2">
-         <%=request.getParameter("Sub_name")%>
-         <input type="hidden" name="Sub_id" value=<%=request.getParameter("Sub_id")%>>
-         </label>
-     	</div>
-     </div>
-     	<br><br>
-<div class="row">
-    <div class="right-align col s11">
-   	   <a class="waves-effect waves-light btn-large"> <innput type="submit"  value="変更"></a>
-    </div>
-    </div>
-    </form>
-    <div class="col s1"></div>
 
+        <br><br>
+        <form action="Admin_ky_delete">
+               <table>
+                           <tbody>
+
+        <thead>
+          <tr>
+              <th>学籍番号</th>
+              <th>名前</th>
+          </tr>
+        </thead>
+          <% ArrayList<SubjectBean> subList = (ArrayList<SubjectBean>)request.getAttribute("suball"); %>
+         <%for(SubjectBean bean : subList){%>
+
+          <tr>
+            <td>
+
+              <label>
+                    <span></span>
+        　    </label>
+             </td>
+            <td><a href="Admin_ky_changego?Sub_id=<%=bean.getSub_id()%>&Sub_name=<%=bean.getSub_name()%>"><%=bean.getSub_name()%></a></td>
+            <td><input class="common_button" type="submit" value="削除" name="<%=bean.getSub_id()%>"></td>
+          </tr>
+          <%} %>
+        </tbody>
+      </table>
+
+        </form>
+        <br><br>
+        <div class="right-align">
+        <a class="waves-effect waves-light btn-large right-align red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消　去&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </div>
 
 
 
@@ -93,31 +111,28 @@
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-      <script type="text/javascript">
 
-	  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
+
+<script language="JavaScript" type="text/javascript">
+     $(function(){
+
+/* ここにjQueryのコードを記述 */
+
+         $('#all').on('click', function() {
+                   if($("#all:checked").val()) {
+      $('.test').prop('checked', true); //アイテムを全部checkedにする
+   }else{
+       $('.test').prop('checked', false); //アイテムを全部checkedにする
+   }
+});
+
+
+  // 一つでもチェックを外すと「全て選択」のチェック外れる
+   $('.test').on('click', function() {
+        $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-
-
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-	  // Or with jQuery
-
-
-
-
-
-	   </script>
+     });
+</script>
 
 </body>
 </html>

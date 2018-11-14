@@ -9,19 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.DepartmentDao;
-
 /**
- * Servlet implementation class Department_Change
+ * Servlet implementation class Department_next
  */
-@WebServlet("/Department_Change")
-public class Department_Change extends HttpServlet {
+@WebServlet("/Department_next")
+public class Department_next extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Department_Change() {
+    public Department_next() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,18 +29,18 @@ public class Department_Change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		DepartmentDao  ddao = new DepartmentDao();
-		int Sub_id=Integer.parseInt(request.getParameter("Sub_id"));
-		String name=request.getParameter("Sub_change");
-		ddao.subjectChange(name, Sub_id);
-        RequestDispatcher rd = request.getRequestDispatcher("Sub_delete");
+
+        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/department_change.jsp");
         rd.forward(request, response);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
