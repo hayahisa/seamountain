@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import dao.KyDao;
 import model.KyBean;
 import model.KyInfoBean;
-import model.RoomBean;
-import model.SubjectBean;
 
 /**
  * Servlet implementation class Ky_delete
@@ -33,6 +31,7 @@ public class Ky_delete extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		KyDao KD = new KyDao();
@@ -43,12 +42,12 @@ public class Ky_delete extends HttpServlet {
 		mo=KIB.getKyArray();
 		request.setAttribute("kyall", mo);
 		request.getRequestDispatcher("WEB-INF/jsp/admin_ky_delete.jsp").forward(request, response);
-		doGet(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
