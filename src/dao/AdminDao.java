@@ -40,5 +40,66 @@ public class AdminDao extends DaoBase{
 		return adminbean;
 
 	}
+	
+	//ユーザIDの重複チェック
+	public boolean adminNocheck(String adminno) {
+
+		boolean flg = false;
+
+		try {
+			// connection確立
+			super.connection();
+			String selectSQL = "select count(*) from user where admin_no = ?";
+
+			stmt = con.prepareStatement(selectSQL);
+			// SQLの？に値のセット
+			stmt.setString(1, adminno);
+			rs = stmt.executeQuery();
+			
+			rs.next();
+			
+			if(!(rs.getString(1).equals("0"))){
+				flg = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return flg;
+	}
+	// ユーザ登録
+	public void registrationAdmin(AdminBean abean) {
+		try {
+	
+			// connection確立
+			super.connection();
+	
+			// ユーザーを登録するSQL
+			String sql = "insert into admin() values(?,?)";
+	
+			stmt = con.prepareStatement(sql);
+	
+			// SQLの？に値のセット
+			stmt.setString(1, abean.getAdmin_id());
+			stmt.setString(2, abean.getAdmin_name());
+			stmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
 
 }

@@ -21,7 +21,9 @@ public class AdminPassDao extends DaoBase{
 			stmt.setString(2, encryptPass);
 			rs = stmt.executeQuery();
 			
-			while(rs.next()){
+			rs.next();
+			
+			if(rs.getString(1).equals("1")){
 				flg = true;
 			}
 
@@ -38,4 +40,30 @@ public class AdminPassDao extends DaoBase{
 		return flg;
 	}
 	
+	//パスワードの登録
+	public void registrationAdminPass(String adminno,String adminpass) {
+		try {
+			// connection確立
+			super.connection();
+			
+			// ユーザーを登録するSQL
+			String insertSQL = "insert into admin_password values(?,?)";
+			
+			stmt = con.prepareStatement(insertSQL);
+			// SQLの？に値のセット
+			stmt.setString(1, adminno);
+			stmt.setString(2, adminpass);
+			stmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
 }

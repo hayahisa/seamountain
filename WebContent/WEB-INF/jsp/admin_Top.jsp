@@ -42,7 +42,7 @@
       <div class="collapsible-header"><i class="material-icons">assignment_ind</i>ユーザー管理</div>
       <div class="collapsible-body">
           <span>
-              <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　管理者管理　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+              <div class="center-align"><a href="Next_admin_regist" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　管理者管理　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
               <p></p>
               <div class="center-align"><a href="Next_user_management" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ユーザー管理 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
           </span>
@@ -52,8 +52,6 @@
         <div class="collapsible-header"><i class="material-icons">vpn_key</i>鍵管理</div>
         <div class="collapsible-body">
             <span>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-                <p></p>
                 <div class="center-align"><a class="waves-effect waves-light btn-large celter-align" href="Ky_delete">変更・削除</a></div>
                 <p></p>
             </span>
@@ -63,9 +61,9 @@
         <div class="collapsible-header"><i class="material-icons">dashboard</i>学科管理</div>
         <div class="collapsible-body">
             <span>
-                <div class="center-align"><a href="department_add.jsp" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+                <div class="center-align"><a href="Next_course_add" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
                 <p></p>
-                <div class="center-align"><a href="department_change.jsp" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
+                <div class="center-align"><a href="Next_course_management" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
                 <p></p>
                 
             </span>
