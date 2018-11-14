@@ -27,16 +27,17 @@ public class DepartmentDao extends DaoBase{
 			}
 		}
 	}
-	public void subjectChange(String name) {
+	public void subjectChange(String name,int Sub_id) {
 		try {
 
 			// connection確立
 			super.connection();
 
 			//sql
-	     	 String sql = "update `subject` SET subject_name=?";
+	     	 String sql = "update `subject` SET subject_name=? where subject_id=?";
 
 			stmt.setString(1, name);
+			stmt.setInt(2,Sub_id);
 			stmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -49,5 +50,20 @@ public class DepartmentDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
+	}
+	public void subjectDelete(int subject_id){
+		try {
+			super.connection();
+
+			String sql = "delete from subject where subject_id=?;";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, subject_id);
+			stmt.executeUpdate();
+
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
 	}
 }

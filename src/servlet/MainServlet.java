@@ -22,7 +22,7 @@ public class MainServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			mail.Mail.sendMail("Request", "test", "1601137@st.asojuku.ac.jp");
+			mail.Mail.sendMail("Request", "test", "1601134@st.asojuku.ac.jp");
 		} catch (MessagingException | javax.mail.MessagingException e) {
 			e.printStackTrace();
 		}
