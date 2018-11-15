@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Next_reservation_conf
@@ -34,7 +35,10 @@ public class Next_reservation_conf extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//予約を行う
+		HttpSession session = request.getSession();
 
+		request.getRequestDispatcher("WEB-INF/jsp/reservation_conf.jsp").forward(request, response);
 	}
 
 }

@@ -46,6 +46,8 @@ public class Next_reservation_list extends HttpServlet {
 		String three_room = "three_room_state_id";
 		String four_room = "four_room_state_id";
 
+		String msg = null;
+
 		ReservationDao rdao = new ReservationDao();	//予約に関するDAO
 
 		int roomId = Integer.parseInt(request.getParameter("room"));	//x教室
@@ -71,8 +73,6 @@ public class Next_reservation_list extends HttpServlet {
 		ArrayList<ReservationBean> threeList = new ArrayList<ReservationBean>();		//３限のリスト
 		ArrayList<ReservationBean> fourList = new ArrayList<ReservationBean>();			//４限のリスト
 
-		System.out.println(roomId + day + time);
-
 		if(roomId == 0 && day.equals("0") && time == 0){
 			//選択無し（全て表示）
 //			１限ずつ取得
@@ -80,8 +80,6 @@ public class Next_reservation_list extends HttpServlet {
 			twoList = rdao.AllReservation(two_room,2);
 			threeList = rdao.AllReservation(three_room,3);
 			fourList = rdao.AllReservation(four_room,4);
-
-			System.out.println("all is no");
 
 		}else if(roomId == 0 && day.equals("0")){
 			//roomId,dayが無し
@@ -94,7 +92,6 @@ public class Next_reservation_list extends HttpServlet {
 			}else if(time == 4){	//4限目
 				reservationList = rdao.AllReservation(four_room, 4);
 			}
-			System.out.println("roomId,day is no");
 
 		}else if(day.equals("0") && time == 0){
 			//day,timeIdが無し
@@ -102,7 +99,6 @@ public class Next_reservation_list extends HttpServlet {
 			twoList = rdao.dtReservation(two_room,2,roomId);
 			threeList = rdao.dtReservation(three_room,3,roomId);
 			fourList = rdao.dtReservation(four_room,4,roomId);
-			System.out.println("day,time is no");
 
 		}else if(roomId == 0 && time == 0){
 			//roomId,timeIdが無し
@@ -110,7 +106,6 @@ public class Next_reservation_list extends HttpServlet {
 			twoList = rdao.rtReservation(two_room,2,day);
 			threeList = rdao.rtReservation(three_room,3,day);
 			fourList = rdao.rtReservation(four_room,4,day);
-			System.out.println("room,timeId is no");
 
 		}else if(roomId == 0){
 			//roomIdが無し
@@ -123,19 +118,37 @@ public class Next_reservation_list extends HttpServlet {
 			}else if(time == 4){
 				fourList = rdao.rtReservation(four_room,4,day);
 			}
-			System.out.println("room,timeId is no");
 
 		}else if(day.equals("0")){
 			//dayが無し
-			System.out.println("room,timeId is no");
+			if(time == 1){			//1限目
+				reservationList = rdao.dReservation(one_room, 1, roomId);
+			}else if(time == 2){	//2限目
+				reservationList = rdao.dReservation(two_room, 2, roomId);
+			}else if(time == 3){	//3限目
+				reservationList = rdao.dReservation(three_room, 3, roomId);
+			}else if(time == 4){	//4限目
+				reservationList = rdao.dReservation(four_room, 4, roomId);
+			}
 
 		}else if(time == 0){
 			//timeIdが無し
-			System.out.println("room,timeId is no");
+			oneList = rdao.tReservation(one_room,1,day,roomId);
+			twoList = rdao.tReservation(two_room,2,day,roomId);
+			threeList = rdao.tReservation(three_room,3,day,roomId);
+			fourList = rdao.tReservation(four_room,4,day,roomId);
 
 		}else{
 			//全て選択
-			System.out.println("all is getting");
+			if(time == 1){			//1限目
+				reservationList = rdao.Reservation(one_room, 1, day, roomId);
+			}else if(time == 2){	//2限目
+				reservationList = rdao.Reservation(two_room, 2, day, roomId);
+			}else if(time == 3){	//3限目
+				reservationList = rdao.Reservation(three_room, 3, day, roomId);
+			}else if(time == 4){	//4限目
+				reservationList = rdao.Reservation(four_room, 4, day, roomId);
+			}
 
 		}
 
@@ -153,10 +166,14 @@ public class Next_reservation_list extends HttpServlet {
 			reservationList.add(reservation);
 		}
 
+//		リストの中身が空かどうかの判定
+		if (reservationList == null || reservationList.size() == 0) {
+			msg = "該当する対象がありません";
+			}
+
 		//何限目を指定したかどうかのセッション
-		session.setAttribute("timeX",x);
-		session.setAttribute("time",time);
 		session.setAttribute("reservationList", reservationList);
+		session.setAttribute("msg", msg);
 		request.getRequestDispatcher("WEB-INF/jsp/reservation_list.jsp").forward(request, response);
 	}
 
