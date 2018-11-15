@@ -37,6 +37,7 @@ public class CreateTableDao extends DaoBase{
 	}
 
 	//room_state_detailにinsert(初期化）
+	//鍵の追加時にラズパイ側で
 	public void insertRoom(int room_id,String day){
 		int num = 0;
 		try{

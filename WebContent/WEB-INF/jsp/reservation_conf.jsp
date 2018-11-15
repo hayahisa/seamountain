@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="model.RoomBean"  import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -24,7 +22,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>reservation_list</title> <!--画面名-->
+<title>reservation_conf</title> <!--画面名-->
 
 
 </head>
@@ -39,51 +37,25 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 
-<!--
-      <div class="left-align">
-        <label class="badge green" style="padding:10px 20px 10px 20px;font-size: 20px;">教室予約</label>
-      </div>
- -->
+		<div class="center-align">
+			<h5>予約を完了しました</h5>
+		</div>
 
- 	<h5>空き教室一覧</h5>
-
- 	<br>
-
- 	<c:out value="${msg}"/>
-
- 		<form class="" action="Next_reservation_conf" method="post">
-	      	<c:forEach var="obj" items="${reservationList}" varStatus="status">
-
-			<div class="panel panel-default panel-size">
-					<div class="panel-body">
-						<span style="font-size:15px">
-						教室名：${obj.room_name}
-						<br>
-						曜日：${obj.day}曜日
-						<br>
-						時間：${obj.lecture }限目
-						<input type="hidden" name="room_id" value="${obj.room_id }">
-						<input type="hidden" name="day" value="${obj.day }">
-						<input type="hidden" name="lecture" value="${obj.lecture }">
-						<div class="row right-align">
-							<input class="waves-effect red btn" type="submit" value="予約する">
-						</div>
-						</span>
-					</div>
+		<form action="Next_main" method="post">
+   			<div class="right-align">
+   				<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="トップ">
 			</div>
-			</c:forEach>
-
 		</form>
 
 		<br>
 
-  	<form action="Next_reservation" method="post">
    		<div class="right-align">
-   			<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">
+   			<a href="javascript:history.back();" class="waves-effect grey btn">　戻る　</a>
 		</div>
-	</form>
 
-   <!-- ここまで -->
+"WebContent/WEB-INF/jsp/reservation_conf.jsp"
+
+  		<!-- ここまで -->
   </div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 </div> <!-- div row　終了 -->
@@ -95,21 +67,10 @@
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
-	    document.addEventListener('DOMContentLoaded', function() {
-	        var elems = document.querySelectorAll('select');
-	        var instances = M.FormSelect.init(elems);
-	      });
-
-     $(document).ready(function(){
-       $('select').formSelect();
-     });
-
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-	  // Or with jQuery
-
+            document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
 
 	  </script>
 
