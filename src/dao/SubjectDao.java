@@ -2,7 +2,6 @@ package dao;
 
 import model.SubjectBean;
 import model.SubjectInfoBean;
-import model.TimeListBean;
 
 public class SubjectDao extends DaoBase{
 	public SubjectDao(){
@@ -29,6 +28,22 @@ public class SubjectDao extends DaoBase{
 		
 		
 		return SIB;
+	}
+	
+	//科目の追加
+	public void subjectAdd(String subjectname){
+		
+		try {
+			super.connection();
+			String sql = "INSERT INTO subject('subject_name') VALUES(?)";
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, subjectname);
+			stmt.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 	}
 
 }

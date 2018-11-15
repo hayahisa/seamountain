@@ -66,7 +66,7 @@ public class AdminLogin extends HttpServlet {
 			
 			path = "WEB-INF/jsp/admin_Top.jsp";
 		}else{
-			path = "/Admin_login.jsp";
+			path = "Admin_login.jsp";
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
