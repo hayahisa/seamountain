@@ -46,7 +46,7 @@
 				<form action="AdminRegistration" method="post" class="col s12">
 					<div class="row">
 						<div class="input-field col s12  ">
-							<input id="gakuseki" type="text" class="validate" name="no" required>
+							<input id="gakuseki" type="text" class="validate" name="no" maxlength="16" required>
 							<label for="gakuseki">管理者番号</label>
 						</div>
 					</div>
