@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.DepartmentDao;
+import dao.CourseDao;
 
 /**
  * Servlet implementation class Department_delete
@@ -46,7 +46,7 @@ public class Department_delete extends HttpServlet {
 		Enumeration<String> names = request.getParameterNames();
 
 		String name;        // 現在のパラメータ名
-		int subject_id = 0;        // KyID
+		int course_id = 0;        // KyID
 
 		// 削除ボタンがクリックされた場所を特定
 		while (names.hasMoreElements()) {
@@ -55,10 +55,10 @@ public class Department_delete extends HttpServlet {
 		    name = names.nextElement();
 		    if ("削除".equals(request.getParameter(name))) {
 
-		        subject_id = Integer.parseInt(name);
+		        course_id = Integer.parseInt(name);
 
-		        DepartmentDao ddao = new DepartmentDao();
-				    ddao.subjectDelete(subject_id);
+		        CourseDao cdao = new CourseDao();
+				    cdao.courseDelete(course_id);
 				System.out.println("実行完了");
 		    }
 		}

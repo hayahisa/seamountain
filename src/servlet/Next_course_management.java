@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Next_course_management")
 public class Next_course_management extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,9 +28,10 @@ public class Next_course_management extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+
 		request.getRequestDispatcher("WEB-INF/jsp/department_change.jsp").forward(request, response);
-		
+
 	}
 
 	/**
