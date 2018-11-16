@@ -65,7 +65,7 @@
                 <p></p>
                 <div class="center-align"><a href="Next_course_management" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
                 <p></p>
-                
+
             </span>
         </div>
     </li>
