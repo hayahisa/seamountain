@@ -9,18 +9,21 @@ public class ReservationBean implements Serializable{
 	private String room_name;
 	private String day;
 	private int lecture;
+	private String resDate;
+
 
 	public ReservationBean(){
 
 	}
 
-	public ReservationBean(int room_state_id, int room_id, String room_name, String day, int lecture) {
+	public ReservationBean(int room_state_id, int room_id, String room_name, String day, int lecture, String resDate) {
 		super();
 		this.room_state_id = room_state_id;
 		this.room_id = room_id;
 		this.room_name = room_name;
 		this.day = day;
 		this.lecture = lecture;
+		this.resDate = resDate;
 	}
 
 	public int getRoom_state_id() {
@@ -61,6 +64,14 @@ public class ReservationBean implements Serializable{
 
 	public void setLecture(int lecture) {
 		this.lecture = lecture;
+	}
+
+	public String getResDate(){
+		return resDate;
+	}
+
+	public void setResDate(String resDate){
+		this.resDate = resDate;
 	}
 
 }

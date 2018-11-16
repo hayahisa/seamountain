@@ -50,32 +50,32 @@
  	<br>
 
  	<c:out value="${msg}"/>
-
- 		<form class="" action="Next_reservation_conf" method="post">
-	      	<c:forEach var="obj" items="${reservationList}" varStatus="status">
-
+	<c:forEach var="obj" items="${reservationList}" varStatus="status">
+		<form class="" action="Next_reservation_conf" method="post">
 			<div class="panel panel-default panel-size">
-					<div class="panel-body">
-						<span style="font-size:15px">
-						教室名：${obj.room_name}
-						<br>
-						曜日：${obj.day}曜日
-						<br>
-						時間：${obj.lecture }限目
-						<input type="hidden" name="room_id" value="${obj.room_id }">
-						<input type="hidden" name="day" value="${obj.day }">
-						<input type="hidden" name="lecture" value="${obj.lecture }">
-						<div class="row right-align">
-							<input class="waves-effect red btn" type="submit" value="予約する">
-						</div>
-						</span>
+				<div class="panel-body">
+					<span style="font-size:15px">
+					${obj.resDate }
+					<br>
+					教室名：${obj.room_name}
+					<br>
+					曜日：${obj.day}曜日
+					<br>
+					時間：${obj.lecture }限目
+					<input type="hidden" name="resDate" value="${obj.resDate }">
+					<input type="hidden" name="room_id" value="${obj.room_id }">
+					<input type="hidden" name="day" value="${obj.day }">
+					<input type="hidden" name="lecture" value="${obj.lecture }">
+					<div class="row right-align">
+						<input class="waves-effect red btn" type="submit" value="予約する">
 					</div>
+					</span>
+				</div>
 			</div>
-			</c:forEach>
-
 		</form>
+	</c:forEach>
 
-		<br>
+	<br>
 
   	<form action="Next_reservation" method="post">
    		<div class="right-align">
