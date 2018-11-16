@@ -49,11 +49,9 @@
 
 		<br>
 
-   		<div class="right-align">
+   		<!-- <div class="right-align">
    			<a href="javascript:history.back();" class="waves-effect grey btn">　戻る　</a>
-		</div>
-
-"WebContent/WEB-INF/jsp/reservation_conf.jsp"
+		</div> -->
 
   		<!-- ここまで -->
   </div>
