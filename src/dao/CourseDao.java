@@ -112,7 +112,9 @@ public class CourseDao extends DaoBase{
 			super.connection();
 
 			//sql
-	     	 String sql = "update `course` SET course_name=? where course_id=?";
+	     	 String sql = "update `course` SET course_name= ? where course_id= ?";
+
+	     	 stmt = con.prepareStatement(sql);
 
 			stmt.setString(1, name);
 			stmt.setInt(2,course_id);
@@ -134,7 +136,7 @@ public class CourseDao extends DaoBase{
 		try {
 			super.connection();
 
-			String sql = "delete from course where subject_id=?;";
+			String sql = "delete from course where course_id=?;";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, course_id);
 			stmt.executeUpdate();
@@ -143,6 +145,40 @@ public class CourseDao extends DaoBase{
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+
+	}
+
+	//学科名取得
+	public CourseBean selectCourse(int courseId){
+
+		CourseBean coursebean = new CourseBean();
+
+		try {
+			super.connection();
+
+			String sql = "SELECT * FROM course where course_id = ?";
+			stmt = con.prepareStatement(sql);
+
+			stmt.setInt(1,courseId);
+
+			rs = stmt.executeQuery();
+			rs.next();
+
+			coursebean.setCourse_id(rs.getInt(1));
+			coursebean.setCourse_name(rs.getString(2));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+
+		return coursebean;
 
 	}
 

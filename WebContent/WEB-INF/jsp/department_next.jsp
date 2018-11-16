@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="model.SubjectBean"%>
+    <%@ page import="model.CourseBean"%>
     <%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
@@ -70,28 +70,22 @@
 		<!-- ここから書いて -->
 
         <br><br>
-        <form action="Admin_ky_delete">
+        <form action="Department_delete">
                <table>
                            <tbody>
 
         <thead>
           <tr>
-              <th>学籍番号</th>
-              <th>名前</th>
+              <th>学科名</th>
+              <th></th>
           </tr>
         </thead>
-          <% ArrayList<SubjectBean> subList = (ArrayList<SubjectBean>)request.getAttribute("suball"); %>
-         <%for(SubjectBean bean : subList){%>
+          <% ArrayList<CourseBean> cList = (ArrayList<CourseBean>)request.getAttribute("cList"); %>
+          <%for(CourseBean bean : cList){%>
 
           <tr>
-            <td>
-
-              <label>
-                    <span></span>
-        　    </label>
-             </td>
-            <td><a href="Admin_ky_changego?Sub_id=<%=bean.getSub_id()%>&Sub_name=<%=bean.getSub_name()%>"><%=bean.getSub_name()%></a></td>
-            <td><input class="common_button" type="submit" value="削除" name="<%=bean.getSub_id()%>"></td>
+            <td><a href="Department_next?course_id=<%=bean.getCourse_id()%>&course_name=<%=bean.getCourse_name()%>"><%=bean.getCourse_name()%></a></td>
+            <td><input class="waves-effect red lightten-1 btn" type="submit" value="削除" name="<%=bean.getCourse_id()%>"></td>
           </tr>
           <%} %>
         </tbody>
@@ -100,7 +94,7 @@
         </form>
         <br><br>
         <div class="right-align">
-        <a class="waves-effect waves-light btn-large right-align red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消　去&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a  class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;戻　る&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
 
 

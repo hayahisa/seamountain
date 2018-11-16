@@ -32,11 +32,13 @@ public class Department_Change extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	    CourseDao  cdao = new CourseDao();
-		int course_id=Integer.parseInt(request.getParameter("course_id"));
-		String name=request.getParameter("course_change");
+
+	    String name = request.getParameter("name");
+
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
+
 		cdao.courseChange(name, course_id);
-		
-        RequestDispatcher rd = request.getRequestDispatcher("_delete");
+        RequestDispatcher rd = request.getRequestDispatcher("Next_admin_top");
         rd.forward(request, response);
 	}
 
