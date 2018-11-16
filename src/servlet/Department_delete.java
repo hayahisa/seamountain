@@ -33,7 +33,30 @@ public class Department_delete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// GETメソッドのパラメータ名を取得
+				Enumeration<String> names = request.getParameterNames();
+
+				String name;        // 現在のパラメータ名
+				int course_id = 0;        // KyID
+
+				// 削除ボタンがクリックされた場所を特定
+				while (names.hasMoreElements()) {
+				    // 渡ってきたパラメータを順番に処理
+				    // パラメータ名を取得
+				    name = names.nextElement();
+				    if ("削除".equals(request.getParameter(name))) {
+
+				        course_id = Integer.parseInt(name);
+
+				        CourseDao cdao = new CourseDao();
+						    cdao.courseDelete(course_id);
+						System.out.println("実行完了");
+				    }
+				}
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Next_admin_top");
+				dispatcher.forward(request, response);
+
 	}
 
 	/**
@@ -41,30 +64,5 @@ public class Department_delete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-
-		// GETメソッドのパラメータ名を取得
-		Enumeration<String> names = request.getParameterNames();
-
-		String name;        // 現在のパラメータ名
-		int course_id = 0;        // KyID
-
-		// 削除ボタンがクリックされた場所を特定
-		while (names.hasMoreElements()) {
-		    // 渡ってきたパラメータを順番に処理
-		    // パラメータ名を取得
-		    name = names.nextElement();
-		    if ("削除".equals(request.getParameter(name))) {
-
-		        course_id = Integer.parseInt(name);
-
-		        CourseDao cdao = new CourseDao();
-				    cdao.courseDelete(course_id);
-				System.out.println("実行完了");
-		    }
-		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Sub_delete");
-		dispatcher.forward(request, response);
 	}
-
 }
