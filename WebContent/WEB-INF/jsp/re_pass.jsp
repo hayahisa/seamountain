@@ -44,20 +44,22 @@
         <br>
          
         <div class="row container">
-    <form class="col s12">
+    <form action="RePass" method="post" class="col s12">
               <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate">
           <label for="email">メールアドレス</label>
         </div>
       </div>
+      <div class="row container">
+      	<div class="col s12 right-align">
+    		<input type="submit" value="身分認証を行う" class="waves-effect waves-light btn">
+    	</div>
+    </div>
     </form>
   </div>
         
-            <div class="row container">
-      <div class="col s12 right-align">
-    <a class="waves-effect waves-light btn">身分認証を行う</a></div>
-    </div>
+            
             
         
 
