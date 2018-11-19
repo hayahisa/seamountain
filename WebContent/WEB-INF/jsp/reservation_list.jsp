@@ -66,6 +66,7 @@
 					<input type="hidden" name="room_id" value="${obj.room_id }">
 					<input type="hidden" name="day" value="${obj.day }">
 					<input type="hidden" name="lecture" value="${obj.lecture }">
+					<input type="hidden" name="room_name" value="${obj.room_name }">
 					<div class="row right-align">
 						<input class="waves-effect red btn" type="submit" value="予約する">
 					</div>
