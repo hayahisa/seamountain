@@ -74,8 +74,8 @@ public class Login extends HttpServlet {
 
 			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 
-			 Timeget time = new Timeget();
-			 time.doPost(request, response);
+			Timeget time = new Timeget();
+			time.doPost(request, response);
 
 		}else{
 			path = "/login.jsp";
