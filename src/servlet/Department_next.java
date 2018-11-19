@@ -30,6 +30,8 @@ public class Department_next extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+//
+
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/department_change.jsp");
         rd.forward(request, response);
 

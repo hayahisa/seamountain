@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.DepartmentDao;
+import dao.CourseDao;
 
 /**
  * Servlet implementation class Department_Change
@@ -31,11 +31,14 @@ public class Department_Change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		DepartmentDao  ddao = new DepartmentDao();
-		int Sub_id=Integer.parseInt(request.getParameter("Sub_id"));
-		String name=request.getParameter("Sub_change");
-		ddao.subjectChange(name, Sub_id);
-        RequestDispatcher rd = request.getRequestDispatcher("Sub_delete");
+	    CourseDao  cdao = new CourseDao();
+
+	    String name = request.getParameter("name");
+
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
+
+		cdao.courseChange(name, course_id);
+        RequestDispatcher rd = request.getRequestDispatcher("Next_admin_top");
         rd.forward(request, response);
 	}
 

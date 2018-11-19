@@ -66,17 +66,17 @@
 <br><br><br><br><br><br><br>
 
 <div class="row">
-    <form class="col s12" method="post" action="Department_Add.java">
+    <form class="col s12" method="post" action="Department_Add">
         <div class="row">
             <div class="input-field col s12">
                 <input placeholder="学科名" id="first_name" type="text" class="validate" name="name">
                 <label for="first_name">学科名</label>
             </div>
         </div>
-    <div class="right-align col s11">
-    		<inptut type="submit" class="waves-effect waves-light btn-large" value="　追加　">
-        <a class="waves-effect waves-light btn-large">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-    </div>
+    <div class="col-md-12">
+		<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+		<input type="submit" value="追加" class="waves-effect blue lighten-1 btn">
+	</div>
     </form>
     <div class="col s1"></div>
 </div>

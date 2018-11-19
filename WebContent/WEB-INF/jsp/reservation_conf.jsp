@@ -39,7 +39,10 @@
 
 		<div class="center-align">
 			<h5>予約を完了しました</h5>
+			<p>予約内容確認</p>
+			<c:out value="${room_name}"/>
 		</div>
+
 
 		<form action="Next_main" method="post">
    			<div class="right-align">
@@ -49,11 +52,9 @@
 
 		<br>
 
-   		<div class="right-align">
+   		<!-- <div class="right-align">
    			<a href="javascript:history.back();" class="waves-effect grey btn">　戻る　</a>
-		</div>
-
-"WebContent/WEB-INF/jsp/reservation_conf.jsp"
+		</div> -->
 
   		<!-- ここまで -->
   </div>

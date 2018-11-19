@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.CourseBean"%>
+<%	CourseBean coursebean = (CourseBean)request.getAttribute("coursebean"); %>
 
 <!DOCTYPE html>
 
@@ -65,20 +67,20 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 <br><br><br><br><br><br><br>
-<form action="Department_Change.java" >
+<form action="Department_Change" >
   <div class="row">
     <div class="input-field col s12">
-         <input value="" id="first_name2" type="text" class="validate" name="name">
+         <input id="first_name2" type="text" class="validate" name="name">
          <label class="active" for="first_name2">
-         <%=request.getParameter("Sub_name")%>
-         <input type="hidden" name="Sub_id" value=<%=request.getParameter("Sub_id")%>>
+         <%=request.getParameter("course_name")%>
+         <input type="hidden" name="course_id" value=<%=request.getParameter("course_id")%> >
          </label>
      	</div>
      </div>
      	<br><br>
 <div class="row">
     <div class="right-align col s11">
-   	   <a class="waves-effect waves-light btn-large"> <innput type="submit"  value="変更"></a>
+   	   <input type="submit" value="変更" class="waves-effect waves-light btn-large">
     </div>
     </div>
     </form>

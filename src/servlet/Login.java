@@ -45,7 +45,6 @@ public class Login extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response)
 		HttpSession session = request.getSession();	//セッション
 		String path = null;	//遷移用path
 		int len; //user_noのlength
@@ -65,7 +64,7 @@ public class Login extends HttpServlet {
 		//LoginDao
 		LoginDao ldao = new LoginDao();
 		UserPassBean userpassbean = ldao.User_loginDao(user_no);
-		
+
 		if(ldao.User_loginDao(user_no) == null){
 			path = "/login.jsp";
 		}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(encryptPass)){
@@ -74,7 +73,7 @@ public class Login extends HttpServlet {
 			userbean = (UserBean)udao.userSession(user_no);
 
 			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
-			
+
 			Timeget time = new Timeget();
 			time.doPost(request, response);
 

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ReservationDao;
+import model.UserBean;
+
 /**
  * Servlet implementation class Next_reservation_conf
  */
@@ -37,6 +40,61 @@ public class Next_reservation_conf extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//予約を行う
 		HttpSession session = request.getSession();
+		GetSelectDays sday = new GetSelectDays();
+		ReservationDao rdao = new ReservationDao();
+
+//		requestを取得
+		int room_id = Integer.parseInt(request.getParameter("room_id"));
+		String day = String.valueOf(request.getParameter("day"));
+		int lecture = Integer.parseInt(request.getParameter("lecture"));
+		String resDate = String.valueOf(request.getParameter("resDate"));
+		String room_name = String.valueOf(request.getParameter("room_name"));
+
+//		予約日
+		int res_date = sday.changeDate(resDate);
+		String x_room = null;
+
+//		何限目か
+		switch(lecture){
+		case 1:
+			x_room = "one_room_state_id";
+		case 2:
+			x_room = "two_room_state_id";
+		case 3:
+			x_room = "three_room_state_id";
+		case 4:
+			x_room = "four_room_state_id";
+		}
+
+//		曜日変換
+		switch(day){
+		case "月":
+			day = "monday";
+			break;
+		case "火":
+			day = "tuesday";
+			break;
+		case "水":
+			day = "wednesday";
+			break;
+		case "木":
+			day = "thursday";
+			break;
+		case "金":
+			day = "friday";
+			break;
+		}
+
+//		user_noを取得
+		UserBean userbean = new UserBean();
+		userbean = (UserBean)session.getAttribute("userBean");
+		String user_no = String.valueOf(userbean.getUserNo());
+
+//		daoへ挿入 reservationとreservation_state_detail
+		rdao.insertReservation(user_no, room_id, res_date, day, lecture);
+		rdao.updateReservationDetail(x_room, room_id, day);
+
+		session.setAttribute("room_name", room_name);
 
 		request.getRequestDispatcher("WEB-INF/jsp/reservation_conf.jsp").forward(request, response);
 	}
