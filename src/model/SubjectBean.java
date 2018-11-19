@@ -4,26 +4,25 @@ import java.io.Serializable;
 
 public class SubjectBean implements Serializable {
 	
-	
     private static final long serialVersionUID = 1L;
 
-    private String sub_id;
+    private int sub_id;
     private String sub_name; 
 
 	public SubjectBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
-	public SubjectBean(String sub_id,String sub_name) {
+	public SubjectBean(int sub_id,String sub_name) {
 		setSub_id(sub_id);
 		setSub_name(sub_name);
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public String getSub_id() {
+	public int getSub_id() {
 		return sub_id;
 	}
 
-	public void setSub_id(String sub_id) {
+	public void setSub_id(int sub_id) {
 		this.sub_id = sub_id;
 	}
 
