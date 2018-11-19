@@ -48,6 +48,7 @@ public class Next_reservation_conf extends HttpServlet {
 		String day = String.valueOf(request.getParameter("day"));
 		int lecture = Integer.parseInt(request.getParameter("lecture"));
 		String resDate = String.valueOf(request.getParameter("resDate"));
+		String room_name = String.valueOf(request.getParameter("room_name"));
 
 //		予約日
 		int res_date = sday.changeDate(resDate);
@@ -92,6 +93,8 @@ public class Next_reservation_conf extends HttpServlet {
 //		daoへ挿入 reservationとreservation_state_detail
 		rdao.insertReservation(user_no, room_id, res_date, day, lecture);
 		rdao.updateReservationDetail(x_room, room_id, day);
+
+		session.setAttribute("room_name", room_name);
 
 		request.getRequestDispatcher("WEB-INF/jsp/reservation_conf.jsp").forward(request, response);
 	}

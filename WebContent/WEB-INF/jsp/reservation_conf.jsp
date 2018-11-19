@@ -39,7 +39,10 @@
 
 		<div class="center-align">
 			<h5>予約を完了しました</h5>
+			<p>予約内容確認</p>
+			<c:out value="${room_name}"/>
 		</div>
+
 
 		<form action="Next_main" method="post">
    			<div class="right-align">
