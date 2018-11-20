@@ -46,7 +46,6 @@ public class Next_reservation extends HttpServlet {
 		RoomDao rdao = new RoomDao();
 
 		ArrayList<RoomBean> roomlist = rdao.roomList();
-
 		session.setAttribute("roomList", roomlist);
 
 		Reservation reservation = new Reservation();
