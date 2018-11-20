@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="javax.servlet.http.HttpSession"%>
+    <%@ page import="model.UserBean" %>
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,17 @@
 </head>
 <body>
 
-<%@ include file="header.jsp"%>
+<%
+UserBean user = new UserBean();
+user = (UserBean) session.getAttribute("userBean");
+String roleFlg = String.valueOf(user.getRoleFlg());
+%>
+
+<%if(roleFlg.equals("S")){ %>
+	<%@ include file="header.jsp"%>
+<%}else{%>
+	<%@ include file="header2.jsp"%>
+<%} %>
 <%
 String nextsubject=(String)session.getAttribute("nextsubject");
   String nextroom=(String)session.getAttribute("nextroom");

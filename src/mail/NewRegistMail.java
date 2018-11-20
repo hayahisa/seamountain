@@ -14,25 +14,25 @@ import javax.mail.internet.MimeMessage;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 
 public class NewRegistMail {
-	
+
 	 private final static String mailServerHost = System.getenv("MAIL_SERVER_HOST");
 	    private final static String mailServerPort = System.getenv("MAIL_SERVER_PORT");
 	    private final static String mailUserAddress = System.getenv("MAIL_USER_ADDRESS");
 	    private final static String mailUserName = System.getenv("MAIL_USER_NAME");
 	    private final static String mailUserPassword = System.getenv("MAIL_USER_PASSWORD");
 	    private final static String mailCharset = "UTF-8";
-	    
+
 	    public NewRegistMail() {
 			// TODO 自動生成されたコンストラクター・スタブ
 		}
-	    
+
 	    private static String decorateContent(String content) {
 	        return content +
 	                "\n" +
 	                "\n" +
 	                "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n" +
 	                "登録を完了するためにURLを押下してください\n" +
-	                "http://localhost:8080/SeaMountain/UserRegistrationConfirm" +
+	                "https://seamountain.site/UserRegistrationConfirm" +
 	                "\n" +
 	                "※ このメールへの返信はできませんのでご了承ください。\n" +
 	                "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n";

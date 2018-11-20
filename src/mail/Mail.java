@@ -29,7 +29,7 @@ public class Mail {
                 "\n" +
                 "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n" +
                 "パスワード再設定\n" +
-                "http://localhost:8080/SeaMountain/Next_new_pass" +
+                "https://seamountain.site/Next_new_pass" +
                 "\n" +
                 "※ このメールへの返信はできませんのでご了承ください。\n" +
                 "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n";
