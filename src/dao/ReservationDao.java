@@ -3,6 +3,7 @@ package dao;
 import java.util.ArrayList;
 
 import model.ReservationBean;
+import model.ReservationConfBean;
 import servlet.GetSelectDays;
 
 public class ReservationDao extends DaoBase{
@@ -10,6 +11,91 @@ public class ReservationDao extends DaoBase{
 
 	public ReservationDao(){
 
+	}
+
+//	対象の予約を消す
+	public void deleteReservation(int reservation_no){
+		int num = 0;
+		System.out.println("deleteReservation");
+		try{
+			super.connection();
+			String sql = "DELETE FROM `reservation` "
+					+ "WHERE reservation_no = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, reservation_no);
+			num = stmt.executeUpdate();
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
+
+//	room_state_detailのアップデート
+	public void deleteRoomStateDetail(String x_room, int room_id, String day){
+		int num = 0;
+		String x_room_state_id = x_room;
+		System.out.println("deleteRoomStateDetail");
+		System.out.println(x_room);
+		System.out.println(room_id);
+		System.out.println(day);
+		try{
+			super.connection();
+			String sql = "UPDATE `room_state_detail` "
+					+ "SET " +  x_room_state_id + " = 1 "
+					+ "WHERE room_id = ? "
+					+ "AND day = ?;";
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, room_id);
+			stmt.setString(2, day);
+
+			num = stmt.executeUpdate();
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
+
+//	予約一覧を取り出す
+	public ArrayList<ReservationConfBean> getAllReservation(){
+		ArrayList<ReservationConfBean> reservationconfArray = new ArrayList<>();
+		try{
+			super.connection();
+			String sql = "SELECT * FROM `reservation`";
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+				ReservationConfBean reservationonfbean = new ReservationConfBean(
+					rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDate(4),rs.getString(5),rs.getInt(6)
+					);
+				reservationconfArray.add(reservationonfbean);
+				}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return reservationconfArray;
 	}
 
 //	予約を行う(reservation,room_state_detail）
@@ -49,7 +135,7 @@ public class ReservationDao extends DaoBase{
 		try{
 			super.connection();
 			String sql = "UPDATE `room_state_detail` "
-					+ "SET " +  x_room_state_id + "= 2 "
+					+ "SET " +  x_room_state_id + " = 2 "
 					+ "WHERE room_id = ? "
 					+ "AND day = ?;";
 

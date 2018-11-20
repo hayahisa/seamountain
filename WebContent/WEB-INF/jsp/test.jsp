@@ -37,7 +37,9 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 
-
+		<h1>this is test</h1>
+		okok
+		jhhjjh
 
    <!-- ここまで -->
   </div>

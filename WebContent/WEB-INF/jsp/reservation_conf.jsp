@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -40,7 +41,17 @@
 		<div class="center-align">
 			<h5>予約を完了しました</h5>
 			<p>予約内容確認</p>
-			<c:out value="${room_name}"/>
+			<div class="panel panel-default panel-size">
+				<div class="panel-body">
+					<span style="font-size:15px">
+					教室名：<c:out value="${room_name}"/>
+					<br>
+					曜日：<c:out value="${day}"/>曜日
+					<br>
+					時間：<c:out value="${lecture}"/>限目
+					</span>
+				</div>
+			</div>
 		</div>
 
 
