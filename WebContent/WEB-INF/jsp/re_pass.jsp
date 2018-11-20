@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ import javax.mail.* %>
+<%@ page import="javax.mail.*" %>
 
 <%	
 	String message = "";
@@ -42,10 +42,9 @@
 
 	<div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-
+	
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-
         <br>
         <br>
           <div class="container">
@@ -55,43 +54,21 @@
         <br>
 
         <div class="row container">
-   			<form class="col s12" action=\"/MailTest/mail\" method=\"POST\">
+   			<form action="RePassMail" method="post" class="col s12">
             	<div class="row">
         			<div class="input-field col s12">
-          		<input id="email" type="email" class="validate">
+          		<input id="email" type="email" name="email" class="validate">
           		<label for="email">メールアドレス</label>
         			</div>
-      		</div>
+      			</div>
+      			<div class="row container">
+      				<div class="col s12 right-align">
+    					<input type="submit" value="送信" class="waves-effect waves-light btn">
+    				</div>
+    			</div>
     		</form>
   </div>
-
-            <div class="row container">
-      <div class="col s12 right-align">
-    <a class="waves-effect waves-light btn">身分認証を行う</a></div>
-    </div>
-
-
-    <form action="RePassMail" method="post" class="col s12">
-              <div class="row">
-              <label style="color:red"><%=message %></label>
-        <div class="input-field col s12">
-          <input id="email" type="email" name="email"  class="validate">
-          <label for="email">メールアドレス</label>
-        </div>
-      </div>
-      <div class="row container">
-      	<div class="col s12 right-align">
-    		<input type="submit" value="送信" class="waves-effect waves-light btn">
-    	</div>
-    </div>
-    </form>
   </div>
-        
-            
-            
-        
-
-
    <!-- ここまで -->
 	</div>
 

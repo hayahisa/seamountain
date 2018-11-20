@@ -41,8 +41,6 @@ public class UserRegistration extends HttpServlet {
 			HttpSession session = request.getSession();
 			UserBean userbean = (UserBean) session.getAttribute("userBean");
 			
-			System.out.println(userbean.getMail());
-			
 			mail.NewRegistMail.sendMail("新規会員登録", "新規会員登録", userbean.getMail());
 			
 			request.getRequestDispatcher("WEB-INF/jsp/new_regist_mail_confirm.jsp").forward(request, response);
