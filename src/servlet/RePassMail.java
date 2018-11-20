@@ -38,6 +38,8 @@ public class RePassMail extends HttpServlet {
 				request.getRequestDispatcher("WEB-INF/jsp/re_pass.jsp").forward(request, response);
 			}else{
 				mail.Mail.sendMail("パスワード再設定", "パスワード再設定", email);
+				
+				request.getRequestDispatcher("WEB-INF/jsp/re_pass_mail_confirm.jsp").forward(request, response);
 			}
 		} catch (MessagingException | javax.mail.MessagingException e) {
 			e.printStackTrace();
