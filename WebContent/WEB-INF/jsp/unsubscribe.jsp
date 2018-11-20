@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.UserBean" %>
 <%
 	String msgflg = (String) request.getAttribute("error");
 	String msg = "";
@@ -34,11 +35,21 @@
 <title>退会</title>
 </head>
 <body>
-	
+
 	<header>
-		<%@ include file="header.jsp"%>
+<%
+UserBean user = new UserBean();
+user = (UserBean) session.getAttribute("userBean");
+String roleFlg = String.valueOf(user.getRoleFlg());
+%>
+
+<%if(roleFlg.equals("S")){ %>
+	<%@ include file="header.jsp"%>
+<%}else{%>
+	<%@ include file="header2.jsp"%>
+<%} %>
 	</header>
-	
+
 	<div class="row"> <!-- 表示範囲の設定 -->
 		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 		<div class="middle col-lg-10 col-md-10 col-xs-10"> <!-- 中央表示 -->
@@ -50,7 +61,7 @@
 					<h5 class="center-align valign-wrapper"><i class="material-icons medium ">person</i>退会しますか？</h5>
 				</div>
 			<div class="row"> <!-- 表示範囲の設定 -->
-				
+
 				<div class="middle col-lg-12 col-md-12 col-xs-12"> <!-- 中央表示 -->
 					<div class="center-align">
 						<form action="UnSubscribe" method="post" class="col s12">
@@ -77,16 +88,16 @@
 	 <!-- div row　終了 -->
 	<script type="text/javascript">
 		function check(){
-			
+
 			if(window.confirm('退会しますか？')){
 				return true;
 			}else{
-				
+
 				window.alert('キャンセルされました'); // 警告ダイアログを表示
 				return false;
 		}
 	}
 	</script>
-	
+
 </body>
 </html>

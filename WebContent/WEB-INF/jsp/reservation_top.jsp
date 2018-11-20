@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.RoomBean"  import="java.util.ArrayList"%>
+<%@ page import="model.UserBean" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
@@ -30,8 +31,17 @@
 </head>
 
 <body>
+<%
+UserBean user = new UserBean();
+user = (UserBean) session.getAttribute("userBean");
+String roleFlg = String.valueOf(user.getRoleFlg());
+%>
 
-<%@ include file="header.jsp"%>
+<%if(roleFlg.equals("S")){ %>
+	<%@ include file="header.jsp"%>
+<%}else{%>
+	<%@ include file="header2.jsp"%>
+<%} %>
 
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->

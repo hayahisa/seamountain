@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.UserBean" %>
 <!DOCTYPE html>
 
 <html>
@@ -29,7 +30,17 @@
 
 <body>
 
-<%@ include file="header.jsp"%>
+<%
+UserBean user = new UserBean();
+user = (UserBean) session.getAttribute("userBean");
+String roleFlg = String.valueOf(user.getRoleFlg());
+%>
+
+<%if(roleFlg.equals("S")){ %>
+	<%@ include file="header.jsp"%>
+<%}else{%>
+	<%@ include file="header2.jsp"%>
+<%} %>
 
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
