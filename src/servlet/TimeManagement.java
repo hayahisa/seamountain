@@ -1,29 +1,23 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dao.RoomDao;
-import model.RoomBean;
 
 /**
- * Servlet implementation class Next_reservation
+ * Servlet implementation class TimeManagement
  */
-@WebServlet("/Next_reservation")
-public class Next_reservation extends HttpServlet {
+@WebServlet("/TimeManagement")
+public class TimeManagement extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Next_reservation() {
+    public TimeManagement() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,17 +35,7 @@ public class Next_reservation extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//教室の一覧を表示
-		HttpSession session = request.getSession();
-		RoomDao rdao = new RoomDao();
-
-		ArrayList<RoomBean> roomlist = rdao.roomList();
-		session.setAttribute("roomList", roomlist);
-
-		Reservation reservation = new Reservation();
-		reservation.deleteReservation();
-
-		request.getRequestDispatcher("WEB-INF/jsp/reservation_top.jsp").forward(request, response);
+		doGet(request, response);
 	}
 
 }
