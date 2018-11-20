@@ -34,6 +34,7 @@ String nextsubject=(String)session.getAttribute("nextsubject");
   String nextroom=(String)session.getAttribute("nextroom");
   String ky=(String)session.getAttribute("ky");
   int ky_id=(int)session.getAttribute("ky_id");
+  int ky_state_id=(int)session.getAttribute("ky_state_id");
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
@@ -56,15 +57,24 @@ String nextsubject=(String)session.getAttribute("nextsubject");
         	<label class="btn-large blue"><%=ky%></label>
         </div>
 
-        <%if(ky=="教務室"){ %>
+        <%=ky_state_id %>
+
+        <%if(ky_state_id==2){ %>
         <div class="center-align">
-        <form action="kyState"method="get">
-           <input type="hidden" value=<%=ky_id %>>
+        <form action="KeyState"method="post">
+           <input type="hidden" name="ky_id" value=<%=ky_id%>>
            <input type="submit" class="btn-large red" value="鍵を取りに行く">
         	</form>
         </div>
-        <%} %>
 
+        <%}else if(ky_state_id==4){ %>
+        <div class="center-align">
+        <form action="KeyState"method="get">
+           <input type="hidden" name="ky_id" value=<%=ky_id%>>
+           <input type="submit" class="btn-large red" value="キャンセル">
+        	</form>
+        </div>
+        <%} %>
         <br>
 
         <div class="center-align">
