@@ -28,6 +28,13 @@ public class Next_user_change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+
+//		UserBean userbean = new UserBean();
+//
+//		int timeId = userbean.getTimeId();
+//		TimeTableDisplay timetable = new TimeTableDisplay();
+//		timetable.doPost(request, response, timeId);
 		request.getRequestDispatcher("WEB-INF/jsp/user_change.jsp").forward(request, response);
 	}
 
