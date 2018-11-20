@@ -135,7 +135,7 @@
 						<br>
 						<div class="col-md-12">
 							<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-							<input type="submit" value="確認" class="waves-effect blue lighten-1 btn">
+							<input type="submit" value="確認" class="waves-effect blue lighten-1 btn" onClick="passcheck();return mailcheck();">
 						</div>
 					</div>
 	    		</form>
@@ -172,7 +172,7 @@
 			$('select').formSelect();
 		});
 		
-		function errorcheck() {
+		function passcheck() {
 		    var pass = document.getElementById('pass').value;
 		    var pass2 = document.getElementById('pass2').value;
 		    
@@ -187,7 +187,7 @@
 		    }
 		};
 		
-		function errorcheck() {
+		function mailcheck() {
 		    var mail = document.getElementById('email').value;
 		    var mail2 = document.getElementById('email2').value;
 		    
