@@ -44,7 +44,7 @@
         <label class="badge green" style="padding:10px 20px 10px 20px;font-size: 20px;">教室予約</label>
       </div>
  -->
-
+<!-- 予約top -->
  	<h5>教室予約</h5>
 
  	<br>

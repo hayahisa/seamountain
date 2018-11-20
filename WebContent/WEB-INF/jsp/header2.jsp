@@ -72,11 +72,17 @@
   					</a>
   				</li>
 
-  				<!-- <li>	教室予約へ
+  				<li>	<!-- 教室予約へ -->
   					<a class="waves-effect" href="Next_reservation" onclick="document.reservation.submit();return false;">
   						<i class="material-icons">bookmark_border</i>教室予約
   					</a>
-  				</li> -->
+  				</li>
+
+  				<li>	<!-- 予約確認へ -->
+  					<a class="waves-effect" href="Next_Confirmation" onclick="document.reservation.submit();return false;">
+  						<i class="material-icons">bookmark_border</i>予約確認
+  					</a>
+  				</li>
 
   				<li>	<!-- ログアウトへ -->
   					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;">
