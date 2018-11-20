@@ -89,7 +89,7 @@ public class KyDao extends DaoBase{
 	public void ChangeKyState(int ky_id){
 		try {
 			super.connection();
-			String sql = "update ky set ky_name=4 where ky_id=?;";
+			String sql = "update ky set ky_state_id=4 where ky_id=?;";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, ky_id);
 			stmt.executeUpdate();
@@ -97,6 +97,46 @@ public class KyDao extends DaoBase{
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
+
+	}
+
+	public void CancelKyState(int ky_id){
+		try {
+			super.connection();
+			String sql = "update ky set ky_state_id=2 where ky_id=?;";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, ky_id);
+			stmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
+	}
+
+
+	public int getKyStateId(int ky_id) {
+		int ky_state_id=0;
+		try {
+
+			super.connection();
+			String sql = "SELECT ky_state_id FROM ky where ky_id=?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1,ky_id);
+			rs = stmt.executeQuery();
+			rs.next();
+			ky_state_id=rs.getInt(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return ky_state_id;
 
 	}
 
