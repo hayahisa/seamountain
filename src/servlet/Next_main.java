@@ -29,9 +29,6 @@ public class Next_main extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("WEB-INF/jsp/main01.jsp").forward(request, response);
 	}
 
 	/**
@@ -42,15 +39,12 @@ public class Next_main extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String path = "";
+		
 		HttpSession session = request.getSession(false);
-
-		if (session == null) {
-			path = "login.jsp";
-
-		} else {
-		     path = "WEB-INF/jsp/main01.jsp";
-		}
-		request.getRequestDispatcher(path).forward(request, response);
+		
+		session.invalidate();
+		
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 
 	}
 

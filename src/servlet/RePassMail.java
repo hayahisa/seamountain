@@ -29,8 +29,6 @@ public class RePassMail extends HttpServlet {
 			
 			String email = request.getParameter("email");
 			
-			System.out.println(email);
-			
 			UserDao userdao = new UserDao();
 			boolean mailflg = userdao.mailCheck(email);
 			if(mailflg == false){
