@@ -37,8 +37,6 @@ public class Next_re_pass extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("post");
 		request.getRequestDispatcher("WEB-INF/jsp/re_pass.jsp").forward(request, response);
 	}
 

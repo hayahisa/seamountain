@@ -65,7 +65,6 @@
                 <p></p>
                 <div class="center-align"><a href="Next_course_management" class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
                 <p></p>
-
             </span>
         </div>
     </li>
@@ -80,22 +79,7 @@
             </span>
         </div>
     </li>
-    <li>
-        <div class="collapsible-header"><i class="material-icons">school</i>教室管理</div>
-        <div class="collapsible-body">
-            <span>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;追加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-                <p></p>
-                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align">変更・削除</a></div>
-                <p></p>
-            </span>
-        </div>
-    </li>
 </ul>
-
-
-
-
 
    <!-- ここまで -->
 	</div>
@@ -121,3 +105,4 @@
 
 </body>
 </html>
+
