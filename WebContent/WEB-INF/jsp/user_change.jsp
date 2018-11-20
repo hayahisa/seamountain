@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.UserBean"%>
+<%@ page import="model.TimeTableBean" %>
 <%UserBean userbean = (UserBean)session.getAttribute("userBean");%>
+<%TimeTableBean time = (TimeTableBean)session.getAttribute("monday");%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,13 +49,11 @@
     <div class="row container">
 
         <form class="col s12">
-            <div class="row">
+             <div class="row">
                 <div class="input-field col s9 left-align">
-                    <p class="Heading h3">使用時間割:</p>
+                    <p class="Heading h4">[ 使用時間割名 ]<br>　<%=time.getTime_name() %></p>
                 </div>
-            <div class="input-field col s3">
-                <input disabled value="0000000" id="disabled" type="text" class="validate">
-                <label for="disabled"></label>
+            	<div class="input-field col s3">
             </div>
             </div>
         </form>
@@ -60,7 +61,7 @@
         <form class="col s12" action="User_change" method="post" onsubmit="return_sousin()">
             <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="0000000" id="disabled" type="text" class="validate">
+                    <input disabled value="ユーザ番号：<%=userbean.getUserNo() %>" id="disabled" type="text" class="validate">
                     <label for="disabled"></label>
                 </div>
             </div>
@@ -72,8 +73,8 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input value="" name="name" id="disabled" type="text" class="validate" onClick="return sousin()">
-                   <%--  <%=userbean.getUserName() %> --%>
+                    <input value=" <%=userbean.getUserName() %>" name="name" id="disabled" type="text" class="validate" onClick="return sousin()">
+
                     <label for="disabled"></label>
                 </div>
             </div>
@@ -95,7 +96,7 @@
 
 
     <div class="center-align">
-		<a class="waves-effect waves-light btn">トップ</a>
+		<a class="waves-effect waves-light btn" href="Next_main">トップ</a>
 	</div>
 
    <!-- ここまで -->
