@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.KyDao;
 import dao.KyStateDao;
 import model.TimeTableBean;
 import model.UserBean;
@@ -20,7 +21,7 @@ import model.UserBean;
 @WebServlet("/Timeget")
 public class Timeget extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -48,34 +49,34 @@ public class Timeget extends HttpServlet {
 		int timeId = userbean.getTimeId();
 		 TimeTableDisplay timetable = new TimeTableDisplay();
 		 timetable.doPost(request, response, timeId);
-		
+
 		 Calendar cal = Calendar.getInstance();
-		 
+
 		 TimeTableBean Timelist = new TimeTableBean();
 		 TimeTableBean Nexttimelist = new TimeTableBean();
 		 String nextsubject="";
 		 String nextroom="";
 		 switch(cal.get(Calendar.DAY_OF_WEEK)){
 		 case Calendar.SUNDAY://日曜
-			 
+
 			 break;
 		 case Calendar.MONDAY://月曜
 			 Timelist=(TimeTableBean) session.getAttribute("monday");
 			 break;
 		 case Calendar.TUESDAY://火曜
-			 Timelist=(TimeTableBean) session.getAttribute("tuesday"); 
+			 Timelist=(TimeTableBean) session.getAttribute("tuesday");
 			 break;
 		 case Calendar.WEDNESDAY://水曜
-			 Timelist=(TimeTableBean) session.getAttribute("wednesday"); 
+			 Timelist=(TimeTableBean) session.getAttribute("wednesday");
 			 break;
 		 case Calendar.THURSDAY://木曜
-			 Timelist=(TimeTableBean) session.getAttribute("thursday"); 
+			 Timelist=(TimeTableBean) session.getAttribute("thursday");
 			 break;
 		 case Calendar.FRIDAY://金曜
-			 Timelist=(TimeTableBean) session.getAttribute("friday"); 
+			 Timelist=(TimeTableBean) session.getAttribute("friday");
 			 break;
 		 case Calendar.SATURDAY://土曜
-			 
+
 			 break;
 		 }
 		 //int hour=cal.get(Calendar.HOUR_OF_DAY);
@@ -108,7 +109,7 @@ public class Timeget extends HttpServlet {
 		 }else if(hour==13){
 			 if(min<=49){
 				 nextsubject=Timelist.getThree_subject_name();
-				 nextroom=Timelist.getThree_room_name(); 
+				 nextroom=Timelist.getThree_room_name();
 			 }else{
 				 nextsubject=Timelist.getFour_subject_name();
 				 nextroom=Timelist.getFour_room_name();
@@ -123,7 +124,7 @@ public class Timeget extends HttpServlet {
 		 }else if(hour==15){
 			 if(min<=34){
 			     nextsubject=Timelist.getFour_subject_name();
-				 nextroom=Timelist.getFour_room_name();	 
+				 nextroom=Timelist.getFour_room_name();
 			 }else{
 				 int day=cal.get(Calendar.DAY_OF_WEEK);
 				 day=day+1;
@@ -171,14 +172,18 @@ public class Timeget extends HttpServlet {
 			 }
 			nextsubject=Nexttimelist.getOne_subject_name();
 			nextroom=Nexttimelist.getOne_room_name();
+
 		 }
 		 System.out.println(nextsubject);
 		 System.out.println(nextroom);
 		 session.setAttribute("nextsubject", nextsubject);
 		 session.setAttribute("nextroom", nextroom);
-		 KyStateDao KyDao = new KyStateDao();	
+		 KyStateDao KyDao = new KyStateDao();
 		 String ky=KyDao.getKeyState(nextroom);
+		 KyDao kDao = new KyDao();
+		 int ky_id=kDao.getKy(nextroom);
 		 session.setAttribute("ky", ky);
+		 session.setAttribute("ky_id",ky_id);
 		doGet(request, response);
 	}
 
