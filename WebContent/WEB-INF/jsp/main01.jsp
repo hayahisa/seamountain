@@ -57,8 +57,6 @@ String nextsubject=(String)session.getAttribute("nextsubject");
         	<label class="btn-large blue"><%=ky%></label>
         </div>
 
-        <%=ky_state_id %>
-
         <%if(ky_state_id==2){ %>
         <div class="center-align">
         <form action="KeyState"method="post">
