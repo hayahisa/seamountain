@@ -33,6 +33,7 @@
 String nextsubject=(String)session.getAttribute("nextsubject");
   String nextroom=(String)session.getAttribute("nextroom");
   String ky=(String)session.getAttribute("ky");
+  int ky_id=(int)session.getAttribute("ky_id");
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
@@ -54,6 +55,15 @@ String nextsubject=(String)session.getAttribute("nextsubject");
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
         	<label class="btn-large blue"><%=ky%></label>
         </div>
+
+        <%if(ky=="教務室"){ %>
+        <div class="center-align">
+        <form action="kyState"method="get">
+           <input type="hidden" value=<%=ky_id %>>
+           <input type="submit" class="btn-large red" value="鍵を取りに行く">
+        	</form>
+        </div>
+        <%} %>
 
         <br>
 

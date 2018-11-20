@@ -52,7 +52,6 @@ public class PassDao extends DaoBase{
 			}
 
 		} catch (Exception e) {
-			System.out.println("kkkkkkk");
 			e.printStackTrace();
 		} finally {
 			try {
@@ -63,6 +62,34 @@ public class PassDao extends DaoBase{
 			}
 		}
 		return flg;
+		
+	}
+	
+	//パスワード再設定
+	public void updatePass(String no,String pass){
+		
+		try {
+			// connection確立
+			super.connection();
+
+			String SQL = "UPDATE password SET password = ? WHERE user_no = ?";
+
+			stmt = con.prepareStatement(SQL);
+			// SQLの？に値のセット
+			stmt.setString(1, pass);
+			stmt.setString(2, no);
+			stmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
 		
 	}
 }

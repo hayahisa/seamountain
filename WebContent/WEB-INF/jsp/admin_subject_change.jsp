@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="model.SubjectBean" %>
+<%	SubjectBean subjectbean = new SubjectBean();
+	subjectbean = (SubjectBean)request.getAttribute("subjectbean");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -23,47 +27,41 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 
-<title></title> <!--画面名-->
-
-
+<title>科目名変更</title> <!--画面名-->
+    
 </head>
-
+    
 <body>
 
 	<header>
 		<%@ include file="admin_header.jsp"%>
 	</header><!-- ヘッダー終了  -->
 
-<div class="row"> <!-- 表示範囲の設定 -->
-	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-
-	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
-		<!-- ここから書いて -->
-<br><br><br><br><br><br><br>
-
-<div class="row">
-    <form class="col s12" method="post" action="SubjectAdd">
-        <div class="row">
-            <div class="input-field col s12">
-                <input placeholder="科目名" id="first_name" type="text" class="validate" name="subjectname">
-                <label for="first_name">科目名</label>
-            </div>
-        </div>
-        <div class="row">
-    		<div class="right-align col s11">
-    			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-    			<input type="submit" class="waves-effect blue lighten-1 btn" value="追　加">
-    		</div>
-    	</div>
-    </form>
-    <div class="col s1"></div>
-</div>
-
-   <!-- ここまで -->
-    </div>
-	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
-</div> <!-- div row　終了 -->
-
+	<div class="row"> <!-- 表示範囲の設定 -->
+		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
+		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
+			<!-- ここから書いて -->
+			<br><br><br><br><br><br><br>
+			<form action="Admin_subject_change" method="post">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="first_name1" name="subjectname" class="validate">
+						<label class="active" for="first_name2"><%=subjectbean.getSub_name() %></label>
+						<input type="hidden" value="<%= subjectbean.getSub_id()%>" name="subjectid">
+					</div>
+				</div>
+				<br><br>
+				<div class="row">
+					<div class="right-align col s11">
+						<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+						<input type="submit" value="変更" class="waves-effect waves-light btn-large">
+					</div>
+					<div class="col s1"></div>
+    			</div>
+    		</form>
+			<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+		</div> <!-- div row　終了 -->
+	</div>
 <!-- SCRIPT -->
       <script type="text/javascript">
 
@@ -84,10 +82,10 @@
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
 	  // Or with jQuery
-
-
-
-
+          
+        
+          
+          
 
 	   </script>
 

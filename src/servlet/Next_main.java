@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,7 +40,7 @@ public class Next_main extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		String path = "";
 		HttpSession session = request.getSession(false);
 
@@ -52,7 +51,7 @@ public class Next_main extends HttpServlet {
 		     path = "WEB-INF/jsp/main01.jsp";
 		}
 		request.getRequestDispatcher(path).forward(request, response);
-		
+
 	}
 
 }

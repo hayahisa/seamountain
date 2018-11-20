@@ -38,7 +38,8 @@ public class Department_Change extends HttpServlet {
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
 
 		cdao.courseChange(name, course_id);
-        RequestDispatcher rd = request.getRequestDispatcher("Next_admin_top");
+
+		RequestDispatcher rd = request.getRequestDispatcher("Next_admin_top");
         rd.forward(request, response);
 	}
 

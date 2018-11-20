@@ -74,7 +74,7 @@
     <br>
     <input type="hidden" value="<%=userdetails.getUserNo() %>" name="userno">
     <div class="right-align">
-    	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻　る</button>
+    	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
 		<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
     </div>
 </form>
