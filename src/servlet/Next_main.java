@@ -27,6 +27,7 @@ public class Next_main extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
@@ -42,9 +43,13 @@ public class Next_main extends HttpServlet {
 		
 		HttpSession session = request.getSession(false);
 		
-		session.invalidate();
+		if(session == null){
+			path = "login.jsp";
+		}else{
+			path = "WEB-INF/jsp/main01.jsp";
+		}
 		
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.getRequestDispatcher(path).forward(request, response);
 
 	}
 
