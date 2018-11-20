@@ -44,6 +44,9 @@ public class UserRegistration extends HttpServlet {
 			System.out.println(userbean.getMail());
 			
 			mail.NewRegistMail.sendMail("新規会員登録", "新規会員登録", userbean.getMail());
+			
+			request.getRequestDispatcher("WEB-INF/jsp/new_regist_mail_confirm.jsp").forward(request, response);
+			
 		} catch (MessagingException | javax.mail.MessagingException e) {
 			e.printStackTrace();
 		}
