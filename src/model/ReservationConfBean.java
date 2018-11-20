@@ -9,18 +9,20 @@ public class ReservationConfBean implements Serializable{
 	private String user_no;
 	private int room_id;
 	private Date date;
+	private String day;
 	private int lecture;
 
 	public ReservationConfBean(){
 
 	}
 
-	public ReservationConfBean(int reservation_no, String user_no, int room_id, Date date, int lecture) {
+	public ReservationConfBean(int reservation_no, String user_no, int room_id, Date date, String day, int lecture) {
 		super();
 		this.reservation_no = reservation_no;
 		this.user_no = user_no;
 		this.room_id = room_id;
 		this.date = date;
+		this.day = day;
 		this.lecture = lecture;
 	}
 
@@ -56,6 +58,14 @@ public class ReservationConfBean implements Serializable{
 		this.date = date;
 	}
 
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
 	public int getLecture() {
 		return lecture;
 	}
@@ -63,5 +73,6 @@ public class ReservationConfBean implements Serializable{
 	public void setLecture(int lecture) {
 		this.lecture = lecture;
 	}
+
 
 }
