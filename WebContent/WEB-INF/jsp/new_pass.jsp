@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%	
+	String message = "";
+	String mailflg = (String)request.getAttribute("flg");
+	if(mailflg != null){
+		message = "学籍番号が一致しません";
+	}
+%>
 <!DOCTYPE html>
 
 <html>
@@ -45,22 +52,16 @@
     </div>
 
     <div class="row container">
+    
         <form class="col s12" action="Re_pass_regist" method="post">
-
         	<br>
         	<br>
 
         	<div class="row">
+        		<label style="color:red"><%=message %></label>
 			    <div class="input-field col s12  ">
 				    <input id="number" type="number" class="validate" name="number" required>
 					<label for="number">学籍番号</label>
-				</div>
-			</div>
-
-        	<div class="row">
-			    <div class="input-field col s12  ">
-				    <input id="email" type="email" class="validate" name="mail" required>
-					<label for="mail">メールアドレス</label>
 				</div>
 			</div>
 
@@ -77,13 +78,13 @@
 
 		    <div class="row">
 		        <div class="input-field col s12">
-				    <input id="repass" type="password" class="validate" name="repass" required>
+				    <input id="pass2" type="password" class="validate" required>
 	         		<label for="repass">パスワード再入力</label>
 				</div>
 			</div>
 
    		    <div class="col s12 right-align">
-   		    	<input type="submit" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="再登録">
+   		    	<input type="submit" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="再登録" onClick="return errorcheck()">
    		    </div>
 
         </form>
@@ -107,6 +108,28 @@
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
+            
+            function errorcheck() {
+    		    var pass = document.getElementById('pass').value;
+    		    var pass2 = document.getElementById('pass2').value;
+    		    
+    		    
+    		    // パスワードの一致確認
+    		    if (pass != pass2){
+    		    	
+    		      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+    		      return false;
+    		    }else{
+    		    	var res = confirm("登録しますか？");
+    		    	if(res == true){
+    		    		return true;
+    		    	}else{
+    		    		return false;
+    		    	}
+    		    	
+    		      return true;
+    		    }
+    		};
 
 	  </script>
 

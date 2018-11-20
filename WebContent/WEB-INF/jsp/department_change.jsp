@@ -14,7 +14,7 @@
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
 <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
 
 <link rel="stylesheet" href="css/default.css" >
@@ -34,31 +34,7 @@
 <body>
 
 	<header>
-		<nav> <!-- ヘッダー  -->
-
-  		<ul id="slide-out" class="sidenav">　<!-- サイドメニュー -->
-    		<li><div class="user-view">
-      		<div class="background">
-      		</div>
-      		<a href="#name"><span class="white-text name">John Doe</span></a>
-      		<a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    		</div></li>
-    		<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    		<li><a href="#!">メニュー</a></li>
-    		<li><div class="divider"></div></li>
-    		<li><a class="subheader">Subheader</a></li>
-    		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-				<li><a class="時間割作成" href="#!"></a></li>
-				<li><a class="時間割一覧" href="#!"></a></li>
-				<li><a class="" href="#!"></a></li>
-				<li><a class="logout" href="#!">ログアウト</a></li>
-  		</ul>
-
-  		<a href="#" data-target="slide-out" class="sidenav-trigger">
-				<i class="material-icons">menu</i>
-			</a>
-
-		</nav>　
+		<%@ include file="admin_header.jsp"%>
 	</header><!-- ヘッダー終了  -->
 
 <div class="row"> <!-- 表示範囲の設定 -->
@@ -80,14 +56,12 @@
      	<br><br>
 <div class="row">
     <div class="right-align col s11">
-   	   <input type="submit" value="変更" class="waves-effect waves-light btn-large">
+    	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+		<input type="submit" value="変更" class="waves-effect blue btn">
     </div>
     </div>
     </form>
     <div class="col s1"></div>
-
-
-
 
    <!-- ここまで -->
     </div>

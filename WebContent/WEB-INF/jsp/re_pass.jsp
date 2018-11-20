@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%@ import javax.mail.* %>
+
+<%	
+	String message = "";
+	String mailflg = (String)request.getAttribute("flg");
+	if(mailflg != null){
+		message = "メールアドレスは登録されていません";
+	}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +71,25 @@
     </div>
 
 
-
+    <form action="RePassMail" method="post" class="col s12">
+              <div class="row">
+              <label style="color:red"><%=message %></label>
+        <div class="input-field col s12">
+          <input id="email" type="email" name="email"  class="validate">
+          <label for="email">メールアドレス</label>
+        </div>
+      </div>
+      <div class="row container">
+      	<div class="col s12 right-align">
+    		<input type="submit" value="送信" class="waves-effect waves-light btn">
+    	</div>
+    </div>
+    </form>
+  </div>
+        
+            
+            
+        
 
 
    <!-- ここまで -->

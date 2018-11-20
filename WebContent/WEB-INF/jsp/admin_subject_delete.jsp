@@ -44,7 +44,6 @@
     <div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 <br><br>
-<form action="Admin_subject_delete" name="form">
     <table>
         <tbody>
             <thead>
@@ -59,17 +58,15 @@
                 		<a href="Next_subject_change?subjectid=<%=subjectArray.get(count).getSub_id() %>"><%=subjectArray.get(count).getSub_name() %></a>
                 	</td>
                 	<td>
-                		<input type="hidden" value="<%=subjectArray.get(count).getSub_id() %>" name="subjectid">
-                    	<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
+                    	<a href="Admin_subject_delete?subjectid=<%=subjectArray.get(count).getSub_id() %>" class="waves-effect red lighten-1 btn" onClick="return check()">削　除</a>
                 	</td>
             	</tr>
             <% }%>
         </tbody>
     </table>
-</form>
         <br><br>
 		<div class="right-align">
-			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻　る</button>
+			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
 		</div>
              
 

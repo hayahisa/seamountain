@@ -68,7 +68,7 @@
         </form>
         <br><br>
         <div class="right-align">
-        	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻　る</button>
+        	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
 		</div>
              
 

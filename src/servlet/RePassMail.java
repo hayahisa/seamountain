@@ -10,19 +10,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 
-@WebServlet("/mail")
-public class MainServlet extends HttpServlet {
+import dao.UserDao;
+
+@WebServlet("/RePassMail")
+public class RePassMail extends HttpServlet {
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().write(""
-				+ "<form action=\"/MailTest/mail\" method=\"POST\">"
+				+ "<form action=\"/SeaMountain/mail\" method=\"POST\">"
 				+ "  <button type=\"submit\">submit</button>"
 				+ "</form>");
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			mail.Mail.sendMail("Request", "test", "1601134@st.asojuku.ac.jp");
+			
+			String email = request.getParameter("email");
+			
+			System.out.println(email);
+			
+			UserDao userdao = new UserDao();
+			boolean mailflg = userdao.mailCheck(email);
+			if(mailflg == false){
+				request.setAttribute("flg", "1");
+				request.getRequestDispatcher("WEB-INF/jsp/re_pass.jsp").forward(request, response);
+			}else{
+				mail.Mail.sendMail("パスワード再設定", "パスワード再設定", email);
+			}
 		} catch (MessagingException | javax.mail.MessagingException e) {
 			e.printStackTrace();
 		}
