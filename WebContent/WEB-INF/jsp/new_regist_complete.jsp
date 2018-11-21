@@ -54,7 +54,7 @@
 					<br>
 					<br>
 					<div class="center-align">
-						<a href="Next_main" class="center-align waves-effect waves-light btn center" onclick="document.main.submit();return false;">ログイン画面へ</a>
+						<a href="Next_main" class="center-align waves-effect waves-light btn center" onclick="document.main.submit();return false;">メイン画面へ</a>
 					</div>
 			
 					<!-- ここまで -->
