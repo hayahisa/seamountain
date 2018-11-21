@@ -79,7 +79,7 @@
   				</li>
 
   				<li>	<!-- 予約確認へ -->
-  					<a class="waves-effect" href="Next_Confirmation" onclick="document.reservation.submit();return false;">
+  					<a class="waves-effect" href="Next_confirmation" onclick="document.confirmation.submit();return false;">
   						<i class="material-icons">bookmark_border</i>予約確認
   					</a>
   				</li>
@@ -106,6 +106,8 @@
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
   			<form action="Next_time_search" name="time_search" method="post"></form>	<!-- time_searchへ -->
   			<form action="Next_reservation" name="reservation" method="post"></form>	<!-- reservation(予約）へ -->
+  			<form action="Next_confirmation" name="confirmation" method="post"></form>	<!-- confirmation(予約確認）へ -->
+
 
 
   		</nav>　
