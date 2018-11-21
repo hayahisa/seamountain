@@ -73,7 +73,6 @@ public class Reservation extends HttpServlet {
 		for(ReservationConfBean array : reservationconfList){
 			reservationDate = String.valueOf(reservationconfList.get(i).getDate());
 			lecture = reservationconfList.get(i).getLecture();	//何限目か
-			System.out.println(reservationDate);
 
 //			年、月、日に分解
 			String[] reservationDateArray = reservationDate.split("-",0);
@@ -81,20 +80,11 @@ public class Reservation extends HttpServlet {
 			int resMonth = Integer.parseInt(reservationDateArray[1]);
 			int resDate = Integer.parseInt(reservationDateArray[2]);
 
-			System.out.println("lecture="+lecture);
-			System.out.println("month="+month);
-			System.out.println("year="+year);
-			System.out.println("date="+date);
-
 //			今日と予約の日の差
 			if(year >= resYear){
-				System.out.println("year");
 				if(month >= resMonth){
-					System.out.println("month");
 					if(date >= resDate){
-						System.out.println("date");
 //						何限目かでの時間を比べる
-						System.out.println("hour="+hour);
 						switch(lecture){
 						case 1:
 							if(hour >= 10){
