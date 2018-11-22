@@ -115,12 +115,8 @@ public class Timeget extends HttpServlet {
 				 nextroom=Timelist.getFour_room_name();
 			 }
 		 }else if(hour==14){
-			 System.out.println("14:00");
 			 nextsubject=Timelist.getFour_subject_name();
 			  nextroom=Timelist.getFour_room_name();
-			  System.out.println("14:00");
-				 System.out.println(nextsubject);
-				 System.out.println(nextroom);
 		 }else if(hour==15){
 			 if(min<=34){
 			     nextsubject=Timelist.getFour_subject_name();
@@ -150,9 +146,7 @@ public class Timeget extends HttpServlet {
 			 }
 		 }else{
 			 int day=cal.get(Calendar.DAY_OF_WEEK);
-			 System.out.println(day);
 			 day=day+1;
-			 System.out.println(day);
 			  switch(day){
 			  case 3:
 			   Nexttimelist=(TimeTableBean) session.getAttribute("tuesday");
@@ -174,8 +168,6 @@ public class Timeget extends HttpServlet {
 			nextroom=Nexttimelist.getOne_room_name();
 
 		 }
-		 System.out.println(nextsubject);
-		 System.out.println(nextroom);
 		 session.setAttribute("nextsubject", nextsubject);
 		 session.setAttribute("nextroom", nextroom);
 		 KyStateDao KyDao = new KyStateDao();
