@@ -14,9 +14,9 @@ import dao.RoomDao;
 import model.RoomBean;
 
 /**
- * Servlet implementation class Next_time_search
+ * Servlet implementation class Next_class_list
  */
-@WebServlet("/Next_time_search")
+@WebServlet("/Next_class_list")
 public class Next_class_list extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,7 @@ public class Next_class_list extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
