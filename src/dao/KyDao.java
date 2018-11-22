@@ -126,6 +126,7 @@ public class KyDao extends DaoBase{
 			rs = stmt.executeQuery();
 			rs.next();
 			ky_state_id=rs.getInt(1);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
