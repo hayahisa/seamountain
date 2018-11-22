@@ -2,6 +2,7 @@ package dao;
 
 import java.util.ArrayList;
 
+import model.ConfirmationViewBean;
 import model.ReservationBean;
 import model.ReservationConfBean;
 import servlet.GetSelectDays;
@@ -11,6 +12,87 @@ public class ReservationDao extends DaoBase{
 
 	public ReservationDao(){
 
+	}
+
+//	ユーザーの予約情報を確認する
+	public ArrayList<ConfirmationViewBean> viewReservation(String user_no){
+		ArrayList<ConfirmationViewBean> confirmationviewArray = new ArrayList<>();
+		String day = null;
+		String resDate = null;
+		try{
+			super.connection();
+			String sql = "SELECT res.room_id, ro.room_name, res.day, res.lecture, res.date "
+					+ "FROM reservation res "
+					+ "INNER JOIN room ro "
+					+ "ON res.room_id = ro.room_id "
+					+ "WHERE res.user_no = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, user_no);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+				if(rs.getString(3).equals("monday")){
+					day = "月";
+					resDate = sday.getSelectDays("monday");
+				}else if(rs.getString(3).equals("tuesday")){
+					day = "火";
+					resDate = sday.getSelectDays("tuesday");
+				}else if(rs.getString(3).equals("wednesday")){
+					day = "水";
+					resDate = sday.getSelectDays("wednesday");
+				}else if(rs.getString(3).equals("thursday")){
+					day = "木";
+					resDate = sday.getSelectDays("thursday");
+				}else if(rs.getString(3).equals("friday")){
+					resDate = sday.getSelectDays("friday");
+					day = "金";
+				}
+				ConfirmationViewBean confirmationbean = new ConfirmationViewBean(
+						rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getDate(5)
+					);
+				confirmationviewArray.add(confirmationbean);
+				}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return confirmationviewArray;
+	}
+
+//	ユーザのreservationを取り出す
+	public ArrayList<ReservationConfBean> getUserReservation(String user_no){
+		ArrayList<ReservationConfBean> reservationconfArray = new ArrayList<>();
+		try{
+			super.connection();
+			String sql = "SELECT * FROM `reservation` "
+					+ "WHERE user_no = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, user_no);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+				ReservationConfBean reservationonfbean = new ReservationConfBean(
+					rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDate(4),rs.getString(5),rs.getInt(6)
+					);
+				reservationconfArray.add(reservationonfbean);
+				}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return reservationconfArray;
 	}
 
 //	対象の予約を消す

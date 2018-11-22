@@ -80,7 +80,7 @@
 
   				<li>	<!-- 予約確認へ -->
   					<a class="waves-effect" href="Next_confirmation" onclick="document.confirmation.submit();return false;">
-  						<i class="material-icons">bookmark_border</i>予約確認
+  						<i class="material-icons">chrome_reader_mode</i>予約確認
   					</a>
   				</li>
 
