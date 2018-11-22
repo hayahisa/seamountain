@@ -27,22 +27,24 @@ public class Next_main extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String path = "";
-		
+
 		HttpSession session = request.getSession(false);
-		
+
 		if(session == null){
 			path = "login.jsp";
 		}else{
 			path = "WEB-INF/jsp/main01.jsp";
 		}
-		
+
+		Timeget time = new Timeget();
+		time.doPost(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
-		
+
 	}
 
 	/**
@@ -53,15 +55,17 @@ public class Next_main extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String path = "";
-		
+
 		HttpSession session = request.getSession(false);
-		
+
 		if(session == null){
 			path = "login.jsp";
 		}else{
 			path = "WEB-INF/jsp/main01.jsp";
 		}
-		
+
+		Timeget time = new Timeget();
+		time.doPost(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 
 	}

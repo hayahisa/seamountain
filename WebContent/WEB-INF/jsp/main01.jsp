@@ -76,13 +76,13 @@ String nextsubject=(String)session.getAttribute("nextsubject");
         	</form>
         </div>
 
-        <%}else if(ky_state_id==4){ %>
+        <%-- <%}else if(ky_state_id==4){ %>
         <div class="center-align">
         <form action="KeyState"method="get">
            <input type="hidden" name="ky_id" value=<%=ky_id%>>
            <input type="submit" class="btn-large red" value="キャンセル">
         	</form>
-        </div>
+        </div> --%>
         <%} %>
         <br>
 
