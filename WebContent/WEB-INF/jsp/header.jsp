@@ -67,7 +67,7 @@
   				</li>
 
   				<li>	<!-- 時間割検索へ -->
-  					<a class="waves-effect" href="Next_time_search" onclick="document.time_search.submit();return false;">
+  					<a class="waves-effect" href="Next_class_list" onclick="document.time_search.submit();return false;">
   						<i class="material-icons">search</i>鍵状態一覧
   					</a>
   				</li>
