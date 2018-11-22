@@ -67,7 +67,7 @@
   				</li>
 
   				<li>	<!-- 時間割検索へ -->
-  					<a class="waves-effect" href="Next_class_list" onclick="document.time_search.submit();return false;">
+  					<a class="waves-effect" href="Next_class_list" onclick="document.class_list.submit();return false;">
   						<i class="material-icons">search</i>鍵状態一覧
   					</a>
   				</li>
@@ -104,7 +104,7 @@
   			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
   			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
-  			<form action="Next_time_search" name="time_search" method="post"></form>	<!-- time_searchへ -->
+  			<form action="Next_class_list" name="class_list" method="post"></form>	<!-- time_searchへ -->
   			<form action="Next_reservation" name="reservation" method="post"></form>	<!-- reservation(予約）へ -->
   			<form action="Next_confirmation" name="confirmation" method="post"></form>	<!-- confirmation(予約確認）へ -->
 
