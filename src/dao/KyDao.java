@@ -33,7 +33,6 @@ public class KyDao extends DaoBase{
 
 		int ky_id = 0;
 		try {
-			System.out.println(roomId+"aaaaaaaaaaa");
 			super.connection();
 			String sql = "SELECT ky_id FROM room where room_name=?";
 			stmt = con.prepareStatement(sql);

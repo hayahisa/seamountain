@@ -57,16 +57,16 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 	<c:forEach var="obj" items="${rArray}" varStatus="status">
 		<div class="panel panel-default panel-size">
 			<div class="panel-body">
-				予約情報<br>
-				<%-- ${obj.room_name}： --%>
-				${obj.day}：
-				${obj.lecture}
-				<span class="badge red">
-				</span>
+				予約情報：<br>${obj.date}（${obj.day}）：${obj.room_name}：${obj.lecture}限目
 			</div>
 		</div>
 	</c:forEach>
 
+	<form action="Next_main" method="post">
+   		<div class="right-align">
+   			<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" value="　戻る　">
+		</div>
+	</form>
 
 	<!-- ここまで -->
 	</div>
