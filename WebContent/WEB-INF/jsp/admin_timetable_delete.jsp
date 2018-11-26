@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"
-		import="model.SubjectBean"
+		import="model.TimeListBean"
 %>
 <%
-	ArrayList<SubjectBean> subjectArray = new ArrayList<SubjectBean>();
-	subjectArray = (ArrayList<SubjectBean>)request.getAttribute("subjectArray");
+	ArrayList<TimeListBean> timeArray = new ArrayList<TimeListBean>();
+	timeArray = (ArrayList<TimeListBean>)request.getAttribute("timeArray");
 %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 
-<title>科目一覧・削除</title> <!--画面名-->
+<title>時間割一覧・削除</title> <!--画面名-->
 
 </head>
     
@@ -48,17 +48,17 @@
         <tbody>
             <thead>
                 <tr>
-                	<th>学科名</th>
+                	<th>時間割</th>
                     <th></th>
                 </tr>
             </thead>
-            <%for(int count=0;count<subjectArray.size();count++){%>
+            <%for(int count=0;count<timeArray.size();count++){%>
             	<tr>
+            		<td>
+            			<%=timeArray.get(count).getTime_name() %>
+            		</td>
                 	<td>
-                		<a href="Next_subject_change?subjectid=<%=subjectArray.get(count).getSub_id() %>"><%=subjectArray.get(count).getSub_name() %></a>
-                	</td>
-                	<td>
-                    	<a href="Admin_subject_delete?subjectid=<%=subjectArray.get(count).getSub_id() %>" class="waves-effect red lighten-1 btn" onClick="return check()">削　除</a>
+                    	<a href="Admin_time_table_delete?timeid=<%=timeArray.get(count).getTime_id() %>" class="waves-effect red lighten-1 btn" onClick="return check()">削　除</a>
                 	</td>
             	</tr>
             <% }%>
@@ -100,7 +100,7 @@
      });
      
      function check(){
-  		if(window.confirm('科目を削除しますか？')){
+  		if(window.confirm('時間割を削除しますか？')){
   			return true;
   		}else{
   			window.alert('キャンセルされました'); // 警告ダイアログを表示

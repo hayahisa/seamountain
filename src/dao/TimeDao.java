@@ -36,5 +36,26 @@ public class TimeDao extends DaoBase{
 		}
 		return timeArray;
 	}
+	
+	//時間割削除
+	public void deleteTimetable(int timeid){
+		try{
+			super.connection();
+			String sql = "DELETE FROM time WHERE time_id = ?";
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, timeid);
+			stmt.executeUpdate();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
 
 }

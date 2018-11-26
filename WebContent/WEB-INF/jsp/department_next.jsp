@@ -60,7 +60,7 @@
 
           <tr>
             <td><a href="Department_next?course_id=<%=bean.getCourse_id()%>&course_name=<%=bean.getCourse_name()%>"><%=bean.getCourse_name()%></a></td>
-            <td><input class="waves-effect red lightten-1 btn" type="submit" value="削除" name="<%=bean.getCourse_id()%>"></td>
+            <td><input class="waves-effect red lightten-1 btn" type="submit" value="削除" name="<%=bean.getCourse_id()%>" onClick="return check()"></td>
           </tr>
           <%} %>
         </tbody>
@@ -101,6 +101,15 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
+     
+     function check(){
+  		if(window.confirm('選択されたユーザーを削除しますか？')){
+  			return true;
+  		}else{
+  			window.alert('キャンセルされました'); // 警告ダイアログを表示
+  			return false;
+  		}
+  	}
 </script>
 
 </body>
