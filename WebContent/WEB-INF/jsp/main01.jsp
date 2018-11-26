@@ -74,7 +74,7 @@ String nextsubject=(String)session.getAttribute("nextsubject");
         <form action="KeyState"method="post">
            <input type="hidden" name="ky_id" value=<%=ky_id%>>
            <input type="submit" class="btn-large red" value="鍵を取りに行く">
-        	</form>
+        </form>
         </div>
 
         <%-- <%}else if(ky_state_id==4){ %>

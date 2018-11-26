@@ -68,40 +68,36 @@ String roleFlg = String.valueOf(userbean.getRoleFlg());
 
         <form class="col s12" action="User_change" method="post" onsubmit="return_sousin()">
             <div class="row">
+                <div class="input-field col s12" style="display:inline-block">
+                    <input disabled value="<%=userbean.getUserNo() %>" id="disabled" type="text" class="validate">
+                    <label for="disabled">ユーザ番号</label>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="input-field col s12">
-                    <input disabled value="ユーザ番号：<%=userbean.getUserNo() %>" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
+                    <input value="<%=userbean.getUserName() %>" name="name" id="disabled" type="text" class="validate" onClick="return sousin()">
+                    <label for="disabled">ユーザ名</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <input value="<%=userbean.getMail()%>" name="mail" id="disabled" type="text" class="validate">
-                    <label for="disabled"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input value=" <%=userbean.getUserName() %>" name="name" id="disabled" type="text" class="validate" onClick="return sousin()">
-
-                    <label for="disabled"></label>
+                    <label for="disabled">メール</label>
                 </div>
             </div>
 
             <div class="container">
-        <div class="row right-align">
-        <br>
-            <div>
-                <input class="waves-effect blue lighten-1 btn"  value="ユーザー情報変更" type="submit">
-
-            </div>
-        </div>
-    </div>
+        		<div>
+        		<br>
+            		<div class="row center-align">
+                		<input type="submit" class="waves-effect blue lighten-1 btn" value="ユーザ情報変更" style="padding:10px;">
+            		</div>
+        		</div>
+    		</div>
         </form>
 
     </div>
-
-
-
 
     <div class="center-align">
 		<a class="waves-effect waves-light btn" href="Next_main">トップ</a>

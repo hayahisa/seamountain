@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%session.invalidate(); %>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +26,7 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>ログイン画面</title> <!--画面名-->
 
-<nav class="header">鍵管理システム</nav>
+<nav class="header">　鍵管理システム</nav>
 
 </head>
 <body>
@@ -37,13 +39,15 @@
 	<br>
 	<br>
 
-
-
 	<div class="container">
     	<h5 class="left-align valign-wrapper"><i class="material-icons small ">input</i>ログイン</h5>
     </div>
 
     <br>
+     <!-- エラーメッセージ -->
+     <div class="center-align" style="color:red;">
+     <c:out value="${msg}" />
+     </div>
 
     <br>
 	<div class="row container">
@@ -90,6 +94,7 @@
 	</div>
 
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
+
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
@@ -101,25 +106,13 @@
 	    	var pass = document.getElementById('password').value;
 
 	    	if(isNaN(number) == true){
-	    		alert('数字で入力してください');
+	    		alert('ユーザ番号は数字で入力してください');
 	    		return false;
 	    	}else{
 	    		return true;
 	    	}
 	    }
 
-      /*
-      document.addEventListener('DOMContentLoaded', function() {
-	    var elems = document.querySelectorAll('.sidenav');
-	    var instances = M.Sidenav.init(elems);
-	  });
-      */
-
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-	  // Or with jQuery
 	   </script>
 
 </body>

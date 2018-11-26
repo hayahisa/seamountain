@@ -41,7 +41,7 @@ String roleFlg = String.valueOf(userbean.getRoleFlg());
 	<%@ include file="header.jsp"%>
 <%}else{%>
 	<%@ include file="header2.jsp"%>
-<%} %>>
+<%} %>
 
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
@@ -79,13 +79,13 @@ String roleFlg = String.valueOf(userbean.getRoleFlg());
             <br><br>
             <div class="row">
             	<div style="border-bottom:solid 2px; margin-left:10px; border-color:grey;">
-                	<p>　アドレス：<%=userbean.getMail()%></p>
+                	<p>　ユーザ名：<%=userbean.getUserName()%></p>
                 </div>
             </div>
             <br><br>
             <div class="row">
             	<div style="border-bottom:solid 2px; margin-left:10px; border-color:grey;">
-                	<p>　ユーザ名：<%=userbean.getUserName()%></p>
+                	<p>　アドレス：<%=userbean.getMail()%></p>
                 </div>
             </div>
         </form>
@@ -103,9 +103,9 @@ String roleFlg = String.valueOf(userbean.getRoleFlg());
         </div>
     </div>
 
-    <div class="center-align">
-		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect green btn" style="margin:0px 5px 0px 0px">トップ</a>
-	</div>
+        <div class="center-align">
+			<a class="waves-effect waves-light btn" href="Next_main">トップ</a>
+		</div>
 
    <!-- ここまで -->
   </div>

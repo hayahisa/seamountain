@@ -66,6 +66,7 @@ public class Login extends HttpServlet {
 		UserPassBean userpassbean = ldao.User_loginDao(user_no);
 
 		if(ldao.User_loginDao(user_no) == null){
+			request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
 			path = "/login.jsp";
 		}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(encryptPass)){
 			session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
@@ -76,8 +77,9 @@ public class Login extends HttpServlet {
 
 			Timeget time = new Timeget();
 			time.doPost(request, response);
-
+			request.setAttribute("msg", "");
 		}else{
+			request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
 			path = "/login.jsp";
 		}
 		request.getRequestDispatcher(path).forward(request, response);
