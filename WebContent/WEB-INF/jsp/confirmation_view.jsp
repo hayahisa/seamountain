@@ -41,7 +41,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 	<%@ include file="header.jsp"%>
 <%}else{%>
 	<%@ include file="header2.jsp"%>
-<%} %>>
+<%} %>
 
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
