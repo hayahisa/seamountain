@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.SubjectDao;
+import dao.TimeDao;
 
 /**
- * Servlet implementation class Admin_subject_delete
+ * Servlet implementation class Admin_time_table_delete
  */
-@WebServlet("/Admin_subject_delete")
-public class Admin_subject_delete extends HttpServlet {
+@WebServlet("/Admin_time_table_delete")
+public class Admin_time_table_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Admin_subject_delete() {
+    public Admin_time_table_delete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +31,12 @@ public class Admin_subject_delete extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int subjectid = Integer.parseInt(request.getParameter("subjectid"));
+		int timeid = Integer.parseInt(request.getParameter("timeid"));
 		
-		SubjectDao subjectdao = new SubjectDao();
-		subjectdao.deleteSubject(subjectid);
+		TimeDao timedao = new TimeDao();
+		timedao.deleteTimetable(timeid);
 		
-		request.getRequestDispatcher("Next_subject_delete").forward(request, response);
+		request.getRequestDispatcher("Next_time_table_delete").forward(request, response);
 		
 	}
 

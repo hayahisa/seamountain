@@ -32,7 +32,7 @@ public class NewRegistMail {
 	                "\n" +
 	                "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n" +
 	                "登録を完了するためにURLを押下してください\n" +
-	                "https://seamountain.site/UserRegistrationConfirm" +
+	                "http://localhost:8080/SeaMountain/UserRegistrationConfirm" +
 	                "\n" +
 	                "※ このメールへの返信はできませんのでご了承ください。\n" +
 	                "｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ+｡｡.｡･.｡*ﾟ\n";

@@ -59,7 +59,7 @@
          
           <tr>
             <td><a href="Admin_ky_changego?Ky_id=<%=bean.getKy_id()%>&Ky_name=<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
-            <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect waves-light btn-large right-align red"></td>
+            <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect waves-light btn-large right-align red" onClick="return check()"></td>
           </tr>
           <%} %>
         </tbody>
@@ -100,6 +100,15 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
+     
+     function check(){
+  		if(window.confirm('鍵を削除しますか？')){
+  			return true;
+  		}else{
+  			window.alert('キャンセルされました'); // 警告ダイアログを表示
+  			return false;
+  		}
+  	}
 </script>
 
 </body>

@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,19 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.SubjectDao;
+import dao.TimeDao;
+import model.TimeListBean;
 
 /**
- * Servlet implementation class Admin_subject_delete
+ * Servlet implementation class Next_time_table_delete
  */
-@WebServlet("/Admin_subject_delete")
-public class Admin_subject_delete extends HttpServlet {
+@WebServlet("/Next_time_table_delete")
+public class Next_time_table_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Admin_subject_delete() {
+    public Next_time_table_delete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,12 +33,13 @@ public class Admin_subject_delete extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int subjectid = Integer.parseInt(request.getParameter("subjectid"));
+		ArrayList<TimeListBean> timeArray = new ArrayList<TimeListBean>();
+		TimeDao timedao = new TimeDao();
+		timeArray = timedao.timeList();
 		
-		SubjectDao subjectdao = new SubjectDao();
-		subjectdao.deleteSubject(subjectid);
+		request.setAttribute("timeArray", timeArray);
 		
-		request.getRequestDispatcher("Next_subject_delete").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/admin_timetable_delete.jsp").forward(request, response);
 		
 	}
 

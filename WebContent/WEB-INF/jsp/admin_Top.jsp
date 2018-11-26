@@ -79,6 +79,15 @@
             </span>
         </div>
     </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">vpn_key</i>時間割管理</div>
+        <div class="collapsible-body">
+            <span>
+                <div class="center-align"><a class="waves-effect waves-light btn-large celter-align" href="Next_time_table_delete">一覧・削除</a></div>
+                <p></p>
+            </span>
+        </div>
+    </li>
 </ul>
 
    <!-- ここまで -->
