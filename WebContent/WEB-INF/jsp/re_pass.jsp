@@ -3,7 +3,7 @@
 
 <%@ page import="javax.mail.*" %>
 
-<%	
+<%
 	String message = "";
 	String mailflg = (String)request.getAttribute("flg");
 	if(mailflg != null){
@@ -42,7 +42,7 @@
 
 	<div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
-	
+
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
         <br>
@@ -61,8 +61,8 @@
           		<label for="email">メールアドレス</label>
         			</div>
       			</div>
-      			<div class="row container">
-      				<div class="col s12 right-align">
+      			<div>
+      				<div class="center-align">
     					<input type="submit" value="送信" class="waves-effect waves-light btn">
     				</div>
     			</div>

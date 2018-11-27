@@ -79,7 +79,7 @@
   				</li> -->
 
   				<li>	<!-- ログアウトへ -->
-  					<a class="waves-effect" href="Logout" onclick="document.logout.submit();return false;">
+  					<a class="waves-effect" href="Logout_Before" onclick="document.logout.su;return false;false;" id="logout">
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
@@ -94,43 +94,26 @@
 
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
-  			<form action="Logout" name="logout" method="post"></form>	<!-- logout -->
+  			<form action="Logout_Before" name="logout" method="post"></form>
   			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
   			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
   			<form action="Next_class_list" name="class_list" method="post"></form>	<!-- time_searchへ -->
   			<form action="Next_reservation" name="reservation" method="post"></form>	<!-- reservation(予約）へ -->
 
-
   		</nav>　
 
-	    <!-- 検索バー -->
-	  	<!-- <div class="row">
-	  		<form class="col s12">
-	      		<div class="row">
-	            	<div class="input-field col s8">
-	              		<input type="text" name="" value="">
-	              	</div>
-		            <div class="input-field col s4">
-		                <a class="waves-effect waves-light btn">教室検索</a>
-		            </div>
-	          	</div>
-	      	</form>
-	  	</div> -->
+  	</header>
 
-  	</header><!-- ヘッダー終了  -->
-
-
-    <!-- SCRIPT -->
-          <script type="text/javascript">
+	<script type="text/javascript">
 
  			/* navのスクリプト */
-    	    document.addEventListener('DOMContentLoaded', function() {
+          function() {
     	    var elems = document.querySelectorAll('.sidenav');
     	    var instances = M.Sidenav.init(elems);
     	  });
 
-    	   </script>
+    	  </script>
 
   </body>
 </html>
