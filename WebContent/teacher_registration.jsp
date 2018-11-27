@@ -125,18 +125,73 @@
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-<script type="text/javascript">
+      <script type="text/javascript">
 
 	    document.addEventListener('DOMContentLoaded', function() {
 	    var elems = document.querySelectorAll('.sidenav');
 	    var instances = M.Sidenav.init(elems);
 	  });
-            document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
 
-	  </script>
+
+	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+	  // var collapsibleElem = document.querySelector('.collapsible');
+	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+	  // Or with jQuery
+		document.addEventListener('DOMContentLoaded', function() {
+    	var elems = document.querySelectorAll('select');
+    	var instances = M.FormSelect.init(elems);
+ 		});
+
+  // Or with jQuery
+
+		$(document).ready(function(){
+			$('select').formSelect();
+		});
+
+		function passcheck() {
+		    var pass = document.getElementById('pass').value;
+		    var pass2 = document.getElementById('pass2').value;
+
+
+		    // パスワードの一致確認
+		    if (pass != pass2){
+
+		      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+		      return false;
+		    }else{
+		      return true;
+		    }
+		};
+
+		function mailcheck() {
+		    var mail = document.getElementById('email').value;
+		    var mail2 = document.getElementById('email2').value;
+
+
+		    // パスワードの一致確認
+		    if (mail != mail2){
+
+		      alert("メールアドレスと確認用メールアドレスが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+		      return false;
+		    }else{
+		      return true;
+		    }
+		};
+
+		/* ログインのエラー確認 */
+	    function numberCheck(){
+	    	var number = document.getElementById('gakuseki').value;
+
+	    	if(isNaN(number) == true){
+	    		alert('数字で入力してください');
+	    		return false;
+	    	}else{
+	    		return true;
+	    	}
+	    }
+
+	   </script>
 
 </body>
 </html>
