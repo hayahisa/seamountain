@@ -259,7 +259,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
    		<div class="row right-align">
        		<br>
             <div>
-           		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">トップ画面へ</a>
+           		<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">トップへ</a>
             </div>
         </div>
 

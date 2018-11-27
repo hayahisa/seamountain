@@ -59,8 +59,8 @@
 				</div>
 			</div>
 
-	<div class="row container">
-		<div class="col s3 right-align">
+	<div>
+		<div class="center-align">
 			<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action">ログイン</button>
 		</div>
 	</div>

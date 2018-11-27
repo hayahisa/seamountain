@@ -35,12 +35,14 @@
 		<!-- ここから書いて -->
 		<br>
 
-		<p>ログアウトしました。</p>
+		<h5>ログアウトしました。</h5>
+		<br>
+		<br>
 		<br>
 
 		<div class="row container">
 
-	   		<div class="col s12 left-align">
+	   		<div class="col s12 center-align">
 	   			<a href="login" onclick="document.logout.submit();return false;">ログイン画面へ</a>
 	   		</div>
 
