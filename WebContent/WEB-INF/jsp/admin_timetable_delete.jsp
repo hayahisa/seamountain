@@ -44,6 +44,8 @@
     <div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 <br><br>
+	<h5 class="left-align valign-wrapper"><i class="material-icons medium">view_comfy</i>時間割一覧</h5>
+	<br>
     <table>
         <tbody>
             <thead>

@@ -39,13 +39,16 @@
         
         <br>
         <br>
+        <div class="container">
+	        <h5 class="left-align valign-wrapper"><i class="material-icons medium ">assignment_ind</i>完了</h5>
+        </div>
         <br>
         <br>
-    <div class="center-align"><h5 class="">登録が完了しました</h5></div>
+    	<div class="center-align"><h5 class="">登録が完了しました</h5></div>
         <br>
         <br>
         <div class="center-align">
-        <a class="center-align waves-effect waves-light btn center">メイン画面へ</a>
+        <a href="Next_admin_top" class="center-align waves-effect waves-light btn center">トップ</a>
             </div>
         
 

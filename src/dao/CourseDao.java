@@ -43,6 +43,37 @@ public class CourseDao extends DaoBase{
 		}
 		return courseArray;
 	}
+	
+	//学科全取得
+	public ArrayList<CourseBean> managementAllSelectCourse(){
+
+		ArrayList<CourseBean> courseArray = new ArrayList<CourseBean>();
+
+		try {
+			super.connection();
+
+			String sql = "SELECT * FROM course";
+			stmt = con.prepareStatement(sql);
+			rs = stmt.executeQuery();
+
+			while(rs.next()){
+				CourseBean coursebean = new CourseBean();
+				coursebean.setCourse_id(rs.getInt(1));
+				coursebean.setCourse_name(rs.getString(2));
+				courseArray.add(coursebean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return courseArray;
+	}
 
 	//学科名取得
 	public String selectCourseName(int courseId){

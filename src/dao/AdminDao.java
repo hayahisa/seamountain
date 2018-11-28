@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.ArrayList;
+
 import model.AdminBean;
 
 public class AdminDao extends DaoBase{
@@ -100,6 +102,42 @@ public class AdminDao extends DaoBase{
 				System.out.println("error");
 			}
 		}
+	}
+	
+	//ユーザIDの重複チェック
+	public ArrayList<AdminBean> adminUserList() {
+		
+		ArrayList<AdminBean> adminArray = new ArrayList<AdminBean>();
+		
+		boolean flg = false;
+
+		try {
+			// connection確立
+			super.connection();
+			String selectSQL = "select * from admin";
+
+			stmt = con.prepareStatement(selectSQL);
+			// SQLの？に値のセット
+			rs = stmt.executeQuery();
+			
+			while(rs.next()){
+				AdminBean adminbean = new AdminBean();
+				adminbean.setAdmin_id(rs.getString(1));
+				adminbean.setAdmin_name(rs.getString(2));
+				
+				adminArray.add(adminbean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return adminArray;
 	}
 
 }

@@ -32,7 +32,6 @@
 <title>科目一覧・削除</title> <!--画面名-->
 
 </head>
-    
 <body>
 
 	<header>
@@ -44,6 +43,9 @@
     <div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 <br><br>
+
+<h5 class="left-align valign-wrapper"><i class="material-icons medium">place</i>科目一覧</h5>
+<br>
     <table>
         <tbody>
             <thead>

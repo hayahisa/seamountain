@@ -37,7 +37,7 @@ public class Next_user_management extends HttpServlet {
 		ArrayList<CourseBean> courseArray = new ArrayList<CourseBean>();
 		
 		CourseDao coursedao = new CourseDao();
-		courseArray = coursedao.AllSelectCourse();
+		courseArray = coursedao.managementAllSelectCourse();
 		
 		HttpSession session = request.getSession();	
 		session.setAttribute("courseArray", courseArray);

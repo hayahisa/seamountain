@@ -45,6 +45,10 @@
 		<!-- ここから書いて -->
         
         <br><br>
+        
+        <h5 class="left-align valign-wrapper"><i class="material-icons medium ">vpn_key</i>鍵一覧</h5>
+        <br>
+        
         <form action="Admin_ky_delete">
 			<table>
 				<tbody>
@@ -59,7 +63,7 @@
          
           <tr>
             <td><a href="Admin_ky_changego?Ky_id=<%=bean.getKy_id()%>&Ky_name=<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
-            <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect waves-light btn-large right-align red" onClick="return check()"></td>
+            <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect red lighten-1 btn" onClick="return check()"></td>
           </tr>
           <%} %>
         </tbody>
