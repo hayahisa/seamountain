@@ -139,5 +139,42 @@ public class AdminDao extends DaoBase{
 		}
 		return adminArray;
 	}
+	
+	//チェックボックスで選択されたユーザーの削除
+	public void adminUserCheckDelete(String userno[]){
+		try {
+			// connection確立
+			super.connection();
+			
+			String insertuser = "";
+			String insertuserQ = ",?";
+			
+			//ユーザを選択された数"?"を追加
+			for(int count=0;count<userno.length - 1;count++){
+				insertuser = insertuser + insertuserQ;
+			}
+			
+			String SQL = "DELETE FROM admin WHERE admin_no IN(?" + insertuser + ")";
+
+			stmt = con.prepareStatement(SQL);
+			
+			for(int stmtCount=0;stmtCount<=userno.length - 1;stmtCount++){
+				stmt.setString(stmtCount + 1, userno[stmtCount]);
+			}
+			// SQLの？に値のセット
+			stmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+
+		}
+	}
 
 }

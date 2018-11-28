@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UserDao;
+import dao.AdminDao;
 
 /**
- * Servlet implementation class AdminManagementDeleteList
+ * Servlet implementation class Admin_user_delete
  */
-@WebServlet("/AdminManagementDeleteList")
-public class AdminManagementDeleteList extends HttpServlet {
+@WebServlet("/Admin_user_delete")
+public class Admin_user_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminManagementDeleteList() {
+    public Admin_user_delete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,10 +42,10 @@ public class AdminManagementDeleteList extends HttpServlet {
 		
 		String usercheck[] = request.getParameterValues("user");
 		
-		UserDao userdao = new UserDao();
-		userdao.userCheckDelete(usercheck);
+		AdminDao admindao = new AdminDao();
+		admindao.adminUserCheckDelete(usercheck);
 		
-		request.getRequestDispatcher("AdminUserSelect").forward(request, response);
+		request.getRequestDispatcher("Next_admin_list").forward(request, response);
 		
 	}
 

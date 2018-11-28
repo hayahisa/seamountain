@@ -57,20 +57,19 @@
 				<h5><%=notResult %></h5>
 		<% }else{ %>
         
-		<form action="AdminManagementDeleteList" method="post" name="form">
+		<form action="Admin_user_delete" method="post" name="form">
 			<table>
 				<tbody>
 					<thead>
 						<tr>
 							<td>
 								<label>
-									<input type="checkbox" name="all" id="all" />
+									<input type="checkbox" name="all" id="all">
 									<span></span>
 								</label>
 							</td>
-							<th>学籍番号</th>
-							<th>名前</th>
-							<th>入学年</th>
+							<th>管理者ID</th>
+							<th>管理者名</th>
 						</tr>
 					</thead>
 					<% for(int count=0;count<adminArray.size();count++){%>
@@ -82,8 +81,7 @@
 									<span></span>
 								</label>
 							</td>
-							<td><a href="AdminUserDetail?user_no=<%=adminArray.get(count).getAdmin_id() %>"><%=adminArray.get(count).getAdmin_name() %></a></td>
-							<td><%=adminArray.get(count).getAdmin_id() %></td>
+							<td><a href="AdminUserDetail?user_no=<%=adminArray.get(count).getAdmin_id() %>"><%=adminArray.get(count).getAdmin_id() %></a></td>
 							<td><%=adminArray.get(count).getAdmin_name() %></td>
 						</tr>
 					<%} 
@@ -107,7 +105,7 @@
     
     
 	<script type="text/javascript">
-
+	$(function(){
 		document.addEventListener('DOMContentLoaded', function() {
 			var elems = document.querySelectorAll('select');
 			var instances = M.FormSelect.init(elems);
@@ -122,8 +120,27 @@
 	  // var collapsibleElem = document.querySelector('.collapsible');
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
-	  // Or with jQuery
-
+		$('#all').on('click', function() {
+			if($("#all:checked").val()) {
+				$('.test').prop('checked', true); //アイテムを全部checkedにする
+			}else{
+				$('.test').prop('checked', false); //アイテムを全部checkedにする
+			}
+		});
+		// 一つでもチェックを外すと「全て選択」のチェック外れる
+		$('.test').on('click', function() {
+			$('#all').prop('checked', false); //アイテムを全部checkedにする
+		});
+	});
+	
+	function check(){
+ 		if(window.confirm('選択されたユーザーを削除しますか？')){
+ 			return true;
+ 		}else{
+ 			window.alert('キャンセルされました'); // 警告ダイアログを表示
+ 			return false;
+ 		}
+ 	}
 	   </script>
 
 </body>

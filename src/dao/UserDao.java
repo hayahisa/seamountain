@@ -271,8 +271,6 @@ public class UserDao extends DaoBase{
 			String insertuser = "";
 			String insertuserQ = ",?";
 			
-			System.out.println(userno.length);
-			
 			//ユーザを選択された数"?"を追加
 			for(int count=0;count<userno.length - 1;count++){
 				insertuser = insertuser + insertuserQ;
