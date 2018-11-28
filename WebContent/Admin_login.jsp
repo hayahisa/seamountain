@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%session.invalidate(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>ログイン画面</title> <!--画面名-->
 
-<nav class="header">鍵管理システム</nav>
+<nav class="header">　鍵管理システム</nav>
 
 </head>
 <body>
@@ -43,6 +45,10 @@
     </div>
 
     <br>
+    <!-- エラーメッセージ -->
+     <div class="center-align" style="color:red;">
+     <c:out value="${msg}" />
+     </div>
     <br>
 	<div class="row container">
 		<form class="col s12" action="AdminLogin" method="post">

@@ -19,6 +19,7 @@ public class TimeDao extends DaoBase{
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
+			rs.next();
 			while(rs.next()){
 				TimeListBean timelistbean = new TimeListBean(rs.getInt(1),rs.getString(2));
 				timeArray.add(timelistbean);
@@ -36,7 +37,7 @@ public class TimeDao extends DaoBase{
 		}
 		return timeArray;
 	}
-	
+
 	//時間割削除
 	public void deleteTimetable(int timeid){
 		try{
@@ -45,7 +46,7 @@ public class TimeDao extends DaoBase{
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, timeid);
 			stmt.executeUpdate();
-	
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

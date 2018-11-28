@@ -55,6 +55,8 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
         
+        <br>
+        <h6 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>ユーザ管理</h6>
         <br><br>
         
 		<form action="AdminUserSelect" method="post">

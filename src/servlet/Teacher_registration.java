@@ -46,8 +46,6 @@ public class Teacher_registration extends HttpServlet {
 		String mail = request.getParameter("mail");
 		String pass = request.getParameter("pass");
 
-		System.out.println(number + username + mail + pass);
-
 		String encPass = "";
 		String path = "";
 

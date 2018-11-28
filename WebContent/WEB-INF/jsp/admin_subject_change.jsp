@@ -41,7 +41,11 @@
 		<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 		<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 			<!-- ここから書いて -->
-			<br><br><br><br><br><br><br>
+			<br><br>
+			
+			<h5 class="left-align valign-wrapper"><i class="material-icons medium">place</i>科目名変更</h5>
+			<br>
+			
 			<form action="Admin_subject_change" method="post">
 				<div class="row">
 					<div class="input-field col s12">
@@ -54,7 +58,7 @@
 				<div class="row">
 					<div class="right-align col s11">
 						<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-						<input type="submit" value="変更" class="waves-effect waves-light btn-large">
+						<input type="submit" value="変更" class="waves-effect blue lighten-1 btn">
 					</div>
 					<div class="col s1"></div>
     			</div>

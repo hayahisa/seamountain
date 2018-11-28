@@ -42,7 +42,7 @@
 			<br>
 			<br>
 			<div class="container">
-			<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>確認</h5>
+			<h5 class="left-align valign-wrapper"><i class="material-icons medium ">assignment_ind</i>確認</h5>
 			</div>
 			<br>
 			<br>
