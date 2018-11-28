@@ -79,7 +79,7 @@
   				</li> -->
 
   				<li>	<!-- ログアウトへ -->
-  					<a class="waves-effect" href="Logout_Before" onclick="document.logout.su;return false;false;" id="logout">
+  					<a class="waves-effect" href="Logout_Before" onclick="document.logout.submit();return false;">
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
@@ -94,7 +94,7 @@
 
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
-  			<form action="Logout_Before" name="logout" method="post"></form>
+  			<form action="Logout_Before" name="logout" method="post"></form>	<!-- logout -->
   			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
   			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
@@ -108,12 +108,12 @@
 	<script type="text/javascript">
 
  			/* navのスクリプト */
-          function() {
+    	    document.addEventListener('DOMContentLoaded', function() {
     	    var elems = document.querySelectorAll('.sidenav');
     	    var instances = M.Sidenav.init(elems);
     	  });
 
-    	  </script>
+    	   </script>
 
   </body>
 </html>
