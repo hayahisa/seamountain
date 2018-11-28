@@ -42,7 +42,10 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-<br><br><br><br><br><br><br>
+	<br><br>
+
+	<h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科名変更</h5>
+	<br>
 <form action="Department_Change" >
   <div class="row">
     <div class="input-field col s12">

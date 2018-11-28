@@ -45,6 +45,9 @@
 		<!-- ここから書いて -->
 
         <br><br>
+        <h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科一覧</h5>
+        <br>
+        
         <form action="Department_delete">
                <table>
                            <tbody>

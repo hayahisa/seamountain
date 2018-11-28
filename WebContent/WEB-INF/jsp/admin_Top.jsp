@@ -42,9 +42,11 @@
       <div class="collapsible-header"><i class="material-icons">assignment_ind</i>ユーザー管理</div>
       <div class="collapsible-body">
           <span>
-              <div class="center-align"><a href="Next_admin_regist" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　管理者登録　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+              <div class="center-align"><a href="Next_admin_regist" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 管理者登録 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
               <p></p>
-              <div class="center-align"><a href="Next_user_management" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ユーザー管理 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+              <div class="center-align"><a href="Next_admin_list" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 管理者一覧 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+              <p></p>
+              <div class="center-align"><a href="Next_user_management" class="waves-effect waves-light btn-large celter-align">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ユーザ管理 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
           </span>
       </div>
     </li>
@@ -80,7 +82,7 @@
         </div>
     </li>
     <li>
-        <div class="collapsible-header"><i class="material-icons">vpn_key</i>時間割管理</div>
+        <div class="collapsible-header"><i class="material-icons">view_comfy</i>時間割管理</div>
         <div class="collapsible-body">
             <span>
                 <div class="center-align"><a class="waves-effect waves-light btn-large celter-align" href="Next_time_table_delete">一覧・削除</a></div>
