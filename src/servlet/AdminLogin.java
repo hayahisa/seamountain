@@ -20,7 +20,7 @@ import model.HashPassword;
 @WebServlet("/AdminLogin")
 public class AdminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -43,34 +43,35 @@ public class AdminLogin extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String adminId = request.getParameter("id");
 		String adminPass = request.getParameter("pass");
-		
+
 		String path = "";
-		
+
 		HashPassword hashpass = new HashPassword();
 		String encryptPass = hashpass.encryptPass(adminPass);
-		
+
 		AdminPassDao adminpassdao = new AdminPassDao();
 		boolean flg = adminpassdao.adminLogin(adminId, encryptPass);
-		
+
 		if(flg == true){
 			//管理者情報を取得しセッションに格納
 			AdminBean adminbean = new AdminBean();
 			AdminDao admindao = new AdminDao();
 			adminbean = admindao.getAdminInfo(adminId);
-			
+
 			HttpSession session = request.getSession();
 			session.setAttribute("adminbean", adminbean);
-			
+
 			path = "WEB-INF/jsp/admin_Top.jsp";
 		}else{
+			request.setAttribute("msg", "　※IDかパスワードが間違っています　");
 			path = "Admin_login.jsp";
 		}
-		
+
 		request.getRequestDispatcher(path).forward(request, response);
-		
+
 	}
 
 }

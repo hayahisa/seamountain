@@ -24,6 +24,7 @@ public class RoomDao extends DaoBase {
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
+			rs.next();
 			while(rs.next()){
 				RoomBean roomlistbean = new RoomBean(rs.getString(1),rs.getString(2),rs.getString(3));
 				roomArray.add(roomlistbean);
