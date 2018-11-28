@@ -42,7 +42,7 @@
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
   				<li>	<!-- ログアウトへ -->
-  					<a class="waves-effect" href="Admin_logout" onclick="document.logout.submit();return false;">
+  					<a class="waves-effect" href="Admin_Logout_Before" onclick="document.logout.submit();return false;">
   						<i class="material-icons">directions_bike</i>ログアウト
   					</a>
   				</li>
@@ -57,7 +57,7 @@
 
   			<!-- form達 -->
   			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
-  			<form action="Admin_logout" name="logout" method="post"></form>	<!-- logout -->
+  			<form action="Admin_Logout_Before" name="logout" method="post"></form>	<!-- logout -->
   			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
   			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
   			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
