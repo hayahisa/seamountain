@@ -7,19 +7,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Admin_logout
+ * Servlet implementation class Admin_Logout_Before
  */
-@WebServlet("/Admin_logout")
-public class Admin_logout extends HttpServlet {
+@WebServlet("/Admin_Logout_Before")
+public class Admin_Logout_Before extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Admin_logout() {
+    public Admin_Logout_Before() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,18 +37,7 @@ public class Admin_logout extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		HttpSession session = request.getSession(false);
-		session.invalidate();
-
-		/*//ログインフラグの変更
-		LogoutDao ldao = new LogoutDao();
-		ldao.logout();*/
-
-		String path = "WEB-INF/jsp/admin_logout.jsp";
-
-		request.getRequestDispatcher(path).forward(request, response);
-
-
+		request.getRequestDispatcher("WEB-INF/jsp/admin_logout_before.jsp").forward(request, response);
 	}
 
 }

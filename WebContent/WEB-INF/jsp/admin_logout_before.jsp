@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="model.UserBean" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 
@@ -21,49 +23,66 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>ログアウト画面</title> <!--画面名-->
+<title>logout</title> <!--画面名-->
 
-<nav class="header">　鍵管理システム</nav>　
 
 </head>
+
 <body>
+
+	<%@ include file="admin_header.jsp"%>
 
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-		<br>
 
-		<h5>ログアウトしました。</h5>
 		<br>
-		<br>
-		<br>
+        <br>
+          <div class="container">
+    <h5 class="left-align valign-wrapper"><i class="material-icons medium ">delete</i>ログアウト</h5>
+  </div>
+        <br>
+        <br>
 
-		<div class="row container">
 
-	   		<div class="col s12 center-align">
-	   			<a href="Admin_login.jsp">ログイン画面へ</a>
-	   		</div>
+        <div class="container">
+    	<div class="row center-align">
+        <br>
+        <div class="center-align"><h5 class="">ログアウトしますか？</h5></div>
+        <br>
+        <br>
+        <form action="Admin_logout" method="post" class="right-align">
+        	<div class="row center-align">
+        	<a href="Next_admin_top" onclick="document.admin.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+          	<input type="submit" class="waves-effect blue lighten-1 btn" value="ログアウト">
+           	</div>
+        </form>
+        </div>
+        </div>
 
-   			<div class="row right-align"></div>
-		</div>
+	<form action="Next_admin_top" name="admin" method="post"></form>	<!-- mainに戻る -->
+
 
    <!-- ここまで -->
-	</div>
-
+  </div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-      <script>
+<script type="text/javascript">
 
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+	    document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.sidenav');
+	    var instances = M.Sidenav.init(elems);
+	  });
+            document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
 
-	  // Or with jQuery
-	   </script>
+	  </script>
 
 </body>
 </html>
