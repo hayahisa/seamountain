@@ -63,7 +63,8 @@ String roleFlg = String.valueOf(userbean.getRoleFlg());
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s9 left-align">
-                    <p class="Heading h4">[ 使用時間割名 ]<br>　<%=time.getTime_name() %></p>
+                    <p class="Heading h4">[ 使用時間割名 ]</p>
+                    <p class="Heading h4">　<%=time.getTime_name() %></p>
                 </div>
             	<div class="input-field col s3">
             </div>

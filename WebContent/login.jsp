@@ -50,38 +50,39 @@
      </div>
 
     <br>
-	<div class="row container">
-		<form class="col s12" action="Login" method="post" onsubmit="return login()">
-			<div class="row">
-				<div class="input-field col s12  ">
-					<input id="gakuseki" type="text" class="validate" name="user_number" required>
-					<label for="gakuseki">ユーザ番号</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="password" type="password" class="validate" name="user_pass" required>
-	         		 <label for="password">パスワード</label>
-				</div>
-			</div>
 
-	<div class="row container">
-		<div class="col s9 left-align">
-			<a href="Next_re_pass" onclick="document.repass.submit();return false;">パスワードを忘れた場合</a>
-		</div>
-		<div class="col s3 right-align">
-			<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="return login()">ログイン</button>
-		</div>
-		</div>
+		<div class="row container">
+			<form class="col s12" action="Login" method="post" onsubmit="return login()">
+				<div class="row">
+					<div class="input-field col s12  ">
+						<input id="gakuseki" type="text" class="validate" name="user_number" required>
+						<label for="gakuseki">ユーザ番号</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate" name="user_pass" required>
+	         			<label for="password">パスワード</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+				<div class="col s8 left-align">
+					<a href="Next_re_pass" onclick="document.repass.submit();return false;">パスワードを忘れた場合</a>
+				</div>
+				<div class="col s4 left-align">
+					<button class="right-align btn waves-effect waves-light blue lighten-1" type="submit" name="action" onClick="return login()">ログイン</button>
+				</div>
+				</div>
+			</form>
 
-		</form>
-	</div>
+		</div>
 
   	<div class="row container">
-   		<div class="col s12 left-align">
-   			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
-   		</div>
-   		<div class="row right-align"></div>
+  		<div class="col s9 left-align">
+  			<a href="Next_new_regist" onclick="document.newregist.submit();return false;">新規登録</a>
+  		</div>
+   		<div class="col s3 right-align"></div>
 	</div>
 
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->

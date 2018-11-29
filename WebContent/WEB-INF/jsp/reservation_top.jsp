@@ -87,25 +87,14 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 			</select>
 		</div>
 		<br>
-			<div class="right-align">
-				<input type="submit" name="" value="検索" class="waves-effect blue btn">
-			</div>
+		<div class="row right-align">
+			<a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
+			<input type="submit" name="" value="　検索　" class="waves-effect blue btn">
+ 		</div>
 		</form>
-
 		<div>
 
-  <br><br>
-
-  <div class="row right-align">
-    <div>
-      <a href="Next_main" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
-    </div>
-  </div>
-
 	<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
-
-
-
 
    <!-- ここまで -->
   </div>
