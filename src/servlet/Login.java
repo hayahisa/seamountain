@@ -56,31 +56,51 @@ public class Login extends HttpServlet {
 		String user_pass = request.getParameter("user_pass"); 	//ユーザパス
 		int no = Integer.parseInt(user_no);
 
-		// パスワードをSHA-256でハッシュ化
-		HashPassword hashPass = new HashPassword();
-		String encryptPass = hashPass.encryptPass(user_pass);
+//		cookie
+		Start start = new Start();
 
+		//Cookieから"test_cookie_name"というKeyで登録された値(文字列)を取り出す
+		String value = start.getCookie(request, "test_cookie_name");
 
-		//LoginDao
-		LoginDao ldao = new LoginDao();
-		UserPassBean userpassbean = ldao.User_loginDao(user_no);
-
-		if(ldao.User_loginDao(user_no) == null){
-			request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
-			path = "/login.jsp";
-		}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(encryptPass)){
-			session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
+		//valueがnullの場合のみCookieをセットする(期限は5分)
+		if (value == null) {
+			start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 5 * 60);
 			path = "WEB-INF/jsp/main01.jsp";
-			userbean = (UserBean)udao.userSession(user_no);
 
+			session.setAttribute("user_number",user_no);
+			userbean = (UserBean)udao.userSession(user_no);
 			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 
 			Timeget time = new Timeget();
 			time.doPost(request, response);
-			request.setAttribute("msg", "");
 		}else{
-			request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
-			path = "/login.jsp";
+			// パスワードをSHA-256でハッシュ化
+			HashPassword hashPass = new HashPassword();
+			String encryptPass = hashPass.encryptPass(user_pass);
+
+
+			//LoginDao
+			LoginDao ldao = new LoginDao();
+			UserPassBean userpassbean = ldao.User_loginDao(user_no);
+
+			if(ldao.User_loginDao(user_no) == null){
+				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
+				path = "/login.jsp";
+			}else if(userpassbean.getUser_number() ==  no && userpassbean.getUser_pass().equals(encryptPass)){
+				session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
+				path = "WEB-INF/jsp/main01.jsp";
+				userbean = (UserBean)udao.userSession(user_no);
+
+				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+
+				Timeget time = new Timeget();
+				time.doPost(request, response);
+				request.setAttribute("msg", "");
+
+			}else{
+				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
+				path = "/login.jsp";
+			}
 		}
 		request.getRequestDispatcher(path).forward(request, response);
 
