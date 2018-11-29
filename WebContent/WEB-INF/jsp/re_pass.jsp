@@ -47,9 +47,9 @@
 		<!-- ここから書いて -->
         <br>
         <br>
-          <div class="container">
-    <h5 class="left-align valign-wrapper"><i class="material-icons medium ">loop</i>パスワード再設定</h5>
-  </div>
+        <div class="container">
+    	<h5 class="left-align valign-wrapper"><i class="material-icons medium ">loop</i>パスワード再設定</h5>
+  		</div>
         <br>
         <br>
 
@@ -63,12 +63,14 @@
       			</div>
       			<div>
       				<div class="center-align">
+      					<a href="login.jsp" onclick="document.main.submit();return false;" class="waves-effect grey btn" style="margin:0px 5px 0px 0px">　戻る　</a>
     					<input type="submit" value="送信" class="waves-effect waves-light btn">
     				</div>
     			</div>
     		</form>
-  </div>
-  </div>
+  		</div>
+ 	</div>
+
    <!-- ここまで -->
 	</div>
 
