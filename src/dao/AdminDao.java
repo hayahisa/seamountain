@@ -43,7 +43,7 @@ public class AdminDao extends DaoBase{
 
 	}
 	
-	//ユーザIDの重複チェック
+	//管理者IDの重複チェック
 	public boolean adminNocheck(String adminno) {
 
 		boolean flg = false;
@@ -75,7 +75,7 @@ public class AdminDao extends DaoBase{
 		}
 		return flg;
 	}
-	// ユーザ登録
+	// 管理者登録
 	public void registrationAdmin(AdminBean abean) {
 		try {
 	
@@ -104,7 +104,7 @@ public class AdminDao extends DaoBase{
 		}
 	}
 	
-	//ユーザIDの重複チェック
+	//管理者一覧の取得
 	public ArrayList<AdminBean> adminUserList() {
 		
 		ArrayList<AdminBean> adminArray = new ArrayList<AdminBean>();

@@ -113,7 +113,7 @@
 <script language="JavaScript" type="text/javascript">
      $(function(){
 
-/* ここにjQueryのコードを記述 */
+	/* ここにjQueryのコードを記述 */
 
          $('#all').on('click', function() {
                    if($("#all:checked").val()) {
