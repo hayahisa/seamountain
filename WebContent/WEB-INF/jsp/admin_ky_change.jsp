@@ -24,10 +24,10 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title></title> <!--画面名-->
-    
+
 
 </head>
-    
+
 <body>
 
 	<header>
@@ -41,7 +41,7 @@
 		<br><br>
 		<h5 class="left-align valign-wrapper"><i class="material-icons medium">vpn_key</i>鍵名変更</h5>
 		<br>
-		<form action="Admin_ky_change"> 
+		<form action="Admin_ky_change">
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="" id="first_name2" type="text" class="validate" name="Ky_change">
@@ -85,10 +85,10 @@
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
 
 	  // Or with jQuery
-          
-        
-          
-          
+
+
+
+
 
 	   </script>
 

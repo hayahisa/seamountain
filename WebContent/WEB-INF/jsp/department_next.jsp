@@ -47,10 +47,10 @@
         <br><br>
         <h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科一覧</h5>
         <br>
-        
+
         <form action="Department_delete">
-               <table>
-                           <tbody>
+        <table>
+        <tbody>
 
         <thead>
           <tr>
@@ -67,7 +67,7 @@
           </tr>
           <%} %>
         </tbody>
-      </table>
+     	</table>
 
         </form>
         <br><br>
@@ -104,7 +104,7 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
-     
+
      function check(){
   		if(window.confirm('選択されたユーザーを削除しますか？')){
   			return true;

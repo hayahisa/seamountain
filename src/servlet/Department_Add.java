@@ -42,7 +42,7 @@ public class Department_Add extends HttpServlet {
 	    CourseDao cdao = new CourseDao();
 		cdao.courseAdd(name);
 
-		request.getRequestDispatcher("Next_admin_top").forward(request, response);
+		request.getRequestDispatcher("Next_course_add").forward(request, response);
 	}
 
 }

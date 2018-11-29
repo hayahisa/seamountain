@@ -74,6 +74,7 @@ public class Login extends HttpServlet {
 			Timeget time = new Timeget();
 			time.doPost(request, response);
 		}else{
+			user_no = value;
 			// パスワードをSHA-256でハッシュ化
 			HashPassword hashPass = new HashPassword();
 			String encryptPass = hashPass.encryptPass(user_pass);
