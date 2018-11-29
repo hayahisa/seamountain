@@ -45,8 +45,8 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 String nextsubject=(String)session.getAttribute("nextsubject");
   String nextroom=(String)session.getAttribute("nextroom");
   String ky=(String)session.getAttribute("ky");
-  int ky_id=(int)session.getAttribute("ky_id");
-  int ky_state_id=(int)session.getAttribute("ky_state_id");
+  int ky_id = Integer.parseInt(String.valueOf(session.getAttribute("ky_id")));
+  int ky_state_id = Integer.parseInt(String.valueOf(session.getAttribute("ky_state_id")));
 %>
 <div class="row"> <!-- 表示範囲の設定 -->
 	<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->

@@ -28,10 +28,10 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 
 <title></title> <!--画面名-->
-    
+
 
 </head>
-    
+
 <body>
 
 	<header>
@@ -43,12 +43,12 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-        
+
         <br><br>
-        
+
         <h5 class="left-align valign-wrapper"><i class="material-icons medium ">vpn_key</i>鍵一覧</h5>
         <br>
-        
+
         <form action="Admin_ky_delete">
 			<table>
 				<tbody>
@@ -60,7 +60,7 @@
 					</thead>
 					<% ArrayList<KyBean> KyList = (ArrayList<KyBean>)request.getAttribute("kyall"); %>
          <%for(KyBean bean : KyList){%>
-         
+
           <tr>
             <td><a href="Admin_ky_changego?Ky_id=<%=bean.getKy_id()%>&Ky_name=<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
             <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect red lighten-1 btn" onClick="return check()"></td>
@@ -68,23 +68,23 @@
           <%} %>
         </tbody>
       </table>
-            
+
         </form>
         <br><br>
         <div class="right-align">
-        	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+        	<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
 		</div>
-             
 
-  
+		<form action="Next_admin_top" name="main" method="post"></form> <!-- mainに戻る -->
+
    <!-- ここまで -->
     </div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-    
-    
+
+
 <script language="JavaScript" type="text/javascript">
      $(function(){
 
@@ -104,7 +104,7 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
-     
+
      function check(){
   		if(window.confirm('鍵を削除しますか？')){
   			return true;
