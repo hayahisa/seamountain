@@ -41,6 +41,12 @@
 
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
+      			<li>	<!-- トップへ -->
+         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;">
+         				<i class="material-icons">star_border</i>トップ
+         			</a>
+         		</li>
+
   				<li>	<!-- ログアウトへ -->
   					<a class="waves-effect" href="Admin_Logout_Before" onclick="document.logout.submit();return false;">
   						<i class="material-icons">directions_bike</i>ログアウト

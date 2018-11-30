@@ -69,6 +69,8 @@
 
 						</table>
 
+						<br>
+
 						<div class="container">
 							<div class="row right-align">
 								<br>
