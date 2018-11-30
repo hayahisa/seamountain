@@ -68,7 +68,7 @@
     </table>
         <br><br>
 		<div class="right-align">
-			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+        	<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
 		</div>
              
 

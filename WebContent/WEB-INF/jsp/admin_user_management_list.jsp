@@ -94,14 +94,16 @@
 			<br>
 			<br>
 			<div class="right-align">
-    	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-		<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
-    </div>
+        		<a href="Next_user_management" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
+				<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
+			</div>
 		</form>
 		
 		<%} %>
 		<br><br>
 		
+		<form action="Next_user_management" name="main" method="post"></form> <!-- mainに戻る -->
+				
 		<!-- ここまで -->
 	</div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
