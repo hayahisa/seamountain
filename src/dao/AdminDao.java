@@ -139,5 +139,38 @@ public class AdminDao extends DaoBase{
 		}
 		return adminArray;
 	}
+	//管理者一覧の取得
+	public void adminDeleteList(String adminno[]){
+		
+		try {
+			// connection確立
+			super.connection();
+			String insertuser = "";
+			String insertuserQ = ",?";
+			
+			//ユーザを選択された数"?"を追加
+			for(int count=0;count<adminno.length - 1;count++){
+				insertuser = insertuser + insertuserQ;
+			}
+			
+			String SQL = "DELETE FROM admin WHERE admin_no IN(?" + insertuser + ")";
 
+			stmt = con.prepareStatement(SQL);
+			
+			for(int stmtCount=0;stmtCount<=adminno.length - 1;stmtCount++){
+				stmt.setString(stmtCount + 1, adminno[stmtCount]);
+			}
+			stmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				// エラー時はclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+	}
 }

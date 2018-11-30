@@ -57,7 +57,7 @@
 				<h5><%=notResult %></h5>
 		<% }else{ %>
         
-		<form action="AdminManagementDeleteList" method="post" name="form">
+		<form action="AdminUserDelete" method="post" name="form">
 			<table>
 				<tbody>
 					<thead>
@@ -81,7 +81,7 @@
 									<span></span>
 								</label>
 							</td>
-							<td><a href="AdminUserDetail?user_no=<%=adminArray.get(count).getAdmin_id() %>"><%=adminArray.get(count).getAdmin_id() %></a></td>
+							<td><%=adminArray.get(count).getAdmin_id() %></td>
 							<td><%=adminArray.get(count).getAdmin_name() %></td>
 						</tr>
 					<%} 
@@ -91,10 +91,13 @@
 			<br>
 			<br>
 			<div class="right-align">
-    	<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-		<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
-    </div>
+				<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
+				<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
+    		</div>
 		</form>
+		
+		<form action="Next_admin_top" name="main" method="post"></form> <!-- mainに戻る -->
+		
 		
    <!-- ここまで -->
     </div>
@@ -111,9 +114,7 @@
 			var instances = M.FormSelect.init(elems);
 		});
 		
-		$(document).ready(function(){
-			$('select').formSelect();
- 		});
+		
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
 	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);

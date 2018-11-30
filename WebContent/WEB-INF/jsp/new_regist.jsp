@@ -113,12 +113,6 @@
 	          				<label for="email">メールアドレス</label>
 	        			</div>
 	        		</div>
-	        		<div class="row">
-	        			<div class="input-field col s12">
-	        				<input id="email2" type="email" class="validate" maxlength="64" required>
-	        				<label for="email2">メールアドレス確認</label>
-						</div>
-	      			</div>
 	      			<div class="row">
 	        			<div class="input-field col s12">
 	          				<input id="pass" type="password" class="validate" name="pass" required>
@@ -135,7 +129,7 @@
 						<br>
 						<div class="col-md-12">
 							<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-							<input type="submit" value="確認" class="waves-effect blue lighten-1 btn" onClick="passcheck();return mailcheck();">
+							<input type="submit" value="確認" class="waves-effect blue lighten-1 btn" onClick="return passcheck();">
 						</div>
 					</div>
 	    		</form>
@@ -181,21 +175,6 @@
 		    if (pass != pass2){
 		    	
 		      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
-		      return false;
-		    }else{
-		      return true;
-		    }
-		};
-		
-		function mailcheck() {
-		    var mail = document.getElementById('email').value;
-		    var mail2 = document.getElementById('email2').value;
-		    
-		    
-		    // パスワードの一致確認
-		    if (mail != mail2){
-		    	
-		      alert("メールアドレスと確認用メールアドレスが一致しません"); // 一致していなかったら、エラーメッセージを表示する
 		      return false;
 		    }else{
 		      return true;

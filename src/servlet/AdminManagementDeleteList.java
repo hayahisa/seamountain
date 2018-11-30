@@ -42,8 +42,6 @@ public class AdminManagementDeleteList extends HttpServlet {
 		
 		String usercheck[] = request.getParameterValues("user");
 		
-		//System.out.println(usercheck[0] + "@@" + usercheck[1] + "@@" +usercheck[2]);
-		
 		UserDao userdao = new UserDao();
 		userdao.userCheckDelete(usercheck);
 		
