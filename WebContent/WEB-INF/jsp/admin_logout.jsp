@@ -43,7 +43,13 @@
 		<div class="row container">
 
 	   		<div class="col s12 center-align">
-	   			<a href="Admin_login.jsp">ログイン画面へ</a>
+	   			<a href="Admin_login.jsp">管理者ログイン画面へ</a>
+	   		</div>
+
+	   		<br><br>
+
+	   		<div class="col s12 center-align">
+	   			<a href="login.jsp">ユーザログイン画面へ</a>
 	   		</div>
 
    			<div class="row right-align"></div>

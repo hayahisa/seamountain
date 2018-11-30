@@ -42,7 +42,7 @@
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
       			<li>	<!-- トップへ -->
-         			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;">
+         			<a class="waves-effect" href="AdminLogin" onclick="document.main.submit();return false;">
          				<i class="material-icons">star_border</i>トップ
          			</a>
          		</li>
@@ -62,14 +62,8 @@
   			<a href="Next_admin_top">鍵管理システム</a>
 
   			<!-- form達 -->
-  			<form action="Next_main" name="main" method="post"></form>	<!-- mainに戻る -->
+  			<form action="AdminLogin" name="main" method="get"></form>	<!-- mainに戻る -->
   			<form action="Admin_Logout_Before" name="logout" method="post"></form>	<!-- logout -->
-  			<form action="Next_mypage" name="mypage" method="post"></form>	<!-- mypageへ -->
-  			<form action="Next_create_table" name="create_table" method="post"></form>	<!-- create_tableへ -->
-  			<form action="Next_time_table" name="time_table" method="post"></form>	<!-- time_tableへ -->
-  			<form action="Next_time_search" name="time_search" method="post"></form>	<!-- time_searchへ -->
-  			<form action="Next_reservation" name="reservation" method="post"></form>	<!-- reservation(予約）へ -->
-
 
   		</nav>　
 
