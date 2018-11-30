@@ -26,17 +26,20 @@ public class RePassMail extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			
+			System.out.println("mail post");
+
 			String email = request.getParameter("email");
-			
+
 			UserDao userdao = new UserDao();
 			boolean mailflg = userdao.mailCheck(email);
 			if(mailflg == false){
+				System.out.println("false");
 				request.setAttribute("flg", "1");
 				request.getRequestDispatcher("WEB-INF/jsp/re_pass.jsp").forward(request, response);
 			}else{
 				mail.Mail.sendMail("パスワード再設定", "パスワード再設定", email);
-				
+				System.out.println("true");
+
 				request.getRequestDispatcher("WEB-INF/jsp/re_pass_mail_confirm.jsp").forward(request, response);
 			}
 		} catch (MessagingException | javax.mail.MessagingException e) {
