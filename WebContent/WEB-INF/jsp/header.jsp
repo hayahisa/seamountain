@@ -48,7 +48,6 @@
       			<li><a class="subheader"><i class="material-icons">cloud_queue</i>メニュー</a></li>
 
          		<li>	<!-- メインへ -->
-
          			<a class="waves-effect" href="Next_main" onclick="document.main.submit();return false;">
          				<i class="material-icons">star_border</i>トップ
          			</a>
