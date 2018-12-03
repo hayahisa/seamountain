@@ -42,7 +42,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 	<%@ include file="header2.jsp"%>
 <%} %>
 <%
-String nextsubject=(String)session.getAttribute("nextsubject");
+  String nextsubject=(String)session.getAttribute("nextsubject");
   String nextroom=(String)session.getAttribute("nextroom");
   String ky=(String)session.getAttribute("ky");
   int ky_id = Integer.parseInt(String.valueOf(session.getAttribute("ky_id")));
@@ -56,12 +56,12 @@ String nextsubject=(String)session.getAttribute("nextsubject");
 
         <div class="center-align">
             <p class="Heading h4">次の授業<i class="material-icons">school</i></p>
-        	<label class="btn-large blue"><%=nextroom%></label>
+        	<label class="btn-large blue"><%=nextsubject%></label>
         </div>
 
         <div class="center-align">
             <p class="Heading h4">次の教室<i class="material-icons">place</i></p>
-        	<label class="btn-large blue"><%=nextsubject%></label>
+        	<label class="btn-large blue"><%=nextroom%></label>
         </div>
 
         <div class="center-align">

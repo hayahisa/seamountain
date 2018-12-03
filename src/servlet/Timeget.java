@@ -79,13 +79,10 @@ public class Timeget extends HttpServlet {
 
 			 break;
 		 }
-		 //int hour=cal.get(Calendar.HOUR_OF_DAY);
-		 //int min=cal.get(Calendar.MINUTE);
-		 int hour=12;
-		 int min=20;
+		 int hour=cal.get(Calendar.HOUR_OF_DAY);
+		 int min=cal.get(Calendar.MINUTE);
 		 if(hour<=9){
 			if(hour==9&&min>=45){//9:45分以上
-				System.out.println("9:45");
 				nextsubject=Timelist.getTwo_subject_name();
 				nextroom=Timelist.getTwo_room_name();
 		    }else{
@@ -116,7 +113,7 @@ public class Timeget extends HttpServlet {
 			 }
 		 }else if(hour==14){
 			 nextsubject=Timelist.getFour_subject_name();
-			  nextroom=Timelist.getFour_room_name();
+			 nextroom=Timelist.getFour_room_name();
 		 }else if(hour==15){
 			 if(min<=34){
 			     nextsubject=Timelist.getFour_subject_name();
