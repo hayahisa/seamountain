@@ -14,6 +14,14 @@
 <%
 	ArrayList<CourseBean> courseArray = new ArrayList<CourseBean>();
 	courseArray = (ArrayList<CourseBean>)session.getAttribute("courseArray");
+	
+	String msg = (String)request.getAttribute("flg");
+	String errormsg = "";
+	
+	if (msg != null) {
+		errormsg = "選択されていません";
+	}
+	
 %>
 <!DOCTYPE html>
 
@@ -59,9 +67,11 @@
         <h6 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>ユーザ管理</h6>
         <br><br>
         
+        <label style="color:red"><%=errormsg %></label>
+        
 		<form action="AdminUserSelect" method="post">
 			<div class="input-field col s12">
-    			<select multiple name="year" required>
+    			<select multiple name="year" id="year" required>
 					<option value="" disabled></option>
 						<% for(int year=isysYear-7;year<=isysYear;year++){ %>
 							<option value=<%=year%>><%=year%>年</option>
@@ -71,7 +81,7 @@
 			</div>
 			
 			<div class="input-field col s12">
-				<select name="course" multiple required>
+				<select name="course" id="course" multiple required>
 					<option value="" disabled></option>
 					<% for(int count=0;count<courseArray.size();count++){ %>
 						<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
@@ -82,7 +92,7 @@
 			<div class="row">
 				<div class="right-align col s11">
 					<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
-					<input type="submit" class="waves-effect blue lighten-1 btn" value="検索">
+					<input type="submit" class="waves-effect blue lighten-1 btn" value="検索" id="submit">
 				</div>
 				<div class="col s1">
 				</div>
@@ -108,12 +118,14 @@
 		$(document).ready(function(){
 			$('select').formSelect();
  		});
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-	  // Or with jQuery
-
+		// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+		// var collapsibleElem = document.querySelector('.collapsible');
+	  	// var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+		
+		// Or with jQuery
+		
+	 	
+		
 	   </script>
 
 </body>

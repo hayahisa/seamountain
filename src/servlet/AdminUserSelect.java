@@ -66,11 +66,15 @@ public class AdminUserSelect extends HttpServlet {
 
 		String year[] = null;
 		String course[] = null;
-
+		
+		String path = "";
+		
 		HttpSession session = request.getSession();
 
-		if (request.getParameterValues("year") == null && request.getParameterValues("course") == null) {
-			request.setAttribute("flg", "");
+		if (request.getParameterValues("year") == null || request.getParameterValues("course") == null) {
+			request.setAttribute("flg", "1");
+			path = "WEB-INF/jsp/admin_user_management.jsp";
+			
 		} else {
 			if (request.getParameterValues("year") != null) {
 				year = request.getParameterValues("year");
@@ -105,9 +109,12 @@ public class AdminUserSelect extends HttpServlet {
 				String notResult = "検索結果がありませんでした";
 				request.setAttribute("notResult", notResult);
 			}
+			
+			path = "WEB-INF/jsp/admin_user_management_list.jsp";
+			
 		}
 
-		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_list.jsp").forward(request, response);
+		request.getRequestDispatcher(path).forward(request, response);
 
 	}
 }
