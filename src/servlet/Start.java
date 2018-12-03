@@ -72,7 +72,6 @@ public class Start extends HttpServlet {
 	}
 
     public void setCookie(HttpServletRequest request, HttpServletResponse response, String path, String name, String value, int maxAge) {
-
     	Cookie cookie = new Cookie(name,value);
     	cookie.setMaxAge(maxAge);
     	cookie.setPath(path);
