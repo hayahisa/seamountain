@@ -62,7 +62,7 @@
 		<form action="AdminUserSelect" method="post">
 			<div class="input-field col s12">
     			<select multiple name="year" required>
-					<option value="" disabled selected></option>
+					<option value="" disabled></option>
 						<% for(int year=isysYear-7;year<=isysYear;year++){ %>
 							<option value=<%=year%>><%=year%>年</option>
 						<%} %>
@@ -71,8 +71,8 @@
 			</div>
 			
 			<div class="input-field col s12">
-				<select multiple name="course" required>
-					<option value="" disabled selected></option>
+				<select name="course" multiple required>
+					<option value="" disabled></option>
 					<% for(int count=0;count<courseArray.size();count++){ %>
 						<option value=<%=courseArray.get(count).getCourse_id()%>><%=courseArray.get(count).getCourse_name()%></option>
 					<%} %>

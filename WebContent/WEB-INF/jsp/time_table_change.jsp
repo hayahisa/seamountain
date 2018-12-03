@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>時間割変更</title> <!--画面名-->
 
-
 </head>
 
 <body>
