@@ -48,6 +48,7 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession();	//セッション
 		String path = null;	//遷移用path
 		int len; //user_noのlength
+		boolean flg; //user_noが存在するか
 
 		UserDao udao = new UserDao();
 		UserBean userbean = new UserBean();
@@ -64,21 +65,29 @@ public class Login extends HttpServlet {
 
 		//valueがnullの場合のみCookieをセットする(期限は5分)
 		if (value == null) {
-			start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 5 * 60);
-			path = "WEB-INF/jsp/main01.jsp";
+			start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 
-			session.setAttribute("user_number",user_no);
-			userbean = (UserBean)udao.userSession(user_no);
-			session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
+//			user_noがDBに存在するか調べる
+			flg = udao.userNocheck(user_no);
+			if(flg == true){//user_no存在
+				session.setAttribute("user_number",user_no);
+				userbean = (UserBean)udao.userSession(user_no);
+				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
 
-			Timeget time = new Timeget();
-			time.doPost(request, response);
+				Timeget time = new Timeget();
+				time.doPost(request, response);
+				path = "WEB-INF/jsp/main01.jsp";
+
+			}else{//user_no存在しない
+				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
+				path = "/login.jsp";
+			}
+
 		}else{
 			user_no = value;
 			// パスワードをSHA-256でハッシュ化
 			HashPassword hashPass = new HashPassword();
 			String encryptPass = hashPass.encryptPass(user_pass);
-
 
 			//LoginDao
 			LoginDao ldao = new LoginDao();
