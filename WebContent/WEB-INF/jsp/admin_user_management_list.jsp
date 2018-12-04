@@ -56,7 +56,10 @@
         <h6 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>ユーザ一覧</h6>
         
         <% if(notResult != null){%>
+        	<div class="right-align">
 				<h5><%=notResult %></h5>
+				<a href="Next_user_management" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
+			</div>
 		<% }else{ %>
         
 		<form action="AdminManagementDeleteList" method="post" name="form">

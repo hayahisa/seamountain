@@ -99,7 +99,7 @@ public class AdminUserSelect extends HttpServlet {
 			request.setAttribute("userArray", userArray);
 		} else {
 			
-			String notResult = "検索結果がありませんでした";
+			String notResult = "該当ユーザーが見つかりません";
 			request.setAttribute("notResult", notResult);
 		}
 		

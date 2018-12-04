@@ -61,6 +61,7 @@
         <br><br>
 		
 		<form action="AdminUserSelect" method="post">
+			
 			<label style="color:red" id="msg"></label>
 			<div class="input-field col s12">
     			<select multiple name="year" id="year" required>
@@ -119,9 +120,10 @@
 			$('#submit').click(function(){
 				//if(!$('#year'||'#course').prop('checked')){
 				if('#year' == "" || '#course' == ""){
-					$('#msg').text('選択されていません');
+					alert('@@@@@');
 				}else{
-					$('#msg').hide();
+					
+					$('#msg').text('選択されていません');
 				}
 			});
 		
