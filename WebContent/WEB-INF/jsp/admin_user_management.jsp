@@ -15,13 +15,6 @@
 	ArrayList<CourseBean> courseArray = new ArrayList<CourseBean>();
 	courseArray = (ArrayList<CourseBean>)session.getAttribute("courseArray");
 	
-	String msg = (String)request.getAttribute("flg");
-	String errormsg = "";
-	
-	if (msg != null) {
-		errormsg = "選択されていません";
-	}
-	
 %>
 <!DOCTYPE html>
 
@@ -66,10 +59,9 @@
         <br>
         <h6 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>ユーザ管理</h6>
         <br><br>
-        
-        <label style="color:red"><%=errormsg %></label>
-        
+		
 		<form action="AdminUserSelect" method="post">
+			<label style="color:red" id="msg"></label>
 			<div class="input-field col s12">
     			<select multiple name="year" id="year" required>
 					<option value="" disabled></option>
@@ -124,7 +116,14 @@
 		
 		// Or with jQuery
 		
-	 	
+			$('#submit').click(function(){
+				//if(!$('#year'||'#course').prop('checked')){
+				if('#year' == "" || '#course' == ""){
+					$('#msg').text('選択されていません');
+				}else{
+					$('#msg').hide();
+				}
+			});
 		
 	   </script>
 

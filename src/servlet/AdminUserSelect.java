@@ -63,58 +63,47 @@ public class AdminUserSelect extends HttpServlet {
 	// ユーザー一覧
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String year[] = null;
 		String course[] = null;
 		
-		String path = "";
-		
 		HttpSession session = request.getSession();
-
-		if (request.getParameterValues("year") == null || request.getParameterValues("course") == null) {
-			request.setAttribute("flg", "1");
-			path = "WEB-INF/jsp/admin_user_management.jsp";
-			
+		
+		if (request.getParameterValues("year") != null) {
+			year = request.getParameterValues("year");
+			course = request.getParameterValues("course");
 		} else {
-			if (request.getParameterValues("year") != null) {
-				year = request.getParameterValues("year");
-				course = request.getParameterValues("course");
-			} else {
-				year = (String[]) session.getAttribute("year");
-				course = (String[]) session.getAttribute("course");
-			}
-
-			ArrayList<UserBean> userArray = new ArrayList<UserBean>();
-			ArrayList<Integer> yearArray = new ArrayList<Integer>();
-			ArrayList<String> courseArray = new ArrayList<String>();
-
-			for (int count = 0; count < year.length; count++) {
-				yearArray.add(Integer.parseInt(year[count]));
-			}
-
-			for (int count = 0; count < course.length; count++) {
-				courseArray.add(course[count]);
-			}
-
-			UserDao userdao = new UserDao();
-			userArray = userdao.UserGetSelect(yearArray, courseArray);
-
-			if (userArray.size() != 0) {
-
-				session.setAttribute("year", year);
-				session.setAttribute("course", course);
-				request.setAttribute("userArray", userArray);
-			} else {
-
-				String notResult = "検索結果がありませんでした";
-				request.setAttribute("notResult", notResult);
-			}
-			
-			path = "WEB-INF/jsp/admin_user_management_list.jsp";
-			
+			year = (String[]) session.getAttribute("year");
+			course = (String[]) session.getAttribute("course");
 		}
-
-		request.getRequestDispatcher(path).forward(request, response);
-
+		
+		ArrayList<UserBean> userArray = new ArrayList<UserBean>();
+		ArrayList<Integer> yearArray = new ArrayList<Integer>();
+		ArrayList<String> courseArray = new ArrayList<String>();
+		
+		for (int count = 0; count < year.length; count++) {
+			yearArray.add(Integer.parseInt(year[count]));
+		}
+		
+		for (int count = 0; count < course.length; count++) {
+			courseArray.add(course[count]);
+		}
+		
+		UserDao userdao = new UserDao();
+		userArray = userdao.UserGetSelect(yearArray, courseArray);
+		
+		if (userArray.size() != 0) {
+			
+			session.setAttribute("year", year);
+			session.setAttribute("course", course);
+			request.setAttribute("userArray", userArray);
+		} else {
+			
+			String notResult = "検索結果がありませんでした";
+			request.setAttribute("notResult", notResult);
+		}
+		
+		request.getRequestDispatcher("WEB-INF/jsp/admin_user_management_list.jsp").forward(request, response);
+		
 	}
 }
