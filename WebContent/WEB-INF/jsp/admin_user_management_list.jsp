@@ -5,10 +5,10 @@
 	import="model.UserBean"
 %>
 
-<%	
+<%
 	ArrayList<UserBean> userArray = new ArrayList<UserBean>();
 	userArray = (ArrayList<UserBean>)request.getAttribute("userArray");
-	
+
 	String notResult = (String)request.getAttribute("notResult");
 %>
 <!DOCTYPE html>
@@ -35,10 +35,10 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 
 <title></title> <!--画面名-->
-    
+
 
 </head>
-    
+
 <body>
 
 	<header>
@@ -50,18 +50,18 @@
 
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
-        
+
         <br>
-        
+
         <h6 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>ユーザ一覧</h6>
-        
+
         <% if(notResult != null){%>
+        <h5><%=notResult %></h5>
         	<div class="right-align">
-				<h5><%=notResult %></h5>
 				<a href="Next_user_management" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
 			</div>
 		<% }else{ %>
-        
+
 		<form action="AdminManagementDeleteList" method="post" name="form">
 			<table>
 				<tbody>
@@ -79,7 +79,7 @@
 						</tr>
 					</thead>
 					<% for(int count=0;count<userArray.size();count++){%>
-						
+
 						<tr>
 							<td>
 								<label>
@@ -101,20 +101,20 @@
 				<input type="submit" value="削　除" class="waves-effect red lighten-1 btn" onClick="return check()">
 			</div>
 		</form>
-		
+
 		<%} %>
 		<br><br>
-		
+
 		<form action="Next_user_management" name="main" method="post"></form> <!-- mainに戻る -->
-				
+
 		<!-- ここまで -->
 	</div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 </div> <!-- div row　終了 -->
 
 <!-- SCRIPT -->
-    
-    
+
+
 <script language="JavaScript" type="text/javascript">
      $(function(){
 
@@ -134,7 +134,7 @@
         $('#all').prop('checked', false); //アイテムを全部checkedにする
   });
      });
-     
+
      function check(){
  		if(window.confirm('選択されたユーザーを削除しますか？')){
  			return true;
