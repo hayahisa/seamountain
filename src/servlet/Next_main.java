@@ -40,11 +40,10 @@ public class Next_main extends HttpServlet {
 		}else{
 			path = "WEB-INF/jsp/main01.jsp";
 		}
-
 		Timeget time = new Timeget();
 		time.doPost(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
-
+		
 	}
 
 	/**

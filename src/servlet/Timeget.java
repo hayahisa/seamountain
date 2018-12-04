@@ -79,10 +79,8 @@ public class Timeget extends HttpServlet {
 
 			 break;
 		 }
-		 //int hour=cal.get(Calendar.HOUR_OF_DAY);
-		 //int min=cal.get(Calendar.MINUTE);
-		 int hour=12;
-		 int min=20;
+		 int hour=cal.get(Calendar.HOUR_OF_DAY);
+		 int min=cal.get(Calendar.MINUTE);
 		 if(hour<=9){
 			if(hour==9&&min>=45){//9:45分以上
 				System.out.println("9:45");
