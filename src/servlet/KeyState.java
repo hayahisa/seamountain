@@ -56,9 +56,12 @@ public class KeyState extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		int ky_id = Integer.parseInt(request.getParameter("ky_id"));
+		int ky_state_id = Integer.parseInt(String.valueOf(session.getAttribute("ky_state_id")));
 
+		if(ky_state_id==2){
 		KyDao KyDao = new KyDao();
 		KyDao.ChangeKyState(ky_id);
+		}
 
 		Timeget time = new Timeget();
 		time.doPost(request, response);
