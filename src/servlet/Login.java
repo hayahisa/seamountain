@@ -65,11 +65,11 @@ public class Login extends HttpServlet {
 
 		//valueがnullの場合のみCookieをセットする(期限は5分)
 		if (value == null) {
-			start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 
 //			user_noがDBに存在するか調べる
 			flg = udao.userNocheck(user_no);
 			if(flg == true){//user_no存在
+				start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 				session.setAttribute("user_number",user_no);
 				userbean = (UserBean)udao.userSession(user_no);
 				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
