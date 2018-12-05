@@ -68,7 +68,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 
 		<form action="Next_main" method="post">
    			<div class="right-align">
-   				<input type="submit" style="margin:0px 5px 0px 0px" class="waves-effect blue btn" style="margin:0px 5px 0px 0px" value="トップ">
+   				<input type="submit" style="margin:0px 5px 0px 0px" class="center-align waves-effect waves-light btn center" style="margin:0px 5px 0px 0px" value="トップ">
 			</div>
 		</form>
 
