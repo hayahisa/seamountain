@@ -93,7 +93,7 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<select name="useryear" required>
-								<% for(int year=isysYear-7;year<=isysYear;year++){ %>
+								<% for(int year=isysYear-5;year<=isysYear;year++){ %>
 								<option value=<%=year%>><%=year%>年</option>
 								<%} %>
 							</select>

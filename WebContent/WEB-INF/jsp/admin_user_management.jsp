@@ -39,8 +39,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
     
-<title></title> <!--画面名-->
-    
+<title>ユーザー管理</title> <!--画面名-->
 
 </head>
     
@@ -119,15 +118,12 @@
 		
 			$('#submit').click(function(){
 				//if(!$('#year'||'#course').prop('checked')){
-				if('#year' == "" || '#course' == ""){
-					alert('@@@@@');
-				}else{
-					
+				if($('#year').val() == null || $('#course').val() == null){
 					$('#msg').text('選択されていません');
+				}else{
 				}
 			});
 		
-	   </script>
-
+	</script>
 </body>
 </html>
