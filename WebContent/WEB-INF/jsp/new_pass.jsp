@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%	
+<%
 	String message = "";
 	String mailflg = (String)request.getAttribute("flg");
 	if(mailflg != null){
@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>new_pass</title> <!--画面名-->
 
-<nav class="header">鍵管理システム</nav>
+<nav class="header">　鍵管理システム</nav>
 
 </head>
 
@@ -52,7 +52,7 @@
     </div>
 
     <div class="row container">
-    
+
         <form class="col s12" action="Re_pass_regist" method="post">
         	<br>
         	<br>
@@ -108,15 +108,15 @@
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
-            
+
             function errorcheck() {
     		    var pass = document.getElementById('pass').value;
     		    var pass2 = document.getElementById('pass2').value;
-    		    
-    		    
+
+
     		    // パスワードの一致確認
     		    if (pass != pass2){
-    		    	
+
     		      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
     		      return false;
     		    }else{
@@ -126,7 +126,7 @@
     		    	}else{
     		    		return false;
     		    	}
-    		    	
+
     		      return true;
     		    }
     		};

@@ -54,6 +54,8 @@ public class KeyState extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		System.out.println("keyState.java");
+
 		HttpSession session = request.getSession();
 		int ky_id = Integer.parseInt(request.getParameter("ky_id"));
 

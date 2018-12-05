@@ -43,7 +43,6 @@ public class Start extends HttpServlet {
         }else{
         	path = "WEB-INF/jsp/main01.jsp";
         }
-
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	/**
