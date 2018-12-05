@@ -177,7 +177,6 @@ public class Timeget extends HttpServlet {
 		 session.setAttribute("ky", ky);
 		 session.setAttribute("ky_id",ky_id);
 		 session.setAttribute("ky_state_id",ky_state_id);
-		doGet(request, response);
 	}
 
 }
