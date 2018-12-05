@@ -26,7 +26,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 
-<title></title> <!--画面名-->
+<title>学科名変更</title> <!--画面名-->
 
 
 </head>
@@ -51,7 +51,7 @@
     <div class="input-field col s12">
          <input id="first_name2" type="text" class="validate" name="name">
          <label class="active" for="first_name2">
-         <%=request.getParameter("course_name")%>
+         <%=(String)request.getParameter("course_name")%>
          <input type="hidden" name="course_id" value=<%=request.getParameter("course_id")%> >
          </label>
      	</div>
