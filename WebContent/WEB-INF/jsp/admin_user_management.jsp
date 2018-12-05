@@ -39,7 +39,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
     
-<title>ユーザー管理</title> <!--画面名-->
+<title>ユーザ管理</title> <!--画面名-->
 
 </head>
     
@@ -83,7 +83,7 @@
 			</div>
 			<div class="row">
 				<div class="right-align col s11">
-					<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+					<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
 					<input type="submit" class="waves-effect blue lighten-1 btn" value="検索" id="submit">
 				</div>
 				<div class="col s1">

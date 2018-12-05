@@ -27,7 +27,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title>class_list</title> <!--画面名-->
+<title>クラス一覧t</title> <!--画面名-->
 
 
 </head>

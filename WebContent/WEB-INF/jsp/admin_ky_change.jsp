@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%	String key_name = (String)request.getParameter("Ky_name"); %>
 
 <!DOCTYPE html>
 
@@ -23,7 +24,7 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
-<title></title> <!--画面名-->
+<title>鍵名変更</title> <!--画面名-->
 
 
 </head>
@@ -44,9 +45,9 @@
 		<form action="Admin_ky_change">
 			<div class="row">
 				<div class="input-field col s12">
-					<input value="" id="first_name2" type="text" class="validate" name="Ky_change">
+					<input id="first_name2" type="text" class="validate" name="Ky_change">
 					<label class="active" for="first_name2">
-					<%=request.getParameter("Ky_name")%>
+					<%= key_name%>
 					<input type="hidden" name="Ky_id" value=<%=request.getParameter("Ky_id")%>>
 					</label>
 				</div>

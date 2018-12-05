@@ -32,7 +32,7 @@ TimeTableBean friday = (TimeTableBean)session.getAttribute("friday");
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <link rel="stylesheet" href="css/materialize.min.css" >
 
-<title>create_table_con</title> <!--画面名-->
+<title>時間割確認</title> <!--画面名-->
 
 
 </head>
