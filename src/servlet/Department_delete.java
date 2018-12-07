@@ -54,7 +54,7 @@ public class Department_delete extends HttpServlet {
 				    }
 				}
 
-				RequestDispatcher dispatcher = request.getRequestDispatcher("Next_admin_top");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Next_course_management");
 				dispatcher.forward(request, response);
 
 	}
