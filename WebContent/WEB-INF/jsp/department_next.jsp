@@ -48,7 +48,7 @@
         <h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科一覧</h5>
         <br>
 
-        <form action="Department_delete">
+        <form action="Department_delete" method = "get">
         <table>
         <tbody>
 
@@ -72,7 +72,7 @@
         </form>
         <br><br>
         <div class="right-align">
-        <button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+        <a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
             </div>
 
 

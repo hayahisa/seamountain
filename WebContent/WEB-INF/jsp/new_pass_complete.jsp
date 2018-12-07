@@ -37,9 +37,8 @@
 			<!-- ここから書いて -->
 			<br>
 			<br>
-			<div class="container">
-				<h5 class="left-align valign-wrapper"><i class="material-icons medium ">person</i>パスワード再設定完了</h5>
-			</div>
+			<br>
+			<br>
 			<div class="row"> <!-- 表示範囲の設定 -->
 				<div class="left col-lg-1 col-md-1 col-xs-0"></div> <!-- 左側余白 -->
 				<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
@@ -56,7 +55,7 @@
 					<div class="center-align">
 						<a class="center-align waves-effect waves-light btn center" onclick="document.main.submit();return false;">ログイン画面へ</a>
 					</div>
-			
+
 					<!-- ここまで -->
 				</div>
 				<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
@@ -66,7 +65,7 @@
 
 		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 	</div> <!-- div row　終了 -->
-	
+
 	<form action="Next_login" name="main" method="post"></form>	<!-- mainに戻る -->
 
 <!-- SCRIPT -->
