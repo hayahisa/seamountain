@@ -34,22 +34,26 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 		<br>
-
-		<h5>ログアウトしました。</h5>
 		<br>
 		<br>
-		<br>
-
+		<div class="row container">
+			<div class="col s12 center-align">
+				<h5>ログアウトしました。</h5>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
 		<div class="row container">
 
 	   		<div class="col s12 center-align">
-	   			<a href="Admin_login.jsp">管理者ログイン画面へ</a>
+	   			<a href="Admin_login.jsp" class="waves-effect blue lighten-1 btn">管理者ログイン画面へ</a>
 	   		</div>
 
-	   		<br><br>
+	   		<br><br><br>
 
 	   		<div class="col s12 center-align">
-	   			<a href="login.jsp">ユーザログイン画面へ</a>
+	   			<a href="login.jsp" class="waves-effect blue lighten-1 btn">ユーザログイン画面へ</a>
 	   		</div>
 
    			<div class="row right-align"></div>

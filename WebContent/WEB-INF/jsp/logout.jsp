@@ -34,16 +34,21 @@
 	<div class="middle col-lg-10 col-md-10 col-xs-12"> <!-- 中央表示 -->
 		<!-- ここから書いて -->
 		<br>
-
-		<h5>ログアウトしました。</h5>
 		<br>
 		<br>
 		<br>
+		<div class="row container">
+	   		<div class="col s12 center-align">
+				<h5>ログアウトしました。</h5>
+				<br>
+				<br>
+			</div>
+		</div>
 
 		<div class="row container">
 
 	   		<div class="col s12 center-align">
-	   			<a href="login" onclick="document.logout.submit();return false;">ログイン画面へ</a>
+	   			<a href="login" class="waves-effect blue lighten-1 btn" onclick="document.logout.submit();return false;">ログイン画面</a>
 	   		</div>
 
    			<div class="row right-align"></div>

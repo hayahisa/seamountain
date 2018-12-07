@@ -42,7 +42,7 @@
 			<br>
 			<br>
 			<div class="center-align">
-				<a href="Next_login" class="center-align waves-effect waves-light btn center">ログイン画面へ</a>
+				<a href="Next_login" class="center-align waves-effect waves-light btn center">ログイン画面</a>
 			</div>
 		</div>
 				<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
