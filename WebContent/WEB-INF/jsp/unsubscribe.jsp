@@ -70,7 +70,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 	          						<input id="pass" type="password" name="pass" required>
 	          						<label for="password">パスワード</label>
 	          						<%= msg%>
-	          						<input type="submit" class="waves-effect blue lighten-1 btn" value="送信" onClick="return check()">
+	          						<input type="submit" class="waves-effect blue lighten-1 btn" value="退会" onClick="return check()">
 	        					</div>
 	        				</div>
 	        			</form>
@@ -83,7 +83,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 			</div> <!-- div row　終了 -->
 			<!-- ここまで -->
 		</div>
-
+		
 		<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 	 <!-- div row　終了 -->
 	<script type="text/javascript">
