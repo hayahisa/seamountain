@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.KyDao;
 
@@ -33,28 +31,14 @@ public class Admin_ky_delete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-    	HttpSession session = request.getSession();
 
         // GETメソッドのパラメータ名を取得
-        Enumeration<String> names = request.getParameterNames();
 
-        String name;        // 現在のパラメータ名
-        int Ky_id = 0;        // KyID
-
-        // 削除ボタンがクリックされた場所を特定
-        while (names.hasMoreElements()) {
-            // 渡ってきたパラメータを順番に処理
-            // パラメータ名を取得
-            name = names.nextElement();
-            if ("削除".equals(request.getParameter(name))) {
-
-                Ky_id = Integer.parseInt(name);
+        int Ky_id=Integer.parseInt(request.getParameter("Ky_id"));
                 KyDao KD = new KyDao();
                 KD.DeleteKy(Ky_id);
-        		System.out.println("実行完了");
-            }
-        }
-
+                RequestDispatcher rd = request.getRequestDispatcher("Ky_delete");
+                rd.forward(request, response);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Ky_delete");
         dispatcher.forward(request, response);
 	}

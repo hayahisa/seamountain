@@ -39,7 +39,7 @@ public class Department_Change extends HttpServlet {
 
 		cdao.courseChange(name, course_id);
 
-		RequestDispatcher rd = request.getRequestDispatcher("Next_course_add");
+		RequestDispatcher rd = request.getRequestDispatcher("Next_course_management");
         rd.forward(request, response);
 	}
 
