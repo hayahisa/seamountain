@@ -54,15 +54,13 @@
         </div>
         <div class="row">
     		<div class="right-align col s11">
-    			<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
+    			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
     			<input type="submit" class="waves-effect blue lighten-1 btn" value="追　加">
     		</div>
     	</div>
     </form>
     <div class="col s1"></div>
 </div>
-
-<form action="Next_admin_top" name="main" method="post"></form> <!-- mainに戻る -->
 
    <!-- ここまで -->
     </div>
