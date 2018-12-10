@@ -19,7 +19,7 @@ import dao.KyDao;
 @WebServlet("/Admin_ky_delete")
 public class Admin_ky_delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,12 +47,10 @@ public class Admin_ky_delete extends HttpServlet {
             // パラメータ名を取得
             name = names.nextElement();
             if ("削除".equals(request.getParameter(name))) {
-            	
-            	
+
                 Ky_id = Integer.parseInt(name);
-                System.out.println(Ky_id);
                 KyDao KD = new KyDao();
-        		KD.DeleteKy(Ky_id);
+                KD.DeleteKy(Ky_id);
         		System.out.println("実行完了");
             }
         }

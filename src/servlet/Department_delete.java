@@ -49,8 +49,8 @@ public class Department_delete extends HttpServlet {
 				        course_id = Integer.parseInt(name);
 
 				        CourseDao cdao = new CourseDao();
-						    cdao.courseDelete(course_id);
-						System.out.println("実行完了");
+				        cdao.courseDelete(course_id);
+				        System.out.println("実行完了");
 				    }
 				}
 
