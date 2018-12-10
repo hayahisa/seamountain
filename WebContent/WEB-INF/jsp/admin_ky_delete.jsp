@@ -63,7 +63,7 @@
 
           <tr>
             <td><a href="Admin_ky_changego?Ky_id=<%=bean.getKy_id()%>&Ky_name=<%=bean.getKy_name()%>"><%=bean.getKy_name()%></a></td>
-            <td><input type="submit" value="削除" name="<%=bean.getKy_id()%>" class="waves-effect red lighten-1 btn" onClick="return check()"></td>
+            <td><a href="Admin_ky_delete?Ky_id=<%=bean.getKy_id()%>" class="waves-effect red lighten-1 btn" onClick="return check()">削除</a></td>
           </tr>
           <%} %>
         </tbody>
