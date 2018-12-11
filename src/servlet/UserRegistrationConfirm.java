@@ -36,24 +36,24 @@ public class UserRegistrationConfirm extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = "";
-
+		
 		HttpSession session = request.getSession(false);
-
+		
 		if (session == null) {
-
+			
 			path = "WEB-INF/jsp/new_regist.jsp";
-
+			
 		} else {
 			PasswordBean passBean = (PasswordBean) session.getAttribute("passBean");
 			UserBean userBean = (UserBean) session.getAttribute("userBean");
-
+			
 			// パスワードをSHA-256でハッシュ化
 			HashPassword hashPass = new HashPassword();
 			String encryptPass = hashPass.encryptPass(passBean.getPassword());
-
+			
 			// passのsessionを破棄
 			session.removeAttribute("passBean");
-
+			
 			// ユーザ情報をuserテーブルに格納
 			UserDao userdao = new UserDao();
 			userdao.registrationUser(userBean);
@@ -64,10 +64,10 @@ public class UserRegistrationConfirm extends HttpServlet {
 			//時間割を取得
 			Timeget time = new Timeget();
 			time.doPost(request, response);
-
+			
 			path = "WEB-INF/jsp/new_regist_complete.jsp";
 		}
-	
+		
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
