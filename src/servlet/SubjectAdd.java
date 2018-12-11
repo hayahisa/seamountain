@@ -45,7 +45,7 @@ public class SubjectAdd extends HttpServlet {
 		SubjectDao subjectdao = new SubjectDao();
 		subjectdao.subjectAdd(subjectname);
 		
-		request.getRequestDispatcher("Next_admin_top").forward(request, response);
+		request.getRequestDispatcher("Next_subject_add").forward(request, response);
 		
 	}
 

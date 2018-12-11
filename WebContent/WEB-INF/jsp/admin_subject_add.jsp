@@ -53,7 +53,7 @@
         </div>
         <div class="row">
     		<div class="right-align col s11">
-    			<button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+    			<a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
     			<input type="submit" class="waves-effect blue lighten-1 btn" value="追　加">
     		</div>
     	</div>
@@ -65,7 +65,7 @@
     </div>
 	<div class="right col-lg-1 col-md-1 col-xs-0"></div> <!-- 右側余白 -->
 </div> <!-- div row　終了 -->
-
+<form action="Next_admin_top" name="main" method="post"></form> <!-- mainに戻る -->
 <!-- SCRIPT -->
       <script type="text/javascript">
 
