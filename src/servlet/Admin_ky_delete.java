@@ -37,8 +37,6 @@ public class Admin_ky_delete extends HttpServlet {
         int Ky_id=Integer.parseInt(request.getParameter("Ky_id"));
                 KyDao KD = new KyDao();
                 KD.DeleteKy(Ky_id);
-                RequestDispatcher rd = request.getRequestDispatcher("Ky_delete");
-                rd.forward(request, response);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Ky_delete");
         dispatcher.forward(request, response);
 	}
@@ -48,7 +46,6 @@ public class Admin_ky_delete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.print("aaaa1");
 		doGet(request, response);
 	}
 
