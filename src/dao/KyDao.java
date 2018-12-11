@@ -7,6 +7,38 @@ public class KyDao extends DaoBase{
 	public KyDao(){
 
 	}
+
+	//鍵名取得
+	public KyBean getKyName(int kyid){
+
+		KyBean kybean = new KyBean();
+
+		try{
+			super.connection();
+
+			String sql  ="SELECT * FROM ky WHERE ky_id = ?";
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, kyid);
+			rs = stmt.executeQuery();
+
+			rs.next();
+
+			kybean.setKy_id(rs.getInt(1));
+			kybean.setKy_name(rs.getString(2));
+		}catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			try {
+				// エラーじはclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return kybean;
+	}
+
 	public KyInfoBean getKyall(){
 		KyInfoBean KIB = new KyInfoBean();
 		try {

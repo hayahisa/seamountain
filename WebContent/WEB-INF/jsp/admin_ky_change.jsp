@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%	String key_name = (String)request.getParameter("Ky_name"); %>
-
+<%@ page import="model.KyBean" %>
+<%
+KyBean kybean = new KyBean();
+kybean = (KyBean)request.getAttribute("kybean");
+%>
 <!DOCTYPE html>
 
 <html>
@@ -47,8 +50,8 @@
 				<div class="input-field col s12">
 					<input id="first_name2" type="text" class="validate" name="Ky_change">
 					<label class="active" for="first_name2">
-					<%= key_name%>
-					<input type="hidden" name="Ky_id" value=<%=request.getParameter("Ky_id")%>>
+					<%= kybean.getKy_name()%>
+					<input type="hidden" name="Ky_id" value=<%=kybean.getKy_id()%>>
 					</label>
 				</div>
 			</div>

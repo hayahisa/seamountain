@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CourseDao;
+import model.CourseBean;
+
 /**
  * Servlet implementation class Department_next
  */
@@ -30,7 +33,13 @@ public class Department_next extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-//
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
+
+		CourseBean coursebean = new CourseBean();
+		CourseDao cdao = new CourseDao();
+		coursebean = cdao.getCourseName(course_id);
+
+		request.setAttribute("coursebean", coursebean);
 
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/department_change.jsp");
         rd.forward(request, response);

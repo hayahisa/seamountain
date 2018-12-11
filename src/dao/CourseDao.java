@@ -10,6 +10,36 @@ public class CourseDao extends DaoBase{
 
 	}
 
+	public CourseBean getCourseName(int courseid){
+
+		CourseBean coursebean = new CourseBean();
+
+		try{
+			super.connection();
+
+			String sql = "SELECT * FROM course WHERE course_id = ?";
+
+			stmt = con.prepareStatement(sql);
+			stmt.setInt(1, courseid);
+			rs = stmt.executeQuery();
+
+			rs.next();
+
+			coursebean.setCourse_id(rs.getInt(1));
+			coursebean.setCourse_name(rs.getString(2));
+		}catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			try {
+				// エラーじはclose処理
+				super.DbClose();
+			} catch (Exception e) {
+				System.out.println("error");
+			}
+		}
+		return coursebean;
+	}
+
 	//学科全取得
 	public ArrayList<CourseBean> AllSelectCourse(){
 
@@ -43,7 +73,7 @@ public class CourseDao extends DaoBase{
 		}
 		return courseArray;
 	}
-	
+
 	//学科全取得
 	public ArrayList<CourseBean> managementAllSelectCourse(){
 

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.CourseBean"%>
-<%	CourseBean coursebean = (CourseBean)request.getAttribute("coursebean"); %>
+<%
+CourseBean coursebean = new CourseBean();
+coursebean = (CourseBean)request.getAttribute("coursebean"); %>
 
 <!DOCTYPE html>
 
@@ -51,8 +53,8 @@
     <div class="input-field col s12">
          <input id="first_name2" type="text" class="validate" name="name">
          <label class="active" for="first_name2">
-         <%=(String)request.getParameter("course_name")%>
-         <input type="hidden" name="course_id" value=<%=request.getParameter("course_id")%> >
+         <%=coursebean.getCourse_name()%>
+         <input type="hidden" name="course_id" value=<%=coursebean.getCourse_id()%> >
          </label>
      	</div>
      </div>
