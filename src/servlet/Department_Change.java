@@ -31,7 +31,14 @@ public class Department_Change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	    CourseDao  cdao = new CourseDao();
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		CourseDao  cdao = new CourseDao();
 
 	    String name = request.getParameter("name");
 
@@ -41,12 +48,6 @@ public class Department_Change extends HttpServlet {
 
 		RequestDispatcher rd = request.getRequestDispatcher("Next_course_management");
         rd.forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }

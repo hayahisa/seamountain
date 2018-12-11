@@ -45,7 +45,7 @@ kybean = (KyBean)request.getAttribute("kybean");
 		<br><br>
 		<h5 class="left-align valign-wrapper"><i class="material-icons medium">vpn_key</i>鍵名変更</h5>
 		<br>
-		<form action="Admin_ky_change">
+		<form action="Admin_ky_change" method="post">
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="first_name2" type="text" class="validate" name="Ky_change">

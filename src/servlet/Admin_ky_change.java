@@ -31,12 +31,7 @@ public class Admin_ky_change extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		KyDao  KD = new KyDao();
-		int Ky_id = Integer.parseInt(request.getParameter("Ky_id"));
-		String name = request.getParameter("Ky_change");
-		KD.UpdateKy(Ky_id, name);
-        RequestDispatcher rd = request.getRequestDispatcher("Ky_delete");
-        rd.forward(request, response);
+
 	}
 
 	/**
@@ -44,6 +39,12 @@ public class Admin_ky_change extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		KyDao  KD = new KyDao();
+		int Ky_id = Integer.parseInt(request.getParameter("Ky_id"));
+		String name = request.getParameter("Ky_change");
+		KD.UpdateKy(Ky_id, name);
+        RequestDispatcher rd = request.getRequestDispatcher("Ky_delete");
+        rd.forward(request, response);
 	}
 
 }
