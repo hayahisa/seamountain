@@ -48,7 +48,7 @@
         <h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科一覧</h5>
         <br>
 
-        <form action="Department_delete">
+
         <table>
         <tbody>
 
@@ -63,16 +63,15 @@
 
           <tr>
             <td><a href="Department_next?course_id=<%=bean.getCourse_id()%>&course_name=<%=bean.getCourse_name()%>"><%=bean.getCourse_name()%></a></td>
-            <td><input class="waves-effect red lightten-1 btn" type="submit" value="削除" name="<%=bean.getCourse_id()%>" onClick="return check()"></td>
+            <td><a href="Department_delete?course_id=<%=bean.getCourse_id()%>" class="waves-effect red lightten-1 btn"  onClick="return check()">削除</a></td>
           </tr>
           <%} %>
         </tbody>
      	</table>
 
-        </form>
         <br><br>
         <div class="right-align">
-        <button type="button" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="history.back()">戻る</button>
+        <a href="Next_admin_top" class="waves-effect grey btn" style="margin:0px 5px 0px 0px" onclick="document.main.submit();return false;">戻る</a>
             </div>
 
 

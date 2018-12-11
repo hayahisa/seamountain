@@ -32,7 +32,6 @@ public class Start extends HttpServlet {
 		String name = null;
 		String result = null;
 		String path = null;
-
 		Start start = new Start();
 
 		 //Cookieから"test_cookie_name"というKeyで登録された値(文字列)を取り出す

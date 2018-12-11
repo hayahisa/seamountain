@@ -98,8 +98,6 @@ import model.SubjectInfoBean;
 
 			rs.next();
 
-			System.out.println(rs.getString(2));
-
 			subjectbean.setSub_id(rs.getInt(1));
 			subjectbean.setSub_name(rs.getString(2));
 
