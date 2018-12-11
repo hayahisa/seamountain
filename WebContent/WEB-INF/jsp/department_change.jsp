@@ -48,7 +48,7 @@ coursebean = (CourseBean)request.getAttribute("coursebean"); %>
 
 	<h5 class="left-align valign-wrapper"><i class="material-icons medium">dashboard</i>学科名変更</h5>
 	<br>
-<form action="Department_Change" >
+<form action="Department_Change" method="post">
   <div class="row">
     <div class="input-field col s12">
          <input id="first_name2" type="text" class="validate" name="name">
