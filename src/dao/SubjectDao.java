@@ -16,6 +16,7 @@ import model.SubjectInfoBean;
 			super.connection();
 			String sql = "SELECT * FROM subject;";
 			stmt = con.prepareStatement(sql);
+
 			rs = stmt.executeQuery();
 
 			rs.next();
