@@ -69,7 +69,7 @@ public class Login extends HttpServlet {
 //			user_noがDBに存在するか調べる
 			flg = udao.userNocheck(user_no);
 			if(flg == true){//user_no存在
-				start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 86400 * 60);
+				start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 				session.setAttribute("user_number",user_no);
 				userbean = (UserBean)udao.userSession(user_no);
 				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
