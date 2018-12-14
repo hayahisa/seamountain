@@ -68,7 +68,7 @@ String roleFlg = String.valueOf(user.getRoleFlg());
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
         	<label class="btn-large blue"><%=ky%></label>
         </div>
-
+        
         <%if(ky_state_id==2){ %>
         <div class="center-align">
         <form action="KeyState"method="post">
@@ -103,16 +103,25 @@ String roleFlg = String.valueOf(user.getRoleFlg());
       <script type="text/javascript">
 
 	    document.addEventListener('DOMContentLoaded', function() {
-	    var elems = document.querySelectorAll('.sidenav');
-	    var instances = M.Sidenav.init(elems);
-	  });
-
-
-	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-	  // var collapsibleElem = document.querySelector('.collapsible');
-	  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-	  // Or with jQuery
+	    	var elems = document.querySelectorAll('.sidenav');
+	    	var instances = M.Sidenav.init(elems);
+	    });
+	    
+	    
+		$(function(){
+			if($('#keystate').children('label').text() == '貸出途中'){
+				$('#state').attr('class', 'btn-large green');
+			}else if($('#keystate').children('label').text() == '貸出中'){
+				$('#state').attr('class', 'btn-large red');
+			}else if($('#keystate').children('label').text() == '教務室'){
+				$('#state').attr('class', 'btn-large blue');
+			}
+		});
+		
+		// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+		// var collapsibleElem = document.querySelector('.collapsible');
+		// var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+		// Or with jQuery
 	   </script>
 
 </body>

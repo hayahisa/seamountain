@@ -38,6 +38,8 @@
 UserBean user = new UserBean();
 user = (UserBean) session.getAttribute("userBean");
 String roleFlg = String.valueOf(user.getRoleFlg());
+ArrayList<RoomBean> roomArray = new ArrayList<RoomBean>();
+roomArray = (ArrayList<RoomBean>)session.getAttribute("roomList");
 %>
 
 <%if(roleFlg.equals("S")){ %>
@@ -68,9 +70,23 @@ String roleFlg = String.valueOf(user.getRoleFlg());
 		<c:forEach var="obj" items="${roomList}" varStatus="status">
 			<div class="panel panel-default panel-size">
 					<div class="panel-body">教室名：${obj.room_name}
-						<span class="badge red">
-						<span class="white-text text-darken-2">${obj.ky_state_name}</span>
-	    				</span>
+						<c:choose>
+							<c:when test="${obj.ky_state_name == '貸出途中'}">
+								<span class="badge green">
+									<span class="white-text text-darken-2">${obj.ky_state_name}</span>
+								</span>
+							</c:when>
+							<c:when test="${obj.ky_state_name == '貸出中'}">
+								<span class="badge red">
+									<span class="white-text text-darken-2">${obj.ky_state_name}</span>
+								</span>
+							</c:when>
+							<c:when test="${obj.ky_state_name == '教務室'}">
+								<span class="badge blue">
+									<span class="white-text text-darken-2">${obj.ky_state_name}</span>
+	    						</span>
+	    					</c:when>
+						</c:choose>
 					</div>
 			</div>
 		</c:forEach>
@@ -102,7 +118,6 @@ String roleFlg = String.valueOf(user.getRoleFlg());
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
-
 
 	  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
 	  // var collapsibleElem = document.querySelector('.collapsible');
