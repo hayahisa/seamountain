@@ -56,19 +56,25 @@ public class Login extends HttpServlet {
 		String user_no = request.getParameter("user_number");	//ユーザ番号
 		String user_pass = request.getParameter("user_pass"); 	//ユーザパス
 		int no = Integer.parseInt(user_no);
-
+		
+		// パスワードをSHA-256でハッシュ化
+		HashPassword hashPass = new HashPassword();
+		String encryptPass = hashPass.encryptPass(user_pass);
+		
+		//LoginDao
+		LoginDao ldao = new LoginDao();
+		UserPassBean userpassbean = ldao.User_loginDao(user_no);
+		
 //		cookie
 		Start start = new Start();
 
 		//Cookieから"test_cookie_name"というKeyで登録された値(文字列)を取り出す
 		String value = start.getCookie(request, "test_cookie_name");
 
-		//valueがnullの場合のみCookieをセットする(期限は5分)
+		//valueがnullの場合のみCookieをセットする(期限は1分)
 		if (value == null) {
 
-//			user_noがDBに存在するか調べる
-			flg = udao.userNocheck(user_no);
-			if(flg == true){//user_no存在
+			if(userpassbean.getUser_number() == no && userpassbean.getUser_pass().equals(encryptPass)){
 				start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 				session.setAttribute("user_number",user_no);
 				userbean = (UserBean)udao.userSession(user_no);
@@ -83,15 +89,8 @@ public class Login extends HttpServlet {
 				path = "/login.jsp";
 			}
 
-		}else{
+		}else{//Cookieが存在したら
 			user_no = value;
-			// パスワードをSHA-256でハッシュ化
-			HashPassword hashPass = new HashPassword();
-			String encryptPass = hashPass.encryptPass(user_pass);
-
-			//LoginDao
-			LoginDao ldao = new LoginDao();
-			UserPassBean userpassbean = ldao.User_loginDao(user_no);
 
 			if(ldao.User_loginDao(user_no) == null){
 				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");

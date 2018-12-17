@@ -33,10 +33,9 @@
 <%
 UserBean user = new UserBean();
 user = (UserBean) session.getAttribute("userBean");
-String roleFlg = String.valueOf(user.getRoleFlg());
 %>
 
-<%if(roleFlg.equals("S")){ %>
+<%if(user.getRoleFlg().equals("S")){ %>
 	<%@ include file="header.jsp"%>
 <%}else{%>
 	<%@ include file="header2.jsp"%>
@@ -64,9 +63,9 @@ String roleFlg = String.valueOf(user.getRoleFlg());
         	<label class="btn-large blue"><%=nextroom%></label>
         </div>
 
-        <div class="center-align">
+        <div class="center-align" id="keystate">
             <p class="Heading h4">鍵の状態<i class="material-icons">vpn_key</i></p>
-        	<label class="btn-large blue"><%=ky%></label>
+        	<label class="btn-large blue" id="state"><%=ky%></label>
         </div>
         
         <%if(ky_state_id==2){ %>
