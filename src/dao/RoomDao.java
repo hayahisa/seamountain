@@ -20,7 +20,8 @@ public class RoomDao extends DaoBase {
 					+ "INNER JOIN ky k "
 					+ "ON r.ky_id = k.ky_id) "
 					+ "INNER JOIN ky_state ks "
-					+ "ON k.ky_state_id = ks.ky_state_id;";
+					+ "ON k.ky_state_id = ks.ky_state_id "
+					+ "ORDER BY r.room_name";
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
