@@ -29,7 +29,7 @@ public class Login extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -65,33 +65,33 @@ public class Login extends HttpServlet {
 		LoginDao ldao = new LoginDao();
 		UserPassBean userpassbean = ldao.User_loginDao(user_no);
 		
-//		cookie
+//	cookie
 		Start start = new Start();
-
+		
 		//Cookieから"test_cookie_name"というKeyで登録された値(文字列)を取り出す
 		String value = start.getCookie(request, "test_cookie_name");
-
+		
 		//valueがnullの場合のみCookieをセットする(期限は1分)
 		if (value == null) {
-
+			
 			if(userpassbean.getUser_number() == no && userpassbean.getUser_pass().equals(encryptPass)){
 				start.setCookie(request, response, "WEB-INF/jsp/main01.jsp", "test_cookie_name", user_no, 1 * 60);
 				session.setAttribute("user_number",user_no);
 				userbean = (UserBean)udao.userSession(user_no);
 				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
-
+				
 				Timeget time = new Timeget();
 				time.doPost(request, response);
 				path = "WEB-INF/jsp/main01.jsp";
-
+				
 			}else{//user_no存在しない
 				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
 				path = "/login.jsp";
 			}
-
+			
 		}else{//Cookieが存在したら
 			user_no = value;
-
+			
 			if(ldao.User_loginDao(user_no) == null){
 				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
 				path = "/login.jsp";
@@ -99,13 +99,13 @@ public class Login extends HttpServlet {
 				session.setAttribute("user_number",user_no);	//セッションにユーザナンバーを確認
 				path = "WEB-INF/jsp/main01.jsp";
 				userbean = (UserBean)udao.userSession(user_no);
-
+				
 				session.setAttribute("userBean",userbean);	//ユーザ情報をセッションに格納
-
+				
 				Timeget time = new Timeget();
 				time.doPost(request, response);
 				request.setAttribute("msg", "");
-
+				
 			}else{
 				request.setAttribute("msg", "　※ユーザ番号かパスワードが間違っています　");
 				path = "/login.jsp";

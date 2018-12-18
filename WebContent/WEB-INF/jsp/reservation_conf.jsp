@@ -26,7 +26,6 @@
 <link rel="stylesheet" href="css/materialize.min.css" >
 <title>予約完了</title> <!--画面名-->
 
-
 </head>
 
 <body>
